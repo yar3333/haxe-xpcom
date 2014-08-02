@@ -1,0 +1,3 @@
+syntax: glob
+library/library.zip
+tools/MakeXpcomExterns/bin/MakeXpcomExterns.n

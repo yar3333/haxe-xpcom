@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="redesign no-js">
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/IAccessibleText by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Aug 2014 20:07:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+        
+    <title>IAccessibleText - Mozilla | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="https://developer.mozilla.org/en-US/">
+  <link rel="copyright" href="#copyright">
+
+  <link href="../../../../../../../../mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" type="text/css" rel="stylesheet">
+              <link rel="stylesheet" media="all" href="../../../../../../../../developer.cdn.mozilla.net/media/css/mdn-min46d5.css?build=9fd3034" />
+
+      
+    <link rel="stylesheet" media="all" href="../../../../../../../../developer.cdn.mozilla.net/media/css/wiki-min46d5.css?build=9fd3034" />
+
+          <link rel="stylesheet" type="text/css"
+            href="https://developer.mozilla.org/en-US/docs/Template:CustomCSS?raw=1" />
+    
+    
+  <!-- common social tags -->
+    <meta property="og:type" content="website">
+  <meta property="og:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta property="og:site_name" content="Mozilla Developer Network">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta name="twitter:site" content="@NewOnMDN">
+  <meta name="twitter:creator" content="@NewOnMDN">
+
+  <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon144.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon114.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon72.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon57.png">
+  <!-- basic favicon -->
+          <link rel="shortcut icon" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon32.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script src="https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
+
+    <link rel="alternate" type="application/json" href="IAccessibleText%24json.json">
+  <link rel="canonical" href="IAccessibleText.html" >
+
+  
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="IAccessibleText">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/IAccessibleText">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/IAccessibleText">
+  <meta name="twitter:title" content="IAccessibleText">
+    <meta property="og:description" content="This enum defines values which specify a text() boundary type. IA2_TEXT_BOUNDARY_SENTENCE is optional. When a method doesn&#39;t implement this method it must return S_FALSE. Typically this feature would not be implemented by an application. However, if the application developer was not satisfied with how screen readers have handled the reading of sentences this boundary type could be implemented and screen readers could use the application&#39;s version of a sentence rather than the screen reader&#39;s. The rest of the boundary types must be supported. This enum is used in textBeforeOffset(), textAtOffset(), and textAfterOffset().">
+  <meta name="description" content="This enum defines values which specify a text() boundary type. IA2_TEXT_BOUNDARY_SENTENCE is optional. When a method doesn&#39;t implement this method it must return S_FALSE. Typically this feature would not be implemented by an application. However, if the application developer was not satisfied with how screen readers have handled the reading of sentences this boundary type could be implemented and screen readers could use the application&#39;s version of a sentence rather than the screen reader&#39;s. The rest of the boundary types must be supported. This enum is used in textBeforeOffset(), textAtOffset(), and textAfterOffset().">
+  <meta name="twitter:description" content="This enum defines values which specify a text() boundary type. IA2_TEXT_BOUNDARY_SENTENCE is optional. When a method doesn&#39;t implement this method it must return S_FALSE. Typically this feature would not be implemented by an application. However, if the application developer was not satisfied with how screen readers have handled the reading of sentences this boundary type could be implemented and screen readers could use the application&#39;s version of a sentence rather than the screen reader&#39;s. The rest of the boundary types must be supported. This enum is used in textBeforeOffset(), textAtOffset(), and textAfterOffset().">
+  
+      <script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+    
+    
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.hash.indexOf('utm') != -1) {
+                var anchor = location.hash.match(/#(?!utm)[^&]+/);
+                anchor = anchor ? anchor[0] : '';
+                if(!anchor && win.history.replaceState){
+                    history.replaceState({}, '', location.pathname + location.search);
+                } else {
+                    location.hash = anchor;
+                }
+            }
+        };
+
+        ga('send', 'pageview', removeUtms(win.location + ''));
+    })();
+</script>
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgAEV1RTGwABU1NSAAQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("https://developer.mozilla.org/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script></head>
+<body data-slug="Mozilla/Tech/XPCOM/Reference/Interface/IAccessibleText" contextmenu="edit-history-menu" class="document  ">
+
+  <script type="text/javascript">
+    (function(win) {
+        'use strict';
+
+                    (function(){
+  var FLAGS = {
+    'derby_closed': true,'ga_outbound_links': true,'kumaediting': false,'page_move': false,'promote_script': false,'redirect_messages': false,'top_contributors': false,'wiki_spellcheck': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'render_stale_documents_async': true,'enable_optimizely': false
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+                
+        // This represents the site configuration
+        win.mdn = {
+            build: '9fd3034',
+            // Properties and settings for CKEditor will go here
+            ckeditor: {},
+            // Feature test results and methods will be placed here
+            features: {},
+            // The path to media (images, CSS, JS) in MDN
+            mediaPath: 'https://developer.cdn.mozilla.net/media/',
+            // Optimizely API
+            optimizely: win['optimizely'] || [],
+            // Site notifications
+            notifications: [],
+            
+            // Wiki-specific settings will be placed here
+            wiki: {
+                autosuggestTitleUrl: '/en-US/docs/get-documents'
+            },
+        };
+
+        // Ensures gettext always returns something, is always set
+        win.gettext = function(x) {
+            return x;
+        }
+    })(window);
+</script>
+  
+
+  
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="#language">Select language</a></li>
+          <li><a href="#q" id="skip-search">Skip to search</a></li>
+      </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <div class="clear header-login">
+      <a href="http://www.mozilla.org/" id="tabzilla" class="no-track">mozilla</a>
+                <script src="../../../../../../../../login.persona.org/include.js"></script>
+<script type="text/javascript">
+(function() {
+  var allauth = window.allauth = window.allauth || {};
+
+  function startWatching() {
+    navigator.id.watch({
+      onlogin: function(assertion) {
+        // TODO: next url handling
+        document.getElementById("_persona_assertion").value = assertion;
+        document.getElementById("_persona_login").submit();
+      },
+      onlogout: function() {
+        // TODO
+      }
+    })
+  };
+
+  allauth.persona = {
+    login: function(nextUrl, process) {
+        document.getElementById("_persona_next_url").value = nextUrl || '';
+        document.getElementById("_persona_process").value = process;
+        startWatching();
+        navigator.id.request({"siteName": "Mozilla Developer Network", "siteLogo": "/media/redesign/img/opengraph-logo.png"});
+    }
+  }
+})();
+</script>
+
+<form id="_persona_login" method="post" action="https://developer.mozilla.org/users/persona/login/">
+  <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='OFUZvWX3cvltHNznKujHNL8vtsBRoNMa' /></div>
+  <input type="hidden" name="next" value="" id="_persona_next_url"/>
+  <input type="hidden" name="process" value="" id="_persona_process"/>
+  <input type="hidden" name="assertion" id="_persona_assertion"/>
+</form>
+
+  <form>
+      <div class="oauth-login-container" tabIndex="0">
+          <div class="oauth-login-options">
+              <span>Sign in with</span>
+              <span class="oauth-icon oauth-persona" title="Sign in with Persona"><i class="icon-user" aria-hidden="true"></i></span>
+                      </div>
+          <div class="submenu oauth-login-picker" aria-hidden="true">
+              <ul>
+                  <li><a href="javascript:allauth.persona.login('/en\u002DUS/docs/Mozilla/Tech/XPCOM/Reference/Interface/IAccessibleText', 'login')" class="persona-button persona-loaded login-link" data-next="/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/IAccessibleText" data-service="Persona"><i class="icon-user" aria-hidden="true"></i>Persona</a></li>
+                              </ul>
+          </div>
+      </div>
+  </form>
+          </div>
+
+    <a href="https://developer.mozilla.org/en-US/" class="logo">Mozilla Developer Network</a>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="https://developer.mozilla.org/en-US/docs/Zones">Zones<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-single" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/Add-ons">Add-ons</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Apps">App Center</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox">Firefox</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Marketplace">Firefox Marketplace</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox_OS">Firefox OS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Persona">Persona</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Web">Web Platform<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Apps">Apps</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References & Guides</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Tools">Tools</a></li><li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Connect">Connect</a></li><li class="main-nav-search"><form action="https://developer.mozilla.org/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" data-placeholder="Search" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+   <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+            <div class="article-meta">
+        <!-- action buttons -->
+        
+        
+        
+
+  <ul class="page-buttons" data-sticky="false"><li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-globe"></i></button>
+
+        <div class="submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+                              <li class="smaller">No translations exist for this document.</li>
+              
+                              <li><a href="https://developer.mozilla.org/en-US/users/signin/?next=/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/IAccessibleText%24locales">Add a translation</a></li>
+                          </ul>
+          </div>
+        </div></li><li class="page-buttons-edit"><a href="https://developer.mozilla.org/en-US/users/signin/?next=/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/IAccessibleText%24edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li><li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+
+        <div class="submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="IAccessibleText%24history.html">History</a></li>
+                                                                
+                
+                                
+                                                                <li class="page-print"><a href="#" onclick="return window.print();"  title="Print page">Print this page</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+        <!-- crumbs -->
+          <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US" rel="v:url" property="v:title">MDN</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla" rel="v:url" property="v:title">Mozilla</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech" rel="v:url" property="v:title">Mozilla technologies</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM" rel="v:url" property="v:title">XPCOM</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference" rel="v:url" property="v:title">XPCOM reference</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="../Interface.html" rel="v:url" property="v:title">XPCOM Interface Reference</a></li>
+        <li class="crumb" typeof="v:Breadcrumb" property="v:title">IAccessibleText</li>
+  </ol></nav>
+      </div>
+
+      <!-- heading -->
+      <div id="wiki-document-head" class="document-head">
+          <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="Previous Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+          <span class="from-search-navigate-wrap">
+            <a href="#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true" class="icon-double-angle-up"></i></span><span class="from-search-navigate-down"><i aria-hidden="true" class="icon-double-angle-down"></i></span></a>
+          </span>
+          <div class="from-search-toc">
+            <span class="title">Your Search Results</span>
+            <ol></ol>
+          </div>
+          <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+        <h1>IAccessibleText</h1>
+        
+      </div>
+      
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-closed wiki-left-none">
+
+          
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+                          <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+                            <!-- table of contents -->
+              <div id="toc" class="toc toggleable">
+                <a href="#toc" class="title toggler" data-open-icon="icon-plus" data-closed-icon="icon-minus">In This Article<i></i></a>
+                <ol class="toggle-container">
+                  <code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#Method_overview" rel="internal">Method overview</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#Methods" rel="internal">Methods</a><ol><li><a href="#addSelection()" rel="internal">addSelection()</a><code></code><code></code><code></code><code></code><code></code><li><a href="#attributes()" rel="internal">attributes()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#caretOffset()" rel="internal">caretOffset()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#characterExtents()" rel="internal">characterExtents()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#nCharacters()" rel="internal">nCharacters()</a><code></code><li><a href="#newText()" rel="internal">newText()</a><code></code><code></code><code></code><code></code><code></code><li><a href="#nSelections()" rel="internal">nSelections()</a><code></code><li><a href="#offsetAtPoint()" rel="internal">offsetAtPoint()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#oldText()" rel="internal">oldText()</a><code></code><code></code><code></code><code></code><code></code><li><a href="#removeSelection()" rel="internal">removeSelection()</a><code></code><code></code><code></code><li><a href="#scrollSubstringTo()" rel="internal">scrollSubstringTo()</a><code></code><code></code><code></code><li><a href="#scrollSubstringToPoint()" rel="internal">scrollSubstringToPoint()</a><code></code><code></code><code></code><code></code><code></code><li><a href="#selection()" rel="internal">selection()</a><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#setCaretOffset()" rel="internal">setCaretOffset()</a><code></code><code></code><code></code><code></code><li><a href="#setSelection()" rel="internal">setSelection()</a><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#text()" rel="internal">text()</a><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#textAfterOffset()" rel="internal">textAfterOffset()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#textAtOffset()" rel="internal">textAtOffset()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#textBeforeOffset()" rel="internal">textBeforeOffset()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code></ol></li>
+                </ol>
+              </div>
+                            </div>
+            
+                                                  
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-main wiki-column text-content">
+
+              
+              
+                                                                                          
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                                                      <p></p><div style="border: solid #ddd 2px; margin-bottom: 12px;"> 
+<div style="background: #eee; padding: 2px;"><code><a class="external" href="http://mxr.mozilla.org/mozilla-central/source/other-licenses/ia2/AccessibleText.idl" rel="custom">other-licenses/ia2/AccessibleText.idl</a></code><span style="text-align: right; float: right;"><span style="color: #cc0000; font-weight: 700;">Not scriptable</span></span></div> 
+<span style="padding: 4px 2px;"> 
+ 
+A structure containing a substring and the start and end offsets in the enclosing string. 
+</span> 
+ 
+  <div style="height: 42px; position: relative; padding: 2px; width: auto;"> 
+ 
+  <div style="top: 22px; font-size: 11px; position: absolute;">1.0</div> 
+   
+  <div style="top: 22px; font-size: 11px; position: absolute; left: 0px; text-align: right; float: right; width: 100%;">28</div> 
+   
+  <div style="height: 8px; top: 16px; background: #dd0000; left: 0px; position: absolute; width: 18.75%;"></div> 
+   
+<div style="height: 8px; top: 16px; left: 18.75%; background: #00dd00; position: absolute; width: 81.25%;" title="Introduced in Gecko 1.9 (Firefox 3)"></div> 
+ 
+<div style="top: 0px; font-size: 11px; position: absolute; left: 18.75%;">Introduced</div> 
+<div style="top: 22px; font-size: 11px; position: absolute; left: 18.75%;">Gecko 1.9</div> 
+ 
+</div> 
+ 
+<div style="background: #eee; padding: 2px;"> 
+Inherits from: <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IUnknown" title="">IUnknown</a></code> 
+<span style="text-align: right; float: right;">Last changed in Gecko 1.9 (Firefox 3)</span></div> 
+</div><p></p>
+<p>This enum defines values which specify a <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> boundary type. IA2_TEXT_BOUNDARY_SENTENCE is optional. When a method doesn't implement this method it must return S_FALSE. Typically this feature would not be implemented by an application. However, if the application developer was not satisfied with how screen readers have handled the reading of sentences this boundary type could be implemented and screen readers could use the application's version of a sentence rather than the screen reader's. The rest of the boundary types must be supported. This enum is used in <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#textBeforeOffset()">textBeforeOffset()</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#textAtOffset()">textAtOffset()</a></code>, and <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#textAfterOffset()">textAfterOffset()</a></code>.</p>
+<h2 id="Method_overview">Method overview</h2>
+<table class="standard-table"> <tbody> <tr> <td><code>HRESULT <a href="#addSelection()">addSelection</a>([in] long startOffset, [in] long endOffset );</code></td> </tr> <tr> <td><code>[propget] HRESULT <a href="#attributes()">attributes</a>([in] long offset, [out] long startOffset, [out] long endOffset, [out] BSTR textAttributes );</code></td> </tr> <tr> <td><code>[propget] HRESULT <a href="#caretOffset()">caretOffset</a>([out] long offset );</code></td> </tr> <tr> <td><code>[propget] HRESULT <a href="#characterExtents()">characterExtents</a>([in] long offset, [in] enum IA2CoordinateType coordType, [out] long x, [out] long y, [out] long width, [out] long height );</code></td> </tr> <tr> <td><code>[propget] HRESULT <a href="#nCharacters()">nCharacters</a>([out] long nCharacters );</code></td> </tr> <tr> <td><code>[propget] HRESULT <a href="#newText()">newText</a>([out] IA2TextSegment newText );</code></td> </tr> <tr> <td><code>[propget] HRESULT <a href="#nSelections()">nSelections</a>([out] long nSelections );</code></td> </tr> <tr> <td><code>[propget] HRESULT <a href="#offsetAtPoint()">offsetAtPoint</a>([in] long x, [in] long y, [in] enum IA2CoordinateType coordType, [out] long offset );</code></td> </tr> <tr> <td><code>[propget] HRESULT <a href="#oldText()">oldText</a>([out] IA2TextSegment oldText );</code></td> </tr> <tr> <td><code>HRESULT <a href="#removeSelection()">removeSelection</a>([in] long selectionIndex );</code></td> </tr> <tr> <td><code>HRESULT <a href="#scrollSubstringTo()">scrollSubstringTo</a>([in] long startIndex, [in] long endIndex, [in] enum IA2ScrollType scrollType );</code></td> </tr> <tr> <td><code>HRESULT <a href="#scrollSubstringToPoint()">scrollSubstringToPoint</a>([in] long startIndex, [in] long endIndex, [in] enum IA2CoordinateType coordinateType, [in] long x, [in] long y );</code></td> </tr> <tr> <td><code>[propget] HRESULT <a href="#selection()">selection</a>([in] long selectionIndex, [out] long startOffset, [out] long endOffset );</code></td> </tr> <tr> <td><code>HRESULT <a href="#setCaretOffset()">setCaretOffset</a>([in] long offset );</code></td> </tr> <tr> <td><code>HRESULT <a href="#setSelection()">setSelection</a>([in] long selectionIndex, [in] long startOffset, [in] long endOffset );</code></td> </tr> <tr> <td><code>[propget] HRESULT <a href="#text()">text</a>([in] long startOffset, [in] long endOffset, [out] BSTR text );</code></td> </tr> <tr> <td><code>[propget] HRESULT <a href="#textAfterOffset()">textAfterOffset</a>([in] long offset, [in] enum IA2TextBoundaryType boundaryType, [out] long startOffset, [out] long endOffset, [out] BSTR text );</code></td> </tr> <tr> <td><code>[propget] HRESULT <a href="#textAtOffset()">textAtOffset</a>([in] long offset, [in] enum IA2TextBoundaryType boundaryType, [out] long startOffset, [out] long endOffset, [out] BSTR text );</code></td> </tr> <tr> <td><code>[propget] HRESULT <a href="#textBeforeOffset()">textBeforeOffset</a>([in] long offset, [in] enum IA2TextBoundaryType boundaryType, [out] long startOffset, [out] long endOffset, [out] BSTR text );</code></td> </tr> </tbody>
+</table>
+<h2 id="Methods">Methods</h2>
+<h3 id="addSelection()">addSelection()</h3>
+<p>Adds a <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#selection()">selection()</a></code>.</p>
+<pre class="eval">HRESULT addSelection(
+  [in] long startOffset,
+  [in] long endOffset 
+);
+</pre>
+<h6 id="Parameters">Parameters</h6>
+<dl> <dt><code>startOffset</code></dt> <dd>Starting offset ( 0 based).</dd> <dt><code>endOffset</code></dt> <dd>Offset of first character after new <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#selection()">selection()</a></code> (0 based).</dd>
+</dl>
+<h6 id="Return_value">Return value</h6>
+<p>E_INVALIDARG if bad [in] passed. S_OK.</p>
+<h3 id="attributes()">attributes()</h3>
+<p>Returns <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> <code>attributes</code>.</p>
+<pre class="eval">[propget] HRESULT attributes(
+  [in] long offset,
+  [out] long startOffset,
+  [out] long endOffset,
+  [out] BSTR textAttributes 
+);
+</pre>
+<h6 id="Parameters_2">Parameters</h6>
+<dl> <dt><code>offset</code></dt> <dd><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#Text()">Text()</a></code> offset (0 based)</dd> <dt><code>startOffset</code></dt> <dd>The starting offset of the character range over which all <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> <code>attributes</code> match those of offset. (0 based)</dd> <dt><code>endOffset</code></dt> <dd>The offset of the first character past the character range over which all <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> <code>attributes</code> match those of offset. (0 based)</dd> <dt><code>textAttributes</code></dt> <dd>A string of <code>attributes</code> describing the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code>. The <code>attributes</code> are described in the; <a class=" external" href="http://www.linuxfoundation.org/en/Accessibility/IAccessible2/TextAttributes">text attributes specification</a> on the IAccessible2 web site.</dd>
+</dl>
+<h6 id="Return_value_2">Return value</h6>
+<p>E_INVALIDARG if bad [in] passed, [out] values are 0s and <code>null</code> respectively. S_FALSE if there is nothing to return, [out] values are 0s and <code>null</code> respectively. S_OK.</p>
+<h3 id="caretOffset()">caretOffset()</h3>
+<p>Returns the position of the caret. Returns the 0-based offset of the caret within the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code>. If the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> is implemented as a tree of <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> objects with embed characters in higher levels representing substrings of child <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> objects and the caret is in one of the child <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> objects, then the offset in the higher level <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> object would be at the embed character representing child <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> object that contains the caret. For example, if the string "one two three" is implemented as a two <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> objects, with a top level <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> object containing an embed character "one ? three" and a child <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> object containing "two" and if the caret is in the descendant object just before the 'o' in "two", then:</p>
+<ul> <li>the <code>caretOffset</code> for the "one ? three" object would be 4, matching the embed character&lt;/li&gt;</li> <li>the <code>caretOffset</code> for "two" would be 2, matching the "o"</li>
+</ul>
+<p>The caret position/offset is that of the character logically following it, for example to the right of it in a left to right language.</p>
+<pre class="eval">[propget] HRESULT caretOffset(
+  [out] long offset 
+);
+</pre>
+<h6 id="Parameters_3">Parameters</h6>
+<dl> <dt><code>offset</code></dt> <dd>The returned offset is relative to the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> represented by this object.</dd>
+</dl>
+<h6 id="Return_value_3">Return value</h6>
+<p>S_FALSE if the caret is not currently active on this object, that is the caret is located on some other object. The returned offset value will be -1. S_OK.</p>
+<h3 id="characterExtents()">characterExtents()</h3>
+<p>Returns the bounding box of the specified position. The virtual character after the last character of the represented <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code>, that is the one at position length is a special case. It represents the current input position and will therefore typically be queried by AT more often than other positions. Because it does not represent an existing character its bounding box is defined in relation to preceding characters. It should be roughly equivalent to the bounding box of some character when inserted at the end of the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code>. Its height typically being the maximal height of all the characters in the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> or the height of the preceding character, its width being at least one pixel so that the bounding box is not degenerate.</p>
+<pre class="eval">[propget] HRESULT characterExtents(
+  [in] long offset,
+  [in] enum IA2CoordinateType coordType,
+  [out] long x,
+  [out] long y,
+  [out] long width,
+  [out] long height 
+);
+</pre>
+<h6 id="Parameters_4">Parameters</h6>
+<dl> <dt><code>offset</code></dt> <dd>Index of the character for which to return its bounding box. The valid range is 0..length.</dd> <dt><code>coordType</code></dt> <dd>Specifies if the coordinates are relative to the screen or to the parent window.</dd> <dt><code>x</code></dt> <dd>X coordinate of the top left corner of the bounding box of the referenced character.</dd> <dt><code>y</code></dt> <dd>Y coordinate of the top left corner of the bounding box of the referenced character.</dd> <dt><code>width</code></dt> <dd>Width of the bounding box of the referenced character.</dd> <dt><code>height</code></dt> <dd>Height of the bounding box of the referenced character.</dd>
+</dl>
+<h6 id="Return_value_4">Return value</h6>
+<p>E_INVALIDARG if bad [in] passed, [out] values are 0s. S_OK.</p>
+<h3 id="nCharacters()">nCharacters()</h3>
+<p>Returns total number of characters.</p>
+<pre class="eval">[propget] HRESULT nCharacters(
+  [out] long nCharacters 
+);
+</pre>
+<h6 id="Parameters_5">Parameters</h6>
+<dl> <dt><code>nCharacters</code></dt> <dd>Missing Description</dd>
+</dl>
+<h6 id="Return_value_5">Return value</h6>
+<p>S_OK.</p>
+<h3 id="newText()">newText()</h3>
+<p>Returns any inserted <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code>. Provided for use by the ::IA2_EVENT_TEXT_INSERTED and ::IA2_EVENT_TEXT_UPDATED event handlers. This data is only guaranteed to be valid while the thread notifying the event continues. Once the handler has returned, the validity of the data depends on how the server manages the life cycle of its objects. Also, note that the server may have different life cycle management strategies for controls depending on whether or not a control manages its children. Lists, trees, and tables can have a large number of children and thus it's possible that the child objects for those controls would only be created as needed. Servers should document their life cycle strategy as this will be of interest to assistive technology or script engines accessing data out of process or from other threads. Servers only need to save the last inserted block of <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> and a scope of the entire application is adequate.</p>
+<pre class="eval">[propget] HRESULT newText(
+  [out] IA2TextSegment newText 
+);
+</pre>
+<h6 id="Parameters_6">Parameters</h6>
+<dl> <dt><code>newText</code></dt> <dd>The <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> that was just inserted.</dd>
+</dl>
+<h6 id="Return_value_6">Return value</h6>
+<p>S_FALSE if there is nothing to return, [out] value is <code>null</code>. S_OK.</p>
+<h3 id="nSelections()">nSelections()</h3>
+<p>Returns the number of active non-contiguous selections.</p>
+<pre class="eval">[propget] HRESULT nSelections(
+  [out] long nSelections 
+);
+</pre>
+<h6 id="Parameters_7">Parameters</h6>
+<dl> <dt><code>nSelections</code></dt> <dd>Missing Description</dd>
+</dl>
+<h6 id="Return_value_7">Return value</h6>
+<p>S_OK.</p>
+<h3 id="offsetAtPoint()">offsetAtPoint()</h3>
+<p>Returns the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> position for the specified screen position. Given a point return the zero-based index of the character under that point. The same functionality could be achieved by using the bounding boxes for each character as returned by <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#characterExtents()">characterExtents()</a></code>. The method <code>offsetAtPoint</code>, however, can be implemented more efficiently.</p>
+<pre class="eval">[propget] HRESULT offsetAtPoint(
+  [in] long x,
+  [in] long y,
+  [in] enum IA2CoordinateType coordType,
+  [out] long offset 
+);
+</pre>
+<h6 id="Parameters_8">Parameters</h6>
+<dl> <dt><code>x</code></dt> <dd>The position's x value for which to look up the index of the character that is rendered on to the display at that point.</dd> <dt><code>y</code></dt> <dd>The position's y value for which to look up the index of the character that is rendered on to the display at that point.</dd> <dt><code>coordType</code></dt> <dd>Screen coordinates or window coordinates.</dd> <dt><code>offset</code></dt> <dd>Index of the character under the given point or -1 if the point is invalid or there is no character under the point.</dd>
+</dl>
+<h6 id="Return_value_8">Return value</h6>
+<p>E_INVALIDARG if bad [in] passed, [out] value is 0. S_OK.</p>
+<h3 id="oldText()">oldText()</h3>
+<p>Returns any removed <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code>. Provided for use by the IA2_EVENT_TEXT_REMOVED/UPDATED event handlers. This data is only guaranteed to be valid while the thread notifying the event continues. Once the handler has returned, the validity of the data depends on how the server manages the life cycle of its objects. Also, note that the server may have different life cycle management strategies for controls depending on whether or not a control manages its children. Lists, trees, and tables can have a large number of children and thus it's possible that the child objects for those controls would only be created as needed. Servers should document their life cycle strategy as this will be of interest to assistive technology or script engines accessing data out of process or from other threads. Servers only need to save the last removed block of <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> and a scope of the entire application is adequate.</p>
+<pre class="eval">[propget] HRESULT oldText(
+  [out] IA2TextSegment oldText 
+);
+</pre>
+<h6 id="Parameters_9">Parameters</h6>
+<dl> <dt><code>oldText</code></dt> <dd>The <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> that was just removed.</dd>
+</dl>
+<h6 id="Return_value_9">Return value</h6>
+<p>S_FALSE if there is nothing to return, [out] value is <code>null</code>. S_OK.</p>
+<h3 id="removeSelection()">removeSelection()</h3>
+<p>Unselects a range of <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code>.</p>
+<pre class="eval">HRESULT removeSelection(
+  [in] long selectionIndex 
+);
+</pre>
+<h6 id="Parameters_10">Parameters</h6>
+<dl> <dt><code>selectionIndex</code></dt> <dd>Index of <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#selection()">selection()</a></code> to remove (0 based).</dd>
+</dl>
+<h6 id="Return_value_10">Return value</h6>
+<p>E_INVALIDARG if bad [in] passed. S_OK.</p>
+<h3 id="scrollSubstringTo()">scrollSubstringTo()</h3>
+<p>Makes a specific part of string visible on screen.</p>
+<pre class="eval">HRESULT scrollSubstringTo(
+  [in] long startIndex,
+  [in] long endIndex,
+  [in] enum IA2ScrollType scrollType 
+);
+</pre>
+<h6 id="Parameters_11">Parameters</h6>
+<dl> <dt><code>startIndex</code></dt> <dd>0 based character offset.</dd> <dt><code>endIndex</code></dt> <dd>0 based character offset - the offset of the character just past the last character of the string.</dd> <dt><code>scrollType</code></dt> <dd>Defines where the object should be placed on the screen.</dd>
+</dl>
+<h6 id="Return_value_11">Return value</h6>
+<p>E_INVALIDARG if bad [in] passed. S_OK.</p>
+<h3 id="scrollSubstringToPoint()">scrollSubstringToPoint()</h3>
+<p>Moves the top left of a substring to a specified location.</p>
+<pre class="eval">HRESULT scrollSubstringToPoint(
+  [in] long startIndex,
+  [in] long endIndex,
+  [in] enum IA2CoordinateType coordinateType,
+  [in] long x,
+  [in] long y 
+);
+</pre>
+<h6 id="Parameters_12">Parameters</h6>
+<dl> <dt><code>startIndex</code></dt> <dd>0 based character offset.</dd> <dt><code>endIndex</code></dt> <dd>0 based character offset - the offset of the character just past the last character of the string.</dd> <dt><code>coordinateType</code></dt> <dd>Specifies whether the coordinates are relative to the screen or the parent object.</dd> <dt><code>x</code></dt> <dd>Defines the x coordinate.</dd> <dt><code>y</code></dt> <dd>Defines the y coordinate.</dd>
+</dl>
+<h6 id="Return_value_12">Return value</h6>
+<p>E_INVALIDARG if bad [in] passed. S_FALSE if the object is already at the specified location. S_OK.</p>
+<h3 id="selection()">selection()</h3>
+<p>Returns the character offsets of Nth active <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> <code>selection</code>.</p>
+<pre class="eval">[propget] HRESULT selection(
+  [in] long selectionIndex,
+  [out] long startOffset,
+  [out] long endOffset 
+);
+</pre>
+<h6 id="Parameters_13">Parameters</h6>
+<dl> <dt><code>selectionIndex</code></dt> <dd>Index of <code>selection</code> (0 based).</dd> <dt><code>startOffset</code></dt> <dd>0 based offset of first selected character.</dd> <dt><code>endOffset</code></dt> <dd>0 based offset of one past the last selected character.</dd>
+</dl>
+<h6 id="Return_value_13">Return value</h6>
+<p>E_INVALIDARG if bad [in] passed, [out] values are 0s. S_FALSE if there is nothing to return, [out] values are 0s. S_OK.</p>
+<h3 id="setCaretOffset()">setCaretOffset()</h3>
+<p>Sets the position of the caret. The caret position/offset is that of the character logically following it, for example to the right of it in a left to right language. Setting the caret position may or may not alter the current <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#selection()">selection()</a></code>. A change of the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#selection()">selection()</a></code> is notified to the accessibility event listeners with an ::IA2_EVENT_TEXT_SELECTION_CHANGED event. When the new caret position differs from the old one (which, of course, is the standard case) this is notified to the accessibility event listeners with an ::IA2_EVENT_TEXT_CARET_MOVED event.</p>
+<pre class="eval">HRESULT setCaretOffset(
+  [in] long offset 
+);
+</pre>
+<h6 id="Parameters_14">Parameters</h6>
+<dl> <dt><code>offset</code></dt> <dd>The new index of the caret. This caret is actually placed to the left side of the character with that index. An index of 0 places the caret so that the next insertion goes before the first character. An index of <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#nCharacters()">nCharacters()</a></code> leads to insertion after the last character.</dd>
+</dl>
+<h6 id="Return_value_14">Return value</h6>
+<p>E_INVALIDARG if bad [in] passed. E_FAIL if the caret cannot be set. S_OK.</p>
+<h3 id="setSelection()">setSelection()</h3>
+<p>Changes the bounds of an existing <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#selection()">selection()</a></code>.</p>
+<pre class="eval">HRESULT setSelection(
+  [in] long selectionIndex,
+  [in] long startOffset,
+  [in] long endOffset 
+);
+</pre>
+<h6 id="Parameters_15">Parameters</h6>
+<dl> <dt><code>selectionIndex</code></dt> <dd>Index of <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#selection()">selection()</a></code> to change (0 based)</dd> <dt><code>startOffset</code></dt> <dd>New starting offset (0 based)</dd> <dt><code>endOffset</code></dt> <dd>New ending offset (0 based) - the offset of the character just past the last character of the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#selection()">selection()</a></code>.</dd>
+</dl>
+<h6 id="Return_value_15">Return value</h6>
+<p>E_INVALIDARG if bad [in] passed. S_OK.</p>
+<h3 id="text()">text()</h3>
+<p>Returns the substring between the two given indices. The substring starts with the character at startOffset (inclusive) and up to the character at endOffset (exclusive), if startOffset is less or equal endOffste. If endOffset is lower than startOffset, the result is the same as a call with the two arguments being exchanged. The whole <code>text</code> can be requested by passing the indices zero and <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#nCharacters()">nCharacters()</a></code>. If both indices have the same value, an empty string is returned.</p>
+<pre class="eval">[propget] HRESULT text(
+  [in] long startOffset,
+  [in] long endOffset,
+  [out] BSTR text 
+);
+</pre>
+<h6 id="Parameters_16">Parameters</h6>
+<dl> <dt><code>startOffset</code></dt> <dd>Index of the first character to include in the returned string. The valid range is 0..length.</dd> <dt><code>endOffset</code></dt> <dd>Index of the last character to exclude in the returned string. The valid range is 0..length.</dd> <dt><code>text</code></dt> <dd>Returns the substring starting with the character at startOffset (inclusive) and up to the character at endOffset (exclusive), if startOffset is less than or equal to endOffset.</dd>
+</dl>
+<h6 id="Return_value_16">Return value</h6>
+<p>E_INVALIDARG if bad [in] passed, [out] value is <code>null</code>. S_OK.</p>
+<h3 id="textAfterOffset()">textAfterOffset()</h3>
+<p>Returns a <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> portion after the given position. Returns the substring of the specified <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> type that is located after the given character and does not include it. The result of this method should be same as a result for <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#textAtOffset()">textAtOffset()</a></code> with a suitably increased index value. For example, if <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> type is ::IA2_TEXT_BOUNDARY_WORD, then the complete word that is closest to and located after offset is returned. If the index is valid, but no suitable word (or other <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> type) is found, a <code>null</code> pointer is returned.</p>
+<pre class="eval">[propget] HRESULT textAfterOffset(
+  [in] long offset,
+  [in] enum IA2TextBoundaryType boundaryType,
+  [out] long startOffset,
+  [out] long endOffset,
+  [out] BSTR text 
+);
+</pre>
+<h6 id="Parameters_17">Parameters</h6>
+<dl> <dt><code>offset</code></dt> <dd>Index of the character for which to return the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> part before it. The index character will not be part of the returned string. The valid range is 0..length.</dd> <dt><code>boundaryType</code></dt> <dd>The type of the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> portion to return. See ::IA2TextBoundaryType for the complete list.</dd> <dt><code>startOffset</code></dt> <dd>0 based offset of first character.</dd> <dt><code>endOffset</code></dt> <dd>0 based offset of one past the last character.</dd> <dt><code>text</code></dt> <dd>Returns the requested <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> portion. This portion may be empty or invalid when no appropriate <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> portion is found or <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> type is invalid.</dd>
+</dl>
+<h6 id="Return_value_17">Return value</h6>
+<p>E_INVALIDARG if bad [in] passed, [out] values are 0s and <code>null</code> respectively. S_FALSE if the requested boundary type is not implemented, such as ::IA2_TEXT_BOUNDARY_SENTENCE, or if there is nothing to return; [out] values are 0s and <code>null</code> respectively. S_OK.</p>
+<h3 id="textAtOffset()">textAtOffset()</h3>
+<p>Returns a <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> portion that spans the given position. Returns the substring of the specified <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> type at the specified offset. If the index is valid, but no suitable word (or other <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> type) is found, a <code>null</code> pointer is returned.</p>
+<pre class="eval">[propget] HRESULT textAtOffset(
+  [in] long offset,
+  [in] enum IA2TextBoundaryType boundaryType,
+  [out] long startOffset,
+  [out] long endOffset,
+  [out] BSTR text 
+);
+</pre>
+<h6 id="Parameters_18">Parameters</h6>
+<dl> <dt><code>offset</code></dt> <dd>Index of the character for which to return the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> part before it. The index character will not be part of the returned string. The valid range is 0..length.</dd> <dt><code>boundaryType</code></dt> <dd>The type of the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> portion to return. See ::IA2TextBoundaryType for the complete list.</dd> <dt><code>startOffset</code></dt> <dd>0 based offset of first character.</dd> <dt><code>endOffset</code></dt> <dd>0 based offset of one past the last character.</dd> <dt><code>text</code></dt> <dd>Returns the requested <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> portion. This portion may be empty or invalid when no appropriate <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> portion is found or <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> type is invalid.</dd>
+</dl>
+<h6 id="Return_value_18">Return value</h6>
+<p>E_INVALIDARG if bad [in] passed, [out] values are 0s and <code>null</code> respectively. S_FALSE if the requested boundary type is not implemented, such as ::IA2_TEXT_BOUNDARY_SENTENCE, or if there is nothing to return; [out] values are 0s and <code>null</code> respectively. S_OK.</p>
+<h3 id="textBeforeOffset()">textBeforeOffset()</h3>
+<p>Returns a <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> portion before the given position. Returns the substring of the specified <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> type that is located before the given character and does not include it. The result of this method should be same as a result for <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#textAtOffset()">textAtOffset()</a></code> with a suitably decreased index value. For example, if <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> type is ::IA2_TEXT_BOUNDARY_WORD, then the complete word that is closest to and located before offset is returned. If the index is valid, but no suitable word (or other boundary type) is found, a <code>null</code> pointer is returned.</p>
+<pre class="eval">[propget] HRESULT textBeforeOffset(
+  [in] long offset,
+  [in] enum IA2TextBoundaryType boundaryType,
+  [out] long startOffset,
+  [out] long endOffset,
+  [out] BSTR text 
+);
+</pre>
+<h6 id="Parameters_19">Parameters</h6>
+<dl> <dt><code>offset</code></dt> <dd>Index of the character for which to return the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> part before it. The index character will not be part of the returned string. The valid range is 0..length.</dd> <dt><code>boundaryType</code></dt> <dd>The type of the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> portion to return. See ::IA2TextBoundaryType for the complete list.</dd> <dt><code>startOffset</code></dt> <dd>0 based offset of first character.</dd> <dt><code>endOffset</code></dt> <dd>0 based offset of one past the last character.</dd> <dt><code>text</code></dt> <dd>Returns the requested <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> portion. This portion may be empty or invalid when no appropriate <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> portion is found or <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/IAccessibleText#text()">text()</a></code> type is invalid.</dd>
+</dl>
+<h6 id="Return_value_19">Return value</h6>
+<p>E_INVALIDARG if bad [in] passed, [out] values are 0s and <code>null</code> respectively. S_FALSE if the requested boundary type is not implemented, such as ::IA2_TEXT_BOUNDARY_SENTENCE, or if there is nothing to return; [out] values are 0s and <code>null</code> respectively. S_OK.</p>
+                                                </article>
+
+              
+                <!-- attachments list -->
+                
+                <!-- contributors -->
+                <div class="wiki-block contributors">
+                  <h2 class="offscreen">Document Tags and Contributors</h2>
+                                                      <!-- tags if present -->
+                  <div class="tag-attach-list tags contributor-sub">
+                    <i aria-hidden="true" class="icon-tags"></i><strong>Tags:</strong>
+                    <ul class="tag-list"><li><a href="https://developer.mozilla.org/en-US/docs/tag/NeedsContent">NeedsContent</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/XPCOM Interface Reference">XPCOM Interface Reference</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/XPCOM">XPCOM</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Interfaces">Interfaces</a></li></ul>
+                  </div>
+                                    <div class="contributor-sub"> <i aria-hidden="true" class="icon-group"></i><strong>Contributors to this page:</strong> <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>, <a href="https://developer.mozilla.org/en-US/profiles/trevorh">trevorh</a> </div>                                      <div class="contributor-sub">
+                      <i aria-hidden="true" class="icon-clock-o"></i><strong>Last updated by:</strong>
+                      <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>,
+                      <time datetime="2014-04-14T10:43:42-07:00">Apr 14, 2014 10:43:42 AM</time>
+                    </div>
+                                  </div>
+                          </div>
+
+                      </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="$edit" label="Edit page"></menuitem>
+    <menuitem data-action="$history" label="View page history"></menuitem>
+  </menu>
+  </div></main>
+
+  <!-- Footer -->
+  <footer><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+                <p>
+          <bdi>&copy; 2005-2014 Mozilla Developer Network and individual contributors<br /> Content is available under <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About#Copyrights_and_licenses">these licenses</a> &middot; <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About">About MDN</a> &middot; <a href="http://github.com/mozilla/kuma">Contribute to the code</a> &middot; <a href="http://www.mozilla.org/privacy/websites/">Privacy policy</a></bdi>        </p>
+              </div>
+      <div class="column-strip">
+                                  </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+    <script src="https://developer.mozilla.org/en-US/jsi18n/build:9fd3034"></script>
+  
+      <!--[if lte IE 8]><script src="/media/redesign/js/libs/selectivizr-1.0.2/selectivizr-build.js?build=9fd3034"></script><![endif]-->
+
+    <script src="../../../../../../../../developer.cdn.mozilla.net/media/js/main-min46d5.js?build=9fd3034"></script>
+
+          <script>
+        mdn.analytics.trackOutboundLinks(document.body);
+      </script>
+    
+          <script src="../../../../../../../../developer.cdn.mozilla.net/media/js/wiki-min46d5.js?build=9fd3034"></script>
+      
+    <script type="text/javascript">
+      jQuery('.from-search-toc').mozSearchResults('');
+  </script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-3.newrelic.com","queueTime":1,"licenseKey":"42869b6ed3","agent":"js-agent.newrelic.com/nr-411.min.js","transactionName":"b1QHMUtVDRdSW0YKXVYeIxBXVxcNXFYdFFtTWEsTUFEUFwlcXQBHVVQLEQ==","applicationID":"3172075","errorBeacon":"bam.nr-data.net","applicationTime":326}</script></body>
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/IAccessibleText by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Aug 2014 20:07:37 GMT -->
+</html>

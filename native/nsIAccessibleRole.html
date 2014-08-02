@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="redesign no-js">
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIAccessibleRole by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Aug 2014 20:09:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+        
+    <title>nsIAccessibleRole - Mozilla | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="https://developer.mozilla.org/en-US/">
+  <link rel="copyright" href="#copyright">
+
+  <link href="../../../../../../../../mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" type="text/css" rel="stylesheet">
+              <link rel="stylesheet" media="all" href="../../../../../../../../developer.cdn.mozilla.net/media/css/mdn-min46d5.css?build=9fd3034" />
+
+      
+    <link rel="stylesheet" media="all" href="../../../../../../../../developer.cdn.mozilla.net/media/css/wiki-min46d5.css?build=9fd3034" />
+
+          <link rel="stylesheet" type="text/css"
+            href="https://developer.mozilla.org/en-US/docs/Template:CustomCSS?raw=1" />
+    
+    
+  <!-- common social tags -->
+    <meta property="og:type" content="website">
+  <meta property="og:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta property="og:site_name" content="Mozilla Developer Network">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta name="twitter:site" content="@NewOnMDN">
+  <meta name="twitter:creator" content="@NewOnMDN">
+
+  <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon144.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon114.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon72.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon57.png">
+  <!-- basic favicon -->
+          <link rel="shortcut icon" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon32.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script src="https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
+
+    <link rel="alternate" type="application/json" href="nsIAccessibleRole%24json.json">
+  <link rel="canonical" href="nsIAccessibleRole.html" >
+
+  
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="nsIAccessibleRole">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIAccessibleRole">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIAccessibleRole">
+  <meta name="twitter:title" content="nsIAccessibleRole">
+  
+      <script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+    
+    
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.hash.indexOf('utm') != -1) {
+                var anchor = location.hash.match(/#(?!utm)[^&]+/);
+                anchor = anchor ? anchor[0] : '';
+                if(!anchor && win.history.replaceState){
+                    history.replaceState({}, '', location.pathname + location.search);
+                } else {
+                    location.hash = anchor;
+                }
+            }
+        };
+
+        ga('send', 'pageview', removeUtms(win.location + ''));
+    })();
+</script>
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgAEV1RTGwABU1NSAAQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("https://developer.mozilla.org/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script></head>
+<body data-slug="Mozilla/Tech/XPCOM/Reference/Interface/nsIAccessibleRole" contextmenu="edit-history-menu" class="document  ">
+
+  <script type="text/javascript">
+    (function(win) {
+        'use strict';
+
+                    (function(){
+  var FLAGS = {
+    'derby_closed': true,'ga_outbound_links': true,'kumaediting': false,'page_move': false,'promote_script': false,'redirect_messages': false,'top_contributors': false,'wiki_spellcheck': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'render_stale_documents_async': true,'enable_optimizely': false
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+                
+        // This represents the site configuration
+        win.mdn = {
+            build: '9fd3034',
+            // Properties and settings for CKEditor will go here
+            ckeditor: {},
+            // Feature test results and methods will be placed here
+            features: {},
+            // The path to media (images, CSS, JS) in MDN
+            mediaPath: 'https://developer.cdn.mozilla.net/media/',
+            // Optimizely API
+            optimizely: win['optimizely'] || [],
+            // Site notifications
+            notifications: [],
+            
+            // Wiki-specific settings will be placed here
+            wiki: {
+                autosuggestTitleUrl: '/en-US/docs/get-documents'
+            },
+        };
+
+        // Ensures gettext always returns something, is always set
+        win.gettext = function(x) {
+            return x;
+        }
+    })(window);
+</script>
+  
+
+  
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="#language">Select language</a></li>
+          <li><a href="#q" id="skip-search">Skip to search</a></li>
+      </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <div class="clear header-login">
+      <a href="http://www.mozilla.org/" id="tabzilla" class="no-track">mozilla</a>
+                <script src="../../../../../../../../login.persona.org/include.js"></script>
+<script type="text/javascript">
+(function() {
+  var allauth = window.allauth = window.allauth || {};
+
+  function startWatching() {
+    navigator.id.watch({
+      onlogin: function(assertion) {
+        // TODO: next url handling
+        document.getElementById("_persona_assertion").value = assertion;
+        document.getElementById("_persona_login").submit();
+      },
+      onlogout: function() {
+        // TODO
+      }
+    })
+  };
+
+  allauth.persona = {
+    login: function(nextUrl, process) {
+        document.getElementById("_persona_next_url").value = nextUrl || '';
+        document.getElementById("_persona_process").value = process;
+        startWatching();
+        navigator.id.request({"siteName": "Mozilla Developer Network", "siteLogo": "/media/redesign/img/opengraph-logo.png"});
+    }
+  }
+})();
+</script>
+
+<form id="_persona_login" method="post" action="https://developer.mozilla.org/users/persona/login/">
+  <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='OFUZvWX3cvltHNznKujHNL8vtsBRoNMa' /></div>
+  <input type="hidden" name="next" value="" id="_persona_next_url"/>
+  <input type="hidden" name="process" value="" id="_persona_process"/>
+  <input type="hidden" name="assertion" id="_persona_assertion"/>
+</form>
+
+  <form>
+      <div class="oauth-login-container" tabIndex="0">
+          <div class="oauth-login-options">
+              <span>Sign in with</span>
+              <span class="oauth-icon oauth-persona" title="Sign in with Persona"><i class="icon-user" aria-hidden="true"></i></span>
+                      </div>
+          <div class="submenu oauth-login-picker" aria-hidden="true">
+              <ul>
+                  <li><a href="javascript:allauth.persona.login('/en\u002DUS/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIAccessibleRole', 'login')" class="persona-button persona-loaded login-link" data-next="/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIAccessibleRole" data-service="Persona"><i class="icon-user" aria-hidden="true"></i>Persona</a></li>
+                              </ul>
+          </div>
+      </div>
+  </form>
+          </div>
+
+    <a href="https://developer.mozilla.org/en-US/" class="logo">Mozilla Developer Network</a>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="https://developer.mozilla.org/en-US/docs/Zones">Zones<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-single" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/Add-ons">Add-ons</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Apps">App Center</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox">Firefox</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Marketplace">Firefox Marketplace</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox_OS">Firefox OS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Persona">Persona</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Web">Web Platform<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Apps">Apps</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References & Guides</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Tools">Tools</a></li><li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Connect">Connect</a></li><li class="main-nav-search"><form action="https://developer.mozilla.org/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" data-placeholder="Search" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+   <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+            <div class="article-meta">
+        <!-- action buttons -->
+        
+        
+        
+
+  <ul class="page-buttons" data-sticky="false"><li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-globe"></i></button>
+
+        <div class="submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+                              <li class="smaller">No translations exist for this document.</li>
+              
+                              <li><a href="https://developer.mozilla.org/en-US/users/signin/?next=/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIAccessibleRole%24locales">Add a translation</a></li>
+                          </ul>
+          </div>
+        </div></li><li class="page-buttons-edit"><a href="https://developer.mozilla.org/en-US/users/signin/?next=/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIAccessibleRole%24edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li><li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+
+        <div class="submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="nsIAccessibleRole%24history.html">History</a></li>
+                                                                
+                
+                                
+                                                                <li class="page-print"><a href="#" onclick="return window.print();"  title="Print page">Print this page</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+        <!-- crumbs -->
+          <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US" rel="v:url" property="v:title">MDN</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla" rel="v:url" property="v:title">Mozilla</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech" rel="v:url" property="v:title">Mozilla technologies</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM" rel="v:url" property="v:title">XPCOM</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference" rel="v:url" property="v:title">XPCOM reference</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="../Interface.html" rel="v:url" property="v:title">XPCOM Interface Reference</a></li>
+        <li class="crumb" typeof="v:Breadcrumb" property="v:title">nsIAccessibleRole</li>
+  </ol></nav>
+      </div>
+
+      <!-- heading -->
+      <div id="wiki-document-head" class="document-head">
+          <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="Previous Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+          <span class="from-search-navigate-wrap">
+            <a href="#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true" class="icon-double-angle-up"></i></span><span class="from-search-navigate-down"><i aria-hidden="true" class="icon-double-angle-down"></i></span></a>
+          </span>
+          <div class="from-search-toc">
+            <span class="title">Your Search Results</span>
+            <ol></ol>
+          </div>
+          <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+        <h1>nsIAccessibleRole</h1>
+        
+      </div>
+      
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-closed wiki-left-none">
+
+          
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+                          <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+                            <!-- table of contents -->
+              <div id="toc" class="toc toggleable">
+                <a href="#toc" class="title toggler" data-open-icon="icon-plus" data-closed-icon="icon-minus">In This Article<i></i></a>
+                <ol class="toggle-container">
+                  <code></code><code></code><li><a href="#Constants" rel="internal">Constants</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code>
+                </ol>
+              </div>
+                            </div>
+            
+                                                  
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-main wiki-column text-content">
+
+              
+              
+                                                                                          
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                                                      <p></p><div style="border: solid #ddd 2px; margin-bottom: 12px;"> 
+<div style="background: #eee; padding: 2px;"><code><a class="external" href="http://mxr.mozilla.org/mozilla-central/source/accessible/public/nsIAccessibleRole.idl" rel="custom">accessible/public/nsIAccessibleRole.idl</a></code><span style="text-align: right; float: right;"><a href="en-US/docs/Interfaces/About_Scriptable_Interfaces.html" style="color: #00cc00; font-weight: 700;">Scriptable</a></span></div> 
+<span style="padding: 4px 2px;"> 
+ 
+This interface defines cross platform (Gecko) roles. 
+</span> 
+ 
+  <div style="height: 42px; position: relative; padding: 2px; width: auto;"> 
+ 
+  <div style="top: 22px; font-size: 11px; position: absolute;">1.0</div> 
+   
+  <div style="top: 22px; font-size: 11px; position: absolute; left: 0px; text-align: right; float: right; width: 100%;">28</div> 
+   
+  <div style="height: 8px; top: 16px; background: #dd0000; left: 0px; position: absolute; width: 18.75%;"></div> 
+   
+<div style="height: 8px; top: 16px; left: 18.75%; background: #00dd00; position: absolute; width: 81.25%;" title="Introduced in Gecko 1.9 (Firefox 3)"></div> 
+ 
+<div style="top: 0px; font-size: 11px; position: absolute; left: 18.75%;">Introduced</div> 
+<div style="top: 22px; font-size: 11px; position: absolute; left: 18.75%;">Gecko 1.9</div> 
+ 
+    <div style="height: 8px; top: 16px; left: 24.5%; background: #eeee00; position: absolute; width: 1%; border-radius: 4px; -webkit-border-radius: 4px;" title="Last changed in Gecko 2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)"></div> 
+     
+</div> 
+ 
+<div style="background: #eee; padding: 2px;"> 
+Inherits from: <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsISupports" title="">nsISupports</a></code> 
+<span style="text-align: right; float: right;">Last changed in Gecko 2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)</span></div> 
+</div><p></p>
+<h2 id="Constants">Constants</h2>
+<table class="standard-table"> <tbody> <tr> <td class="header">Constant</td> <td class="header">Value</td> <td class="header">Description</td> </tr> <tr> <td><code>ROLE_NOTHING</code></td> <td><code>0</code></td> <td>Used when accessible has no strong defined role.</td> </tr> <tr> <td><code>ROLE_TITLEBAR</code></td> <td><code>1</code></td> <td>Represents a title or caption bar for a window. It is used by MSAA only, supported automatically by MS Windows.</td> </tr> <tr> <td><code>ROLE_MENUBAR</code></td> <td><code>2</code></td> <td>Represents the menu bar (positioned beneath the title bar of a window) from which menus are selected by the user. The role is used by xul:menubar or role="menubar".</td> </tr> <tr> <td><code>ROLE_SCROLLBAR</code></td> <td><code>3</code></td> <td>Represents a vertical or horizontal scroll bar, which is part of the client area or used in a control.</td> </tr> <tr> <td><code>ROLE_GRIP</code></td> <td><code>4</code></td> <td>Represents a special mouse pointer, which allows a user to manipulate user interface elements such as windows. For example, a user clicks and drags a sizing grip in the lower-right corner of a window to resize it.</td> </tr> <tr> <td><code>ROLE_SOUND</code></td> <td><code>5</code></td> <td>Represents a system sound, which is associated with various system events.</td> </tr> <tr> <td><code>ROLE_CURSOR</code></td> <td><code>6</code></td> <td>Represents the system mouse pointer.</td> </tr> <tr> <td><code>ROLE_CARET</code></td> <td><code>7</code></td> <td>Represents the system caret. The role is supported for caret.</td> </tr> <tr> <td><code>ROLE_ALERT</code></td> <td><code>8</code></td> <td>Represents an alert or a condition that a user should be notified about. Assistive Technologies typically respond to the role by reading the entire on screen contents of containers advertising this role. Should be used for warning dialogs, etc. The role is used by xul:browsermessage, role="alert", xforms:message.</td> </tr> <tr> <td><code>ROLE_WINDOW</code></td> <td><code>9</code></td> <td>Represents the window frame, which contains child objects such as a title bar, client, and other objects contained in a window. The role is supported automatically by MS Windows.</td> </tr> <tr> <td><code>ROLE_INTERNAL_FRAME</code></td> <td><code>10</code></td> <td>A sub-document or <code>iframe</code>.</td> </tr> <tr> <td><code>ROLE_MENUPOPUP</code></td> <td><code>11</code></td> <td>Represents a menu, which presents a list of options from which the user can make a selection to perform an action. It is used for role="menu".</td> </tr> <tr> <td><code>ROLE_MENUITEM</code></td> <td><code>12</code></td> <td>Represents a menu item, which is an entry in a menu that a user can choose to carry out a command, select an option. It is used for xul:menuitem, role="menuitem".</td> </tr> <tr> <td><code>ROLE_TOOLTIP</code></td> <td><code>13</code></td> <td>Represents a ToolTip that provides helpful hints.</td> </tr> <tr> <td><code>ROLE_APPLICATION</code></td> <td><code>14</code></td> <td>Represents a main window for an application. It is used for role="application". Also refer to <code>ROLE_APP_ROOT</code>.</td> </tr> <tr> <td><code>ROLE_DOCUMENT</code></td> <td><code>15</code></td> <td>Represents a document window. A document window is always contained within an application window. It is used for role="document".</td> </tr> <tr> <td><code>ROLE_PANE</code></td> <td><code>16</code></td> <td>Represents a pane within a frame or document window. Users can navigate between panes and within the contents of the current pane, but cannot navigate between items in different panes. Thus, panes represent a level of grouping lower than frame windows or documents, but above individual controls. It is used for the first child of a or <code>iframe</code>.</td> </tr> <tr> <td><code>ROLE_CHART</code></td> <td><code>17</code></td> <td>Represents a graphical image used to represent data.</td> </tr> <tr> <td><code>ROLE_DIALOG</code></td> <td><code>18</code></td> <td>Represents a dialog box or message box. It is used for xul:dialog, role="dialog".</td> </tr> <tr> <td><code>ROLE_BORDER</code></td> <td><code>19</code></td> <td>Represents a window border.</td> </tr> <tr> <td><code>ROLE_GROUPING</code></td> <td><code>20</code></td> <td>Logically groups other objects. There is not always a parent-child relationship between the grouping object and the objects it contains. It is used for html:textfield, xul:groupbox, role="group".</td> </tr> <tr> <td><code>ROLE_SEPARATOR</code></td> <td><code>21</code></td> <td>Used to visually divide a space into two regions, such as a separator menu item or a bar that divides split panes within a window. It is used for xul:separator, html:hr, role="separator".</td> </tr> <tr> <td><code>ROLE_TOOLBAR</code></td> <td><code>22</code></td> <td>Represents a toolbar, which is a grouping of controls (push buttons or toggle buttons) that provides easy access to frequently used features. It is used for xul:toolbar, role="toolbar".</td> </tr> <tr> <td><code>ROLE_STATUSBAR</code></td> <td><code>23</code></td> <td>Represents a status bar, which is an area at the bottom of a window that displays information about the current operation, state of the application, or selected object. The status bar has multiple fields, which display different kinds of information. It is used for xul:statusbar.</td> </tr> <tr> <td><code>ROLE_TABLE</code></td> <td><code>24</code></td> <td>Represents a table that contains rows and columns of cells, and optionally, row headers and column headers. It is used for html:table, role="grid". Also refer to the following roles: <code>ROLE_COLUMNHEADER</code>, <code>ROLE_ROWHEADER</code>, <code>ROLE_COLUMN</code>, <code>ROLE_ROW</code>, <code>ROLE_CELL</code>.</td> </tr> <tr> <td><code>ROLE_COLUMNHEADER</code></td> <td><code>25</code></td> <td>Represents a column header, providing a visual label for a column in a table. It is used for XUL tree column headers, html:th, role="colheader". Also refer to <code>ROLE_TABLE</code>.</td> </tr> <tr> <td><code>ROLE_ROWHEADER</code></td> <td><code>26</code></td> <td>Represents a row header, which provides a visual label for a table row. It is used for role="rowheader". Also, see <code>ROLE_TABLE</code>.</td> </tr> <tr> <td><code>ROLE_COLUMN</code></td> <td><code>27</code></td> <td>Represents a column of cells within a table. Also, see <code>ROLE_TABLE</code>.</td> </tr> <tr> <td><code>ROLE_ROW</code></td> <td><code>28</code></td> <td>Represents a row of cells within a table. Also, see <code>ROLE_TABLE</code>.</td> </tr> <tr> <td><code>ROLE_CELL</code></td> <td><code>29</code></td> <td>Represents a cell within a table. It is used for html:td, xul:tree cell and xul:listcell. Also, see <code>ROLE_TABLE</code>.</td> </tr> <tr> <td><code>ROLE_LINK</code></td> <td><code>30</code></td> <td>Represents a link to something else. This object might look like text or a graphic, but it acts like a button. It is used for xul:label@class="text-link", html:a, html:area, xforms:trigger@appearance="minimal".</td> </tr> <tr> <td><code>ROLE_HELPBALLOON</code></td> <td><code>31</code></td> <td>Displays a Help topic in the form of a ToolTip or Help balloon.</td> </tr> <tr> <td><code>ROLE_CHARACTER</code></td> <td><code>32</code></td> <td>Represents a cartoon-like graphic object, such as Microsoft Office Assistant, which is displayed to provide help to users of an application.</td> </tr> <tr> <td><code>ROLE_LIST</code></td> <td><code>33</code></td> <td>Represents a list box, allowing the user to select one or more items. It is used for xul:listbox, html:select@size, role="list". See also ROLE_LIST_ITEM.</td> </tr> <tr> <td><code>ROLE_LISTITEM</code></td> <td><code>34</code></td> <td>Represents an item in a list. See also <code>ROLE_LIST</code>.</td> </tr> <tr> <td><code>ROLE_OUTLINE</code></td> <td><code>35</code></td> <td>Represents an outline or tree structure, such as a tree view control, that displays a hierarchical list and allows the user to expand and collapse branches. Is is used for role="tree".</td> </tr> <tr> <td><code>ROLE_OUTLINEITEM</code></td> <td><code>36</code></td> <td>Represents an item in an outline or tree structure. It is used for role="treeitem".</td> </tr> <tr> <td><code>ROLE_PAGETAB</code></td> <td><code>37</code></td> <td>Represents a page tab, it is a child of a page tab list. It is used for xul:tab, role="treeitem". Also refer to <code>ROLE_PAGETABLIST</code>.</td> </tr> <tr> <td><code>ROLE_PROPERTYPAGE</code></td> <td><code>38</code></td> <td>Represents a property sheet. It is used for xul:tabpanel, role="tabpanel".</td> </tr> <tr> <td><code>ROLE_INDICATOR</code></td> <td><code>39</code></td> <td>Represents an indicator, such as a pointer graphic, that points to the current item.</td> </tr> <tr> <td><code>ROLE_GRAPHIC</code></td> <td><code>40</code></td> <td>Represents a picture. Is is used for xul:image, html:img.</td> </tr> <tr> <td><code>ROLE_STATICTEXT</code></td> <td><code>41</code></td> <td>Represents read-only text, such as labels for other controls or instructions in a dialog box. Static text cannot be modified or selected. Is is used for xul:label, xul:description, html:label, role="label", or xforms:output.</td> </tr> <tr> <td><code>ROLE_TEXT_LEAF</code></td> <td><code>42</code></td> <td>Represents selectable text that allows edits or is designated read-only.</td> </tr> <tr> <td><code>ROLE_PUSHBUTTON</code></td> <td><code>43</code></td> <td>Represents a push button control. It is used for xul:button, html:button, role="button", xforms:trigger, xforms:submit.</td> </tr> <tr> <td><code>ROLE_CHECKBUTTON</code></td> <td><code>44</code></td> <td>Represents a check box control. It is used for xul:checkbox, html:input@type="checkbox", role="checkbox", boolean xforms:input.</td> </tr> <tr> <td><code>ROLE_RADIOBUTTON</code></td> <td><code>45</code></td> <td>Represents an option button, also called a radio button. It is one of a group of mutually exclusive options. All objects sharing a single parent that have this attribute are assumed to be part of single mutually exclusive group. It is used for xul:radio, html:input@type="radio", role="radio".</td> </tr> <tr> <td><code>ROLE_COMBOBOX</code></td> <td><code>46</code></td> <td>Represents a combo box; an edit control with an associated list box that provides a set of predefined choices. It is used for html:select, xul:menulist, role="combobox".</td> </tr> <tr> <td><code>ROLE_DROPLIST</code></td> <td><code>47</code></td> <td>Represents the calendar control. It is used for date xforms:input.</td> </tr> <tr> <td><code>ROLE_PROGRESSBAR</code></td> <td><code>48</code></td> <td>Represents a progress bar, dynamically showing the user the percent complete of an operation in progress. It is used for xul:progressmeter, role="progressbar".</td> </tr> <tr> <td><code>ROLE_DIAL</code></td> <td><code>49</code></td> <td>Represents a dial or knob whose purpose is to allow a user to set a value.</td> </tr> <tr> <td><code>ROLE_HOTKEYFIELD</code></td> <td><code>50</code></td> <td>Represents a hot-key field that allows the user to enter a combination or sequence of keystrokes.</td> </tr> <tr> <td><code>ROLE_SLIDER</code></td> <td><code>51</code></td> <td>Represents a slider, which allows the user to adjust a setting in given increments between minimum and maximum values. It is used by xul:scale, role="slider", xforms:range.</td> </tr> <tr> <td><code>ROLE_SPINBUTTON</code></td> <td><code>52</code></td> <td>Represents a spin box, which is a control that allows the user to increment or decrement the value displayed in a separate "buddy" control associated with the spin box. It is used for xul:spinbuttons.</td> </tr> <tr> <td><code>ROLE_DIAGRAM</code></td> <td><code>53</code></td> <td>Represents a graphical image used to diagram data. It is used for svg:svg.</td> </tr> <tr> <td><code>ROLE_ANIMATION</code></td> <td><code>54</code></td> <td>Represents an animation control, which contains content that changes over time, such as a control that displays a series of bitmap frames.</td> </tr> <tr> <td><code>ROLE_EQUATION</code></td> <td><code>55</code></td> <td>Represents a mathematical equation. It is used by MATHML, where there is a rich DOM subtree for an equation. Use <code>ROLE_FLAT_EQUATION</code> for <img alt="[TeX]"></td> </tr> <tr> <td><code>ROLE_BUTTONDROPDOWN</code></td> <td><code>56</code></td> <td>Represents a button that drops down a list of items.</td> </tr> <tr> <td><code>ROLE_BUTTONMENU</code></td> <td><code>57</code></td> <td>Represents a button that drops down a menu.</td> </tr> <tr> <td><code>ROLE_BUTTONDROPDOWNGRID</code></td> <td><code>58</code></td> <td>Represents a button that drops down a grid. It is used for xul:colorpicker.</td> </tr> <tr> <td><code>ROLE_WHITESPACE</code></td> <td><code>59</code></td> <td>Represents blank space between other objects.</td> </tr> <tr> <td><code>ROLE_PAGETABLIST</code></td> <td><code>60</code></td> <td>Represents a container of page tab controls. Is it used for xul:tabs, DHTML: role="tabs". Also refer to <code>ROLE_PAGETAB</code>.</td> </tr> <tr> <td><code>ROLE_CLOCK</code></td> <td><code>61</code></td> <td>Represents a control that displays time.</td> </tr> <tr> <td><code>ROLE_SPLITBUTTON</code></td> <td><code>62</code></td> <td>Represents a button on a toolbar that has a drop-down list icon directly adjacent to the button.</td> </tr> <tr> <td><code>ROLE_IPADDRESS</code></td> <td><code>63</code></td> <td>Represents an edit control designed for an Internet Protocol (IP) address. The edit control is divided into sections for the different parts of the IP address.</td> </tr> <tr> <td><code>ROLE_ACCEL_LABEL</code></td> <td><code>64</code></td> <td>Represents a label control that has an accelerator.</td> </tr> <tr> <td><code>ROLE_ARROW</code></td> <td><code>65</code></td> <td>Represents an arrow in one of the four cardinal directions.</td> </tr> <tr> <td><code>ROLE_CANVAS</code></td> <td><code>66</code></td> <td>Represents a control that can be drawn into and is used to trap events. It is used for html:canvas.</td> </tr> <tr> <td><code>ROLE_CHECK_MENU_ITEM</code></td> <td><code>67</code></td> <td>Represents a menu item with a check box.</td> </tr> <tr> <td><code>ROLE_COLOR_CHOOSER</code></td> <td><code>68</code></td> <td>Represents a specialized dialog that lets the user choose a color.</td> </tr> <tr> <td><code>ROLE_DATE_EDITOR</code></td> <td><code>69</code></td> <td>Represents control whose purpose is to allow a user to edit a date.</td> </tr> <tr> <td><code>ROLE_DESKTOP_ICON</code></td> <td><code>70</code></td> <td>An iconified internal frame in an ROLE_DESKTOP_PANE. Also refer to <code>ROLE_INTERNAL_FRAME</code>.</td> </tr> <tr> <td><code>ROLE_DESKTOP_FRAME</code></td> <td><code>71</code></td> <td>A desktop pane. A pane that supports internal frames and iconified versions of those internal frames.</td> </tr> <tr> <td><code>ROLE_DIRECTORY_PANE</code></td> <td><code>72</code></td> <td>A directory pane. A pane that allows the user to navigate through and select the contents of a directory. May be used by a file chooser. Also refer to <code>ROLE_FILE_CHOOSER</code>.</td> </tr> <tr> <td><code>ROLE_FILE_CHOOSER</code></td> <td><code>73</code></td> <td>A file chooser. A specialized dialog that displays the files in the directory and lets the user select a file, browse a different directory, or specify a filename. May use the directory pane to show the contents of a directory. Also refer to <code>ROLE_DIRECTORY_PANE</code>.</td> </tr> <tr> <td><code>ROLE_FONT_CHOOSER</code></td> <td><code>74</code></td> <td>A font chooser. A font chooser is a component that lets the user pick various attributes for fonts.</td> </tr> <tr> <td><code>ROLE_CHROME_WINDOW</code></td> <td><code>75</code></td> <td>Frame role. A top level window with a title bar, border, menu bar, etc. It is often used as the primary window for an application.</td> </tr> <tr> <td><code>ROLE_GLASS_PANE</code></td> <td><code>76</code></td> <td>A glass pane. A pane that is guaranteed to be painted on top of all panes beneath it. Also refer to <code>ROLE_ROOT_PANE</code>.</td> </tr> <tr> <td><code>ROLE_HTML_CONTAINER</code></td> <td><code>77</code></td> <td>A document container for HTML, whose children represent the document content.</td> </tr> <tr> <td><code>ROLE_ICON</code></td> <td><code>78</code></td> <td>A small fixed size picture, typically used to decorate components.</td> </tr> <tr> <td><code>ROLE_LABEL</code></td> <td><code>79</code></td> <td>Presents an icon or short string in an interface.</td> </tr> <tr> <td><code>ROLE_LAYERED_PANE</code></td> <td><code>80</code></td> <td>A layered pane. A specialized pane that allows its children to be drawn in layers, providing a form of stacking order. This is usually the pane that holds the menu bar as well as the pane that contains most of the visual components in a window. Also refer to <code>ROLE_GLASS_PANE</code> and <code>ROLE_ROOT_PANE</code>.</td> </tr> <tr> <td><code>ROLE_OPTION_PANE</code></td> <td><code>81</code></td> <td>A specialized pane whose primary use is inside a dialog.</td> </tr> <tr> <td><code>ROLE_PASSWORD_TEXT</code></td> <td><code>82</code></td> <td>A text object uses for passwords, or other places where the text content is not shown visibly to the user.</td> </tr> <tr> <td><code>ROLE_POPUP_MENU</code></td> <td><code>83</code></td> <td>A temporary window that is usually used to offer the user a list of choices, and then hides when the user selects one of those choices.</td> </tr> <tr> <td><code>ROLE_RADIO_MENU_ITEM</code></td> <td><code>84</code></td> <td>A radio button that is a menu item.</td> </tr> <tr> <td><code>ROLE_ROOT_PANE</code></td> <td><code>85</code></td> <td>A root pane. A specialized pane that has a glass pane and a layered pane as its children. Also refer to <code>ROLE_GLASS_PANE</code> and <code>ROLE_LAYERED_PANE</code>.</td> </tr> <tr> <td><code>ROLE_SCROLL_PANE</code></td> <td><code>86</code></td> <td>A scroll pane. An object that allows a user to incrementally view a large amount of information. Its children can include scroll bars and a viewport. Also refer to ROLE_VIEW_PORT.</td> </tr> <tr> <td><code>ROLE_SPLIT_PANE</code></td> <td><code>87</code></td> <td>A split pane. A specialized panel that presents two other panels at the same time. Between the two panels is a divider the user can manipulate to make one panel larger and the other panel smaller.</td> </tr> <tr> <td><code>ROLE_TABLE_COLUMN_HEADER</code></td> <td><code>88</code></td> <td>The header for a column of a table.</td> </tr> <tr> <td><code>ROLE_TABLE_ROW_HEADER</code></td> <td><code>89</code></td> <td>The header for a row of a table.</td> </tr> <tr> <td><code>ROLE_TEAR_OFF_MENU_ITEM</code></td> <td><code>90</code></td> <td>A menu item used to tear off and reattach its menu.</td> </tr> <tr> <td><code>ROLE_TERMINAL</code></td> <td><code>91</code></td> <td>Represents an accessible terminal.</td> </tr> <tr> <td><code>ROLE_TEXT_CONTAINER</code></td> <td><code>92</code></td> <td>Collection of objects that constitute a logical text entity.</td> </tr> <tr> <td><code>ROLE_TOGGLE_BUTTON</code></td> <td><code>93</code></td> <td>A toggle button. A specialized push button that can be checked or unchecked, but does not provide a separate indicator for the current state.</td> </tr> <tr> <td><code>ROLE_TREE_TABLE</code></td> <td><code>94</code></td> <td>Representas a control that is capable of expanding and collapsing rows as well as showing multiple columns of data.</td> </tr> <tr> <td><code>ROLE_VIEWPORT</code></td> <td><code>95</code></td> <td>A viewport. An object usually used in a scroll pane. It represents the portion of the entire data that the user can see. As the user manipulates the scroll bars, the contents of the viewport can change. Also refer to <code>ROLE_SCROLL_PANE</code>.</td> </tr> <tr> <td><code>ROLE_HEADER</code></td> <td><code>96</code></td> <td>Header of a document page. Also refer to <code>ROLE_FOOTER</code>.</td> </tr> <tr> <td><code>ROLE_FOOTER</code></td> <td><code>97</code></td> <td>Footer of a document page. Also refer to <code>ROLE_HEADER</code>.</td> </tr> <tr> <td><code>ROLE_PARAGRAPH</code></td> <td><code>98</code></td> <td>A paragraph of text.</td> </tr> <tr> <td><code>ROLE_RULER</code></td> <td><code>99</code></td> <td>A ruler such as those used in word processors.</td> </tr> <tr> <td><code>ROLE_AUTOCOMPLETE</code></td> <td><code>100</code></td> <td>A text entry having dialog or list containing items for insertion into an entry widget, for instance a list of words for completion of a text entry. It is used for xul:textbox@autocomplete.</td> </tr> <tr> <td><code>ROLE_EDITBAR</code></td> <td><code>101</code></td> <td>An editable text object in a toolbar.</td> </tr> <tr> <td><code>ROLE_ENTRY</code></td> <td><code>102</code></td> <td>An control whose textual content may be entered or modified by the user.</td> </tr> <tr> <td><code>ROLE_CAPTION</code></td> <td><code>103</code></td> <td>A caption describing another object.</td> </tr> <tr> <td><code>ROLE_DOCUMENT_FRAME</code></td> <td><code>104</code></td> <td>A visual frame or container which contains a view of document content. Document frames may occur within another Document instance, in which case the second document may be said to be embedded in the containing instance. HTML frames are often <code>ROLE_DOCUMENT_FRAME</code>. Either this object, or a singleton descendant, should implement the Document interface.</td> </tr> <tr> <td><code>ROLE_HEADING</code></td> <td><code>105</code></td> <td>Heading.</td> </tr> <tr> <td><code>ROLE_PAGE</code></td> <td><code>106</code></td> <td>An object representing a page of document content. It is used in documents which are accessed by the user on a page by page basis.</td> </tr> <tr> <td><code>ROLE_SECTION</code></td> <td><code>107</code></td> <td>A container of document content. An example of the use of this role is to represent an html:div.</td> </tr> <tr> <td><code>ROLE_REDUNDANT_OBJECT</code></td> <td><code>108</code></td> <td>An object which is redundant with another object in the accessible hierarchy. ATs typically ignore objects with this role.</td> </tr> <tr> <td><code>ROLE_FORM</code></td> <td><code>109</code></td> <td>A container of form controls. An example of the use of this role is to represent an html:form.</td> </tr> <tr> <td><code>ROLE_IME</code></td> <td><code>110</code></td> <td>An object which is used to allow input of characters not found on a keyboard, such as the input of Chinese characters on a Western keyboard.</td> </tr> <tr> <td><code>ROLE_APP_ROOT</code></td> <td><code>111</code></td> <td> </td> </tr> <tr> <td><code>ROLE_PARENT_MENUITEM</code></td> <td><code>112</code></td> <td>Represents a menu item, which is an entry in a menu that a user can choose to display another menu.</td> </tr> <tr> <td><code>ROLE_CALENDAR</code></td> <td><code>113</code></td> <td>A calendar that allows the user to select a date.</td> </tr> <tr> <td><code>ROLE_COMBOBOX_LIST</code></td> <td><code>114</code></td> <td>A list of items that is shown by combobox.</td> </tr> <tr> <td><code>ROLE_COMBOBOX_OPTION</code></td> <td><code>115</code></td> <td>A item of list that is shown by combobox;</td> </tr> <tr> <td><code>ROLE_IMAGE_MAP</code></td> <td><code>116</code></td> <td>An image map -- has child links representing the areas.</td> </tr> <tr> <td><code>ROLE_OPTION</code></td> <td><code>117</code></td> <td>An option in a listbox.</td> </tr> <tr> <td><code>ROLE_RICH_OPTION</code></td> <td><code>118</code></td> <td>A rich option in a listbox, it can have other widgets as children.</td> </tr> <tr> <td><code>ROLE_LISTBOX</code></td> <td><code>119</code></td> <td>A list of options.</td> </tr> <tr> <td><code>ROLE_FLAT_EQUATION</code></td> <td><code>120</code></td> <td>Represents a mathematical equation in the accessible name.</td> </tr> <tr> <td><code>ROLE_GRID_CELL</code></td> <td><code>121</code></td> <td>Represents a cell within a grid. It is used for role="gridcell". Unlike <code>ROLE_CELL</code>, it allows the calculation of the accessible name from subtree. Also, see <code>ROLE_TABLE</code>. </td> </tr> <tr> <td><code>ROLE_EMBEDDED_OBJECT</code></td> <td><code>122</code></td> <td>Represents an embedded object. It is used for html:object or html:embed. </td> </tr> </tbody>
+</table>
+                                                </article>
+
+              
+                <!-- attachments list -->
+                
+                <!-- contributors -->
+                <div class="wiki-block contributors">
+                  <h2 class="offscreen">Document Tags and Contributors</h2>
+                                                      <!-- tags if present -->
+                  <div class="tag-attach-list tags contributor-sub">
+                    <i aria-hidden="true" class="icon-tags"></i><strong>Tags:</strong>
+                    <ul class="tag-list"><li><a href="https://developer.mozilla.org/en-US/docs/tag/XPCOM Interface Reference">XPCOM Interface Reference</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Interfaces:Scriptable">Interfaces:Scriptable</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/XPCOM">XPCOM</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Interfaces">Interfaces</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Accessibility">Accessibility</a></li></ul>
+                  </div>
+                                    <div class="contributor-sub"> <i aria-hidden="true" class="icon-group"></i><strong>Contributors to this page:</strong> <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>, <a href="https://developer.mozilla.org/en-US/profiles/trevorh">trevorh</a> </div>                                      <div class="contributor-sub">
+                      <i aria-hidden="true" class="icon-clock-o"></i><strong>Last updated by:</strong>
+                      <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>,
+                      <time datetime="2014-04-14T10:44:22-07:00">Apr 14, 2014 10:44:22 AM</time>
+                    </div>
+                                  </div>
+                          </div>
+
+                      </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="$edit" label="Edit page"></menuitem>
+    <menuitem data-action="$history" label="View page history"></menuitem>
+  </menu>
+  </div></main>
+
+  <!-- Footer -->
+  <footer><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+                <p>
+          <bdi>&copy; 2005-2014 Mozilla Developer Network and individual contributors<br /> Content is available under <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About#Copyrights_and_licenses">these licenses</a> &middot; <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About">About MDN</a> &middot; <a href="http://github.com/mozilla/kuma">Contribute to the code</a> &middot; <a href="http://www.mozilla.org/privacy/websites/">Privacy policy</a></bdi>        </p>
+              </div>
+      <div class="column-strip">
+                                  </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+    <script src="https://developer.mozilla.org/en-US/jsi18n/build:9fd3034"></script>
+  
+      <!--[if lte IE 8]><script src="/media/redesign/js/libs/selectivizr-1.0.2/selectivizr-build.js?build=9fd3034"></script><![endif]-->
+
+    <script src="../../../../../../../../developer.cdn.mozilla.net/media/js/main-min46d5.js?build=9fd3034"></script>
+
+          <script>
+        mdn.analytics.trackOutboundLinks(document.body);
+      </script>
+    
+          <script src="../../../../../../../../developer.cdn.mozilla.net/media/js/wiki-min46d5.js?build=9fd3034"></script>
+      
+    <script type="text/javascript">
+      jQuery('.from-search-toc').mozSearchResults('');
+  </script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-3.newrelic.com","queueTime":1,"licenseKey":"42869b6ed3","agent":"js-agent.newrelic.com/nr-411.min.js","transactionName":"b1QHMUtVDRdSW0YKXVYeIxBXVxcNXFYdFFtTWEsTUFEUFwlcXQBHVVQLEQ==","applicationID":"3172075","errorBeacon":"bam.nr-data.net","applicationTime":331}</script></body>
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIAccessibleRole by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Aug 2014 20:09:46 GMT -->
+</html>

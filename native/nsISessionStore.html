@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="redesign no-js">
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISessionStore by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Aug 2014 20:24:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+        
+    <title>nsISessionStore - Mozilla | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="https://developer.mozilla.org/en-US/">
+  <link rel="copyright" href="#copyright">
+
+  <link href="../../../../../../../../mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" type="text/css" rel="stylesheet">
+              <link rel="stylesheet" media="all" href="../../../../../../../../developer.cdn.mozilla.net/media/css/mdn-min46d5.css?build=9fd3034" />
+
+      
+    <link rel="stylesheet" media="all" href="../../../../../../../../developer.cdn.mozilla.net/media/css/wiki-min46d5.css?build=9fd3034" />
+
+          <link rel="stylesheet" type="text/css"
+            href="https://developer.mozilla.org/en-US/docs/Template:CustomCSS?raw=1" />
+    
+    
+  <!-- common social tags -->
+    <meta property="og:type" content="website">
+  <meta property="og:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta property="og:site_name" content="Mozilla Developer Network">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta name="twitter:site" content="@NewOnMDN">
+  <meta name="twitter:creator" content="@NewOnMDN">
+
+  <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon144.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon114.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon72.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon57.png">
+  <!-- basic favicon -->
+          <link rel="shortcut icon" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon32.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script src="https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
+
+    <link rel="alternate" type="application/json" href="nsISessionStore%24json.json">
+  <link rel="canonical" href="nsISessionStore.html" >
+
+            <link rel="alternate" hreflang="fr" href="https://developer.mozilla.org/fr/docs/nsISessionStore" title="nsISessionStore">
+          <link rel="alternate" hreflang="ja" href="https://developer.mozilla.org/ja/docs/XPCOM_Interface_Reference/nsISessionStore" title="nsISessionStore">
+      
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="nsISessionStore">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISessionStore">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISessionStore">
+  <meta name="twitter:title" content="nsISessionStore">
+    <meta property="og:description" content="Deletes a value from a specified tab.">
+  <meta name="description" content="Deletes a value from a specified tab.">
+  <meta name="twitter:description" content="Deletes a value from a specified tab.">
+  
+      <script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+    
+    
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.hash.indexOf('utm') != -1) {
+                var anchor = location.hash.match(/#(?!utm)[^&]+/);
+                anchor = anchor ? anchor[0] : '';
+                if(!anchor && win.history.replaceState){
+                    history.replaceState({}, '', location.pathname + location.search);
+                } else {
+                    location.hash = anchor;
+                }
+            }
+        };
+
+        ga('send', 'pageview', removeUtms(win.location + ''));
+    })();
+</script>
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgAEV1RTGwABU1NSAAQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("https://developer.mozilla.org/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script></head>
+<body data-slug="Mozilla/Tech/XPCOM/Reference/Interface/nsISessionStore" contextmenu="edit-history-menu" class="document  ">
+
+  <script type="text/javascript">
+    (function(win) {
+        'use strict';
+
+                    (function(){
+  var FLAGS = {
+    'derby_closed': true,'ga_outbound_links': true,'kumaediting': false,'page_move': false,'promote_script': false,'redirect_messages': false,'top_contributors': false,'wiki_spellcheck': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'render_stale_documents_async': true,'enable_optimizely': false
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+                
+        // This represents the site configuration
+        win.mdn = {
+            build: '9fd3034',
+            // Properties and settings for CKEditor will go here
+            ckeditor: {},
+            // Feature test results and methods will be placed here
+            features: {},
+            // The path to media (images, CSS, JS) in MDN
+            mediaPath: 'https://developer.cdn.mozilla.net/media/',
+            // Optimizely API
+            optimizely: win['optimizely'] || [],
+            // Site notifications
+            notifications: [],
+            
+            // Wiki-specific settings will be placed here
+            wiki: {
+                autosuggestTitleUrl: '/en-US/docs/get-documents'
+            },
+        };
+
+        // Ensures gettext always returns something, is always set
+        win.gettext = function(x) {
+            return x;
+        }
+    })(window);
+</script>
+  
+
+  
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="#language">Select language</a></li>
+          <li><a href="#q" id="skip-search">Skip to search</a></li>
+      </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <div class="clear header-login">
+      <a href="http://www.mozilla.org/" id="tabzilla" class="no-track">mozilla</a>
+                <script src="../../../../../../../../login.persona.org/include.js"></script>
+<script type="text/javascript">
+(function() {
+  var allauth = window.allauth = window.allauth || {};
+
+  function startWatching() {
+    navigator.id.watch({
+      onlogin: function(assertion) {
+        // TODO: next url handling
+        document.getElementById("_persona_assertion").value = assertion;
+        document.getElementById("_persona_login").submit();
+      },
+      onlogout: function() {
+        // TODO
+      }
+    })
+  };
+
+  allauth.persona = {
+    login: function(nextUrl, process) {
+        document.getElementById("_persona_next_url").value = nextUrl || '';
+        document.getElementById("_persona_process").value = process;
+        startWatching();
+        navigator.id.request({"siteName": "Mozilla Developer Network", "siteLogo": "/media/redesign/img/opengraph-logo.png"});
+    }
+  }
+})();
+</script>
+
+<form id="_persona_login" method="post" action="https://developer.mozilla.org/users/persona/login/">
+  <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='OFUZvWX3cvltHNznKujHNL8vtsBRoNMa' /></div>
+  <input type="hidden" name="next" value="" id="_persona_next_url"/>
+  <input type="hidden" name="process" value="" id="_persona_process"/>
+  <input type="hidden" name="assertion" id="_persona_assertion"/>
+</form>
+
+  <form>
+      <div class="oauth-login-container" tabIndex="0">
+          <div class="oauth-login-options">
+              <span>Sign in with</span>
+              <span class="oauth-icon oauth-persona" title="Sign in with Persona"><i class="icon-user" aria-hidden="true"></i></span>
+                      </div>
+          <div class="submenu oauth-login-picker" aria-hidden="true">
+              <ul>
+                  <li><a href="javascript:allauth.persona.login('/en\u002DUS/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISessionStore', 'login')" class="persona-button persona-loaded login-link" data-next="/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISessionStore" data-service="Persona"><i class="icon-user" aria-hidden="true"></i>Persona</a></li>
+                              </ul>
+          </div>
+      </div>
+  </form>
+          </div>
+
+    <a href="https://developer.mozilla.org/en-US/" class="logo">Mozilla Developer Network</a>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="https://developer.mozilla.org/en-US/docs/Zones">Zones<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-single" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/Add-ons">Add-ons</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Apps">App Center</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox">Firefox</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Marketplace">Firefox Marketplace</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox_OS">Firefox OS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Persona">Persona</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Web">Web Platform<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Apps">Apps</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References & Guides</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Tools">Tools</a></li><li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Connect">Connect</a></li><li class="main-nav-search"><form action="https://developer.mozilla.org/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" data-placeholder="Search" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+   <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+            <div class="article-meta">
+        <!-- action buttons -->
+        
+        
+        
+
+  <ul class="page-buttons" data-sticky="false"><li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-globe"></i></button>
+
+        <div class="submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+                                                <li><bdi><a rel="internal" href="https://developer.mozilla.org/fr/docs/nsISessionStore" title="nsISessionStore">Français</a></bdi></li>
+                                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/ja/docs/XPCOM_Interface_Reference/nsISessionStore" title="nsISessionStore">日本語</a></bdi></li>
+                              
+                              <li><a href="https://developer.mozilla.org/en-US/users/signin/?next=/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISessionStore%24locales">Add a translation</a></li>
+                          </ul>
+          </div>
+        </div></li><li class="page-buttons-edit"><a href="https://developer.mozilla.org/en-US/users/signin/?next=/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISessionStore%24edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li><li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+
+        <div class="submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="nsISessionStore%24history.html">History</a></li>
+                                                                
+                
+                                
+                                                                <li class="page-print"><a href="#" onclick="return window.print();"  title="Print page">Print this page</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+        <!-- crumbs -->
+          <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US" rel="v:url" property="v:title">MDN</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla" rel="v:url" property="v:title">Mozilla</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech" rel="v:url" property="v:title">Mozilla technologies</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM" rel="v:url" property="v:title">XPCOM</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference" rel="v:url" property="v:title">XPCOM reference</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="../Interface.html" rel="v:url" property="v:title">XPCOM Interface Reference</a></li>
+        <li class="crumb" typeof="v:Breadcrumb" property="v:title">nsISessionStore</li>
+  </ol></nav>
+      </div>
+
+      <!-- heading -->
+      <div id="wiki-document-head" class="document-head">
+          <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="Previous Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+          <span class="from-search-navigate-wrap">
+            <a href="#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true" class="icon-double-angle-up"></i></span><span class="from-search-navigate-down"><i aria-hidden="true" class="icon-double-angle-down"></i></span></a>
+          </span>
+          <div class="from-search-toc">
+            <span class="title">Your Search Results</span>
+            <ol></ol>
+          </div>
+          <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+        <h1>nsISessionStore</h1>
+        
+      </div>
+      
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-closed wiki-left-none">
+
+          
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+                          <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+                            <!-- table of contents -->
+              <div id="toc" class="toc toggleable">
+                <a href="#toc" class="title toggler" data-open-icon="icon-plus" data-closed-icon="icon-minus">In This Article<i></i></a>
+                <ol class="toggle-container">
+                  <li><a href="#Method_overview" rel="internal">Method overview</a><li><a href="#Attributes" rel="internal">Attributes</a><li><a href="#Methods" rel="internal">Methods</a><ol><li><a href="#deleteTabValue()" rel="internal">deleteTabValue()</a><li><a href="#deleteWindowValue()" rel="internal">deleteWindowValue()</a><li><a href="#duplicateTab()" rel="internal">duplicateTab()</a><li><a href="#forgetClosedTab()" rel="internal">forgetClosedTab()</a><li><a href="#forgetClosedWindow()" rel="internal">forgetClosedWindow()</a><li><a href="#getBrowserState()" rel="internal">getBrowserState()</a><li><a href="#getClosedTabCount()" rel="internal">getClosedTabCount()</a><li><a href="#getClosedTabData()" rel="internal">getClosedTabData()</a><li><a href="#getClosedWindowCount()" rel="internal">getClosedWindowCount()</a><li><a href="#getClosedWindowData()" rel="internal">getClosedWindowData()</a><li><a href="#getTabState()" rel="internal">getTabState()</a><li><a href="#getTabValue()" rel="internal">getTabValue()</a><li><a href="#getWindowState()" rel="internal">getWindowState()</a><li><a href="#getWindowValue()" rel="internal">getWindowValue()</a><li><a href="#init()" rel="internal">init()</a><li><a href="#persistTabAttribute()" rel="internal">persistTabAttribute()</a><li><a href="#restoreLastSession()" rel="internal">restoreLastSession()</a><li><a href="#setBrowserState()" rel="internal">setBrowserState()</a><li><a href="#setTabState()" rel="internal">setTabState()</a><li><a href="#setTabValue()" rel="internal">setTabValue()</a><li><a href="#setWindowState()" rel="internal">setWindowState()</a><li><a href="#setWindowValue()" rel="internal">setWindowValue()</a><li><a href="#undoCloseTab()" rel="internal">undoCloseTab()</a><li><a href="#undoCloseWindow()" rel="internal">undoCloseWindow()</a></ol></li><li><a href="#Note_on_windows" rel="internal">Note on windows</a><li><a href="#See_also" rel="internal">Note on tabs</a><li><a href="#See_also" rel="internal">See also</a>
+                </ol>
+              </div>
+                            </div>
+            
+                                                  
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-main wiki-column text-content">
+
+              
+              
+                                                                                          
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                                                      <p></p><div style="border: solid #ddd 2px; margin-bottom: 12px;"> 
+<div style="background: #eee; padding: 2px;"><code><a class="external" href="http://mxr.mozilla.org/mozilla-central/source/browser/components/sessionstore/nsISessionStore.idl" rel="custom">browser/components/sessionstore/nsISessionStore.idl</a></code><span style="text-align: right; float: right;"><a href="en-US/docs/Interfaces/About_Scriptable_Interfaces.html" style="color: #00cc00; font-weight: 700;">Scriptable</a></span></div> 
+<span style="padding: 4px 2px;"> 
+ 
+Provides a means for extensions and other code to store data in association with browser sessions, tabs, and windows. The API operates on top-level <code>browser.xul</code> and <code>navigator.xul</code> windows; see <a href="#Note_on_windows">Note on windows</a> for details. 
+</span> 
+ 
+  <div style="height: 42px; position: relative; padding: 2px; width: auto;"> 
+ 
+  <div style="top: 22px; font-size: 11px; position: absolute;">1.0</div> 
+   
+  <div style="top: 22px; font-size: 11px; position: absolute; left: 0px; text-align: right; float: right; width: 100%;">30</div> 
+   
+  <div style="height: 8px; top: 16px; background: #dd0000; left: 0px; position: absolute; width: 11.76470588235294%;"></div> 
+   
+<div style="height: 8px; top: 16px; left: 11.76470588235294%; background: #00dd00; position: absolute; width: 88.23529411764706%;" title="Introduced in Gecko 1.8 (Firefox 1.5 / Thunderbird 1.5 / SeaMonkey 1.0)"></div> 
+ 
+<div style="top: 0px; font-size: 11px; position: absolute; left: 11.76470588235294%;">Introduced</div> 
+<div style="top: 22px; font-size: 11px; position: absolute; left: 11.76470588235294%;">Gecko 1.8</div> 
+ 
+    <div style="height: 8px; top: 16px; left: 23.02941176470588%; background: #eeee00; position: absolute; width: 1%; border-radius: 4px; -webkit-border-radius: 4px;" title="Last changed in Gecko 2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)"></div> 
+     
+</div> 
+ 
+<div style="background: #eee; padding: 2px;"> 
+Inherits from: <code><a href="nsISupports.html" title="">nsISupports</a></code> 
+<span style="text-align: right; float: right;">Last changed in Gecko 2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)</span></div> 
+</div><p></p>
+<p></p><div class="note"><strong>Note:</strong> In versions of Firefox prior to 3.5, the user preference <code>browser.sessionstore.enabled</code> must be <code>true</code> for these calls to be successful. Starting in Firefox 3.5, this preference is no longer used.</div><p></p>
+<h2 id="Method_overview" name="Method_overview">Method overview</h2>
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td><code>void <a href="#deleteTabValue()">deleteTabValue</a>(in nsIDOMNode aTab, in AString aKey);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#deleteWindowValue()">deleteWindowValue</a>(in nsIDOMWindow aWindow, in AString aKey);</code></td>
+  </tr>
+  <tr>
+   <td><code>nsIDOMNode <a href="#duplicateTab()">duplicateTab</a>(in nsIDOMWindow aWindow, in nsIDOMNode aTab);</code> </td>
+  </tr>
+  <tr>
+   <td><code>nsIDOMNode <a href="#forgetClosedTab()">forgetClosedTab</a>(in nsIDOMWindow aWindow, in unsigned long aIndex);</code> </td>
+  </tr>
+  <tr>
+   <td><code>nsIDOMNode <a href="#forgetClosedWindow()">forgetClosedWindow</a>(in unsigned long aIndex);</code> </td>
+  </tr>
+  <tr>
+   <td><code>AString <a href="#getBrowserState()">getBrowserState</a>();</code></td>
+  </tr>
+  <tr>
+   <td><code>unsigned long <a href="#getClosedTabCount()">getClosedTabCount</a>(in nsIDOMWindow aWindow);</code></td>
+  </tr>
+  <tr>
+   <td><code>AString <a href="#getClosedTabData()">getClosedTabData</a>(in nsIDOMWindow aWindow);</code></td>
+  </tr>
+  <tr>
+   <td><code>unsigned long <a href="#getClosedWindowCount()">getClosedWindowCount</a>();</code> </td>
+  </tr>
+  <tr>
+   <td><code>AString <a href="#getClosedWindowData()">getClosedWindowData</a>();</code> </td>
+  </tr>
+  <tr>
+   <td><code>AString <a href="#getTabState()">getTabState</a>(in nsIDOMNode aTab);</code> </td>
+  </tr>
+  <tr>
+   <td><code>AString <a href="#getTabValue()">getTabValue</a>(in nsIDOMNode aTab, in AString aKey);</code></td>
+  </tr>
+  <tr>
+   <td><code>AString <a href="#getWindowState()">getWindowState</a>(in nsIDOMWindow aWindow);</code></td>
+  </tr>
+  <tr>
+   <td><code>AString <a href="#getWindowValue()">getWindowValue</a>(in nsIDOMWindow aWindow, in AString aKey);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#init()">init</a>(in nsIDOMWindow aWindow);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#persistTabAttribute()">persistTabAttribute</a>(in AString aName);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#restoreLastSession()">restoreLastSession</a>();</code> </td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#setBrowserState()">setBrowserState</a>(in AString aState);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#setTabState()">setTabState</a>(in nsIDOMNode aTab, in AString aState);</code> </td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#setTabValue()">setTabValue</a>(in nsIDOMNode aTab, in AString aKey, in AString aStringValue);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#setWindowState()">setWindowState</a>(in nsIDOMWindow aWindow, in AString aState, in boolean aOverwrite);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#setWindowValue()">setWindowValue</a>(in nsIDOMWindow aWindow, in AString aKey, in AString aStringValue);</code></td>
+  </tr>
+  <tr>
+   <td><code>nsIDOMNode <a href="#undoCloseTab()">undoCloseTab</a>(in nsIDOMWindow aWindow, in unsigned long aIndex);</code></td>
+  </tr>
+  <tr>
+   <td><code>nsIDOMWindow <a href="#undoCloseWindow()">undoCloseWindow</a>(in unsigned long aIndex);</code> </td>
+  </tr>
+ </tbody>
+</table>
+<h2 id="Attributes" name="Attributes">Attributes</h2>
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td class="header">Attribute</td>
+   <td class="header">Type</td>
+   <td class="header">Description</td>
+  </tr>
+  <tr>
+   <td><code>canRestoreLastSession</code></td>
+   <td><code><a href="https://developer.mozilla.org/en/boolean" title="en/boolean">boolean</a></code></td>
+   <td>Is it possible to restore the previous session. Will always be <code>false</code> when in Private Browsing mode. </td>
+  </tr>
+ </tbody>
+</table>
+<h2 id="Methods" name="Methods">Methods</h2>
+<h3 id="deleteTabValue()" name="deleteTabValue()">deleteTabValue()</h3>
+<p>Deletes a value from a specified tab.</p>
+<pre class="eval">void deleteTabValue(
+  in nsIDOMNode aTab,
+  in AString aKey
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aTab</code></dt>
+ <dd>
+  The <a href="#Note_on_tabs" title="Note on tabs">tab</a> for which to delete the value.</dd>
+ <dt>
+  <code>aKey</code></dt>
+ <dd>
+  The key whose value is to be deleted.</dd>
+</dl>
+<h6 id="Exceptions_thrown_2"><span>Exceptions thrown</span></h6>
+<p>This method throws a <em>NS_ERROR_ILLEGAL_VALUE </em>exception if the key doesn't exist.</p>
+<h3 id="deleteWindowValue()" name="deleteWindowValue()">deleteWindowValue()</h3>
+<p>Deletes a value from a specified window.</p>
+<pre class="eval">void deleteWindowValue(
+  in nsIDOMWindow aWindow,
+  in AString aKey
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aWindow</code></dt>
+ <dd>
+  The window in which to delete the value.</dd>
+ <dt>
+  <code>aKey</code></dt>
+ <dd>
+  The key whose value is to be deleted.</dd>
+</dl>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="duplicateTab()" name="duplicateTab()">duplicateTab()</h3> 
+</div><p></p>
+<p>Duplicates a specified tab as thoroughly as possible.</p>
+<pre class="eval">nsIDOMNode duplicateTab(
+  in nsIDOMWindow aWindow,
+  in nsIDOMNode aTab
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aWindow</code></dt>
+ <dd>
+  The window in which the duplicated tab will be created.</dd>
+ <dt>
+  <code>aTab</code></dt>
+ <dd>
+  The <a href="#Note_on_tabs" title="Note on tabs">tab</a> to duplicate (can come from a different window).</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>An <code><a href="nsIDOMNode.html" title="">nsIDOMNode</a></code> representing the new tab, the content of which is a duplicate of <code>aTab</code>.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9.2 (Firefox 3.6 / Thunderbird 3.1 / Fennec 1.0)</span> 
+    <h3 id="forgetClosedTab()" name="forgetClosedTab()">forgetClosedTab()</h3> 
+</div><p></p>
+<pre class="eval">nsIDOMNode forgetClosedTab(
+  in nsIDOMWindow aWindow,
+  in unsigned long aIndex
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aWindow</code></dt>
+ <dd>
+  Is the browser window associated with the closed tab.</dd>
+ <dt>
+  <code>aIndex</code></dt>
+ <dd>
+  Is the index of the closed tab to be removed (FIFO ordered).</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p> </p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9.2 (Firefox 3.6 / Thunderbird 3.1 / Fennec 1.0)</span> 
+    <h3 id="forgetClosedWindow()" name="forgetClosedWindow()">forgetClosedWindow()</h3> 
+</div><p></p>
+<pre class="eval">nsIDOMNode forgetClosedWindow(
+  in unsigned long aIndex
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aIndex</code></dt>
+ <dd>
+  Is the index of the closed window to be removed (FIFO ordered).</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p> </p>
+<h6 id="Exceptions_thrown" name="Exceptions_thrown">Exceptions thrown</h6>
+<dl>
+ <dt>
+  <code>NS_ERROR_INVALID_ARG</code></dt>
+ <dd>
+  When aIndex does not map to a closed window.</dd>
+</dl>
+<h3 id="getBrowserState()" name="getBrowserState()">getBrowserState()</h3>
+<p>Returns the current state of all of windows and all of their tabs.</p>
+<pre class="eval">AString getBrowserState();
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<p>None.</p>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>A <a href="https://developer.mozilla.org/en/JSON" title="en/JSON">JSON</a> string representing the current state of all windows in the web browser.</p>
+<h3 id="getClosedTabCount()" name="getClosedTabCount()">getClosedTabCount()</h3>
+<p>Returns the number of restorable tabs for a given window.</p>
+<pre class="eval">unsigned long getClosedTabCount(
+  in nsIDOMWindow aWindow
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aWindow</code></dt>
+ <dd>
+  The window whose restorable tab count should be returned.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>The number of restorable tabs in the window.</p>
+<h3 id="getClosedTabData()" name="getClosedTabData()">getClosedTabData()</h3>
+<p>Returns a list of closed tabs for a specified window.</p>
+<pre class="eval">AString getClosedTabData(
+  in nsIDOMWindow aWindow
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aWindow</code></dt>
+ <dd>
+  The browser window whose closed tab list is to be retrieved.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>A <a href="https://developer.mozilla.org/en/JSON" title="https://developer.mozilla.org/en/JSON">JSON</a> string representing the list of closed tabs for the window specified by <code>aWindow</code>. The list is in last in/first out (LIFO) order, so that the first item in the list is the last tab that was closed.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9.2 (Firefox 3.6 / Thunderbird 3.1 / Fennec 1.0)</span> 
+    <h3 id="getClosedWindowCount()" name="getClosedWindowCount()">getClosedWindowCount()</h3> 
+</div><p></p>
+<p>Returns the number of restorable windows.</p>
+<pre class="eval">unsigned long getClosedWindowCount();
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<p>None.</p>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>The number of restorable windows.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9.2 (Firefox 3.6 / Thunderbird 3.1 / Fennec 1.0)</span> 
+    <h3 id="getClosedWindowData()" name="getClosedWindowData()">getClosedWindowData()</h3> 
+</div><p></p>
+<p>Returns a list of closed windows.</p>
+<pre class="eval">AString getClosedWindowData();
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<p>None.</p>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>A <a href="https://developer.mozilla.org/en/JSON" title="https://developer.mozilla.org/en/JSON">JSON</a> string representing the list of closed windows. The list is in last in/first out (LIFO) order, so that the first item in the list is the last window that was closed.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="getTabState()" name="getTabState()">getTabState()</h3> 
+</div><p></p>
+<p>Returns the state of the specified tab.</p>
+<pre class="eval">AString getTabState(
+  in nsIDOMNode aTab
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aTab</code></dt>
+ <dd>
+  The <a href="#Note_on_tabs" title="Note on tabs">tab</a> whose state is to be returned.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>A <a href="https://developer.mozilla.org/en/JSON" title="https://developer.mozilla.org/en/JSON">JSON</a> string representing the state of the specified tab.</p>
+<p></p><div class="note"><strong>Note:</strong> The returned string does not include cookies. If you need to retrieve cookies as well, you should use <code><a href="nsISessionStore.html#getWindowState()">getWindowState()</a></code> instead.</div><p></p>
+<h3 id="getTabValue()" name="getTabValue()">getTabValue()</h3>
+<p>Returns the value corresponding to a key on a given window.</p>
+<pre class="eval">AString getTabValue(
+  in nsIDOMNode aTab,
+  in AString aKey
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aTab</code></dt>
+ <dd>
+  The <a href="#Note_on_tabs" title="Note on tabs">tab</a> on which to get the value.</dd>
+ <dt>
+  <code>aKey</code></dt>
+ <dd>
+  The key whose corresponding value is to be returned.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>The string value that was previously assigned to <code>aKey</code> using <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsISessionStore#setTabValue()">nsISessionStore.setTabValue()</a></code>, or an empty string if no value is set for that key.</p>
+<p>If the previously saved value was originally a complex data (ie a JavaScript object) it can then be deserialized u<span id="the-code"><span class="c">sing <a href="https://developer.mozilla.org/en/JSON" title="https://developer.mozilla.org/en/JSON"><code>JSON.parse</code></a> cf. </span></span><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsISessionStore#setTabValue()">nsISessionStore.setTabValue()</a></code><span id="the-code"><span class="c">.</span></span></p>
+<h3 id="getWindowState()" name="getWindowState()">getWindowState()</h3>
+<p>Returns the current state of one specified window in the web browser.</p>
+<pre class="eval">AString getWindowState(
+  in nsIDOMWindow aWindow
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aWindow</code></dt>
+ <dd>
+  The browser window whose state is to be returned. See <a href="#Note_on_windows">#Note on windows</a>.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>A <a href="https://developer.mozilla.org/en/JSON" title="en/JSON">JSON</a> string representing a session state that contains only the window specified by <code>aWindow</code>.</p>
+<p>If the preference browser.sessionstate.enabled is false when this method is called, then you will get an exception about "aWindows[i] has no properties".</p>
+<h3 id="getWindowValue()" name="getWindowValue()">getWindowValue()</h3>
+<p>Returns the string value associated with a given key for a window.</p>
+<pre class="eval">AString getWindowValue(
+  in nsIDOMWindow aWindow,
+  in AString aKey
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aWindow</code></dt>
+ <dd>
+  The window from which the value is to be retrieved.</dd>
+ <dt>
+  <code>aKey</code></dt>
+ <dd>
+  The key whose corresponding value is to be retrieved.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>The string value that was previously assigned to <code>aKey</code> using <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsISessionStore#setWindowValue()">nsISessionStore.setWindowValue()</a></code>, or an empty string if no value is set for that key.</p>
+<p>If the previously saved value was originally a complex data (ie a JavaScript object) it can then be deserialized u<span id="the-code"><span class="c">sing <a href="https://developer.mozilla.org/en/JSON" title="https://developer.mozilla.org/en/JSON"><code>JSON.parse</code></a> cf. </span></span><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsISessionStore#setWindowValue()">nsISessionStore.setWindowValue()</a></code><span id="the-code"><span class="c">.</span></span></p>
+<h3 id="init()" name="init()">init()</h3>
+<p>Initializes the session store service.</p>
+<p></p><div class="note"><strong>Note:</strong> This function is intended for use only by the browser; extensions shouldn't call it.</div><p></p>
+<pre class="eval">void init(
+  in nsIDOMWindow aWindow
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aWindow</code></dt>
+ <dd>
+  The window for which to initialize the service.</dd>
+</dl>
+<h3 id="persistTabAttribute()" name="persistTabAttribute()">persistTabAttribute()</h3>
+<p>Sets the name of a tab attribute to be saved and restored for all XUL tabs.</p>
+<p></p><div class="note"><strong>Note:</strong> At present, there's no way to pick and choose tabs to set persistent attributes for. This method affects all tabs indiscriminately.</div><p></p>
+<pre class="eval">void persistTabAttribute(
+  in AString aName
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aName</code></dt>
+ <dd>
+  The name of the attribute to be saved and restored for all tabs.</dd>
+</dl>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)</span> 
+    <h3 id="restoreLastSession()" name="restoreLastSession()">restoreLastSession()</h3> 
+</div><p></p>
+<p>Restore the previous session if possible. This will not overwrite the current session. Instead the previous session will be merged into the current session. Current windows will be reused if they were windows that pinned tabs were previously restored into. New windows will be opened as needed.</p>
+<p></p><div class="note"><strong>Note:</strong> This will throw if there is no previous state to restore. Check with <code>canRestoreLastSession</code> first to avoid thrown errors.</div><p></p>
+<pre class="eval">void restoreLastSession();
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<p>None.</p>
+<h3 id="setBrowserState()" name="setBrowserState()">setBrowserState()</h3>
+<p>Sets the current browsing state.</p>
+<p></p><div class="note"><strong>Note:</strong> Calling <code>setBrowserState</code> immediately replaces the current session, restoring the state of the entire application to the state passed in the <code>aState</code> parameter.</div><p></p>
+<pre class="eval">void setBrowserState(
+  in AString aState
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aState</code></dt>
+ <dd>
+  A <a href="https://developer.mozilla.org/en/JSON" title="https://developer.mozilla.org/en/JSON">JSON</a> string representing the session state to use.</dd>
+</dl>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="setTabState()" name="setTabState()">setTabState()</h3> 
+</div><p></p>
+<p>Sets the state of the specified tab.</p>
+<pre class="eval">void setTabState(
+  in nsIDOMNode aTab,
+  in AString aState
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aTab</code></dt>
+ <dd>
+  The <a href="#Note_on_tabs" title="Note on tabs">tab</a> whose state is to be set.</dd>
+ <dt>
+  <code>aState</code></dt>
+ <dd>
+  The JSON string representing the tab state to set on the tab, such as one returned by <code><a href="nsISessionStore.html#getTabState()">getTabState()</a></code>.</dd>
+</dl>
+<h3 id="setTabValue()" name="setTabValue()">setTabValue()</h3>
+<p>Sets the value of a specified key on a tab.</p>
+<pre class="eval">void setTabValue(
+  in nsIDOMNode aTab,
+  in AString aKey,
+  in AString aStringValue
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aTab</code></dt>
+ <dd>
+  The <a href="#Note_on_tabs" title="Note on tabs">tab</a> for which the value is to be set.</dd>
+ <dt>
+  <code>aKey</code></dt>
+ <dd>
+  The key whose value is to be set.</dd>
+ <dt>
+  <code>aStringValue</code></dt>
+ <dd>
+  A string to set as the value for the key <code>aKey</code>.To assign more complex data (ie JavaScript objects) serialize them <span id="the-code"><span class="c">using <a href="https://developer.mozilla.org/en/JSON" title="https://developer.mozilla.org/en/JSON">JSON.stringify</a>.</span></span></dd>
+</dl>
+<h3 id="setWindowState()" name="setWindowState()">setWindowState()</h3>
+<p>Sets the state of a single window to a given stored state.</p>
+<pre class="eval">void setWindowState(
+  in nsIDOMWindow aWindow,
+  in AString aState,
+  in boolean aOverwrite
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aWindow</code></dt>
+ <dd>
+  The <code><a href="nsIDOMWindow.html" title="">nsIDOMWindow</a></code> whose state is to be set to the state indicated by <code>aState</code>.</dd>
+ <dt>
+  <code>aState</code></dt>
+ <dd>
+  The saved state to apply to the specified window.</dd>
+ <dt>
+  <code>aOverwrite</code></dt>
+ <dd>
+  If this parameter is <code>true</code>, all existing tabs are removed and replaced with the tabs in the state <code>aState</code>. If it's <code>false</code>, the tabs in <code>aState</code> are added to the tabs already in the window.</dd>
+</dl>
+<h3 id="setWindowValue()" name="setWindowValue()">setWindowValue()</h3>
+<p>Sets the value corresponding to a given key for a specified window.</p>
+<pre class="eval">void setWindowValue(
+  in nsIDOMWindow aWindow,
+  in AString aKey,
+  in AString aStringValue
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aWindow</code></dt>
+ <dd>
+  The browser window for which the value is to be set.</dd>
+ <dt>
+  <code>aKey</code></dt>
+ <dd>
+  The key whose value is to be set.</dd>
+ <dt>
+  <code>aStringValue</code></dt>
+ <dd>
+  A string to set as the value for the key <code>aKey</code>. To assign more complex data (ie JavaScript objects) serialize them <span id="the-code"><span class="c">using <a href="https://developer.mozilla.org/en/JSON" title="https://developer.mozilla.org/en/JSON">JSON.stringify</a>.</span></span></dd>
+</dl>
+<h3 id="undoCloseTab()" name="undoCloseTab()">undoCloseTab()</h3>
+<p>Reopens a closed tab in a specified window.</p>
+<pre class="eval">nsIDOMNode undoCloseTab(
+  in nsIDOMWindow aWindow,
+  in unsigned long aIndex
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aWindow</code></dt>
+ <dd>
+  The browser window in which to reopen a closed tab.</dd>
+ <dt>
+  <code>aIndex</code></dt>
+ <dd>
+  The index number of the closed tab to restore. This should be a value from 0 to one less than the value returned by <code><a href="nsISessionStore.html#getClosedTabCount()">getClosedTabCount()</a></code>. The list of closed tabs is stored in last in/first out (LIFO) order, so the tab at index 0 is the last one that was closed.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Prior to <span title="(Firefox 3.5 / Thunderbird 3.0 / SeaMonkey 2.0)">Gecko 1.9.1</span>, this method did not return anything. Starting with <span title="(Firefox 3.5 / Thunderbird 3.0 / SeaMonkey 2.0)">Gecko 1.9.1</span>, it returns a reference to the reopened tab as an <code><a href="nsIDOMNode.html" title="">nsIDOMNode</a></code> object.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9.2 (Firefox 3.6 / Thunderbird 3.1 / Fennec 1.0)</span> 
+    <h3 id="undoCloseWindow()" name="undoCloseWindow()">undoCloseWindow()</h3> 
+</div><p></p>
+<p>Reopens a closed window.</p>
+<pre class="eval">nsIDOMWindow undoCloseWindow(
+  in unsigned long aIndex
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aIndex</code></dt>
+ <dd>
+  The index of the window to be restored. This should be a value from 0 to one less than that returned by <code><a href="nsISessionStore.html#getClosedWindowCount()">getClosedWindowCount()</a></code>. The list of closed windows is stored in last in/first out (LIFO) order, so the window at index 0 is the last one that was closed.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns a reference to the reopened window as an <code><a href="nsIDOMWindow.html" title="">nsIDOMWindow</a></code> object.</p>
+<h2 id="Note_on_windows" name="Note_on_windows">Note on windows</h2>
+<p>The <code>nsISessionStore</code> API stores state information for certain windows inside the web brower. These windows are <code><a href="nsIDOMWindow.html" title="">nsIDOMWindow</a></code> objects that contain the <code>tabbrowser</code> that users see as tabs; the document in these windows is <code>browser.xul</code>.</p>
+<p>For many extensions, those that overlay <code>browser.xul</code>, the appropriate window object for <code>nsISessionStore</code> is the global object <code>'window'</code>.</p>
+<p>For JavaScript running in windows other than the one you want to use in <code>nsISessionStore</code>, you need a <code><a href="nsIDOMWindow.html" title="">nsIDOMWindow</a></code> object containing <code>browser.xul</code>. This will be the outermost or root <code><a href="nsIDOMWindow.html" title="">nsIDOMWindow</a></code> in a <code><a href="nsIXULWindow.html" title="">nsIXULWindow</a></code> (the window seen by users as a moveable frame on the display). This kind of DOMWindow object can be obtained from other <code><a href="nsIDOMWindow.html" title="">nsIDOMWindow</a></code> objects (like the sidebar window object) by applying the 'mainWindow' statement from <a href="https://developer.mozilla.org/en/Working_with_windows_in_chrome_code" title="en/Working_with_windows_in_chrome_code">Working_with_windows_in_chrome_code</a>. This outermost or root window can also be obtained from the list returned by <code>nsIWindowMediator</code>; see example #3 in <a href="https://developer.mozilla.org/en/Working_with_windows_in_chrome_code" title="en/Working_with_windows_in_chrome_code">Working_with_windows_in_chrome_code</a>. It can also be obtained from an <code><a href="nsIXULWindow.html" title="">nsIXULWindow</a></code> using</p>
+<pre class="eval">if (xul_win.docShell instanceof nsIInterfaceRequestor)  {
+   var win = xul_win.docShell.getInterface(nsIDOMWindow);
+   ...
+
+</pre>
+<h2 id="See_also" name="See_also">Note on tabs</h2>
+<p>The <code>nsISessionStore</code> APIs referencing <code>nsIDOMNode aTab</code> require you to get hold of the tab node storing the data. If you you are working in a <code>browser.xul</code> overlay and want the currently selected tab, it's as simple as <code>gBrowser.selectedTab.</code> If you just hold a reference to some content document in the overlay's chrome window, here is how you find its corresponding tab:</p>
+<pre class="eval">function tabFromDoc(doc) {
+  var no = gBrowser.getBrowserIndexForDocument(doc);
+  return gBrowser.tabContainer.childNodes[no];
+}
+
+// example use:
+Cc[<a class="link-mailto" href="mailto:'@mozilla.org" rel="freelink">'@mozilla.org</a>/browser/sessionstore;1']
+  .getService(Ci.nsISessionStore)
+  .setTabValue(tabFromDoc(myContentDoc), 'myKey', 'myValue');
+</pre>
+<h2 id="See_also" name="See_also">See also</h2>
+<ul>
+ <li>The <a href="https://developer.mozilla.org/en/Session_store_API" title="en/Session_store_API">Session store API</a> article.</li>
+ <li><code><a href="nsISessionStartup.html" title="">nsISessionStartup</a></code></li>
+ <li><a href="https://developer.mozilla.org/en/JSON" title="https://developer.mozilla.org/en/JSON">JSON</a></li>
+</ul>
+<p></p>
+                                                </article>
+
+              
+                <!-- attachments list -->
+                
+                <!-- contributors -->
+                <div class="wiki-block contributors">
+                  <h2 class="offscreen">Document Tags and Contributors</h2>
+                                                      <!-- tags if present -->
+                  <div class="tag-attach-list tags contributor-sub">
+                    <i aria-hidden="true" class="icon-tags"></i><strong>Tags:</strong>
+                    <ul class="tag-list"><li><a href="https://developer.mozilla.org/en-US/docs/tag/XPCOM Interface Reference">XPCOM Interface Reference</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Interfaces:Scriptable">Interfaces:Scriptable</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/XPCOM">XPCOM</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Interfaces">Interfaces</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/XPCOM API Reference">XPCOM API Reference</a></li></ul>
+                  </div>
+                                    <div class="contributor-sub"> <i aria-hidden="true" class="icon-group"></i><strong>Contributors to this page:</strong> <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>, <a href="https://developer.mozilla.org/en-US/profiles/Fredchat">Fredchat</a>, <a href="https://developer.mozilla.org/en-US/profiles/Jürgen Jeka">Jürgen Jeka</a>, <a href="https://developer.mozilla.org/en-US/profiles/LouCypher">LouCypher</a>, <a href="https://developer.mozilla.org/en-US/profiles/Jomel">Jomel</a>, <a href="https://developer.mozilla.org/en-US/profiles/Johnjbarton">Johnjbarton</a>, <a href="https://developer.mozilla.org/en-US/profiles/Gomita">Gomita</a>, <a href="https://developer.mozilla.org/en-US/profiles/Nickolay">Nickolay</a>, <a href="https://developer.mozilla.org/en-US/profiles/trevorh">trevorh</a>, <a href="https://developer.mozilla.org/en-US/profiles/Philip Chee">Philip Chee</a>, <a href="https://developer.mozilla.org/en-US/profiles/teoli">teoli</a>, <a href="https://developer.mozilla.org/en-US/profiles/Ecmanaut">Ecmanaut</a>, <a href="https://developer.mozilla.org/en-US/profiles/Wladimir_Palant">Wladimir_Palant</a>, <a href="https://developer.mozilla.org/en-US/profiles/madarche">madarche</a> </div>                                      <div class="contributor-sub">
+                      <i aria-hidden="true" class="icon-clock-o"></i><strong>Last updated by:</strong>
+                      <a href="https://developer.mozilla.org/en-US/profiles/teoli">teoli</a>,
+                      <time datetime="2014-06-22T22:54:38-07:00">Jun 22, 2014 10:54:38 PM</time>
+                    </div>
+                                  </div>
+                          </div>
+
+                      </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="$edit" label="Edit page"></menuitem>
+    <menuitem data-action="$history" label="View page history"></menuitem>
+  </menu>
+  </div></main>
+
+  <!-- Footer -->
+  <footer><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+                <p>
+          <bdi>&copy; 2005-2014 Mozilla Developer Network and individual contributors<br /> Content is available under <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About#Copyrights_and_licenses">these licenses</a> &middot; <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About">About MDN</a> &middot; <a href="http://github.com/mozilla/kuma">Contribute to the code</a> &middot; <a href="http://www.mozilla.org/privacy/websites/">Privacy policy</a></bdi>        </p>
+              </div>
+      <div class="column-strip">
+                        <form class="languages go" method="get" action="https://developer.mozilla.org/en-US/docs/Web">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option value="/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISessionStore" selected>
+          English (US)
+        </option>
+                  <option value="/fr/docs/nsISessionStore">
+            Français
+          </option>          <option value="/ja/docs/XPCOM_Interface_Reference/nsISessionStore">
+            日本語
+          </option>      </select>
+      <noscript><button type="submit">Go</button></noscript>
+    </form>
+                </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+    <script src="https://developer.mozilla.org/en-US/jsi18n/build:9fd3034"></script>
+  
+      <!--[if lte IE 8]><script src="/media/redesign/js/libs/selectivizr-1.0.2/selectivizr-build.js?build=9fd3034"></script><![endif]-->
+
+    <script src="../../../../../../../../developer.cdn.mozilla.net/media/js/main-min46d5.js?build=9fd3034"></script>
+
+          <script>
+        mdn.analytics.trackOutboundLinks(document.body);
+      </script>
+    
+          <script src="../../../../../../../../developer.cdn.mozilla.net/media/js/wiki-min46d5.js?build=9fd3034"></script>
+      
+    <script type="text/javascript">
+      jQuery('.from-search-toc').mozSearchResults('');
+  </script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-3.newrelic.com","queueTime":1,"licenseKey":"42869b6ed3","agent":"js-agent.newrelic.com/nr-411.min.js","transactionName":"b1QHMUtVDRdSW0YKXVYeIxBXVxcNXFYdFFtTWEsTUFEUFwlcXQBHVVQLEQ==","applicationID":"3172075","errorBeacon":"bam.nr-data.net","applicationTime":306}</script></body>
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISessionStore by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Aug 2014 20:24:04 GMT -->
+</html>

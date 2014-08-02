@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="redesign no-js">
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIHTMLEditor by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Aug 2014 20:18:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+        
+    <title>nsIHTMLEditor - Mozilla | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="https://developer.mozilla.org/en-US/">
+  <link rel="copyright" href="#copyright">
+
+  <link href="../../../../../../../../mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" type="text/css" rel="stylesheet">
+              <link rel="stylesheet" media="all" href="../../../../../../../../developer.cdn.mozilla.net/media/css/mdn-min46d5.css?build=9fd3034" />
+
+      
+    <link rel="stylesheet" media="all" href="../../../../../../../../developer.cdn.mozilla.net/media/css/wiki-min46d5.css?build=9fd3034" />
+
+          <link rel="stylesheet" type="text/css"
+            href="https://developer.mozilla.org/en-US/docs/Template:CustomCSS?raw=1" />
+    
+    
+  <!-- common social tags -->
+    <meta property="og:type" content="website">
+  <meta property="og:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta property="og:site_name" content="Mozilla Developer Network">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta name="twitter:site" content="@NewOnMDN">
+  <meta name="twitter:creator" content="@NewOnMDN">
+
+  <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon144.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon114.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon72.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon57.png">
+  <!-- basic favicon -->
+          <link rel="shortcut icon" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon32.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script src="https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
+
+    <link rel="alternate" type="application/json" href="nsIHTMLEditor%24json.json">
+  <link rel="canonical" href="nsIHTMLEditor.html" >
+
+  
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="nsIHTMLEditor">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIHTMLEditor">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIHTMLEditor">
+  <meta name="twitter:title" content="nsIHTMLEditor">
+    <meta property="og:description" content="R egisters a default style property with the editor.">
+  <meta name="description" content="R egisters a default style property with the editor.">
+  <meta name="twitter:description" content="R egisters a default style property with the editor.">
+  
+      <script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+    
+    
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.hash.indexOf('utm') != -1) {
+                var anchor = location.hash.match(/#(?!utm)[^&]+/);
+                anchor = anchor ? anchor[0] : '';
+                if(!anchor && win.history.replaceState){
+                    history.replaceState({}, '', location.pathname + location.search);
+                } else {
+                    location.hash = anchor;
+                }
+            }
+        };
+
+        ga('send', 'pageview', removeUtms(win.location + ''));
+    })();
+</script>
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgAEV1RTGwABU1NSAAQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("https://developer.mozilla.org/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script></head>
+<body data-slug="Mozilla/Tech/XPCOM/Reference/Interface/nsIHTMLEditor" contextmenu="edit-history-menu" class="document  ">
+
+  <script type="text/javascript">
+    (function(win) {
+        'use strict';
+
+                    (function(){
+  var FLAGS = {
+    'derby_closed': true,'ga_outbound_links': true,'kumaediting': false,'page_move': false,'promote_script': false,'redirect_messages': false,'top_contributors': false,'wiki_spellcheck': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'render_stale_documents_async': true,'enable_optimizely': false
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+                
+        // This represents the site configuration
+        win.mdn = {
+            build: '9fd3034',
+            // Properties and settings for CKEditor will go here
+            ckeditor: {},
+            // Feature test results and methods will be placed here
+            features: {},
+            // The path to media (images, CSS, JS) in MDN
+            mediaPath: 'https://developer.cdn.mozilla.net/media/',
+            // Optimizely API
+            optimizely: win['optimizely'] || [],
+            // Site notifications
+            notifications: [],
+            
+            // Wiki-specific settings will be placed here
+            wiki: {
+                autosuggestTitleUrl: '/en-US/docs/get-documents'
+            },
+        };
+
+        // Ensures gettext always returns something, is always set
+        win.gettext = function(x) {
+            return x;
+        }
+    })(window);
+</script>
+  
+
+  
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="#language">Select language</a></li>
+          <li><a href="#q" id="skip-search">Skip to search</a></li>
+      </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <div class="clear header-login">
+      <a href="http://www.mozilla.org/" id="tabzilla" class="no-track">mozilla</a>
+                <script src="../../../../../../../../login.persona.org/include.js"></script>
+<script type="text/javascript">
+(function() {
+  var allauth = window.allauth = window.allauth || {};
+
+  function startWatching() {
+    navigator.id.watch({
+      onlogin: function(assertion) {
+        // TODO: next url handling
+        document.getElementById("_persona_assertion").value = assertion;
+        document.getElementById("_persona_login").submit();
+      },
+      onlogout: function() {
+        // TODO
+      }
+    })
+  };
+
+  allauth.persona = {
+    login: function(nextUrl, process) {
+        document.getElementById("_persona_next_url").value = nextUrl || '';
+        document.getElementById("_persona_process").value = process;
+        startWatching();
+        navigator.id.request({"siteName": "Mozilla Developer Network", "siteLogo": "/media/redesign/img/opengraph-logo.png"});
+    }
+  }
+})();
+</script>
+
+<form id="_persona_login" method="post" action="https://developer.mozilla.org/users/persona/login/">
+  <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='OFUZvWX3cvltHNznKujHNL8vtsBRoNMa' /></div>
+  <input type="hidden" name="next" value="" id="_persona_next_url"/>
+  <input type="hidden" name="process" value="" id="_persona_process"/>
+  <input type="hidden" name="assertion" id="_persona_assertion"/>
+</form>
+
+  <form>
+      <div class="oauth-login-container" tabIndex="0">
+          <div class="oauth-login-options">
+              <span>Sign in with</span>
+              <span class="oauth-icon oauth-persona" title="Sign in with Persona"><i class="icon-user" aria-hidden="true"></i></span>
+                      </div>
+          <div class="submenu oauth-login-picker" aria-hidden="true">
+              <ul>
+                  <li><a href="javascript:allauth.persona.login('/en\u002DUS/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIHTMLEditor', 'login')" class="persona-button persona-loaded login-link" data-next="/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIHTMLEditor" data-service="Persona"><i class="icon-user" aria-hidden="true"></i>Persona</a></li>
+                              </ul>
+          </div>
+      </div>
+  </form>
+          </div>
+
+    <a href="https://developer.mozilla.org/en-US/" class="logo">Mozilla Developer Network</a>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="https://developer.mozilla.org/en-US/docs/Zones">Zones<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-single" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/Add-ons">Add-ons</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Apps">App Center</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox">Firefox</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Marketplace">Firefox Marketplace</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox_OS">Firefox OS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Persona">Persona</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Web">Web Platform<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Apps">Apps</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References & Guides</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Tools">Tools</a></li><li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Connect">Connect</a></li><li class="main-nav-search"><form action="https://developer.mozilla.org/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" data-placeholder="Search" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+   <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+            <div class="article-meta">
+        <!-- action buttons -->
+        
+        
+        
+
+  <ul class="page-buttons" data-sticky="false"><li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-globe"></i></button>
+
+        <div class="submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+                              <li class="smaller">No translations exist for this document.</li>
+              
+                              <li><a href="https://developer.mozilla.org/en-US/users/signin/?next=/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIHTMLEditor%24locales">Add a translation</a></li>
+                          </ul>
+          </div>
+        </div></li><li class="page-buttons-edit"><a href="https://developer.mozilla.org/en-US/users/signin/?next=/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIHTMLEditor%24edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li><li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+
+        <div class="submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="nsIHTMLEditor%24history.html">History</a></li>
+                                                                
+                
+                                
+                                                                <li class="page-print"><a href="#" onclick="return window.print();"  title="Print page">Print this page</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+        <!-- crumbs -->
+          <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US" rel="v:url" property="v:title">MDN</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla" rel="v:url" property="v:title">Mozilla</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech" rel="v:url" property="v:title">Mozilla technologies</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM" rel="v:url" property="v:title">XPCOM</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference" rel="v:url" property="v:title">XPCOM reference</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="../Interface.html" rel="v:url" property="v:title">XPCOM Interface Reference</a></li>
+        <li class="crumb" typeof="v:Breadcrumb" property="v:title">nsIHTMLEditor</li>
+  </ol></nav>
+      </div>
+
+      <!-- heading -->
+      <div id="wiki-document-head" class="document-head">
+          <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="Previous Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+          <span class="from-search-navigate-wrap">
+            <a href="#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true" class="icon-double-angle-up"></i></span><span class="from-search-navigate-down"><i aria-hidden="true" class="icon-double-angle-down"></i></span></a>
+          </span>
+          <div class="from-search-toc">
+            <span class="title">Your Search Results</span>
+            <ol></ol>
+          </div>
+          <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+        <h1>nsIHTMLEditor</h1>
+        
+      </div>
+      
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-closed wiki-left-none">
+
+          
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+                          <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+                            <!-- table of contents -->
+              <div id="toc" class="toc toggleable">
+                <a href="#toc" class="title toggler" data-open-icon="icon-plus" data-closed-icon="icon-minus">In This Article<i></i></a>
+                <ol class="toggle-container">
+                  <code></code><code></code><li><a href="#Method_overview" rel="internal">Method overview</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#Attributes" rel="internal">Attributes</a><code></code><code></code><code></code><code></code><code></code><li><a href="#Constants" rel="internal">Constants</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#Methods" rel="internal">Methods</a><ol><li><a href="#addDefaultProperty()" rel="internal">addDefaultProperty()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#addInsertionListener()" rel="internal">addInsertionListener()</a><code></code><li><a href="#align()" rel="internal">align()</a><code></code><li><a href="#breakIsVisible()" rel="internal">breakIsVisible()</a><code></code><li><a href="#canDrag()" rel="internal">canDrag()</a><code></code><li><a href="#checkSelectionStateForAnonymousButtons()" rel="internal">checkSelectionStateForAnonymousButtons()</a><code></code><li><a href="#createAnonymousElement()" rel="internal">createAnonymousElement()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#createElementWithDefaults()" rel="internal">createElementWithDefaults()</a><code></code><li><a href="#decreaseFontSize()" rel="internal">decreaseFontSize()</a><li><a href="#doDrag()" rel="internal">doDrag()</a><code></code><li><a href="#getAlignment()" rel="internal">getAlignment()</a><code></code><code></code><code></code><li><a href="#getBackgroundColorState()" rel="internal">getBackgroundColorState()</a><code></code><code></code><code></code><li><a href="#getElementOrParentByTagName()" rel="internal">getElementOrParentByTagName()</a><code></code><code></code><code></code><code></code><li><a href="#getFontColorState()" rel="internal">getFontColorState()</a><code></code><code></code><li><a href="#getFontFaceState()" rel="internal">getFontFaceState()</a><code></code><code></code><li><a href="#getHeadContentsAsHTML()" rel="internal">getHeadContentsAsHTML()</a><li><a href="#getHighlightColorState()" rel="internal">getHighlightColorState()</a><code></code><code></code><li><a href="#getIndentState()" rel="internal">getIndentState()</a><code></code><code></code><li><a href="#getInlineProperty()" rel="internal">getInlineProperty()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#getInlinePropertyWithAttrValue()" rel="internal">getInlinePropertyWithAttrValue()</a><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#getLinkedObjects()" rel="internal">getLinkedObjects()</a><code></code><li><a href="#getListItemState()" rel="internal">getListItemState()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#getListState()" rel="internal">getListState()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#getParagraphState()" rel="internal">getParagraphState()</a><code></code><code></code><li><a href="#getSelectedElement()" rel="internal">getSelectedElement()</a><code></code><li><a href="#getSelectionContainer()" rel="internal">getSelectionContainer()</a><li><a href="#ignoreSpuriousDragEvent()" rel="internal">ignoreSpuriousDragEvent()</a><code></code><li><a href="#increaseFontSize()" rel="internal">increaseFontSize()</a><li><a href="#indent()" rel="internal">indent()</a><code></code><li><a href="#insertElementAtSelection()" rel="internal">insertElementAtSelection()</a><code></code><code></code><li><a href="#insertFromDrop()" rel="internal">insertFromDrop()</a><code></code><li><a href="#insertHTML()" rel="internal">insertHTML()</a><code></code><li><a href="#insertHTMLWithContext()" rel="internal">insertHTMLWithContext()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#insertLinkAroundSelection()" rel="internal">insertLinkAroundSelection()</a><code></code><li><a href="#isAnonymousElement()" rel="internal">isAnonymousElement()</a><code></code><li><a href="#makeOrChangeList()" rel="internal">makeOrChangeList()</a><code></code><code></code><code></code><li><a href="#nodeIsBlock()" rel="internal">nodeIsBlock()</a><code></code><li><a href="#pasteNoFormatting()" rel="internal">pasteNoFormatting()</a><code></code><li><a href="#rebuildDocumentFromSource()" rel="internal">rebuildDocumentFromSource()</a><code></code><li><a href="#removeAllDefaultProperties()" rel="internal">removeAllDefaultProperties()</a><li><a href="#removeAllInlineProperties()" rel="internal">removeAllInlineProperties()</a><li><a href="#removeDefaultProperty()" rel="internal">removeDefaultProperty()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#removeInlineProperty()" rel="internal">removeInlineProperty()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#removeInsertionListener()" rel="internal">removeInsertionListener()</a><code></code><li><a href="#removeList()" rel="internal">removeList()</a><code></code><li><a href="#replaceHeadContentsWithHTML()" rel="internal">replaceHeadContentsWithHTML()</a><code></code><li><a href="#selectElement()" rel="internal">selectElement()</a><code></code><li><a href="#setBackgroundColor()" rel="internal">setBackgroundColor()</a><code></code><li><a href="#setBodyAttribute()" rel="internal">setBodyAttribute()</a><code></code><code></code><li><a href="#setCaretAfterElement()" rel="internal">setCaretAfterElement()</a><code></code><li><a href="#setCSSInlineProperty()" rel="internal">setCSSInlineProperty()</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#setDocumentTitle()" rel="internal">setDocumentTitle()</a><code></code><li><a href="#setInlineProperty()" rel="internal">setInlineProperty()</a><code></code><code></code><code></code><li><a href="#setParagraphFormat()" rel="internal">setParagraphFormat()</a><code></code><li><a href="#updateBaseURL()" rel="internal">updateBaseURL()</a></ol></li>
+                </ol>
+              </div>
+                            </div>
+            
+                                                  
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-main wiki-column text-content">
+
+              
+              
+                                                                                          
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                                                      <p></p><div style="border: solid #ddd 2px; margin-bottom: 12px;"> 
+<div style="background: #eee; padding: 2px;"><code><a class="external" href="http://mxr.mozilla.org/mozilla-central/source/editor/idl/nsIHTMLEditor.idl" rel="custom">editor/idl/nsIHTMLEditor.idl</a></code><span style="text-align: right; float: right;"><a href="en-US/docs/Interfaces/About_Scriptable_Interfaces.html" style="color: #00cc00; font-weight: 700;">Scriptable</a></span></div> 
+<span style="padding: 4px 2px;"> 
+ 
+<i>Please add a summary to this article.</i> 
+</span> 
+ 
+<div style="background: #eee; padding: 2px;"> 
+Inherits from: <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsISupports" title="">nsISupports</a></code> 
+<span style="text-align: right; float: right;">Last changed in Gecko 5.0 (Firefox 5.0 / Thunderbird 5.0 / SeaMonkey 2.2)</span></div> 
+</div><p></p>
+<h2 id="Method_overview">Method overview</h2>
+<table class="standard-table"> <tbody> <tr> <td><code>void <a href="#addDefaultProperty()">addDefaultProperty</a>(in nsIAtom aProperty, in AString aAttribute, in AString aValue);</code></td> </tr> <tr> <td><code>void <a href="#addInsertionListener()">addInsertionListener</a>(in nsIContentFilter inFilter);</code></td> </tr> <tr> <td><code>void <a href="#align()">align</a>(in AString aAlign);</code></td> </tr> <tr> <td><code>boolean <a href="#breakIsVisible()">breakIsVisible</a>(in nsIDOMNode aNode);</code> </td> </tr> <tr> <td><code>boolean <a href="#canDrag()">canDrag</a>(in nsIDOMEvent aEvent);</code></td> </tr> <tr> <td><code>void <a href="#checkSelectionStateForAnonymousButtons()">checkSelectionStateForAnonymousButtons</a>(in nsISelection aSelection);</code></td> </tr> <tr> <td><code>nsIDOMElement <a href="#createAnonymousElement()">createAnonymousElement</a>(in AString aTag, in nsIDOMNode aParentNode, in AString aAnonClass, in boolean aIsCreatedHidden);</code></td> </tr> <tr> <td><code>nsIDOMElement <a href="#createElementWithDefaults()">createElementWithDefaults</a>(in AString aTagName);</code></td> </tr> <tr> <td><code>void <a href="#decreaseFontSize()">decreaseFontSize</a>();</code></td> </tr> <tr> <td><code>void <a href="#doDrag()">doDrag</a>(in nsIDOMEvent aEvent);</code></td> </tr> <tr> <td><code>void <a href="#getAlignment()">getAlignment</a>(out boolean aMixed, out short aAlign);</code></td> </tr> <tr> <td><code>AString <a href="#getBackgroundColorState()">getBackgroundColorState</a>(out boolean aMixed);</code></td> </tr> <tr> <td><code>nsIDOMElement <a href="#getElementOrParentByTagName()">getElementOrParentByTagName</a>(in AString aTagName, in nsIDOMNode aNode);</code></td> </tr> <tr> <td><code>AString <a href="#getFontColorState()">getFontColorState</a>(out boolean aMixed);</code></td> </tr> <tr> <td><code>AString <a href="#getFontFaceState()">getFontFaceState</a>(out boolean aMixed);</code></td> </tr> <tr> <td><code>AString <a href="#getHeadContentsAsHTML()">getHeadContentsAsHTML</a>();</code></td> </tr> <tr> <td><code>AString <a href="#getHighlightColorState()">getHighlightColorState</a>(out boolean aMixed);</code></td> </tr> <tr> <td><code>void <a href="#getIndentState()">getIndentState</a>(out boolean aCanIndent, out boolean aCanOutdent);</code></td> </tr> <tr> <td><code>void <a href="#getInlineProperty()">getInlineProperty</a>(in nsIAtom aProperty, in AString aAttribute, in AString aValue, out boolean aFirst, out boolean aAny, out boolean aAll);</code></td> </tr> <tr> <td><code>AString <a href="#getInlinePropertyWithAttrValue()">getInlinePropertyWithAttrValue</a>(in nsIAtom aProperty, in AString aAttribute, in AString aValue, out boolean aFirst, out boolean aAny, out boolean aAll);</code></td> </tr> <tr> <td><code>nsISupportsArray <a href="#getLinkedObjects()">getLinkedObjects</a>();</code></td> </tr> <tr> <td><code>void <a href="#getListItemState()">getListItemState</a>(out boolean aMixed, out boolean aLI, out boolean aDT, out boolean aDD);</code></td> </tr> <tr> <td><code>void <a href="#getListState()">getListState</a>(out boolean aMixed, out boolean aOL, out boolean aUL, out boolean aDL);</code></td> </tr> <tr> <td><code>AString <a href="#getParagraphState()">getParagraphState</a>(out boolean aMixed);</code></td> </tr> <tr> <td><code>nsIDOMElement <a href="#getSelectedElement()">getSelectedElement</a>(in AString aTagName);</code></td> </tr> <tr> <td><code>nsIDOMElement <a href="#getSelectionContainer()">getSelectionContainer</a>();</code></td> </tr> <tr> <td><code>void <a href="#ignoreSpuriousDragEvent()">ignoreSpuriousDragEvent</a>(in boolean aIgnoreSpuriousDragEvent);</code></td> </tr> <tr> <td><code>void <a href="#increaseFontSize()">increaseFontSize</a>();</code></td> </tr> <tr> <td><code>void <a href="#indent()">indent</a>(in AString aIndent);</code></td> </tr> <tr> <td><code>void <a href="#insertElementAtSelection()">insertElementAtSelection</a>(in nsIDOMElement aElement, in boolean aDeleteSelection);</code></td> </tr> <tr> <td><code>void <a href="#insertFromDrop()">insertFromDrop</a>(in nsIDOMEvent aEvent);</code></td> </tr> <tr> <td><code>void <a href="#insertHTML()">insertHTML</a>(in AString aInputString);</code></td> </tr> <tr> <td><code>void <a href="#insertHTMLWithContext()">insertHTMLWithContext</a>(in AString aInputString, in AString aContextStr, in AString aInfoStr, in AString aFlavor, in nsIDOMDocument aSourceDoc, in nsIDOMNode aDestinationNode, in long aDestinationOffset, in boolean aDeleteSelection);</code></td> </tr> <tr> <td><code>void <a href="#insertLinkAroundSelection()">insertLinkAroundSelection</a>(in nsIDOMElement aAnchorElement);</code></td> </tr> <tr> <td><code>boolean <a href="#isAnonymousElement()">isAnonymousElement</a>(in nsIDOMElement aElement);</code></td> </tr> <tr> <td><code>void <a href="#makeOrChangeList()">makeOrChangeList</a>(in AString aListType, in boolean entireList, in AString aBulletType);</code></td> </tr> <tr> <td><code>boolean <a href="#nodeIsBlock()">nodeIsBlock</a>(in nsIDOMNode node);</code></td> </tr> <tr> <td><code>void <a href="#pasteNoFormatting()">pasteNoFormatting</a>(in long aSelectionType);</code></td> </tr> <tr> <td><code>void <a href="#rebuildDocumentFromSource()">rebuildDocumentFromSource</a>(in AString aSourceString);</code></td> </tr> <tr> <td><code>void <a href="#removeAllDefaultProperties()">removeAllDefaultProperties</a>();</code></td> </tr> <tr> <td><code>void <a href="#removeAllInlineProperties()">removeAllInlineProperties</a>();</code></td> </tr> <tr> <td><code>void <a href="#removeDefaultProperty()">removeDefaultProperty</a>(in nsIAtom aProperty, in AString aAttribute, in AString aValue);</code></td> </tr> <tr> <td><code>void <a href="#removeInlineProperty()">removeInlineProperty</a>(in nsIAtom aProperty, in AString aAttribute);</code></td> </tr> <tr> <td><code>void <a href="#removeInsertionListener()">removeInsertionListener</a>(in nsIContentFilter inFilter);</code></td> </tr> <tr> <td><code>void <a href="#removeList()">removeList</a>(in AString aListType);</code></td> </tr> <tr> <td><code>void <a href="#replaceHeadContentsWithHTML()">replaceHeadContentsWithHTML</a>(in AString aSourceToInsert);</code></td> </tr> <tr> <td><code>void <a href="#selectElement()">selectElement</a>(in nsIDOMElement aElement);</code></td> </tr> <tr> <td><code>void <a href="#setBackgroundColor()">setBackgroundColor</a>(in AString aColor);</code></td> </tr> <tr> <td><code>void <a href="#setBodyAttribute()">setBodyAttribute</a>(in AString aAttr, in AString aValue);</code></td> </tr> <tr> <td><code>void <a href="#setCaretAfterElement()">setCaretAfterElement</a>(in nsIDOMElement aElement);</code></td> </tr> <tr> <td><code>void <a href="#setCSSInlineProperty()">setCSSInlineProperty</a>(in nsIAtom aProperty, in AString aAttribute, in AString aValue);</code></td> </tr> <tr> <td><code>void <a href="#setDocumentTitle()">setDocumentTitle</a>(in AString aTitle);</code></td> </tr> <tr> <td><code>void <a href="#setInlineProperty()">setInlineProperty</a>(in nsIAtom aProperty, in AString aAttribute, in AString aValue);</code></td> </tr> <tr> <td><code>void <a href="#setParagraphFormat()">setParagraphFormat</a>(in AString aParagraphFormat);</code></td> </tr> <tr> <td><code>void <a href="#updateBaseURL()">updateBaseURL</a>();</code></td> </tr> </tbody>
+</table>
+<h2 id="Attributes">Attributes</h2>
+<table class="standard-table"> <tbody> <tr> <td class="header">Attribute</td> <td class="header">Type</td> <td class="header">Description</td> </tr> <tr> <td><code>isCSSEnabled</code></td> <td><code><a href="https://developer.mozilla.org/en/boolean" title="en/boolean">boolean</a></code></td> <td>A boolean which is <code>true</code> is the HTMLEditor has been instantiated with CSS knowledge and if the CSS pref is currently checked.</td> </tr> <tr> <td><code>returnInParagraphCreatesNewParagraph</code></td> <td><code><a href="https://developer.mozilla.org/en/boolean" title="en/boolean">boolean</a></code></td> <td>A boolean indicating if a return key pressed in a paragraph creates another paragraph or just inserts a &lt;br&gt; at the caret. </td> </tr> </tbody>
+</table>
+<h2 id="Constants">Constants</h2>
+<table class="standard-table"> <tbody> <tr> <td class="header">Constant</td> <td class="header">Value</td> <td class="header">Description</td> </tr> <tr> <td><code>eLeft</code></td> <td><code>0</code></td> <td> </td> </tr> <tr> <td><code>eCenter</code></td> <td><code>1</code></td> <td> </td> </tr> <tr> <td><code>eRight</code></td> <td><code>2</code></td> <td> </td> </tr> <tr> <td><code>eJustify</code></td> <td><code>3</code></td> <td> </td> </tr> </tbody>
+</table>
+<h2 id="Methods">Methods</h2>
+<h3 id="addDefaultProperty()">addDefaultProperty()</h3>
+<p><code>R</code>egisters a default style property with the editor.</p>
+<pre class="eval">void addDefaultProperty(
+  in nsIAtom aProperty,
+  in AString aAttribute,
+  in AString aValue
+);
+</pre>
+<h6 id="Parameters">Parameters</h6>
+<dl> <dt><code>aProperty</code></dt> <dd>The property to set by default.</dd> <dt><code>aAttribute</code></dt> <dd>The attribute of the property, if applicable. May be <code>null</code>. Example: <code>aProperty</code>="font", <code>aAttribute</code>="color"</dd> <dt><code>aValue</code></dt> <dd>If <code>aAttribute</code> is not <code>null</code>, the value of the attribute. Example: <code>aProperty</code>="font", <code>aAttribute</code>="color", <code>aValue</code>="0x00FFFF"</dd>
+</dl>
+<h3 id="addInsertionListener()">addInsertionListener()</h3>
+<p>Add listener for insertion override.</p>
+<pre class="eval">void addInsertionListener(
+  in nsIContentFilter inFilter
+);
+</pre>
+<h6 id="Parameters_2">Parameters</h6>
+<dl> <dt><code>inFilter</code></dt> <dd>Function which callers want called during insertion.</dd>
+</dl>
+<h3 id="align()">align()</h3>
+<p>Document me!</p>
+<pre class="eval">void align(
+  in AString aAlign
+);
+</pre>
+<h6 id="Parameters_3">Parameters</h6>
+<dl> <dt><code>aAlign</code></dt> <dd>
+</dd></dl>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 5.0 (Firefox 5.0 / Thunderbird 5.0 / SeaMonkey 2.2)</span> 
+    <h3 id="breakIsVisible()" name="breakIsVisible()">breakIsVisible()</h3> 
+</div><p></p>
+<p>Checks whether a BR node is visible to the user.</p>
+<pre class="eval">boolean breakIsVisible(
+  in nsIDOMNode aNode
+);
+</pre>
+<h6 id="Parameters_4">Parameters</h6>
+<dl> <dt><code>aNode</code></dt> <dd>
+</dd></dl>
+<h6 id="Return_value">Return value</h6>
+<p> </p>
+<h3 id="canDrag()">canDrag()</h3>
+<p>Decides if a drag should be started (for example, based on the current selection and mousepoint).</p>
+<pre class="eval">boolean canDrag(
+  in nsIDOMEvent aEvent
+);
+</pre>
+<h6 id="Parameters_5">Parameters</h6>
+<dl> <dt><code>aEvent</code></dt> <dd>
+</dd></dl>
+<h6 id="Return_value_2">Return value</h6>
+<p> </p>
+<h3 id="checkSelectionStateForAnonymousButtons()">checkSelectionStateForAnonymousButtons()</h3>
+<p>Checks if the anonymous nodes created by the HTML editor have to be refreshed or hidden depending on a possible new state of the selection.</p>
+<pre class="eval">void checkSelectionStateForAnonymousButtons(
+  in nsISelection aSelection
+);
+</pre>
+<h6 id="Parameters_6">Parameters</h6>
+<dl> <dt><code>aSelection</code></dt> <dd>A selection.</dd>
+</dl>
+<h3 id="createAnonymousElement()">createAnonymousElement()</h3>
+<p>Returns an anonymous nsDOMElement of type <code>aTag</code>, child of <code>aParentNode</code>. If aIsCreatedHidden is <code>true</code>, the class "hidden" is added to the created element. If <code>aAnonClass</code> is not the empty string, it becomes the value of the attribute "_moz_anonclass"</p>
+<pre class="eval">nsIDOMElement createAnonymousElement(
+  in AString aTag,
+  in nsIDOMNode aParentNode,
+  in AString aAnonClass,
+  in boolean aIsCreatedHidden
+);
+</pre>
+<h6 id="Parameters_7">Parameters</h6>
+<dl> <dt><code>aTag</code></dt> <dd>A string representing the desired type of the element to create.</dd> <dt><code>aParentNode</code></dt> <dd>The parent node of the created anonymous element.</dd> <dt><code>aAnonClass</code></dt> <dd>Contents of the _moz_anonclass attribute.</dd> <dt><code>aIsCreatedHidden</code></dt> <dd>A boolean specifying if the class "hidden" is to be added to the created anonymous element.</dd>
+</dl>
+<h6 id="Return_value_3">Return value</h6>
+<p>A DOM Element.</p>
+<h3 id="createElementWithDefaults()">createElementWithDefaults()</h3>
+<p>Return a new element with default attribute values.</p>
+<p>This does not rely on the selection, and is not sensitive to context.</p>
+<p>Used primarily to supply new element for various insert element dialogs (Image, Link, NamedAnchor, Table, and HorizontalRule are the only returned elements as of 7/25/99)</p>
+<pre class="eval">nsIDOMElement createElementWithDefaults(
+  in AString aTagName
+);
+</pre>
+<h6 id="Parameters_8">Parameters</h6>
+<dl> <dt><code>aTagName</code></dt> <dd>The HTML tagname Special input values for Links and Named anchors: Use "href" to get a link node (an "A" tag with the "href" attribute set) Use "anchor" or "namedanchor" to get a named anchor node (an "A" tag with the "name" attribute set)</dd>
+</dl>
+<h6 id="Return_value_4">Return value</h6>
+<p>The new element created.</p>
+<h3 id="decreaseFontSize()">decreaseFontSize()</h3>
+<p>Decrease font size for text in selection by 1 HTML unit All existing text is scanned for existing &lt;FONT SIZE&gt; attributes so they will be decreased instead of inserting new &lt;FONT&gt; tag.</p>
+<pre class="eval">void decreaseFontSize();
+</pre>
+<h6 id="Parameters_9">Parameters</h6>
+<p>None.</p>
+<h3 id="doDrag()">doDrag()</h3>
+<p>Transfers the relevant data (as appropriate) to a transferable so it can later be dropped.</p>
+<pre class="eval">void doDrag(
+  in nsIDOMEvent aEvent
+);
+</pre>
+<h6 id="Parameters_10">Parameters</h6>
+<dl> <dt><code>aEvent</code></dt> <dd>
+</dd></dl>
+<h3 id="getAlignment()">getAlignment()</h3>
+<p>Returns what alignment is in the selection.</p>
+<pre class="eval">void getAlignment(
+  out boolean aMixed,
+  out short aAlign
+);
+</pre>
+<h6 id="Parameters_11">Parameters</h6>
+<dl> <dt><code>aMixed</code></dt> <dd><code>true</code> if there is more than one type of list item, or if there is some list and non-list.</dd> <dt><code>aAlign</code></dt> <dd>Enum value for first encountered alignment (left/center/right)</dd>
+</dl>
+<h3 id="getBackgroundColorState()">getBackgroundColorState()</h3>
+<p><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIHTMLEditor#getFontColorState()">getFontColorState()</a></code> returns what font face is in the selection.</p>
+<pre class="eval">AString getBackgroundColorState(
+  out boolean aMixed
+);
+</pre>
+<h6 id="Parameters_12">Parameters</h6>
+<dl> <dt><code>aMixed</code></dt> <dd><code>true</code> if there is more than one font color.</dd>
+</dl>
+<h6 id="Return_value_5">Return value</h6>
+<p>Color string. "" is returned for none.</p>
+<h3 id="getElementOrParentByTagName()">getElementOrParentByTagName()</h3>
+<p>Return the input node or a parent matching the given <code>aTagName</code>, starting the search at the supplied node. An example of use is for testing if a node is in a table cell given a selection anchor node.</p>
+<pre class="eval">nsIDOMElement getElementOrParentByTagName(
+  in AString aTagName,
+  in nsIDOMNode aNode
+);
+</pre>
+<h6 id="Parameters_13">Parameters</h6>
+<dl> <dt><code>aTagName</code></dt> <dd>The HTML tagname Special input values: Use "href" to get a link node (an "A" tag with the "href" attribute set) Use "anchor" or "namedanchor" to get a named anchor node (an "A" tag with the "name" attribute set) Use "list" to get an OL, UL, or DL list node Use "td" to get either a TD or TH cell node.</dd> <dt><code>aNode</code></dt> <dd>The node in the document to start the search. If it is <code>null</code>, the anchor node of the current selection is used.</dd>
+</dl>
+<h6 id="Return_value_6">Return value</h6>
+<p>NS_EDITOR_ELEMENT_NOT_FOUND if an element is not found (passes NS_SUCCEEDED macro)</p>
+<h3 id="getFontColorState()">getFontColorState()</h3>
+<p>Returns what font face is in the selection.</p>
+<pre class="eval">AString getFontColorState(
+  out boolean aMixed
+);
+</pre>
+<h6 id="Parameters_14">Parameters</h6>
+<dl> <dt><code>aMixed</code></dt> <dd><code>true</code> if there is more than one font color.</dd>
+</dl>
+<h6 id="Return_value_7">Return value</h6>
+<p>Color string. "" is returned for none.</p>
+<h3 id="getFontFaceState()">getFontFaceState()</h3>
+<p>Returns what font face is in the selection.</p>
+<pre class="eval">AString getFontFaceState(
+  out boolean aMixed
+);
+</pre>
+<h6 id="Parameters_15">Parameters</h6>
+<dl> <dt><code>aMixed</code></dt> <dd><code>true</code> if there is more than one font face.</dd>
+</dl>
+<h6 id="Return_value_8">Return value</h6>
+<p>Name of face. Note: "tt" is returned for tt tag. "" is returned for none.</p>
+<h3 id="getHeadContentsAsHTML()">getHeadContentsAsHTML()</h3>
+<p>Output the contents of the &lt;HEAD&gt; section as text/HTML format.</p>
+<pre class="eval">AString getHeadContentsAsHTML();
+</pre>
+<h6 id="Parameters_16">Parameters</h6>
+<p>None.</p>
+<h6 id="Return_value_9">Return value</h6>
+<p> </p>
+<h3 id="getHighlightColorState()">getHighlightColorState()</h3>
+<p>Returns what the highlight color of the selection.</p>
+<pre class="eval">AString getHighlightColorState(
+  out boolean aMixed
+);
+</pre>
+<h6 id="Parameters_17">Parameters</h6>
+<dl> <dt><code>aMixed</code></dt> <dd><code>true</code> if there is more than one font color.</dd>
+</dl>
+<h6 id="Return_value_10">Return value</h6>
+<p>Color string. "" is returned for none.</p>
+<h3 id="getIndentState()">getIndentState()</h3>
+<p>Document me!</p>
+<pre class="eval">void getIndentState(
+  out boolean aCanIndent,
+  out boolean aCanOutdent
+);
+</pre>
+<h6 id="Parameters_18">Parameters</h6>
+<dl> <dt><code>aCanIndent</code></dt> <dd> </dd><dt><code>aCanOutdent</code></dt> <dd>
+</dd></dl>
+<h3 id="getInlineProperty()">getInlineProperty()</h3>
+<p>Gets aggregate properties of the current selection. All object in the current selection are scanned and their attributes are represented in a list of Property object.</p>
+<pre class="eval">void getInlineProperty(
+  in nsIAtom aProperty,
+  in AString aAttribute,
+  in AString aValue,
+  out boolean aFirst,
+  out boolean aAny,
+  out boolean aAll
+);
+</pre>
+<h6 id="Parameters_19">Parameters</h6>
+<dl> <dt><code>aProperty</code></dt> <dd>The property to get on the selection.</dd> <dt><code>aAttribute</code></dt> <dd>The attribute of the property, if applicable. May be <code>null</code>. Example: <code>aProperty</code>="font", <code>aAttribute</code>="color"</dd> <dt><code>aValue</code></dt> <dd>If aAttribute is not <code>null</code>, the value of the attribute. May be <code>null</code>. Example: <code>aProperty</code>="font", <code>aAttribute</code>="color", <code>aValue</code>="0x00FFFF"</dd> <dt><code>aFirst</code></dt> <dd>PR_TRUE if the first text node in the selection has the property.</dd> <dt><code>aAny</code></dt> <dd>PR_TRUE if any of the text nodes in the selection have the property.</dd> <dt><code>aAll</code></dt> <dd>PR_TRUE if all of the text nodes in the selection have the property.</dd>
+</dl>
+<h3 id="getInlinePropertyWithAttrValue()">getInlinePropertyWithAttrValue()</h3>
+<pre class="eval">AString getInlinePropertyWithAttrValue(
+  in nsIAtom aProperty,
+  in AString aAttribute,
+  in AString aValue,
+  out boolean aFirst,
+  out boolean aAny,
+  out boolean aAll
+);
+</pre>
+<h6 id="Parameters_20">Parameters</h6>
+<dl> <dt><code>aProperty</code></dt> <dd> </dd><dt><code>aAttribute</code></dt> <dd> </dd><dt><code>aValue</code></dt> <dd> </dd><dt><code>aFirst</code></dt> <dd> </dd><dt><code>aAny</code></dt> <dd> </dd><dt><code>aAll</code></dt> <dd>
+</dd></dl>
+<h6 id="Return_value_11">Return value</h6>
+<p> </p>
+<h3 id="getLinkedObjects()">getLinkedObjects()</h3>
+<p>Find all the nodes in the document which contain references to outside URIs (for example a href, img src, script src, and so on.) The objects in the array will be type <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIURIRefObject" title="">nsIURIRefObject</a></code>.</p>
+<pre class="eval">nsISupportsArray getLinkedObjects();
+</pre>
+<h6 id="Parameters_21">Parameters</h6>
+<p>None.</p>
+<h6 id="Return_value_12">Return value</h6>
+<p>ANodeList the linked nodes found.</p>
+<h3 id="getListItemState()">getListItemState()</h3>
+<p><code>getListItemState</code> returns what list item type is in the selection.</p>
+<pre class="eval">void getListItemState(
+  out boolean aMixed,
+  out boolean aLI,
+  out boolean aDT,
+  out boolean aDD
+);
+</pre>
+<h6 id="Parameters_22">Parameters</h6>
+<dl> <dt><code>aMixed</code></dt> <dd><code>true</code> if there is more than one type of list item, or if there is some list and non-list.</dd> <dt><code>aLI</code></dt> <dd><code>true</code> if "li" list items are selected.</dd> <dt><code>aDT</code></dt> <dd><code>true</code> if "dt" list items are selected.</dd> <dt><code>aDD</code></dt> <dd><code>true</code> if "dd" list items are selected.</dd>
+</dl>
+<h3 id="getListState()">getListState()</h3>
+<p>Returns what list type is in the selection.</p>
+<pre class="eval">void getListState(
+  out boolean aMixed,
+  out boolean aOL,
+  out boolean aUL,
+  out boolean aDL
+);
+</pre>
+<h6 id="Parameters_23">Parameters</h6>
+<dl> <dt><code>aMixed</code></dt> <dd><code>true</code> if there is more than one type of list, or if there is some list and non-list.</dd> <dt><code>aOL</code></dt> <dd>The company that employs me. No, really, it is <code>true</code> if an "ol" list is selected.</dd> <dt><code>aUL</code></dt> <dd><code>true</code> if an "ul" list is selected.</dd> <dt><code>aDL</code></dt> <dd><code>true</code> if a "dl" list is selected.</dd>
+</dl>
+<h3 id="getParagraphState()">getParagraphState()</h3>
+<p>Returns what block tag paragraph format is in the selection.</p>
+<pre class="eval">AString getParagraphState(
+  out boolean aMixed
+);
+</pre>
+<h6 id="Parameters_24">Parameters</h6>
+<dl> <dt><code>aMixed</code></dt> <dd><code>true</code> if there is more than one format.</dd>
+</dl>
+<h6 id="Return_value_13">Return value</h6>
+<p>Name of block tag. "" is returned for none.</p>
+<h3 id="getSelectedElement()">getSelectedElement()</h3>
+<p>Return an element only if it is the only node selected, such as an image, horizontal rule, and so on. The exception is a link, which is more like a text attribute: The Anchor tag is returned if the selection is within the textnode(s) that are children of the "A" node. This could be a collapsed selection, that is, a caret within the link text.</p>
+<pre class="eval">nsIDOMElement getSelectedElement(
+  in AString aTagName
+);
+</pre>
+<h6 id="Parameters_25">Parameters</h6>
+<dl> <dt><code>aTagName</code></dt> <dd>The HTML tagname or and empty string to get any element (but only if it is the only element selected) Special input values for Links and Named anchors: Use "href" to get a link node (an "A" tag with the "href" attribute set) Use "anchor" or "namedanchor" to get a named anchor node (an "A" tag with the "name" attribute set)</dd>
+</dl>
+<h6 id="Return_value_14">Return value</h6>
+<p>NS_EDITOR_ELEMENT_NOT_FOUND if an element is not found (passes NS_SUCCEEDED macro)</p>
+<h3 id="getSelectionContainer()">getSelectionContainer()</h3>
+<p>Returns the deepest container of the selection.</p>
+<pre class="eval">nsIDOMElement getSelectionContainer();
+</pre>
+<h6 id="Parameters_26">Parameters</h6>
+<p>None.</p>
+<h6 id="Return_value_15">Return value</h6>
+<p>A DOM Element.</p>
+<h3 id="ignoreSpuriousDragEvent()">ignoreSpuriousDragEvent()</h3>
+<p>Used to suppress spurious drag/drop events to workaround <a class="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=50703" title="After double-click that launches dialog, mouse up on dialog button triggers dragNdrop in content window">bug 50703</a>. Do not use this method! It will go away after first release!</p>
+<pre class="eval">void ignoreSpuriousDragEvent(
+  in boolean aIgnoreSpuriousDragEvent
+);
+</pre>
+<h6 id="Parameters_27">Parameters</h6>
+<dl> <dt><code>aIgnoreSpuriousDragEvent</code></dt> <dd>
+</dd></dl>
+<h3 id="increaseFontSize()">increaseFontSize()</h3>
+<p>Increase font size for text in selection by 1 HTML unit All existing text is scanned for existing &lt;FONT SIZE&gt; attributes so they will be incremented instead of inserting new &lt;FONT&gt; tag.</p>
+<pre class="eval">void increaseFontSize();
+</pre>
+<h6 id="Parameters_28">Parameters</h6>
+<p>None.</p>
+<h3 id="indent()">indent()</h3>
+<p>Document me!</p>
+<pre class="eval">void indent(
+  in AString aIndent
+);
+</pre>
+<h6 id="Parameters_29">Parameters</h6>
+<dl> <dt><code>aIndent</code></dt> <dd>
+</dd></dl>
+<h3 id="insertElementAtSelection()">insertElementAtSelection()</h3>
+<p>Insert an element, which may have child nodes, at the selection Used primarily to insert a new element for various insert element dialogs, but it enforces the HTML 4.0 DTD "CanContain" rules, so it should be useful for other elements.</p>
+<pre class="eval">void insertElementAtSelection(
+  in nsIDOMElement aElement,
+  in boolean aDeleteSelection
+);
+</pre>
+<h6 id="Parameters_30">Parameters</h6>
+<dl> <dt><code>aElement</code></dt> <dd>The element to insert.</dd> <dt><code>aDeleteSelection</code></dt> <dd>Delete the selection before inserting If aDeleteSelection is PR_FALSE, then the element is inserted after the end of the selection for all element except Named Anchors, which insert before the selection.</dd>
+</dl>
+<h3 id="insertFromDrop()">insertFromDrop()</h3>
+<p>Looks for a dragsession and inserts the relevant data in response to a drop.</p>
+<pre class="eval">void insertFromDrop(
+  in nsIDOMEvent aEvent
+);
+</pre>
+<h6 id="Parameters_31">Parameters</h6>
+<dl> <dt><code>aEvent</code></dt> <dd>
+</dd></dl>
+<h3 id="insertHTML()">insertHTML()</h3>
+<p>Insert some HTML source at the current location.</p>
+<pre class="eval">void insertHTML(
+  in AString aInputString
+);
+</pre>
+<h6 id="Parameters_32">Parameters</h6>
+<dl> <dt><code>aInputString</code></dt> <dd>The string to be inserted.</dd>
+</dl>
+<h3 id="insertHTMLWithContext()">insertHTMLWithContext()</h3>
+<p>Insert some HTML source, interpreting the string argument according to the given context.</p>
+<pre class="eval">void insertHTMLWithContext(
+  in AString aInputString,
+  in AString aContextStr,
+  in AString aInfoStr,
+  in AString aFlavor,
+  in nsIDOMDocument aSourceDoc,
+  in nsIDOMNode aDestinationNode,
+  in long aDestinationOffset,
+  in boolean aDeleteSelection
+);
+</pre>
+<h6 id="Parameters_33">Parameters</h6>
+<dl> <dt><code>aInputString</code></dt> <dd>The string to be inserted.</dd> <dt><code>aContextStr</code></dt> <dd>Context of insertion.</dd> <dt><code>aInfoStr</code></dt> <dd>Related info to aInputString.</dd> <dt><code>aFlavor</code></dt> <dd>Transferable flavor, can be ""</dd> <dt><code>aSourceDoc</code></dt> <dd>Document where input was dragged from (may be <code>null</code>)</dd> <dt><code>aDestinationNode</code></dt> <dd>Location for insertion (such as when dropped)</dd> <dt><code>aDestinationOffset</code></dt> <dd>Used with aDestNode to determine insert location.</dd> <dt><code>aDeleteSelection</code></dt> <dd>Used with aDestNode during drag&amp;drop.</dd>
+</dl>
+<h3 id="insertLinkAroundSelection()">insertLinkAroundSelection()</h3>
+<p>Insert an link element as the parent of the current selection.</p>
+<pre class="eval">void insertLinkAroundSelection(
+  in nsIDOMElement aAnchorElement
+);
+</pre>
+<h6 id="Parameters_34">Parameters</h6>
+<dl> <dt><code>aAnchorElement</code></dt> <dd>
+</dd></dl>
+<h3 id="isAnonymousElement()">isAnonymousElement()</h3>
+<pre class="eval">boolean isAnonymousElement(
+  in nsIDOMElement aElement
+);
+</pre>
+<h6 id="Parameters_35">Parameters</h6>
+<dl> <dt><code>aElement</code></dt> <dd>
+</dd></dl>
+<h6 id="Return_value_16">Return value</h6>
+<p> </p>
+<h3 id="makeOrChangeList()">makeOrChangeList()</h3>
+<pre class="eval">void makeOrChangeList(
+  in AString aListType,
+  in boolean entireList,
+  in AString aBulletType
+);
+</pre>
+<h6 id="Parameters_36">Parameters</h6>
+<dl> <dt><code>aListType</code></dt> <dd> </dd><dt><code>entireList</code></dt> <dd> </dd><dt><code>aBulletType</code></dt> <dd>
+</dd></dl>
+<h3 id="nodeIsBlock()">nodeIsBlock()</h3>
+<p>Tests if a node is a BLOCK element according the the HTML 4.0 DTD. This does NOT consider CSS effect on display type.</p>
+<pre class="eval">boolean nodeIsBlock(
+  in nsIDOMNode node
+);
+</pre>
+<h6 id="Parameters_37">Parameters</h6>
+<dl> <dt><code>node</code></dt> <dd>
+</dd></dl>
+<h6 id="Return_value_17">Return value</h6>
+<p> </p>
+<h3 id="pasteNoFormatting()">pasteNoFormatting()</h3>
+<p>Paste the text in the OS clipboard at the cursor position, replacing the selected text (if any), but strip out any HTML styles and formatting.</p>
+<pre class="eval">void pasteNoFormatting(
+  in long aSelectionType
+);
+</pre>
+<h6 id="Parameters_38">Parameters</h6>
+<dl> <dt><code>aSelectionType</code></dt> <dd>
+</dd></dl>
+<h3 id="rebuildDocumentFromSource()">rebuildDocumentFromSource()</h3>
+<p>Rebuild the entire document from source HTML Needed to be able to edit HEAD and other outside-of-BODY content.</p>
+<pre class="eval">void rebuildDocumentFromSource(
+  in AString aSourceString
+);
+</pre>
+<h6 id="Parameters_39">Parameters</h6>
+<dl> <dt><code>aSourceString</code></dt> <dd>HTML source string of the entire new document.</dd>
+</dl>
+<h3 id="removeAllDefaultProperties()">removeAllDefaultProperties()</h3>
+<p>Unregisters all default style properties with the editor.</p>
+<pre class="eval">void removeAllDefaultProperties();
+</pre>
+<h6 id="Parameters_40">Parameters</h6>
+<p>None.</p>
+<h3 id="removeAllInlineProperties()">removeAllInlineProperties()</h3>
+<p>Deletes all the inline properties from all text in the current selection.</p>
+<pre class="eval">void removeAllInlineProperties();
+</pre>
+<h6 id="Parameters_41">Parameters</h6>
+<p>None.</p>
+<h3 id="removeDefaultProperty()">removeDefaultProperty()</h3>
+<p>Unregisters a default style property with the editor.</p>
+<pre class="eval">void removeDefaultProperty(
+  in nsIAtom aProperty,
+  in AString aAttribute,
+  in AString aValue
+);
+</pre>
+<h6 id="Parameters_42">Parameters</h6>
+<dl> <dt><code>aProperty</code></dt> <dd>The property to remove from defaults.</dd> <dt><code>aAttribute</code></dt> <dd>The attribute of the property, if applicable. May be <code>null</code>. Example: <code>aProperty</code>="font", <code>aAttribute</code>="color"</dd> <dt><code>aValue</code></dt> <dd>If <code>aAttribute</code> is not <code>null</code>, the value of the attribute. Example: <code>aProperty</code>="font", <code>aAttribute</code>="color", <code>aValue</code>="0x00FFFF"</dd>
+</dl>
+<h3 id="removeInlineProperty()">removeInlineProperty()</h3>
+<p>Deletes the properties from all text in the current selection. If <code>aProperty</code> is not set on the selection, nothing is done.</p>
+<pre class="eval">void removeInlineProperty(
+  in nsIAtom aProperty,
+  in AString aAttribute
+);
+</pre>
+<h6 id="Parameters_43">Parameters</h6>
+<dl> <dt><code>aProperty</code></dt> <dd>The property to remove from the selection All atoms are for normal HTML tags (for example <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIEditorProperty#font()">nsIEditorProperty.font()</a></code>) except when you want to remove just links and not named anchors. For that, use <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIEditorProperty#href()">nsIEditorProperty.href()</a></code>.</dd> <dt><code>aAttribute</code></dt> <dd>The attribute of the property, if applicable. May be <code>null</code>. Example: <code>aProperty</code>=<code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIEditorProptery#font()">nsIEditorProptery.font()</a></code>, <code>aAttribute</code>="color" <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIEditProperty#allAttributes()">nsIEditProperty.allAttributes()</a></code> is special. It indicates that all content-based text properties are to be removed from the selection.</dd>
+</dl>
+<h3 id="removeInsertionListener()">removeInsertionListener()</h3>
+<p>Remove listener for insertion override.</p>
+<pre class="eval">void removeInsertionListener(
+  in nsIContentFilter inFilter
+);
+</pre>
+<h6 id="Parameters_44">Parameters</h6>
+<dl> <dt><code>inFilter</code></dt> <dd>Function which callers do not want called during insertion.</dd>
+</dl>
+<h3 id="removeList()">removeList()</h3>
+<p>Document me!</p>
+<pre class="eval">void removeList(
+  in AString aListType
+);
+</pre>
+<h6 id="Parameters_45">Parameters</h6>
+<dl> <dt><code>aListType</code></dt> <dd>
+</dd></dl>
+<h3 id="replaceHeadContentsWithHTML()">replaceHeadContentsWithHTML()</h3>
+<p>Replace all children of &lt;HEAD&gt; with string of HTML source.</p>
+<pre class="eval">void replaceHeadContentsWithHTML(
+  in AString aSourceToInsert
+);
+</pre>
+<h6 id="Parameters_46">Parameters</h6>
+<dl> <dt><code>aSourceToInsert</code></dt> <dd>
+</dd></dl>
+<h3 id="selectElement()">selectElement()</h3>
+<p>Set the selection at the suppled element.</p>
+<pre class="eval">void selectElement(
+  in nsIDOMElement aElement
+);
+</pre>
+<h6 id="Parameters_47">Parameters</h6>
+<dl> <dt><code>aElement</code></dt> <dd>An element in the document.</dd>
+</dl>
+<h3 id="setBackgroundColor()">setBackgroundColor()</h3>
+<p>Set the value of the "bgcolor" attribute on the document's &lt;body&gt; element.</p>
+<pre class="eval">void setBackgroundColor(
+  in AString aColor
+);
+</pre>
+<h6 id="Parameters_48">Parameters</h6>
+<dl> <dt><code>aColor</code></dt> <dd>The HTML color string, such as "#ffccff" or "yellow"</dd>
+</dl>
+<h3 id="setBodyAttribute()">setBodyAttribute()</h3>
+<p>Set an attribute on the document's &lt;body&gt; element such as text, link, background colors.</p>
+<pre class="eval">void setBodyAttribute(
+  in AString aAttr,
+  in AString aValue
+);
+</pre>
+<h6 id="Parameters_49">Parameters</h6>
+<dl> <dt><code>aAttr</code></dt> <dd>The attribute to be set.</dd> <dt><code>aValue</code></dt> <dd>The value of the attribute.</dd>
+</dl>
+<h3 id="setCaretAfterElement()">setCaretAfterElement()</h3>
+<p>Create a collapsed selection just after aElement.</p>
+<p>The selection is set to parent-of-aElement with an offset 1 greater than aElement's offset but it enforces the HTML 4.0 DTD "CanContain" rules, so it should be useful for other elements.</p>
+<pre class="eval">void setCaretAfterElement(
+  in nsIDOMElement aElement
+);
+</pre>
+<h6 id="Parameters_50">Parameters</h6>
+<dl> <dt><code>aElement</code></dt> <dd>An element in the document.</dd>
+</dl>
+<h3 id="setCSSInlineProperty()">setCSSInlineProperty()</h3>
+<p><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIHTMLEditor#SetInlineProperty()">SetInlineProperty()</a></code> sets the aggregate properties on the current selection.</p>
+<pre class="eval">void setCSSInlineProperty(
+  in nsIAtom aProperty,
+  in AString aAttribute,
+  in AString aValue
+);
+</pre>
+<h6 id="Parameters_51">Parameters</h6>
+<dl> <dt><code>aProperty</code></dt> <dd>The property to set on the selection.</dd> <dt><code>aAttribute</code></dt> <dd>The attribute of the property, if applicable. May be <code>null</code>. Example: <code>aProperty</code>="font", <code>aAttribute</code>="color"</dd> <dt><code>aValue</code></dt> <dd>If <code>aAttribute</code> is not <code>null</code>, the value of the attribute. May be <code>null</code>. Example: <code>aProperty</code>="font", <code>aAttribute</code>="color", <code>aValue</code>="0x00FFFF"</dd>
+</dl>
+<h3 id="setDocumentTitle()">setDocumentTitle()</h3>
+<p>Set the documents title.</p>
+<pre class="eval">void setDocumentTitle(
+  in AString aTitle
+);
+</pre>
+<h6 id="Parameters_52">Parameters</h6>
+<dl> <dt><code>aTitle</code></dt> <dd>
+</dd></dl>
+<h3 id="setInlineProperty()">setInlineProperty()</h3>
+<pre class="eval">void setInlineProperty(
+  in nsIAtom aProperty,
+  in AString aAttribute,
+  in AString aValue
+);
+</pre>
+<h6 id="Parameters_53">Parameters</h6>
+<dl> <dt><code>aProperty</code></dt> <dd> </dd><dt><code>aAttribute</code></dt> <dd> </dd><dt><code>aValue</code></dt> <dd>
+</dd></dl>
+<h3 id="setParagraphFormat()">setParagraphFormat()</h3>
+<p>Insert a block paragraph tag around selection.</p>
+<pre class="eval">void setParagraphFormat(
+  in AString aParagraphFormat
+);
+</pre>
+<h6 id="Parameters_54">Parameters</h6>
+<dl> <dt><code>aParagraphFormat</code></dt> <dd>"p", "h1" to "h6", "address", "pre", or "blockquote"</dd>
+</dl>
+<h3 id="updateBaseURL()">updateBaseURL()</h3>
+<p>Set the BaseURL for the document to the current URL but only if the page doesn't have a &lt;base&gt; tag This should be done after the document URL has changed, such as after saving a file This is used as base for relativizing link and image urls.</p>
+<pre class="eval">void updateBaseURL();
+</pre>
+<h6 id="Parameters_55">Parameters</h6>
+<p>None.</p>
+                                                </article>
+
+              
+                <!-- attachments list -->
+                
+                <!-- contributors -->
+                <div class="wiki-block contributors">
+                  <h2 class="offscreen">Document Tags and Contributors</h2>
+                                                      <!-- tags if present -->
+                  <div class="tag-attach-list tags contributor-sub">
+                    <i aria-hidden="true" class="icon-tags"></i><strong>Tags:</strong>
+                    <ul class="tag-list"><li><a href="https://developer.mozilla.org/en-US/docs/tag/NeedsContent">NeedsContent</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Interfaces:Scriptable">Interfaces:Scriptable</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Interfaces">Interfaces</a></li></ul>
+                  </div>
+                                    <div class="contributor-sub"> <i aria-hidden="true" class="icon-group"></i><strong>Contributors to this page:</strong> <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>, <a href="https://developer.mozilla.org/en-US/profiles/trevorh">trevorh</a> </div>                                      <div class="contributor-sub">
+                      <i aria-hidden="true" class="icon-clock-o"></i><strong>Last updated by:</strong>
+                      <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>,
+                      <time datetime="2014-04-14T10:42:56-07:00">Apr 14, 2014 10:42:56 AM</time>
+                    </div>
+                                  </div>
+                          </div>
+
+                      </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="$edit" label="Edit page"></menuitem>
+    <menuitem data-action="$history" label="View page history"></menuitem>
+  </menu>
+  </div></main>
+
+  <!-- Footer -->
+  <footer><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+                <p>
+          <bdi>&copy; 2005-2014 Mozilla Developer Network and individual contributors<br /> Content is available under <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About#Copyrights_and_licenses">these licenses</a> &middot; <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About">About MDN</a> &middot; <a href="http://github.com/mozilla/kuma">Contribute to the code</a> &middot; <a href="http://www.mozilla.org/privacy/websites/">Privacy policy</a></bdi>        </p>
+              </div>
+      <div class="column-strip">
+                                  </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+    <script src="https://developer.mozilla.org/en-US/jsi18n/build:9fd3034"></script>
+  
+      <!--[if lte IE 8]><script src="/media/redesign/js/libs/selectivizr-1.0.2/selectivizr-build.js?build=9fd3034"></script><![endif]-->
+
+    <script src="../../../../../../../../developer.cdn.mozilla.net/media/js/main-min46d5.js?build=9fd3034"></script>
+
+          <script>
+        mdn.analytics.trackOutboundLinks(document.body);
+      </script>
+    
+          <script src="../../../../../../../../developer.cdn.mozilla.net/media/js/wiki-min46d5.js?build=9fd3034"></script>
+      
+    <script type="text/javascript">
+      jQuery('.from-search-toc').mozSearchResults('');
+  </script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-3.newrelic.com","queueTime":1,"licenseKey":"42869b6ed3","agent":"js-agent.newrelic.com/nr-411.min.js","transactionName":"b1QHMUtVDRdSW0YKXVYeIxBXVxcNXFYdFFtTWEsTUFEUFwlcXQBHVVQLEQ==","applicationID":"3172075","errorBeacon":"bam.nr-data.net","applicationTime":284}</script></body>
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIHTMLEditor by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Aug 2014 20:18:17 GMT -->
+</html>

@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="redesign no-js">
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIMsgFolder by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Aug 2014 20:20:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+        
+    <title>nsIMsgFolder - Mozilla | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="https://developer.mozilla.org/en-US/">
+  <link rel="copyright" href="#copyright">
+
+  <link href="../../../../../../../../mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" type="text/css" rel="stylesheet">
+              <link rel="stylesheet" media="all" href="../../../../../../../../developer.cdn.mozilla.net/media/css/mdn-min46d5.css?build=9fd3034" />
+
+      
+    <link rel="stylesheet" media="all" href="../../../../../../../../developer.cdn.mozilla.net/media/css/wiki-min46d5.css?build=9fd3034" />
+
+          <link rel="stylesheet" type="text/css"
+            href="https://developer.mozilla.org/en-US/docs/Template:CustomCSS?raw=1" />
+    
+    
+  <!-- common social tags -->
+    <meta property="og:type" content="website">
+  <meta property="og:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta property="og:site_name" content="Mozilla Developer Network">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta name="twitter:site" content="@NewOnMDN">
+  <meta name="twitter:creator" content="@NewOnMDN">
+
+  <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon144.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon114.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon72.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon57.png">
+  <!-- basic favicon -->
+          <link rel="shortcut icon" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon32.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script src="https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
+
+    <link rel="alternate" type="application/json" href="nsIMsgFolder%24json.json">
+  <link rel="canonical" href="nsIMsgFolder.html" >
+
+  
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="nsIMsgFolder">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIMsgFolder">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIMsgFolder">
+  <meta name="twitter:title" content="nsIMsgFolder">
+    <meta property="og:description" content="The nsIMsgFolder interface is used to interact with folders in Thunderbird. This page is out of date. Check http://mxr.mozilla.org/comm-central/...Folder.idl#706 for the newer methods (esp. isSpecialFolder and such).">
+  <meta name="description" content="The nsIMsgFolder interface is used to interact with folders in Thunderbird. This page is out of date. Check http://mxr.mozilla.org/comm-central/...Folder.idl#706 for the newer methods (esp. isSpecialFolder and such).">
+  <meta name="twitter:description" content="The nsIMsgFolder interface is used to interact with folders in Thunderbird. This page is out of date. Check http://mxr.mozilla.org/comm-central/...Folder.idl#706 for the newer methods (esp. isSpecialFolder and such).">
+  
+      <script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+    
+    
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.hash.indexOf('utm') != -1) {
+                var anchor = location.hash.match(/#(?!utm)[^&]+/);
+                anchor = anchor ? anchor[0] : '';
+                if(!anchor && win.history.replaceState){
+                    history.replaceState({}, '', location.pathname + location.search);
+                } else {
+                    location.hash = anchor;
+                }
+            }
+        };
+
+        ga('send', 'pageview', removeUtms(win.location + ''));
+    })();
+</script>
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgAEV1RTGwABU1NSAAQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("https://developer.mozilla.org/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script></head>
+<body data-slug="Mozilla/Tech/XPCOM/Reference/Interface/nsIMsgFolder" contextmenu="edit-history-menu" class="document  ">
+
+  <script type="text/javascript">
+    (function(win) {
+        'use strict';
+
+                    (function(){
+  var FLAGS = {
+    'derby_closed': true,'ga_outbound_links': true,'kumaediting': false,'page_move': false,'promote_script': false,'redirect_messages': false,'top_contributors': false,'wiki_spellcheck': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'render_stale_documents_async': true,'enable_optimizely': false
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+                
+        // This represents the site configuration
+        win.mdn = {
+            build: '9fd3034',
+            // Properties and settings for CKEditor will go here
+            ckeditor: {},
+            // Feature test results and methods will be placed here
+            features: {},
+            // The path to media (images, CSS, JS) in MDN
+            mediaPath: 'https://developer.cdn.mozilla.net/media/',
+            // Optimizely API
+            optimizely: win['optimizely'] || [],
+            // Site notifications
+            notifications: [],
+            
+            // Wiki-specific settings will be placed here
+            wiki: {
+                autosuggestTitleUrl: '/en-US/docs/get-documents'
+            },
+        };
+
+        // Ensures gettext always returns something, is always set
+        win.gettext = function(x) {
+            return x;
+        }
+    })(window);
+</script>
+  
+
+  
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="#language">Select language</a></li>
+          <li><a href="#q" id="skip-search">Skip to search</a></li>
+      </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <div class="clear header-login">
+      <a href="http://www.mozilla.org/" id="tabzilla" class="no-track">mozilla</a>
+                <script src="../../../../../../../../login.persona.org/include.js"></script>
+<script type="text/javascript">
+(function() {
+  var allauth = window.allauth = window.allauth || {};
+
+  function startWatching() {
+    navigator.id.watch({
+      onlogin: function(assertion) {
+        // TODO: next url handling
+        document.getElementById("_persona_assertion").value = assertion;
+        document.getElementById("_persona_login").submit();
+      },
+      onlogout: function() {
+        // TODO
+      }
+    })
+  };
+
+  allauth.persona = {
+    login: function(nextUrl, process) {
+        document.getElementById("_persona_next_url").value = nextUrl || '';
+        document.getElementById("_persona_process").value = process;
+        startWatching();
+        navigator.id.request({"siteName": "Mozilla Developer Network", "siteLogo": "/media/redesign/img/opengraph-logo.png"});
+    }
+  }
+})();
+</script>
+
+<form id="_persona_login" method="post" action="https://developer.mozilla.org/users/persona/login/">
+  <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='OFUZvWX3cvltHNznKujHNL8vtsBRoNMa' /></div>
+  <input type="hidden" name="next" value="" id="_persona_next_url"/>
+  <input type="hidden" name="process" value="" id="_persona_process"/>
+  <input type="hidden" name="assertion" id="_persona_assertion"/>
+</form>
+
+  <form>
+      <div class="oauth-login-container" tabIndex="0">
+          <div class="oauth-login-options">
+              <span>Sign in with</span>
+              <span class="oauth-icon oauth-persona" title="Sign in with Persona"><i class="icon-user" aria-hidden="true"></i></span>
+                      </div>
+          <div class="submenu oauth-login-picker" aria-hidden="true">
+              <ul>
+                  <li><a href="javascript:allauth.persona.login('/en\u002DUS/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIMsgFolder', 'login')" class="persona-button persona-loaded login-link" data-next="/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIMsgFolder" data-service="Persona"><i class="icon-user" aria-hidden="true"></i>Persona</a></li>
+                              </ul>
+          </div>
+      </div>
+  </form>
+          </div>
+
+    <a href="https://developer.mozilla.org/en-US/" class="logo">Mozilla Developer Network</a>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="https://developer.mozilla.org/en-US/docs/Zones">Zones<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-single" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/Add-ons">Add-ons</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Apps">App Center</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox">Firefox</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Marketplace">Firefox Marketplace</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox_OS">Firefox OS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Persona">Persona</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Web">Web Platform<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Apps">Apps</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References & Guides</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Tools">Tools</a></li><li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Connect">Connect</a></li><li class="main-nav-search"><form action="https://developer.mozilla.org/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" data-placeholder="Search" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+   <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+            <div class="article-meta">
+        <!-- action buttons -->
+        
+        
+        
+
+  <ul class="page-buttons" data-sticky="false"><li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-globe"></i></button>
+
+        <div class="submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+                              <li class="smaller">No translations exist for this document.</li>
+              
+                              <li><a href="https://developer.mozilla.org/en-US/users/signin/?next=/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIMsgFolder%24locales">Add a translation</a></li>
+                          </ul>
+          </div>
+        </div></li><li class="page-buttons-edit"><a href="https://developer.mozilla.org/en-US/users/signin/?next=/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIMsgFolder%24edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li><li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+
+        <div class="submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="nsIMsgFolder%24history.html">History</a></li>
+                                                                
+                
+                                
+                                                                <li class="page-print"><a href="#" onclick="return window.print();"  title="Print page">Print this page</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+        <!-- crumbs -->
+          <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US" rel="v:url" property="v:title">MDN</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla" rel="v:url" property="v:title">Mozilla</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech" rel="v:url" property="v:title">Mozilla technologies</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM" rel="v:url" property="v:title">XPCOM</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference" rel="v:url" property="v:title">XPCOM reference</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="../Interface.html" rel="v:url" property="v:title">XPCOM Interface Reference</a></li>
+        <li class="crumb" typeof="v:Breadcrumb" property="v:title">nsIMsgFolder</li>
+  </ol></nav>
+      </div>
+
+      <!-- heading -->
+      <div id="wiki-document-head" class="document-head">
+          <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="Previous Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+          <span class="from-search-navigate-wrap">
+            <a href="#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true" class="icon-double-angle-up"></i></span><span class="from-search-navigate-down"><i aria-hidden="true" class="icon-double-angle-down"></i></span></a>
+          </span>
+          <div class="from-search-toc">
+            <span class="title">Your Search Results</span>
+            <ol></ol>
+          </div>
+          <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+        <h1>nsIMsgFolder</h1>
+        
+      </div>
+      
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-closed wiki-left-none">
+
+          
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+                          <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+                            <!-- table of contents -->
+              <div id="toc" class="toc toggleable">
+                <a href="#toc" class="title toggler" data-open-icon="icon-plus" data-closed-icon="icon-minus">In This Article<i></i></a>
+                <ol class="toggle-container">
+                  <code></code><code></code><code></code><li><a href="#Method_overview" rel="internal">Method overview</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#Attributes" rel="internal">Attributes</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#Constants" rel="internal">Constants</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#Methods" rel="internal">Methods</a><ol><li><a href="#startFolderLoading()" rel="internal">startFolderLoading()</a><li><a href="#endFolderLoading()" rel="internal">endFolderLoading()</a><li><a href="#updateFolder()" rel="internal">updateFolder()</a><li><a href="#getFilterList()" rel="internal">getFilterList()</a><li><a href="#setFilterList()" rel="internal">setFilterList()</a><li><a href="#ForceDBClosed()" rel="internal">ForceDBClosed()</a><li><a href="#Delete()" rel="internal">Delete()</a><li><a href="#deleteSubFolders()" rel="internal">deleteSubFolders()</a><li><a href="#propagateDelete()" rel="internal">propagateDelete()</a><li><a href="#recursiveDelete()" rel="internal">recursiveDelete()</a><li><a href="#createSubfolder()" rel="internal">createSubfolder()</a><li><a href="#addSubfolder()" rel="internal">addSubfolder()</a><li><a href="#createStorageIfMissing()" rel="internal">createStorageIfMissing()</a><li><a href="#compact()" rel="internal">compact()</a><li><a href="#compactAll()" rel="internal">compactAll()</a><li><a href="#compactAllOfflineStores()" rel="internal">compactAllOfflineStores()</a><li><a href="#emptyTrash()" rel="internal">emptyTrash()</a><li><a href="#rename()" rel="internal">rename()</a><li><a href="#renameSubFolders()" rel="internal">renameSubFolders()</a><li><a href="#generateUniqueSubfolderName()" rel="internal">generateUniqueSubfolderName()</a><li><a href="#updateSummaryTotals()" rel="internal">updateSummaryTotals()</a><li><a href="#summaryChanged()" rel="internal">summaryChanged()</a><li><a href="#getNumUnread()" rel="internal">getNumUnread()</a><li><a href="#getTotalMessages()" rel="internal">getTotalMessages()</a><li><a href="#clearNewMessages()" rel="internal">clearNewMessages()</a><li><a href="#clearRequiresCleanup()" rel="internal">clearRequiresCleanup()</a><li><a href="#setFlag()" rel="internal">setFlag()</a><li><a href="#clearFlag()" rel="internal">clearFlag()</a><li><a href="#getFlag()" rel="internal">getFlag()</a><li><a href="#toggleFlag()" rel="internal">toggleFlag()</a><li><a href="#onFlagChange()" rel="internal">onFlagChange()</a><li><a href="#setPrefFlag()" rel="internal">setPrefFlag()</a><li><a href="#getFoldersWithFlag()" rel="internal">getFoldersWithFlag()</a><li><a href="#getAllFoldersWithFlag()" rel="internal">getAllFoldersWithFlag()</a><li><a href="#getExpansionArray()" rel="internal">getExpansionArray()</a><li><a href="#getUriForMsg()" rel="internal">getUriForMsg()</a><li><a href="#deleteMessages()" rel="internal">deleteMessages()</a><li><a href="#copyMessages()" rel="internal">copyMessages()</a><li><a href="#copyFolder()" rel="internal">copyFolder()</a><li><a href="#copyFileMessage()" rel="internal">copyFileMessage()</a><li><a href="#acquireSemaphore()" rel="internal">acquireSemaphore()</a><li><a href="#releaseSemaphore()" rel="internal">releaseSemaphore()</a><li><a href="#testSemaphore()" rel="internal">testSemaphore()</a><li><a href="#getNewMessages()" rel="internal">getNewMessages()</a><li><a href="#writeToFolderCache()" rel="internal">writeToFolderCache()</a><li><a href="#getNumNewMessages()" rel="internal">getNumNewMessages()</a><li><a href="#setNumNewMessages()" rel="internal">setNumNewMessages()</a><li><a href="#generateMessageURI()" rel="internal">generateMessageURI()</a><li><a href="#addMessageDispositionState()" rel="internal">addMessageDispositionState()</a><li><a href="#markMessagesRead()" rel="internal">markMessagesRead()</a><li><a href="#markAllMessagesRead()" rel="internal">markAllMessagesRead()</a><li><a href="#markMessagesFlagged()" rel="internal">markMessagesFlagged()</a><li><a href="#markThreadRead()" rel="internal">markThreadRead()</a><li><a href="#setLabelForMessages()" rel="internal">setLabelForMessages()</a><li><a href="#getMsgDatabase()" rel="internal">getMsgDatabase()</a><li><a href="#setMsgDatabase()" rel="internal">setMsgDatabase()</a><li><a href="#getDBFolderInfoAndDB()" rel="internal">getDBFolderInfoAndDB()</a><li><a href="#GetMessageHeader()" rel="internal">GetMessageHeader()</a><li><a href="#shouldStoreMsgOffline()" rel="internal">shouldStoreMsgOffline()</a><li><a href="#hasMsgOffline()" rel="internal">hasMsgOffline()</a><li><a href="#getOfflineFileStream()" rel="internal">getOfflineFileStream()</a><li><a href="#DownloadMessagesForOffline()" rel="internal">DownloadMessagesForOffline()</a><li><a href="#getChildWithURI()" rel="internal">getChildWithURI()</a><li><a href="#downloadAllForOffline()" rel="internal">downloadAllForOffline()</a><li><a href="#enableNotifications()" rel="internal">enableNotifications()</a><li><a href="#isCommandEnabled()" rel="internal">isCommandEnabled()</a><li><a href="#matchOrChangeFilterDestination()" rel="internal">matchOrChangeFilterDestination()</a><li><a href="#confirmFolderDeletionForFilter()" rel="internal">confirmFolderDeletionForFilter()</a><li><a href="#alertFilterChanged()" rel="internal">alertFilterChanged()</a><li><a href="#throwAlertMsg()" rel="internal">throwAlertMsg()</a><li><a href="#getStringWithFolderNameFromBundle()" rel="internal">getStringWithFolderNameFromBundle()</a><li><a href="#notifyCompactCompleted()" rel="internal">notifyCompactCompleted()</a><li><a href="#compareSortKeys()" rel="internal">compareSortKeys()</a><li><a href="#getSortKey()" rel="internal">getSortKey()</a><li><a href="#callFilterPlugins()" rel="internal">callFilterPlugins()</a><li><a href="#getStringProperty()" rel="internal">getStringProperty()</a><li><a href="#setStringProperty()" rel="internal">setStringProperty()</a><li><a href="#isAncestorOf()" rel="internal">isAncestorOf()</a><li><a href="#containsChildNamed()" rel="internal">containsChildNamed()</a><li><a href="#getChildNamed()" rel="internal">getChildNamed()</a><li><a href="#findSubFolder()" rel="internal">findSubFolder()</a><li><a href="#AddFolderListener()" rel="internal">AddFolderListener()</a><li><a href="#RemoveFolderListener()" rel="internal">RemoveFolderListener()</a><li><a href="#NotifyPropertyChanged()" rel="internal">NotifyPropertyChanged()</a><li><a href="#NotifyIntPropertyChanged()" rel="internal">NotifyIntPropertyChanged()</a><li><a href="#NotifyBoolPropertyChanged()" rel="internal">NotifyBoolPropertyChanged()</a><li><a href="#NotifyPropertyFlagChanged()" rel="internal">NotifyPropertyFlagChanged()</a><li><a href="#NotifyUnicharPropertyChanged()" rel="internal">NotifyUnicharPropertyChanged()</a><li><a href="#NotifyItemAdded()" rel="internal">NotifyItemAdded()</a><li><a href="#NotifyItemRemoved()" rel="internal">NotifyItemRemoved()</a><li><a href="#NotifyFolderEvent()" rel="internal">NotifyFolderEvent()</a><li><a href="#ListDescendents()" rel="internal">ListDescendents()</a><li><a href="#Shutdown()" rel="internal">Shutdown()</a><li><a href="#setInVFEditSearchScope()" rel="internal">setInVFEditSearchScope()</a><li><a href="#copyDataToOutputStreamForAppend()" rel="internal">copyDataToOutputStreamForAppend()</a><li><a href="#copyDataDone()" rel="internal">copyDataDone()</a><li><a href="#setJunkScoreForMessages()" rel="internal">setJunkScoreForMessages()</a><li><a href="#applyRetentionSettings()" rel="internal">applyRetentionSettings()</a><li><a href="#fetchMsgPreviewText()" rel="internal">fetchMsgPreviewText()</a><li><a href="#addKeywordsToMessages()" rel="internal">addKeywordsToMessages()</a><code></code><li><a href="#removeKeywordsFromMessages()" rel="internal">removeKeywordsFromMessages()</a><li><a href="#getMsgTextFromStream()" rel="internal">getMsgTextFromStream()</a></ol></li>
+                </ol>
+              </div>
+                            </div>
+            
+                                                  
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-main wiki-column text-content">
+
+              
+              
+                                                                                          
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                                                      <p>The <code>nsIMsgFolder</code> interface is used to interact with folders in <a href="https://developer.mozilla.org/en/Thunderbird" title="en/Thunderbird">Thunderbird</a>. <strong>This page is out of date.</strong> Check <a class=" external" href="http://mxr.mozilla.org/comm-central/source/mailnews/base/public/nsIMsgFolder.idl#706">http://mxr.mozilla.org/comm-central/...Folder.idl#706</a> for the newer methods (esp. isSpecialFolder and such).</p>
+<p><br>
+<code><span class="script">web.html($0)</span></code> is defined in 
+ <span class="script">wiki.template('tbsource', mediawiki.args([$1]))</span>. 
+ It is <span class="script">wiki.template(mediawiki.path('InterfaceStatus:Scriptable_' + $4, "en"))</span> 
+ and <span class="script">wiki.template(mediawiki.path('InterfaceStatus:' + $2, "en"), mediawiki.args([$3]))</span>.</p>
+<p>Inherits from: <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsISupports" title="">nsISupports</a></code></p>
+<h2 id="Method_overview">Method overview</h2>
+<table class="standard-table"> <tbody> <tr> <td><code>void <a href="#startFolderLoading.28.29">startFolderLoading</a>();</code></td> </tr> <tr> <td><code>void <a href="#endFolderLoading.28.29">endFolderLoading</a>();</code></td> </tr> <tr> <td><code>void <a href="#updateFolder.28.29">updateFolder</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> aWindow);</code></td> </tr> <tr> <td><code><a href="https://developer.mozilla.org/en/NsIMsgFilterList" title="en/NsIMsgFilterList">nsIMsgFilterList</a> <a href="#getFilterList.28.29">getFilterList</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow);</code></td> </tr> <tr> <td><code>void <a href="#setFilterList.28.29">setFilterList</a>(in <a href="https://developer.mozilla.org/en/NsIMsgFilterList" title="en/NsIMsgFilterList">nsIMsgFilterList</a> filterList);</code></td> </tr> <tr> <td><code>void <a href="#ForceDBClosed.28.29">ForceDBClosed</a>();</code></td> </tr> <tr> <td><code>void <a href="#Delete.28.29">Delete</a>();</code></td> </tr> <tr> <td><code>void <a href="#deleteSubFolders.28.29">deleteSubFolders</a>(in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> folders, in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow);</code></td> </tr> <tr> <td><code>void <a href="#propagateDelete.28.29">propagateDelete</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgFolder" title="en/nsIMsgFolder">nsIMsgFolder</a> folder, in boolean deleteStorage,in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow);</code></td> </tr> <tr> <td><code>void <a href="#recursiveDelete.28.29">recursiveDelete</a>(in boolean deleteStorage, in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow);</code></td> </tr> <tr> <td><code>void <a href="#createSubfolder.28.29">createSubfolder</a>(in AString folderName, in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow);</code></td> </tr> <tr> <td><code>nsIMsgFolder <a href="#addSubfolder.28.29">addSubfolder</a>(in AString folderName);</code></td> </tr> <tr> <td><code>void <a href="#createStorageIfMissing.28.29">createStorageIfMissing</a>(in <a href="https://developer.mozilla.org/en/NsIUrlListener" title="en/NsIUrlListener">nsIUrlListener</a> urlListener);</code></td> </tr> <tr> <td><code>void <a href="#compact.28.29">compact</a>(in <a href="https://developer.mozilla.org/en/NsIUrlListener" title="en/NsIUrlListener">nsIUrlListener</a> aListener, in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> aMsgWindow);</code></td> </tr> <tr> <td><code>void <a href="#compactAll.28.29">compactAll</a>(in <a href="https://developer.mozilla.org/en/NsIUrlListener" title="en/NsIUrlListener">nsIUrlListener</a> aListener, in<a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> aMsgWindow,in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> aFolderArray, in boolean aCompactOfflineAlso,in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> aOfflineFolderArray);</code></td> </tr> <tr> <td><code>void <a href="#compactAllOfflineStores.28.29">compactAllOfflineStores</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> aMsgWindow,in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> aOfflineFolderArray);</code></td> </tr> <tr> <td><code>void <a href="#emptyTrash.28.29">emptyTrash</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> aMsgWindow, in <a href="https://developer.mozilla.org/en/NsIUrlListener" title="en/NsIUrlListener">nsIUrlListener</a> aListener);</code></td> </tr> <tr> <td><code>void <a href="#rename.28.29">rename</a>(in AString name, in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow);</code></td> </tr> <tr> <td><code>void <a href="#renameSubFolders.28.29">renameSubFolders</a>( in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow, in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgFolder" title="en/nsIMsgFolder">nsIMsgFolder</a> oldFolder);</code></td> </tr> <tr> <td><code>AString <a href="#generateUniqueSubfolderName.28.29">generateUniqueSubfolderName</a>(in AString prefix,in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgFolder" title="en/nsIMsgFolder">nsIMsgFolder</a> otherFolder);</code></td> </tr> <tr> <td><code>void <a href="#updateSummaryTotals.28.29">updateSummaryTotals</a>(in boolean force);</code></td> </tr> <tr> <td><code>void <a href="#summaryChanged.28.29">summaryChanged</a>();</code></td> </tr> <tr> <td><code>long <a href="#getNumUnread.28.29">getNumUnread</a>(in boolean deep);</code></td> </tr> <tr> <td><code>long <a href="#getTotalMessages.28.29">getTotalMessages</a>(in boolean deep);</code></td> </tr> <tr> <td><code>void <a href="#clearNewMessages.28.29">clearNewMessages</a>();</code></td> </tr> <tr> <td><code>void <a href="#clearRequiresCleanup.28.29">clearRequiresCleanup</a>();</code></td> </tr> <tr> <td><code>void <a href="#setFlag.28.29">setFlag</a>(in unsigned long flag);</code></td> </tr> <tr> <td><code>void <a href="#clearFlag.28.29">clearFlag</a>(in unsigned long flag);</code></td> </tr> <tr> <td><code>boolean <a href="#getFlag.28.29">getFlag</a>(in unsigned long flag);</code></td> </tr> <tr> <td><code>void <a href="#toggleFlag.28.29">toggleFlag</a>(in unsigned long flag);</code></td> </tr> <tr> <td><code>void <a href="#onFlagChange.28.29">onFlagChange</a>(in unsigned long flag);</code></td> </tr> <tr> <td><code>void <a href="#setPrefFlag.28.29">setPrefFlag</a>();</code></td> </tr> <tr> <td><code><a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgFolder" title="en/nsIMsgFolder">nsIMsgFolder</a> <a href="#getFoldersWithFlag.28.29">getFoldersWithFlag</a>(in unsigned long flags, in unsigned long resultsize, out unsigned long numFolders);</code></td> </tr> <tr> <td><code><a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> <a href="#getAllFoldersWithFlag.28.29">getAllFoldersWithFlag</a>(in unsigned long aFlag);</code></td> </tr> <tr> <td><code>void <a href="#getExpansionArray.28.29">getExpansionArray</a>(in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> expansionArray);</code></td> </tr> <tr> <td><code>ACString <a href="#getUriForMsg.28.29">getUriForMsg</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgDBHdr" title="en/nsIMsgDBHdr">nsIMsgDBHdr</a> msgHdr);</code></td> </tr> <tr> <td><code>void <a href="#deleteMessages.28.29">deleteMessages</a>(in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> messages,in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow, in boolean deleteStorage, in boolean isMove, in <a href="https://developer.mozilla.org/en/NsIMsgCopyServiceListener" title="en/NsIMsgCopyServiceListener">nsIMsgCopyServiceListener</a> listener, in boolean allowUndo);</code></td> </tr> <tr> <td><code>void <a href="#copyMessages.28.29">copyMessages</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgFolder" title="en/nsIMsgFolder">nsIMsgFolder</a> srcFolder, in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> messages,in boolean isMove, in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow,in <a href="https://developer.mozilla.org/en/NsIMsgCopyServiceListener" title="en/NsIMsgCopyServiceListener">nsIMsgCopyServiceListener</a> listener, in boolean isFolder, in boolean allowUndo);</code></td> </tr> <tr> <td><code>void <a href="#copyFolder.28.29">copyFolder</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgFolder" title="en/nsIMsgFolder">nsIMsgFolder</a> srcFolder, in boolean isMoveFolder,in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow, in <a href="https://developer.mozilla.org/en/NsIMsgCopyServiceListener" title="en/NsIMsgCopyServiceListener">nsIMsgCopyServiceListener</a> listener );</code></td> </tr> <tr> <td><code>void <a href="#copyFileMessage.28.29">copyFileMessage</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIFile" title="en/nsIFile">nsIFile</a> file, in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgDBHdr" title="en/nsIMsgDBHdr">nsIMsgDBHdr</a> msgToReplace,in boolean isDraft, in unsigned long newMsgFlags,in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow,in <a href="https://developer.mozilla.org/en/NsIMsgCopyServiceListener" title="en/NsIMsgCopyServiceListener">nsIMsgCopyServiceListener</a> listener);</code></td> </tr> <tr> <td><code>void <a href="#acquireSemaphore.28.29">acquireSemaphore</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsISupports" title="en/nsISupports">nsISupports</a> semHolder);</code></td> </tr> <tr> <td><code>void <a href="#releaseSemaphore.28.29">releaseSemaphore</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsISupports" title="en/nsISupports">nsISupports</a> semHolder);</code></td> </tr> <tr> <td><code>boolean <a href="#testSemaphore.28.29">testSemaphore</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsISupports" title="en/nsISupports">nsISupports</a> semHolder);</code></td> </tr> <tr> <td><code>void <a href="#getNewMessages.28.29">getNewMessages</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> aWindow, in <a href="https://developer.mozilla.org/en/NsIUrlListener" title="en/NsIUrlListener">nsIUrlListener</a> aListener);</code></td> </tr> <tr> <td><code>void <a href="#writeToFolderCache.28.29">writeToFolderCache</a>(in <a href="https://developer.mozilla.org/en/NsIMsgFolderCache" title="en/NsIMsgFolderCache">nsIMsgFolderCache</a> folderCache, in boolean deep);</code></td> </tr> <tr> <td><code>long <a href="#getNumNewMessages.28.29">getNumNewMessages</a>(in boolean deep);</code></td> </tr> <tr> <td><code>void <a href="#setNumNewMessages.28.29">setNumNewMessages</a>(in long numNewMessages);</code></td> </tr> <tr> <td><code>ACString <a href="#generateMessageURI.28.29">generateMessageURI</a>(in <a href="https://developer.mozilla.org/en/NsMsgKey" title="en/NsMsgKey">nsMsgKey</a> msgKey);</code></td> </tr> <tr> <td><code>void <a href="#addMessageDispositionState.28.29">addMessageDispositionState</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgDBHdr" title="en/nsIMsgDBHdr">nsIMsgDBHdr</a> aMessage,in <a href="https://developer.mozilla.org/en/NsMsgDispositionState" title="en/NsMsgDispositionState">nsMsgDispositionState</a> aDispositionFlag);</code></td> </tr> <tr> <td><code>void <a href="#markMessagesRead.28.29">markMessagesRead</a>(in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> messages, in boolean markRead);</code></td> </tr> <tr> <td><code>void <a href="#markAllMessagesRead.28.29">markAllMessagesRead</a>();</code></td> </tr> <tr> <td><code>void <a href="#markMessagesFlagged.28.29">markMessagesFlagged</a>(in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> messages, in boolean markFlagged);</code></td> </tr> <tr> <td><code>void <a href="#markThreadRead.28.29">markThreadRead</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgThread" title="en/nsIMsgThread">nsIMsgThread</a> thread);</code></td> </tr> <tr> <td><code>void <a href="#setLabelForMessages.28.29">setLabelForMessages</a>(in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> messages, in <a href="https://developer.mozilla.org/en/NsMsgLabelValue" title="en/NsMsgLabelValue">nsMsgLabelValue</a> label);</code></td> </tr> <tr> <td><code><a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgDatabase" title="en/nsIMsgDatabase">nsIMsgDatabase</a> <a href="#getMsgDatabase.28.29">getMsgDatabase</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow);</code></td> </tr> <tr> <td><code>void <a href="#setMsgDatabase.28.29">setMsgDatabase</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgDatabase" title="en/nsIMsgDatabase">nsIMsgDatabase</a> msgDatabase);</code></td> </tr> <tr> <td><code><a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgDatabase" title="en/nsIMsgDatabase">nsIMsgDatabase</a> <a href="#getDBFolderInfoAndDB.28.29">getDBFolderInfoAndDB</a>(out <a href="https://developer.mozilla.org/en/NsIDBFolderInfo" title="en/NsIDBFolderInfo">nsIDBFolderInfo</a> folderInfo);</code></td> </tr> <tr> <td><code><a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgDBHdr" title="en/nsIMsgDBHdr">nsIMsgDBHdr</a> <a href="#GetMessageHeader.28.29">GetMessageHeader</a>(in <a href="https://developer.mozilla.org/en/NsMsgKey" title="en/NsMsgKey">nsMsgKey</a> msgKey);</code></td> </tr> <tr> <td><code>boolean <a href="#shouldStoreMsgOffline.28.29">shouldStoreMsgOffline</a>(in <a href="https://developer.mozilla.org/en/NsMsgKey" title="en/NsMsgKey">nsMsgKey</a> msgKey);</code></td> </tr> <tr> <td><code>boolean <a href="#hasMsgOffline.28.29">hasMsgOffline</a>(in <a href="https://developer.mozilla.org/en/NsMsgKey" title="en/NsMsgKey">nsMsgKey</a> msgKey);</code></td> </tr> <tr> <td><code><a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIInputStream" title="en/nsIInputStream">nsIInputStream</a> <a href="#getOfflineFileStream.28.29">getOfflineFileStream</a>(in <a href="https://developer.mozilla.org/en/NsMsgKey" title="en/NsMsgKey">nsMsgKey</a> msgKey, out PRUint32 offset, out PRUint32 size);</code></td> </tr> <tr> <td><code>void <a href="#DownloadMessagesForOffline.28.29">DownloadMessagesForOffline</a>(in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> messages, in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> window);</code></td> </tr> <tr> <td><code>nsIMsgFolder <a href="#getChildWithURI.28.29">getChildWithURI</a>(in ACString uri, in boolean deep, in boolean caseInsensitive);</code></td> </tr> <tr> <td><code>void <a href="#downloadAllForOffline.28.29">downloadAllForOffline</a>(in <a href="https://developer.mozilla.org/en/NsIUrlListener" title="en/NsIUrlListener">nsIUrlListener</a> listener, in nsIMsgWindow window);</code></td> </tr> <tr> <td><code>void <a href="#enableNotifications.28.29">enableNotifications</a>(in long notificationType, in boolean enable, in boolean dbBatching);</code></td> </tr> <tr> <td><code>boolean <a href="#isCommandEnabled.28.29">isCommandEnabled</a>(in ACString command);</code></td> </tr> <tr> <td><code>boolean <a href="#matchOrChangeFilterDestination.28.29">matchOrChangeFilterDestination</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgFolder" title="en/nsIMsgFolder">nsIMsgFolder</a> folder,in boolean caseInsensitive);</code></td> </tr> <tr> <td><code>boolean <a href="#confirmFolderDeletionForFilter.28.29">confirmFolderDeletionForFilter</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow);</code></td> </tr> <tr> <td><code>void <a href="#alertFilterChanged.28.29">alertFilterChanged</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow);</code></td> </tr> <tr> <td><code>void <a href="#throwAlertMsg.28.29">throwAlertMsg</a>(in string msgName, in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> msgWindow);</code></td> </tr> <tr> <td><code>AString <a href="#getStringWithFolderNameFromBundle.28.29">getStringWithFolderNameFromBundle</a>(in string msgName);</code></td> </tr> <tr> <td><code>void <a href="#notifyCompactCompleted.28.29">notifyCompactCompleted</a>();</code></td> </tr> <tr> <td><code>long <a href="#compareSortKeys.28.29">compareSortKeys</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgFolder" title="en/nsIMsgFolder">nsIMsgFolder</a> msgFolder);</code></td> </tr> <tr> <td><code>[noscript] void <a href="#getSortKey.28.29">getSortKey</a>(out octet_ptr key, out unsigned long length);</code></td> </tr> <tr> <td><code>boolean <a href="#callFilterPlugins.28.29">callFilterPlugins</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgWindow" title="en/nsIMsgWindow">nsIMsgWindow</a> aMsgWindow);</code></td> </tr> <tr> <td><code>ACString <a href="#getStringProperty.28.29">getStringProperty</a>(in string propertyName);</code></td> </tr> <tr> <td><code>void <a href="#setStringProperty.28.29">setStringProperty</a>(in string propertyName, in ACString propertyValue);</code></td> </tr> <tr> <td><code>boolean <a href="#isAncestorOf.28.29">isAncestorOf</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgFolder" title="en/nsIMsgFolder">nsIMsgFolder</a> folder);</code></td> </tr> <tr> <td><code>boolean <a href="#containsChildNamed.28.29">containsChildNamed</a>(in AString name);</code></td> </tr> <tr> <td><code><a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgFolder" title="en/nsIMsgFolder">nsIMsgFolder</a> <a href="#getChildNamed.28.29">getChildNamed</a>(in AString aName);</code></td> </tr> <tr> <td><code><a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgFolder" title="en/nsIMsgFolder">nsIMsgFolder</a> <a href="#findSubFolder.28.29">findSubFolder</a>(in ACString escapedSubFolderName);</code></td> </tr> <tr> <td><code>void <a href="#AddFolderListener.28.29">AddFolderListener</a>(in <a href="https://developer.mozilla.org/en/NsIFolderListener" title="en/NsIFolderListener">nsIFolderListener</a> listener);</code></td> </tr> <tr> <td><code>void <a href="#RemoveFolderListener.28.29">RemoveFolderListener</a>(in <a href="https://developer.mozilla.org/en/NsIFolderListener" title="en/NsIFolderListener">nsIFolderListener</a> listener);</code></td> </tr> <tr> <td><code>void <a href="#NotifyPropertyChanged.28.29">NotifyPropertyChanged</a>(in <a href="https://developer.mozilla.org/en/NsIAtom" title="en/NsIAtom">nsIAtom</a> property, in ACString oldValue, in ACString newValue);</code></td> </tr> <tr> <td><code>void <a href="#NotifyIntPropertyChanged.28.29">NotifyIntPropertyChanged</a>(in <a href="https://developer.mozilla.org/en/NsIAtom" title="en/NsIAtom">nsIAtom</a> property, in long oldValue, in long newValue);</code></td> </tr> <tr> <td><code>void <a href="#NotifyBoolPropertyChanged.28.29">NotifyBoolPropertyChanged</a>(in <a href="https://developer.mozilla.org/en/NsIAtom" title="en/NsIAtom">nsIAtom</a> property, in boolean oldValue, in boolean newValue);</code></td> </tr> <tr> <td><code>void <a href="#NotifyPropertyFlagChanged.28.29">NotifyPropertyFlagChanged</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgDBHdr" title="en/nsIMsgDBHdr">nsIMsgDBHdr</a> item, in <a href="https://developer.mozilla.org/en/NsIAtom" title="en/NsIAtom">nsIAtom</a> property, in unsigned long oldValue, in unsigned long newValue);</code></td> </tr> <tr> <td><code>void <a href="#NotifyUnicharPropertyChanged.28.29">NotifyUnicharPropertyChanged</a>(in <a href="https://developer.mozilla.org/en/NsIAtom" title="en/NsIAtom">nsIAtom</a> property, in AString oldValue, in AString newValue);</code></td> </tr> <tr> <td><code>void <a href="#NotifyItemAdded.28.29">NotifyItemAdded</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsISupports" title="en/nsISupports">nsISupports</a> item);</code></td> </tr> <tr> <td><code>void <a href="#NotifyItemRemoved.28.29">NotifyItemRemoved</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsISupports" title="en/nsISupports">nsISupports</a> item);</code></td> </tr> <tr> <td><code>void <a href="#NotifyFolderEvent.28.29">NotifyFolderEvent</a>(in <a href="https://developer.mozilla.org/en/NsIAtom" title="en/NsIAtom">nsIAtom</a> event);</code></td> </tr> <tr> <td><code>void <a href="#ListDescendents.28.29">ListDescendents</a>(in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> descendents);</code></td> </tr> <tr> <td><code>void <a href="#Shutdown.28.29">Shutdown</a>(in boolean shutdownChildren);</code></td> </tr> <tr> <td><code>void <a href="#setInVFEditSearchScope.28.29">setInVFEditSearchScope</a>(in boolean aSearchThisFolder, in boolean aSetOnSubFolders);</code></td> </tr> <tr> <td><code>void <a href="#copyDataToOutputStreamForAppend.28.29">copyDataToOutputStreamForAppend</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIInputStream" title="en/nsIInputStream">nsIInputStream</a> aIStream, in long aLength, in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIOutputStream" title="en/nsIOutputStream">nsIOutputStream</a> outputStream);</code></td> </tr> <tr> <td><code>void <a href="#copyDataDone.28.29">copyDataDone</a>();</code></td> </tr> <tr> <td><code>void <a href="#setJunkScoreForMessages.28.29">setJunkScoreForMessages</a>(in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> aMessages, in ACString aJunkScore);</code></td> </tr> <tr> <td><code>void <a href="#applyRetentionSettings.28.29">applyRetentionSettings</a>();</code></td> </tr> <tr> <td><code>boolean <a href="#fetchMsgPreviewText.28.29">fetchMsgPreviewText</a>([array, size_is (aNumKeys)] in <a href="https://developer.mozilla.org/en/NsMsgKey" title="en/NsMsgKey">nsMsgKey</a> aKeysToFetch, in unsigned long aNumKeys, in boolean aLocalOnly, in <a href="https://developer.mozilla.org/en/NsIUrlListener" title="en/NsIUrlListener">nsIUrlListener</a> aUrlListener);</code></td> </tr> <tr> <td><code>void <a href="#addKeywordsToMessages.28.29">addKeywordsToMessages</a>(in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> aMessages, in ACString aKeywords);</code></td> </tr> <tr> <td><code>void <a href="#removeKeywordsFromMessages.28.29">removeKeywordsFromMessages</a>(in <a href="https://developer.mozilla.org/en/NsISupportsArray" title="en/NsISupportsArray">nsISupportsArray</a> aMessages, in ACString aKeywords);</code></td> </tr> <tr> <td><code>AUTF8String <a href="#getMsgTextFromStream.28.29">getMsgTextFromStream</a>(in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgDBHdr" title="en/nsIMsgDBHdr">nsIMsgDBHdr</a> aMsgHdr, in <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIInputStream" title="en/nsIInputStream">nsIInputStream</a> aStream, in long aBytesToRead, in long aMaxOutputLen, in boolean aCompressQuotes);</code></td> </tr> </tbody>
+</table>
+<h2 id="Attributes">Attributes</h2>
+<table class="standard-table"> <tbody> <tr> <td class="header">Attribute</td> <td class="header">Type</td> <td class="header">Description</td> </tr> <tr> <td><code>supportsOffline</code></td> <td><code>boolean</code></td> <td>readonly</td> </tr> <tr> <td><code>offlineStoreOutputStream</code></td> <td><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIOutputStream" title="">nsIOutputStream</a></code></td> <td>readonly</td> </tr> <tr> <td><code>offlineStoreInputStream</code></td> <td><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIInputStream" title="">nsIInputStream</a></code></td> <td>readonly</td> </tr> <tr> <td><code>retentionSettings</code></td> <td><code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIMsgRetentionSettings" title="">nsIMsgRetentionSettings</a></code></td> <td> </td> </tr> <tr> <td><code>downloadSettings</code></td> <td><code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIMsgDownloadSettings" title="">nsIMsgDownloadSettings</a></code></td> <td> </td> </tr> <tr> <td><code>sortOrder</code></td> <td><code>long</code></td> <td>Used for order in the folder pane, folder pickers, etc.</td> </tr> <tr> <td><code>lastMessageLoaded</code></td> <td><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsMsgKey" title="">nsMsgKey</a></code></td> <td> <p><span>Unique ID to the folder, it is not a globally unique </span><span>identifier.  Will return <code>nsMsgKey_None</code> if there was no last message loaded.</span></p> <p></p><div class="note"><strong>Note:</strong> Does not persist across sessions.</div> <p></p> </td> </tr> <tr> <td><code>URI</code></td> <td><code>ACString</code></td> <td><strong>Readonly:</strong> Old nsIFolder properties and methods.</td> </tr> <tr> <td><code>name</code></td> <td><code>AString</code></td> <td>Old nsIFolder properties and methods.</td> </tr> <tr> <td><code>prettyName</code></td> <td><code>AString</code></td> <td>Old nsIFolder properties and methods.</td> </tr> <tr> <td><code>abbreviatedName</code></td> <td><code>AString</code></td> <td><strong>Readonly:</strong> Old nsIFolder properties and methods.</td> </tr> <tr> <td><code>parent</code></td> <td>nsIMsgFolder</td> <td>Old nsIFolder properties and methods.</td> </tr> <tr> <td><code>parentMsgFolder</code></td> <td>nsIMsgFolder</td> <td><strong>Readonly:</strong> Handy accessor when we want a msg folder.</td> </tr> <tr> <td><code>dBTransferInfo</code></td> <td><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDBFolderInfo" title="">nsIDBFolderInfo</a></code></td> <td> </td> </tr> <tr> <td><code>subFolders</code></td> <td><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsISimpleEnumerator" title="">nsISimpleEnumerator</a></code></td> <td><strong>Readonly:</strong> Returns an enumerator containing a list of nsIMsgFolder items that are subfolders of the instance this is called on.</td> </tr> <tr> <td><code>hasSubFolders</code></td> <td><code>boolean</code></td> <td><strong>Readonly:</strong> Returns true if this folder has sub folders.</td> </tr> <tr> <td>messages</td> <td><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsISimpleEnumerator" title="">nsISimpleEnumerator</a></code></td> <td><strong>Readonly:</strong> Returns a list of Components.interfaces.nsIMsgDBHdr.</td> </tr> <tr> <td><code>numSubFolders</code></td> <td><code>unsigned long</code></td> <td><strong>Readonly:</strong> Returns the number of sub folders that this folder has.</td> </tr> <tr> <td><code>inVFEditSearchScope</code></td> <td><code>boolean </code></td> <td>readonly</td> </tr> <tr> <td><code>customIdentity</code></td> <td><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIMsgIdentity" title="">nsIMsgIdentity</a></code></td> <td><strong>Readonly:</strong> This allows a folder to have a special identity. E.g., you might want to associate an identity with a particular newsgroup, or for <a href="https://developer.mozilla.org/en/IMAP" title="en/IMAP">IMAP</a> shared folders in the other users namespace, you might want to create a delegated identity.</td> </tr> <tr> <td><code>gettingNewMessages</code></td> <td><code>boolean</code></td> <td>Are we running a url as a result of the user clicking get msg.</td> </tr> <tr> <td><code>filePath</code></td> <td><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsILocalFile" title="">nsILocalFile</a></code></td> <td>Local path of this folder.</td> </tr> <tr> <td><code>baseMessageURI</code></td> <td><code>ACString</code></td> <td>readonly</td> </tr> <tr> <td><code>charset</code></td> <td><code>ACString</code></td> <td>The charset of this folder.</td> </tr> <tr> <td><code>charsetOverride</code></td> <td><code>boolean</code></td> <td> </td> </tr> <tr> <td><code>biffState</code></td> <td><code>unsigned long</code></td> <td> </td> </tr> <tr> <td><code>locked</code></td> <td><code>boolean</code></td> <td>readonly</td> </tr> <tr> <td><code>flags</code></td> <td><code>unsigned long</code></td> <td>Direct access to the set/get all the flags at once.</td> </tr> <tr> <td><code>knowsSearchNntpExtension</code></td> <td><code>boolean</code></td> <td>readonly</td> </tr> <tr> <td><code>allowsPosting</code></td> <td><code>boolean</code></td> <td>readonly</td> </tr> <tr> <td><code>relativePathName</code></td> <td><code>ACString</code></td> <td>readonly</td> </tr> <tr> <td><code>sizeOnDisk</code></td> <td><code>unsigned long</code></td> <td>Size of this folder on disk (not including .msf file) for <a href="https://developer.mozilla.org/en/IMAP" title="en/IMAP">IMAP</a>, it's the sum of the size of the messages.</td> </tr> <tr> <td><code>username</code></td> <td><code>ACString</code></td> <td>readonly</td> </tr> <tr> <td><code>hostname</code></td> <td><code>ACString</code></td> <td>readonly</td> </tr> <tr> <td><code>expungedBytes</code></td> <td><code>unsigned long</code></td> <td>readonly</td> </tr> <tr> <td><code>deletable</code></td> <td><code>boolean</code></td> <td><strong>Readonly:</strong> Can this folder be deleted. For example, special folders cannot be deleted.</td> </tr> <tr> <td><code>displayRecipients</code></td> <td><code>boolean</code></td> <td><strong>Readonly:</strong> Should we be displaying recipients instead of the sender. For example, in the Sent folder, recipients are more relevant than the sender.</td> </tr> <tr> <td><code>manyHeadersToDownload</code></td> <td><code>boolean</code></td> <td><strong>Readonly:</strong> Used to determine if it will take a long time to download all the headers in this folder - so that we can do folder notifications synchronously instead of asynchronously.</td> </tr> <tr> <td><code>requiresCleanup</code></td> <td><code>boolean</code></td> <td>readonly</td> </tr> <tr> <td><code>hasNewMessages</code></td> <td><code>boolean</code></td> <td>Does this folder have new messages.</td> </tr> <tr> <td><code>firstNewMessage</code></td> <td><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIMsgDBHdr" title="">nsIMsgDBHdr</a></code></td> <td><strong>Readonly:</strong> The first new message in the folder.</td> </tr> <tr> <td><code>prettiestName</code></td> <td><code>AString </code></td> <td>readonly</td> </tr> <tr> <td><code>folderURL</code></td> <td><code>ACString</code></td> <td><strong>Readonly:</strong> URL for this folder.</td> </tr> <tr> <td><code>showDeletedMessages</code></td> <td><code>boolean</code></td> <td>readonly</td> </tr> <tr> <td><code>server</code></td> <td><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIMsgIncomingServer" title="">nsIMsgIncomingServer</a></code></td> <td><strong>Readonly:</strong> This folder's parent server.</td> </tr> <tr> <td><code>isServer</code></td> <td><code>boolean</code></td> <td><strong>Readonly:</strong> Is this folder the "phantom" server folder?</td> </tr> <tr> <td><code>canSubscribe</code></td> <td><code>boolean</code></td> <td>readonly</td> </tr> <tr> <td><code>canFileMessages</code></td> <td><code>boolean</code></td> <td>readonly</td> </tr> <tr> <td><code>noSelect</code></td> <td><code>boolean</code></td> <td>readonly: this is an imap no select folder</td> </tr> <tr> <td><code>imapShared</code></td> <td><code>boolean</code></td> <td>readonly: this is an imap shared folder</td> </tr> <tr> <td><code>canDeleteMessages</code></td> <td><code>boolean</code></td> <td>readonly: can't delete from imap read-only</td> </tr> <tr> <td><code>canCreateSubfolders</code></td> <td><code>boolean</code></td> <td><strong>Readonly:</strong> Does this folder allow subfolders. For example, newsgroups cannot have subfolders, and the <code>INBOX</code> on some <a href="https://developer.mozilla.org/en/IMAP" title="en/IMAP">IMAP</a> servers cannot have subfolders.</td> </tr> <tr> <td><code>canRename</code></td> <td><code>boolean</code></td> <td><strong>Readonly:</strong> Can you change the name of this folder. For example, newsgroups and some special folders can't be renamed.</td> </tr> <tr> <td><code>canCompact</code></td> <td><code>boolean</code></td> <td>readonly:</td> </tr> <tr> <td><code>rootFolder</code></td> <td><code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIMsgFolder" title="">nsIMsgFolder</a></code></td> <td><strong>Readonly:</strong> The phantom server folder.</td> </tr> </tbody>
+</table>
+<h2 id="Constants">Constants</h2>
+<table class="standard-table"> <tbody> <tr> <td class="header">Constant</td> <td class="header">Value</td> <td class="header">Description</td> </tr> <tr> <td><code>nsMsgBiffState_NewMail</code></td> <td>0</td> <td>User has new mail waiting.</td> </tr> <tr> <td><code>nsMsgBiffState_NoMail</code></td> <td>1</td> <td>No new mail is waiting.</td> </tr> <tr> <td><code>nsMsgBiffState_Unknown</code></td> <td>2</td> <td>We dunno whether there is new mail.</td> </tr> <tr> <td><code>nsMsgDispositionState_None</code></td> <td>-1</td> <td> </td> </tr> <tr> <td><code>nsMsgDispositionState_Replied</code></td> <td>0</td> <td> </td> </tr> <tr> <td><code>nsMsgDispositionState_Forwarded</code></td> <td>1</td> <td> </td> </tr> <tr> <td><code>allMessageCountNotifications</code></td> <td>0</td> <td>Turn notifications on/off for various notification types. Currently only supporting <code>allMessageCountNotifications</code> which refers to both total and unread message counts.</td> </tr> </tbody>
+</table>
+<h2 id="Methods">Methods</h2>
+<h3 id="startFolderLoading()">startFolderLoading()</h3>
+<pre class="eval"> void startFolderLoading();
+</pre>
+<h3 id="endFolderLoading()">endFolderLoading()</h3>
+<pre class="eval"> void endFolderLoading();
+</pre>
+<h3 id="updateFolder()">updateFolder()</h3>
+<p>Get new headers for the database.</p>
+<pre class="eval"> void updateFolder(nsIMsgWindow aWindow);
+</pre>
+<h3 id="getFilterList()">getFilterList()</h3>
+<p>Get the filter list on folder's server (or in the case of news, the filter list for this newsgroup).</p>
+<pre class="eval"> nsIMsgFilterList getFilterList(nsIMsgWindow msgWindow);
+</pre>
+<h3 id="setFilterList()">setFilterList()</h3>
+<pre class="eval"> void setFilterList(in nsIMsgFilterList filterList);
+</pre>
+<h3 id="ForceDBClosed()">ForceDBClosed()</h3>
+<pre class="eval"> void ForceDBClosed();
+</pre>
+<h3 id="Delete()">Delete()</h3>
+<pre class="eval"> void Delete();
+</pre>
+<h3 id="deleteSubFolders()">deleteSubFolders()</h3>
+<pre class="eval"> void deleteSubFolders(in nsISupportsArray folders,
+                       in nsIMsgWindow msgWindow);
+</pre>
+<h3 id="propagateDelete()">propagateDelete()</h3>
+<pre class="eval"> void propagateDelete(in nsIMsgFolder folder,
+                      in boolean deleteStorage,
+                      in nsIMsgWindow msgWindow);
+</pre>
+<h3 id="recursiveDelete()">recursiveDelete()</h3>
+<pre class="eval"> void recursiveDelete(in boolean deleteStorage,
+                      in nsIMsgWindow msgWindow);
+</pre>
+<h3 id="createSubfolder()">createSubfolder()</h3>
+<pre class="eval"> void createSubfolder(in AString folderName,
+                      in nsIMsgWindow msgWindow);
+</pre>
+<h3 id="addSubfolder()">addSubfolder()</h3>
+<pre class="eval"> nsIMsgFolder addSubfolder(in AString folderName);
+</pre>
+<h3 id="createStorageIfMissing()">createStorageIfMissing()</h3>
+<p>This method ensures the storage for the folder exists. For local folders, it creates the <a href="https://developer.mozilla.org/en/Berkeley_mailbox" title="en/Berkeley_mailbox">Berkeley mailbox</a> if missing. For <a href="https://developer.mozilla.org/en/IMAP" title="en/IMAP">IMAP</a> folders, it subscribes to the folder if it exists, or creates it if it doesn't exist.</p>
+<pre class="eval"> void createStorageIfMissing(in nsIUrlListener urlListener);
+</pre>
+<h3 id="compact()">compact()</h3>
+<pre class="eval"> void compact(in nsIUrlListener aListener,
+              in nsIMsgWindow aMsgWindow);
+</pre>
+<h3 id="compactAll()">compactAll()</h3>
+<pre class="eval"> void compactAll(in nsIUrlListener aListener,
+                 in nsIMsgWindow aMsgWindow,
+                 in nsISupportsArray aFolderArray,
+                 in boolean aCompactOfflineAlso,
+                 in nsISupportsArray aOfflineFolderArray);
+</pre>
+<h3 id="compactAllOfflineStores()">compactAllOfflineStores()</h3>
+<pre class="eval"> void compactAllOfflineStores(in nsIMsgWindow aMsgWindow,
+                              in nsISupportsArray aOfflineFolderArray);
+</pre>
+<h3 id="emptyTrash()">emptyTrash()</h3>
+<pre class="eval"> void emptyTrash(in nsIMsgWindow aMsgWindow, 
+                 in nsIUrlListener aListener);
+</pre>
+<h3 id="rename()">rename()</h3>
+<p>Change the name of the folder</p>
+<pre class="eval"> void rename(in AString name,
+             in nsIMsgWindow msgWindow);
+</pre>
+<h3 id="renameSubFolders()">renameSubFolders()</h3>
+<pre class="eval"> void renameSubFolders(in nsIMsgWindow msgWindow,
+                       in nsIMsgFolder oldFolder);
+</pre>
+<h3 id="generateUniqueSubfolderName()">generateUniqueSubfolderName()</h3>
+<pre class="eval"> AString generateUniqueSubfolderName(in AString prefix,
+                                     in nsIMsgFolder otherFolder);
+</pre>
+<h3 id="updateSummaryTotals()">updateSummaryTotals()</h3>
+<pre class="eval"> void updateSummaryTotals(in boolean force);
+</pre>
+<h3 id="summaryChanged()">summaryChanged()</h3>
+<pre class="eval"> void summaryChanged();
+</pre>
+<h3 id="getNumUnread()">getNumUnread()</h3>
+<p>Get the total number of unread messages in this folder, or in all subfolders.</p>
+<pre class="eval"> long getNumUnread(in boolean deep);
+</pre>
+<h3 id="getTotalMessages()">getTotalMessages()</h3>
+<p>Get the total number of messages in this folder, or in all subfolders.</p>
+<pre class="eval"> long getTotalMessages(in boolean deep);
+</pre>
+<h3 id="clearNewMessages()">clearNewMessages()</h3>
+<p>Clear new status flag of all of the new messages.</p>
+<pre class="eval"> void clearNewMessages();
+</pre>
+<h3 id="clearRequiresCleanup()">clearRequiresCleanup()</h3>
+<pre class="eval"> void clearRequiresCleanup();
+</pre>
+<h3 id="setFlag()">setFlag()</h3>
+<p>Sets a flag on the folder. The known flags are defined in <a class="external" href="http://mxr.mozilla.org/mozilla/source/mailnews/base/public/nsMsgFolderFlags.h">nsMsgFolderFlags.h</a>.</p>
+<pre class="eval"> void setFlag(in unsigned long flag);
+</pre>
+<h3 id="clearFlag()">clearFlag()</h3>
+<p>Clears a flag on the folder. The known flags are defined in <a class="external" href="http://mxr.mozilla.org/mozilla/source/mailnews/base/public/nsMsgFolderFlags.h">nsMsgFolderFlags.h</a>.</p>
+<pre class="eval"> void clearFlag(in unsigned long flag);
+</pre>
+<h3 id="getFlag()">getFlag()</h3>
+<p>Determines if a flag is set on the folder or not. The known flags are defined in <a class="external" href="http://mxr.mozilla.org/mozilla/source/mailnews/base/public/nsMsgFolderFlags.h">nsMsgFolderFlags.h</a>.</p>
+<pre class="eval"> boolean getFlag(in unsigned long flag);
+</pre>
+<h3 id="toggleFlag()">toggleFlag()</h3>
+<p>Toggles a flag on the folder. The known flags are defined in <a class="external" href="http://mxr.mozilla.org/mozilla/source/mailnews/base/public/nsMsgFolderFlags.h">nsMsgFolderFlags.h</a>.</p>
+<pre class="eval"> void toggleFlag(in unsigned long flag);
+</pre>
+<h3 id="onFlagChange()">onFlagChange()</h3>
+<p>Called to notify the database and/or listeners of a change of flag.</p>
+<pre class="eval"> void onFlagChange(in unsigned long flag);
+</pre>
+<h3 id="setPrefFlag()">setPrefFlag()</h3>
+<p>Gets the number of folders and folders that have the specified flag set. </p><div class="note"><strong>Note:</strong> DO NOT call from js with resultsize &gt; 1. See Bug 436051. This <b>WILL</b> change.</div><p></p>
+<pre class="eval"> void setPrefFlag();
+</pre>
+<h3 id="getFoldersWithFlag()">getFoldersWithFlag()</h3>
+<pre class="eval"> nsIMsgFolder getFoldersWithFlag(in unsigned long flags,
+                                 in unsigned long resultsize,
+                                 out unsigned long numFolders);
+</pre>
+<h3 id="getAllFoldersWithFlag()">getAllFoldersWithFlag()</h3>
+<pre class="eval"> nsISupportsArray getAllFoldersWithFlag(in unsigned long aFlag);
+</pre>
+<h3 id="getExpansionArray()">getExpansionArray()</h3>
+<pre class="eval"> void getExpansionArray(in nsISupportsArray expansionArray);
+</pre>
+<h3 id="getUriForMsg()">getUriForMsg()</h3>
+<pre class="eval"> ACString getUriForMsg()(in nsIMsgDBHdr msgHdr);
+</pre>
+<h3 id="deleteMessages()">deleteMessages()</h3>
+<pre class="eval"> void deleteMessages(in nsISupportsArray messages,
+                     in nsIMsgWindow msgWindow,
+                     in boolean deleteStorage,
+                     in boolean isMove,
+                     in nsIMsgCopyServiceListener listener,
+                     in boolean allowUndo);
+</pre>
+<h3 id="copyMessages()">copyMessages()</h3>
+<pre class="eval"> void copyMessages(in nsIMsgFolder srcFolder,
+                   in nsISupportsArray messages,
+                   in boolean isMove,
+                   in nsIMsgWindow msgWindow,
+                   in nsIMsgCopyServiceListener listener,
+                   in boolean isFolder,
+                   in boolean allowUndo);
+</pre>
+<h3 id="copyFolder()">copyFolder()</h3>
+<pre class="eval"> void copyFolder(in nsIMsgFolder srcFolder,
+                 in boolean isMoveFolder,
+                 in nsIMsgWindow msgWindow,
+                 in nsIMsgCopyServiceListener listener);
+</pre>
+<h3 id="copyFileMessage()">copyFileMessage()</h3>
+<pre class="eval"> void copyFileMessage(in nsIFile file,
+                      in nsIMsgDBHdr msgToReplace,
+                      in boolean isDraft,
+                      in unsigned long newMsgFlags,
+                      in nsIMsgWindow msgWindow,
+                      in nsIMsgCopyServiceListener listener);
+</pre>
+<h3 id="acquireSemaphore()">acquireSemaphore()</h3>
+<pre class="eval"> void acquireSemaphore(in nsISupports semHolder);
+</pre>
+<h3 id="releaseSemaphore()">releaseSemaphore()</h3>
+<pre class="eval"> void releaseSemaphore(in nsISupports semHolder);
+</pre>
+<h3 id="testSemaphore()">testSemaphore()</h3>
+<pre class="eval"> boolean testSemaphore(in nsISupports semHolder);
+</pre>
+<h3 id="getNewMessages()">getNewMessages()</h3>
+<pre class="eval"> void getNewMessages(in nsIMsgWindow aWindow,
+                     in nsIUrlListener aListener);
+</pre>
+<h3 id="writeToFolderCache()">writeToFolderCache()</h3>
+<p>Write out summary data for this folder to the given folder cache (i.e. panacea.dat)</p>
+<pre class="eval"> void writeToFolderCache(in nsIMsgFolderCache folderCache,
+                         in boolean deep);
+</pre>
+<h3 id="getNumNewMessages()">getNumNewMessages()</h3>
+<p>The number of new messages since this folder was last visited</p>
+<pre class="eval"> long getNumNewMessages(in boolean deep);
+</pre>
+<h3 id="setNumNewMessages()">setNumNewMessages()</h3>
+<pre class="eval"> void setNumNewMessages(in long numNewMessages);
+</pre>
+<h3 id="generateMessageURI()">generateMessageURI()</h3>
+<pre class="eval"> ACString generateMessageURI(in nsMsgKey msgKey);
+</pre>
+<h3 id="addMessageDispositionState()">addMessageDispositionState()</h3>
+<pre class="eval"> void addMessageDispositionState(in nsIMsgDBHdr aMessage,
+                                 in nsMsgDispositionState aDispositionFlag);
+</pre>
+<h3 id="markMessagesRead()">markMessagesRead()</h3>
+<pre class="eval"> void markMessagesRead(in nsISupportsArray messages,
+                       in boolean markRead);
+</pre>
+<h3 id="markAllMessagesRead()">markAllMessagesRead()</h3>
+<pre class="eval"> void markAllMessagesRead();
+</pre>
+<h3 id="markMessagesFlagged()">markMessagesFlagged()</h3>
+<pre class="eval"> void markMessagesFlagged(in nsISupportsArray messages,
+                          in boolean markFlagged);
+</pre>
+<h3 id="markThreadRead()">markThreadRead()</h3>
+<pre class="eval"> void markThreadRead(in nsIMsgThread thread);
+</pre>
+<h3 id="setLabelForMessages()">setLabelForMessages()</h3>
+<pre class="eval"> void setLabelForMessages(in nsISupportsArray messages,
+                          in nsMsgLabelValue label);
+</pre>
+<h3 id="getMsgDatabase()">getMsgDatabase()</h3>
+<pre class="eval"> nsIMsgDatabase getMsgDatabase(in nsIMsgWindow msgWindow);
+</pre>
+<h3 id="setMsgDatabase()">setMsgDatabase()</h3>
+<pre class="eval"> void setMsgDatabase(in nsIMsgDatabase msgDatabase);
+</pre>
+<h3 id="getDBFolderInfoAndDB()">getDBFolderInfoAndDB()</h3>
+<pre class="eval"> nsIMsgDatabase getDBFolderInfoAndDB(out nsIDBFolderInfo folderInfo);
+</pre>
+<h3 id="GetMessageHeader()">GetMessageHeader()</h3>
+<pre class="eval"> nsIMsgDBHdr GetMessageHeader(in nsMsgKey msgKey);
+</pre>
+<h3 id="shouldStoreMsgOffline()">shouldStoreMsgOffline()</h3>
+<pre class="eval"> boolean shouldStoreMsgOffline(in nsMsgKey msgKey);
+</pre>
+<h3 id="hasMsgOffline()">hasMsgOffline()</h3>
+<pre class="eval"> boolean hasMsgOffline(in nsMsgKey msgKey);
+</pre>
+<h3 id="getOfflineFileStream()">getOfflineFileStream()</h3>
+<pre class="eval"> nsIInputStream getOfflineFileStream(in nsMsgKey msgKey, 
+                                     out PRUint32 offset,
+                                     out PRUint32 size);
+</pre>
+<h3 id="DownloadMessagesForOffline()">DownloadMessagesForOffline()</h3>
+<pre class="eval"> void DownloadMessagesForOffline(in nsISupportsArray messages,
+                                 in nsIMsgWindow window);
+</pre>
+<h3 id="getChildWithURI()">getChildWithURI()</h3>
+<pre class="eval"> nsIMsgFolder getChildWithURI(in ACString uri,
+                              in boolean deep,
+                              in boolean caseInsensitive);
+</pre>
+<h3 id="downloadAllForOffline()">downloadAllForOffline()</h3>
+<pre class="eval"> void downloadAllForOffline(in nsIUrlListener listener,
+                            in nsIMsgWindow window);
+</pre>
+<h3 id="enableNotifications()">enableNotifications()</h3>
+<pre class="eval"> void enableNotifications(in long notificationType,
+                          in boolean enable,
+                          in boolean dbBatching);
+</pre>
+<h3 id="isCommandEnabled()">isCommandEnabled()</h3>
+<pre class="eval"> boolean isCommandEnabled(in ACString command);
+</pre>
+<h3 id="matchOrChangeFilterDestination()">matchOrChangeFilterDestination()</h3>
+<pre class="eval"> boolean matchOrChangeFilterDestination(in nsIMsgFolder folder,
+                                        in boolean caseInsensitive);
+</pre>
+<h3 id="confirmFolderDeletionForFilter()">confirmFolderDeletionForFilter()</h3>
+<pre class="eval"> boolean confirmFolderDeletionForFilter(in nsIMsgWindow msgWindow);
+</pre>
+<h3 id="alertFilterChanged()">alertFilterChanged()</h3>
+<pre class="eval"> void alertFilterChanged(in nsIMsgWindow msgWindow);
+</pre>
+<h3 id="throwAlertMsg()">throwAlertMsg()</h3>
+<pre class="eval"> void throwAlertMsg(in string msgName,
+                    in nsIMsgWindow msgWindow);
+</pre>
+<h3 id="getStringWithFolderNameFromBundle()">getStringWithFolderNameFromBundle()</h3>
+<pre class="eval"> AString getStringWithFolderNameFromBundle(in string msgName);
+</pre>
+<h3 id="notifyCompactCompleted()">notifyCompactCompleted()</h3>
+<pre class="eval"> void notifyCompactCompleted();
+</pre>
+<h3 id="compareSortKeys()">compareSortKeys()</h3>
+<pre class="eval"> long compareSortKeys(in nsIMsgFolder msgFolder);
+</pre>
+<h3 id="getSortKey()">getSortKey()</h3>
+<pre class="eval"> [noscript] void getSortKey(out octet_ptr key,
+                            out unsigned long length);
+</pre>
+<h3 id="callFilterPlugins()">callFilterPlugins()</h3>
+<pre class="eval"> boolean callFilterPlugins(in nsIMsgWindow aMsgWindow);
+</pre>
+<h3 id="getStringProperty()">getStringProperty()</h3>
+<pre class="eval"> ACString getStringProperty(in string propertyName);
+</pre>
+<h3 id="setStringProperty()">setStringProperty()</h3>
+<pre class="eval"> void setStringProperty(in string propertyName,
+                        in ACString propertyValue);
+</pre>
+<h3 id="isAncestorOf()">isAncestorOf()</h3>
+<p>Determines if this folder is an ancestor of the supplied folder.</p>
+<pre class="eval"> boolean isAncestorOf(in nsIMsgFolder folder);
+</pre>
+<h3 id="containsChildNamed()">containsChildNamed()</h3>
+<p>Looks in immediate children of this folder for the given name.</p>
+<pre class="eval"> boolean containsChildNamed(in AString name);
+</pre>
+<h3 id="getChildNamed()">getChildNamed()</h3>
+<p>Return the child folder which the specified name.</p>
+<pre class="eval"> nsIMsgFolder getChildNamed(in AString aName);
+</pre>
+<h3 id="findSubFolder()">findSubFolder()</h3>
+<p>Finds the sub folder with the specified name. </p><div class="note"><strong>Note:</strong> Even if the folder doesn't currently exist, a nsIMsgFolder may be returned.</div><p></p>
+<pre class="eval"> nsIMsgFolder findSubFolder(in ACString escapedSubFolderName);
+</pre>
+<h3 id="AddFolderListener()">AddFolderListener()</h3>
+<pre class="eval"> void AddFolderListener(in nsIFolderListener listener);
+</pre>
+<h3 id="RemoveFolderListener()">RemoveFolderListener()</h3>
+<pre class="eval"> void RemoveFolderListener(in nsIFolderListener listener);
+</pre>
+<h3 id="NotifyPropertyChanged()">NotifyPropertyChanged()</h3>
+<pre class="eval"> void NotifyPropertyChanged(in nsIAtom property,
+                            in ACString oldValue,
+                            in ACString newValue);
+</pre>
+<h3 id="NotifyIntPropertyChanged()">NotifyIntPropertyChanged()</h3>
+<pre class="eval"> void NotifyIntPropertyChanged(in nsIAtom property,
+                               in long oldValue,
+                               in long newValue);
+</pre>
+<h3 id="NotifyBoolPropertyChanged()">NotifyBoolPropertyChanged()</h3>
+<pre class="eval"> void NotifyBoolPropertyChanged(in nsIAtom property,
+                                in boolean oldValue,
+                                in boolean newValue);
+</pre>
+<h3 id="NotifyPropertyFlagChanged()">NotifyPropertyFlagChanged()</h3>
+<pre class="eval"> void NotifyPropertyFlagChanged(in nsIMsgDBHdr item,
+                                in nsIAtom property,
+                                in unsigned long oldValue,
+                                in unsigned long newValue);
+</pre>
+<h3 id="NotifyUnicharPropertyChanged()">NotifyUnicharPropertyChanged()</h3>
+<pre class="eval"> void NotifyUnicharPropertyChanged(in nsIAtom property,
+                                   in AString oldValue,
+                                   in AString newValue);
+</pre>
+<h3 id="NotifyItemAdded()">NotifyItemAdded()</h3>
+<pre class="eval"> void NotifyItemAdded(in nsISupports item);
+</pre>
+<h3 id="NotifyItemRemoved()">NotifyItemRemoved()</h3>
+<pre class="eval"> void NotifyItemRemoved(in nsISupports item);
+</pre>
+<h3 id="NotifyFolderEvent()">NotifyFolderEvent()</h3>
+<pre class="eval"> void NotifyFolderEvent(in nsIAtom event);
+</pre>
+<h3 id="ListDescendents()">ListDescendents()</h3>
+<dl> <dd>ists all descendents, not just first level children.</dd>
+</dl>
+<pre class="eval"> void ListDescendents(in nsISupportsArray descendents);
+</pre>
+<h3 id="Shutdown()">Shutdown()</h3>
+<pre class="eval"> void Shutdown(in boolean shutdownChildren);
+</pre>
+<h3 id="setInVFEditSearchScope()">setInVFEditSearchScope()</h3>
+<pre class="eval"> void setInVFEditSearchScope(in boolean aSearchThisFolder,
+                             in boolean aSetOnSubFolders);
+</pre>
+<h3 id="copyDataToOutputStreamForAppend()">copyDataToOutputStreamForAppend()</h3>
+<pre class="eval"> void copyDataToOutputStreamForAppend(in nsIInputStream aIStream,
+                                      in long aLength,
+                                      in nsIOutputStream outputStream);
+</pre>
+<h3 id="copyDataDone()">copyDataDone()</h3>
+<pre class="eval"> void copyDataDone();
+</pre>
+<h3 id="setJunkScoreForMessages()">setJunkScoreForMessages()</h3>
+<pre class="eval"> void setJunkScoreForMessages(in nsISupportsArray aMessages,
+                              in ACString aJunkScore);
+</pre>
+<h3 id="applyRetentionSettings()">applyRetentionSettings()</h3>
+<pre class="eval"> void applyRetentionSettings();
+</pre>
+<h3 id="fetchMsgPreviewText()">fetchMsgPreviewText()</h3>
+<p>Get the beginning of the message bodies for the passed in keys and store them in the msg hdr property "preview". This is intended for new mail alerts, title tips on folders with new messages, and perhaps titletips/message preview in the thread pane.</p>
+<pre class="eval"> boolean fetchMsgPreviewText([array, size_is (aNumKeys)] in nsMsgKey aKeysToFetch,
+                             in unsigned long aNumKeys,
+                             in boolean aLocalOnly,
+                             in nsIUrlListener aUrlListener);
+</pre>
+<h3 id="addKeywordsToMessages()">addKeywordsToMessages()</h3>
+<p>Used to set/clear tags - we could have a single method to <code>setKeywords</code> which would figure out the diffs, but these methods might be more convenient. Keywords are space delimited, in the case of multiple keywords.</p>
+<pre class="eval"> void addKeywordsToMessages(in nsISupportsArray aMessages,
+                            in ACString aKeywords);
+</pre>
+<h3 id="removeKeywordsFromMessages()">removeKeywordsFromMessages()</h3>
+<pre class="eval"> void removeKeywordsFromMessages(in nsISupportsArray aMessages,
+                                 in ACString aKeywords);
+</pre>
+<h3 id="getMsgTextFromStream()">getMsgTextFromStream()</h3>
+<p>Extract the message preview text from aStream, storing it as a string property on aMsgHdr.</p>
+<pre class="eval"> AUTF8String getMsgTextFromStream(in nsIMsgDBHdr aMsgHdr,
+                               in nsIInputStream aStream,
+                               in long aBytesToRead,
+                               in long aMaxOutputLen,
+                               in boolean aCompressQuotes);
+</pre>
+                                                </article>
+
+              
+                <!-- attachments list -->
+                
+                <!-- contributors -->
+                <div class="wiki-block contributors">
+                  <h2 class="offscreen">Document Tags and Contributors</h2>
+                                                      <!-- tags if present -->
+                  <div class="tag-attach-list tags contributor-sub">
+                    <i aria-hidden="true" class="icon-tags"></i><strong>Tags:</strong>
+                    <ul class="tag-list"><li><a href="https://developer.mozilla.org/en-US/docs/tag/thunderbird">thunderbird</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/NeedsContent">NeedsContent</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Interfaces">Interfaces</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/XPCOM API Reference">XPCOM API Reference</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/XPCOM Interface Reference">XPCOM Interface Reference</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Interfaces:Scriptable">Interfaces:Scriptable</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Message Database">Message Database</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Messages">Messages</a></li></ul>
+                  </div>
+                                    <div class="contributor-sub"> <i aria-hidden="true" class="icon-group"></i><strong>Contributors to this page:</strong> <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>, <a href="https://developer.mozilla.org/en-US/profiles/jik">jik</a>, <a href="https://developer.mozilla.org/en-US/profiles/Clarkbw">Clarkbw</a>, <a href="https://developer.mozilla.org/en-US/profiles/Vor0nwe">Vor0nwe</a>, <a href="https://developer.mozilla.org/en-US/profiles/mozjonathan">mozjonathan</a>, <a href="https://developer.mozilla.org/en-US/profiles/Wjjohnst">Wjjohnst</a>, <a href="https://developer.mozilla.org/en-US/profiles/Yanmorin">Yanmorin</a> </div>                                      <div class="contributor-sub">
+                      <i aria-hidden="true" class="icon-clock-o"></i><strong>Last updated by:</strong>
+                      <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>,
+                      <time datetime="2014-04-14T10:42:39-07:00">Apr 14, 2014 10:42:39 AM</time>
+                    </div>
+                                  </div>
+                          </div>
+
+                      </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="$edit" label="Edit page"></menuitem>
+    <menuitem data-action="$history" label="View page history"></menuitem>
+  </menu>
+  </div></main>
+
+  <!-- Footer -->
+  <footer><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+                <p>
+          <bdi>&copy; 2005-2014 Mozilla Developer Network and individual contributors<br /> Content is available under <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About#Copyrights_and_licenses">these licenses</a> &middot; <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About">About MDN</a> &middot; <a href="http://github.com/mozilla/kuma">Contribute to the code</a> &middot; <a href="http://www.mozilla.org/privacy/websites/">Privacy policy</a></bdi>        </p>
+              </div>
+      <div class="column-strip">
+                                  </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+    <script src="https://developer.mozilla.org/en-US/jsi18n/build:9fd3034"></script>
+  
+      <!--[if lte IE 8]><script src="/media/redesign/js/libs/selectivizr-1.0.2/selectivizr-build.js?build=9fd3034"></script><![endif]-->
+
+    <script src="../../../../../../../../developer.cdn.mozilla.net/media/js/main-min46d5.js?build=9fd3034"></script>
+
+          <script>
+        mdn.analytics.trackOutboundLinks(document.body);
+      </script>
+    
+          <script src="../../../../../../../../developer.cdn.mozilla.net/media/js/wiki-min46d5.js?build=9fd3034"></script>
+      
+    <script type="text/javascript">
+      jQuery('.from-search-toc').mozSearchResults('');
+  </script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-3.newrelic.com","queueTime":1,"licenseKey":"42869b6ed3","agent":"js-agent.newrelic.com/nr-411.min.js","transactionName":"b1QHMUtVDRdSW0YKXVYeIxBXVxcNXFYdFFtTWEsTUFEUFwlcXQBHVVQLEQ==","applicationID":"3172075","errorBeacon":"bam.nr-data.net","applicationTime":276}</script></body>
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIMsgFolder by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Aug 2014 20:20:37 GMT -->
+</html>
