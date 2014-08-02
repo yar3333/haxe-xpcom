@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="redesign no-js">
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISelectionController by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Aug 2014 20:23:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+        
+    <title>nsISelectionController - Mozilla | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="https://developer.mozilla.org/en-US/">
+  <link rel="copyright" href="#copyright">
+
+  <link href="../../../../../../../../mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" type="text/css" rel="stylesheet">
+              <link rel="stylesheet" media="all" href="../../../../../../../../developer.cdn.mozilla.net/media/css/mdn-min46d5.css?build=9fd3034" />
+
+      
+    <link rel="stylesheet" media="all" href="../../../../../../../../developer.cdn.mozilla.net/media/css/wiki-min46d5.css?build=9fd3034" />
+
+          <link rel="stylesheet" type="text/css"
+            href="https://developer.mozilla.org/en-US/docs/Template:CustomCSS?raw=1" />
+    
+    
+  <!-- common social tags -->
+    <meta property="og:type" content="website">
+  <meta property="og:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta property="og:site_name" content="Mozilla Developer Network">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta name="twitter:site" content="@NewOnMDN">
+  <meta name="twitter:creator" content="@NewOnMDN">
+
+  <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon144.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon114.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon72.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon57.png">
+  <!-- basic favicon -->
+          <link rel="shortcut icon" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon32.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script src="https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
+
+    <link rel="alternate" type="application/json" href="nsISelectionController%24json.json">
+  <link rel="canonical" href="nsISelectionController.html" >
+
+  
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="nsISelectionController">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISelectionController">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISelectionController">
+  <meta name="twitter:title" content="nsISelectionController">
+    <meta property="og:description" content="Will extend the selection one character cell backward in the document. This method is used internally for handling backspace key only when we&#39;re after UTF-16 surrogates.">
+  <meta name="description" content="Will extend the selection one character cell backward in the document. This method is used internally for handling backspace key only when we&#39;re after UTF-16 surrogates.">
+  <meta name="twitter:description" content="Will extend the selection one character cell backward in the document. This method is used internally for handling backspace key only when we&#39;re after UTF-16 surrogates.">
+  
+      <script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+    
+    
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.hash.indexOf('utm') != -1) {
+                var anchor = location.hash.match(/#(?!utm)[^&]+/);
+                anchor = anchor ? anchor[0] : '';
+                if(!anchor && win.history.replaceState){
+                    history.replaceState({}, '', location.pathname + location.search);
+                } else {
+                    location.hash = anchor;
+                }
+            }
+        };
+
+        ga('send', 'pageview', removeUtms(win.location + ''));
+    })();
+</script>
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgAEV1RTGwABU1NSAAQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("https://developer.mozilla.org/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script></head>
+<body data-slug="Mozilla/Tech/XPCOM/Reference/Interface/nsISelectionController" contextmenu="edit-history-menu" class="document  ">
+
+  <script type="text/javascript">
+    (function(win) {
+        'use strict';
+
+                    (function(){
+  var FLAGS = {
+    'derby_closed': true,'ga_outbound_links': true,'kumaediting': false,'page_move': false,'promote_script': false,'redirect_messages': false,'top_contributors': false,'wiki_spellcheck': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'render_stale_documents_async': true,'enable_optimizely': false
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+                
+        // This represents the site configuration
+        win.mdn = {
+            build: '9fd3034',
+            // Properties and settings for CKEditor will go here
+            ckeditor: {},
+            // Feature test results and methods will be placed here
+            features: {},
+            // The path to media (images, CSS, JS) in MDN
+            mediaPath: 'https://developer.cdn.mozilla.net/media/',
+            // Optimizely API
+            optimizely: win['optimizely'] || [],
+            // Site notifications
+            notifications: [],
+            
+            // Wiki-specific settings will be placed here
+            wiki: {
+                autosuggestTitleUrl: '/en-US/docs/get-documents'
+            },
+        };
+
+        // Ensures gettext always returns something, is always set
+        win.gettext = function(x) {
+            return x;
+        }
+    })(window);
+</script>
+  
+
+  
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="#language">Select language</a></li>
+          <li><a href="#q" id="skip-search">Skip to search</a></li>
+      </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <div class="clear header-login">
+      <a href="http://www.mozilla.org/" id="tabzilla" class="no-track">mozilla</a>
+                <script src="../../../../../../../../login.persona.org/include.js"></script>
+<script type="text/javascript">
+(function() {
+  var allauth = window.allauth = window.allauth || {};
+
+  function startWatching() {
+    navigator.id.watch({
+      onlogin: function(assertion) {
+        // TODO: next url handling
+        document.getElementById("_persona_assertion").value = assertion;
+        document.getElementById("_persona_login").submit();
+      },
+      onlogout: function() {
+        // TODO
+      }
+    })
+  };
+
+  allauth.persona = {
+    login: function(nextUrl, process) {
+        document.getElementById("_persona_next_url").value = nextUrl || '';
+        document.getElementById("_persona_process").value = process;
+        startWatching();
+        navigator.id.request({"siteName": "Mozilla Developer Network", "siteLogo": "/media/redesign/img/opengraph-logo.png"});
+    }
+  }
+})();
+</script>
+
+<form id="_persona_login" method="post" action="https://developer.mozilla.org/users/persona/login/">
+  <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='OFUZvWX3cvltHNznKujHNL8vtsBRoNMa' /></div>
+  <input type="hidden" name="next" value="" id="_persona_next_url"/>
+  <input type="hidden" name="process" value="" id="_persona_process"/>
+  <input type="hidden" name="assertion" id="_persona_assertion"/>
+</form>
+
+  <form>
+      <div class="oauth-login-container" tabIndex="0">
+          <div class="oauth-login-options">
+              <span>Sign in with</span>
+              <span class="oauth-icon oauth-persona" title="Sign in with Persona"><i class="icon-user" aria-hidden="true"></i></span>
+                      </div>
+          <div class="submenu oauth-login-picker" aria-hidden="true">
+              <ul>
+                  <li><a href="javascript:allauth.persona.login('/en\u002DUS/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISelectionController', 'login')" class="persona-button persona-loaded login-link" data-next="/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISelectionController" data-service="Persona"><i class="icon-user" aria-hidden="true"></i>Persona</a></li>
+                              </ul>
+          </div>
+      </div>
+  </form>
+          </div>
+
+    <a href="https://developer.mozilla.org/en-US/" class="logo">Mozilla Developer Network</a>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="https://developer.mozilla.org/en-US/docs/Zones">Zones<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-single" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/Add-ons">Add-ons</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Apps">App Center</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox">Firefox</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Marketplace">Firefox Marketplace</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox_OS">Firefox OS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Persona">Persona</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Web">Web Platform<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Apps">Apps</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References & Guides</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Tools">Tools</a></li><li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Connect">Connect</a></li><li class="main-nav-search"><form action="https://developer.mozilla.org/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" data-placeholder="Search" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+   <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+            <div class="article-meta">
+        <!-- action buttons -->
+        
+        
+        
+
+  <ul class="page-buttons" data-sticky="false"><li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-globe"></i></button>
+
+        <div class="submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+                              <li class="smaller">No translations exist for this document.</li>
+              
+                              <li><a href="https://developer.mozilla.org/en-US/users/signin/?next=/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISelectionController%24locales">Add a translation</a></li>
+                          </ul>
+          </div>
+        </div></li><li class="page-buttons-edit"><a href="https://developer.mozilla.org/en-US/users/signin/?next=/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISelectionController%24edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li><li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+
+        <div class="submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="nsISelectionController%24history.html">History</a></li>
+                                                                
+                
+                                
+                                                                <li class="page-print"><a href="#" onclick="return window.print();"  title="Print page">Print this page</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+        <!-- crumbs -->
+          <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US" rel="v:url" property="v:title">MDN</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla" rel="v:url" property="v:title">Mozilla</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech" rel="v:url" property="v:title">Mozilla technologies</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM" rel="v:url" property="v:title">XPCOM</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference" rel="v:url" property="v:title">XPCOM reference</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="../Interface.html" rel="v:url" property="v:title">XPCOM Interface Reference</a></li>
+        <li class="crumb" typeof="v:Breadcrumb" property="v:title">nsISelectionController</li>
+  </ol></nav>
+      </div>
+
+      <!-- heading -->
+      <div id="wiki-document-head" class="document-head">
+          <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="Previous Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+          <span class="from-search-navigate-wrap">
+            <a href="#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true" class="icon-double-angle-up"></i></span><span class="from-search-navigate-down"><i aria-hidden="true" class="icon-double-angle-down"></i></span></a>
+          </span>
+          <div class="from-search-toc">
+            <span class="title">Your Search Results</span>
+            <ol></ol>
+          </div>
+          <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+        <h1>nsISelectionController</h1>
+        
+      </div>
+      
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-closed wiki-left-none">
+
+          
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+                          <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+                            <!-- table of contents -->
+              <div id="toc" class="toc toggleable">
+                <a href="#toc" class="title toggler" data-open-icon="icon-plus" data-closed-icon="icon-minus">In This Article<i></i></a>
+                <ol class="toggle-container">
+                  <code></code><code></code><li><a href="#Method_overview" rel="internal">Method overview</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#Attributes" rel="internal">Attributes</a><code></code><code></code><code></code><code></code><li><a href="#Constants" rel="internal">Constants</a><ol><li><a href="#Selection_constants" rel="internal">Selection constants</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#Scroll_constants" rel="internal">Scroll constants</a><code></code><code></code><code></code><code></code><code></code><code></code></ol></li><li><a href="#Methods" rel="internal">Methods</a><ol><li><a href="#characterExtendForBackspace" rel="internal">characterExtendForBackspace</a><li><a href="#characterExtendForDelete" rel="internal">characterExtendForDelete</a><li><a href="#characterMove()" rel="internal">characterMove()</a><code></code><code></code><li><a href="#checkVisibility()" rel="internal">checkVisibility()</a><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#completeMove()" rel="internal">completeMove()</a><code></code><code></code><li><a href="#completeScroll()" rel="internal">completeScroll()</a><code></code><li><a href="#getCaretEnabled()" rel="internal">getCaretEnabled()</a><code></code><code></code><li><a href="#getDisplaySelection()" rel="internal">getDisplaySelection()</a><li><a href="#getSelection()" rel="internal">getSelection()</a><code></code><li><a href="#intraLineMove()" rel="internal">intraLineMove()</a><code></code><code></code><li><a href="#lineMove()" rel="internal">lineMove()</a><code></code><code></code><li><a href="#pageMove()" rel="internal">pageMove()</a><code></code><code></code><li><a href="#repaintSelection()" rel="internal">repaintSelection()</a><code></code><li><a href="#scrollHorizontal()" rel="internal">scrollHorizontal()</a><code></code><li><a href="#scrollLine()" rel="internal">scrollLine()</a><code></code><li><a href="#scrollPage()" rel="internal">scrollPage()</a><code></code><li><a href="#scrollSelectionIntoView()" rel="internal">scrollSelectionIntoView()</a><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#selectAll()" rel="internal">selectAll()</a><li><a href="#setCaretEnabled()" rel="internal">setCaretEnabled()</a><code></code><li><a href="#setCaretReadOnly()" rel="internal">setCaretReadOnly()</a><code></code><li><a href="#setCaretVisibilityDuringSelection()" rel="internal">setCaretVisibilityDuringSelection()</a><code></code><li><a href="#setCaretWidth()" rel="internal">setCaretWidth()</a><code></code><li><a href="#setDisplaySelection()" rel="internal">setDisplaySelection()</a><code></code><li><a href="#wordExtendForDelete" rel="internal">wordExtendForDelete</a><code></code><li><a href="#wordMove()" rel="internal">wordMove()</a><code></code><code></code></ol></li>
+                </ol>
+              </div>
+                            </div>
+            
+                                                  
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-main wiki-column text-content">
+
+              
+              
+                                                                                          
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                                                      <p></p><div style="border: solid #ddd 2px; margin-bottom: 12px;"> 
+<div style="background: #eee; padding: 2px;"><code><a class="external" href="http://mxr.mozilla.org/mozilla-central/source/content/base/public/nsISelectionController.idl" rel="custom">content/base/public/nsISelectionController.idl</a></code><span style="text-align: right; float: right;"><a href="en-US/docs/Interfaces/About_Scriptable_Interfaces.html" style="color: #00cc00; font-weight: 700;">Scriptable</a></span></div> 
+<span style="padding: 4px 2px;"> 
+ 
+<i>Please add a summary to this article.</i> 
+</span> 
+ 
+<div style="background: #eee; padding: 2px;"> 
+Inherits from: <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsISelectionDisplay" title="">nsISelectionDisplay</a></code> 
+<span style="text-align: right; float: right;">Last changed in Gecko 2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)</span></div> 
+</div><p></p>
+<h2 id="Method_overview" name="Method_overview">Method overview</h2>
+<table class="standard-table">
+  <tbody>
+    <tr>
+      <td><code>void <a href="#characterExtendForBackspace()">characterExtendForBackspace</a>();</code> <span class="inlineIndicator noscript noscriptInline" title="This method may only be called from C++; don't use it from JavaScript.">Native code only!</span> </td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#characterExtendForDelete()">characterExtendForDelete</a>();</code> <span class="inlineIndicator noscript noscriptInline" title="This method may only be called from C++; don't use it from JavaScript.">Native code only!</span> </td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#characterMove()">characterMove</a>(in boolean forward, in boolean extend);</code></td>
+    </tr>
+    <tr>
+      <td><code>boolean <a href="#checkVisibility()">checkVisibility</a>(in nsIDOMNode node, in short startOffset, in short endOffset);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#completeMove()">completeMove</a>(in boolean forward, in boolean extend);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#completeScroll()">completeScroll</a>(in boolean forward);</code></td>
+    </tr>
+    <tr>
+      <td><code>boolean <a href="#getCaretEnabled()">getCaretEnabled</a>();</code></td>
+    </tr>
+    <tr>
+      <td><code>short <a href="#getDisplaySelection()">getDisplaySelection</a>();</code></td>
+    </tr>
+    <tr>
+      <td><code>nsISelection <a href="#getSelection()">getSelection</a>(in short type);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#intraLineMove()">intraLineMove</a>(in boolean forward, in boolean extend);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#lineMove()">lineMove</a>(in boolean forward, in boolean extend);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#pageMove()">pageMove</a>(in boolean forward, in boolean extend);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#repaintSelection()">repaintSelection</a>(in short type);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#scrollHorizontal()">scrollHorizontal</a>(in boolean left);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#scrollLine()">scrollLine</a>(in boolean forward);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#scrollPage()">scrollPage</a>(in boolean forward);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#scrollSelectionIntoView()">scrollSelectionIntoView</a>(in short type, in short region, in short flags);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#selectAll()">selectAll</a>();</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#setCaretEnabled()">setCaretEnabled</a>(in boolean enabled);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#setCaretReadOnly()">setCaretReadOnly</a>(in boolean readOnly);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#setCaretVisibilityDuringSelection()">setCaretVisibilityDuringSelection</a>(in boolean visibility);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#setCaretWidth()">setCaretWidth</a>(in short pixels);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 1.5 / Thunderbird 1.5 / SeaMonkey 1.0)">Obsolete since Gecko 1.8</span></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#setDisplaySelection()">setDisplaySelection</a>(in short toggle);</code></td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#wordExtendForDelete()">wordExtendForDelete</a>(in boolean forward);</code> <span class="inlineIndicator noscript noscriptInline" title="This method may only be called from C++; don't use it from JavaScript.">Native code only!</span> </td>
+    </tr>
+    <tr>
+      <td><code>void <a href="#wordMove()">wordMove</a>(in boolean forward, in boolean extend);</code></td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="Attributes" name="Attributes">Attributes</h2>
+<table class="standard-table">
+  <tbody>
+    <tr>
+      <td class="header">Attribute</td>
+      <td class="header">Type</td>
+      <td class="header">Description</td>
+    </tr>
+    <tr>
+      <td><code>caretVisible</code></td>
+      <td><code><a href="https://developer.mozilla.org/en/boolean" title="en/boolean">boolean</a></code></td>
+      <td>This is <code>true</code> if the caret is enabled, visible, and currently blinking. This is still <code>true</code> when the caret is enabled, visible, but in its "off" blink cycle. <strong>Read only.</strong> </td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="Constants" name="Constants">Constants</h2>
+<h3 id="Selection_constants" name="Selection_constants">Selection constants</h3>
+<table class="standard-table">
+  <tbody>
+    <tr>
+      <td class="header" rowspan="2">Constant</td>
+      <td class="header" colspan="3">Gecko version</td>
+      <td class="header" rowspan="2">Description</td>
+    </tr>
+    <tr>
+      <td class="header">1.7 - 1.9</td>
+      <td class="header">1.9.1 - 1.9.2</td>
+      <td class="header">2.0</td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_NONE</code></td>
+      <td colspan="3"><code>0</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_NORMAL</code></td>
+      <td colspan="3"><code>1</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_SPELLCHECK</code></td>
+      <td colspan="3"><code>2</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_IME_RAWINPUT</code></td>
+      <td colspan="3"><code>4</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_IME_SELECTEDRAWTEXT</code></td>
+      <td colspan="3"><code>8</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_IME_CONVERTEDTEXT</code></td>
+      <td colspan="3"><code>16</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_IME_SELECTEDCONVERTEDTEXT</code></td>
+      <td colspan="3"><code>32</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_ACCESSIBILITY</code></td>
+      <td colspan="3"><code>64</code></td>
+      <td>For accessibility API usage.</td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_FIND</code></td>
+      <td> </td>
+      <td colspan="2"><code>128</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>NUM_SELECTIONTYPES</code></td>
+      <td><code>8</code></td>
+      <td colspan="2"><code>9</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_ANCHOR_REGION</code></td>
+      <td colspan="3"><code>0</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_FOCUS_REGION</code></td>
+      <td colspan="3"><code>1</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_WHOLE_SELECTION</code></td>
+      <td colspan="2"> </td>
+      <td><code>2</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>NUM_SELECTION_REGIONS</code></td>
+      <td colspan="2"><code>2</code></td>
+      <td><code>3</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_OFF</code></td>
+      <td colspan="3"><code>0</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_HIDDEN</code></td>
+      <td colspan="3"><code>1</code></td>
+      <td>Hidden displays selection.</td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_ON</code></td>
+      <td colspan="3"><code>2</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_DISABLED</code></td>
+      <td colspan="3"><code>3</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>SELECTION_ATTENTION</code></td>
+      <td colspan="3"><code>4</code></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+<h3 id="Scroll_constants" name="Scroll_constants">Scroll constants</h3>
+<table class="standard-table">
+  <tbody>
+    <tr>
+      <td class="header">Constant</td>
+      <td class="header">Value</td>
+      <td class="header">Description</td>
+    </tr>
+    <tr>
+      <td><code>SCROLL_SYNCHRONOUS</code></td>
+      <td><code>1&lt;&lt;1</code></td>
+      <td>If set scrolls the selection into view before returning. If not set, posts a request which is processed at some point after the method returns. </td>
+    </tr>
+    <tr>
+      <td><code>SCROLL_FIRST_ANCESTOR_ONLY</code></td>
+      <td><code>1&lt;&lt;2</code></td>
+      <td>If set, only the first ancestor will be scrolled into view. </td>
+    </tr>
+    <tr>
+      <td><code>SCROLL_CENTER_VERTICALLY</code></td>
+      <td><code>1&lt;&lt;4</code></td>
+      <td>If set, the specified location will be scrolled to the center of the view. </td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="Methods" name="Methods">Methods</h2>
+<p></p><div><span class="indicatorInHeadline noscript noscriptMethod" title="This method may only be called from C++; don't use it from JavaScript.">Native code only!</span><h3 id="characterExtendForBackspace">characterExtendForBackspace</h3></div><p></p>
+<p></p>
+<p>Will extend the selection one character cell backward in the document. This method is used internally for handling backspace key only when we're after UTF-16 surrogates.</p>
+<pre class="eval">void characterExtendForBackspace();
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<p>None.</p>
+<p></p><div><span class="indicatorInHeadline noscript noscriptMethod" title="This method may only be called from C++; don't use it from JavaScript.">Native code only!</span><h3 id="characterExtendForDelete">characterExtendForDelete</h3></div><p></p>
+<p></p>
+<p>Will extend the selection one character cell forward in the document. This method is used internally for handling delete key.</p>
+<pre class="eval">void characterExtendForDelete();
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<p>None.</p>
+<h3 id="characterMove()" name="characterMove()">characterMove()</h3>
+<p>Will move the selection one character forward/backward in the document. This will also have the effect of collapsing the selection if the extend = PR_FALSE the "point" of selection that is extended is considered the "focus" point, or the last point adjusted by the selection.</p>
+<pre class="eval">void characterMove(
+  in boolean forward,
+  in boolean extend
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>forward</code></dt>
+  <dd>
+    Forward or backward if PR_FALSE.</dd>
+  <dt>
+    <code>extend</code></dt>
+  <dd>
+    Should it collapse the selection or extend it?</dd>
+</dl>
+<h3 id="checkVisibility()" name="checkVisibility()">checkVisibility()</h3>
+<p>Checks if textnode and offsets are actually rendered in the current precontext.</p>
+<pre class="eval">boolean checkVisibility(
+  in nsIDOMNode node,
+  in short startOffset,
+  in short endOffset
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>node</code></dt>
+  <dd>
+    <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDOMNode" title="">nsIDOMNode</a></code> to test.</dd>
+  <dt>
+    <code>startOffset</code></dt>
+  <dd>
+    Offset in DOM to first char of textnode to test.</dd>
+  <dt>
+    <code>endOffset</code></dt>
+  <dd>
+    Offset in DOM to last char of textnode to test.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p><code>true</code> if visible, <code>false</code> if not.</p>
+<h3 id="completeMove()" name="completeMove()">completeMove()</h3>
+<p>Will move page view to the top or bottom of the document this will also have the effect of collapsing the selection if the extend = PR_FALSE the "point" of selection that is extended is considered the "focus" point, or the last point adjusted by the selection.</p>
+<pre class="eval">void completeMove(
+  in boolean forward,
+  in boolean extend
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>forward</code></dt>
+  <dd>
+    Forward or backward if PR_FALSE.</dd>
+  <dt>
+    <code>extend</code></dt>
+  <dd>
+    Should it collapse the selection or extend it?</dd>
+</dl>
+<h3 id="completeScroll()" name="completeScroll()">completeScroll()</h3>
+<p>Will move page view to the top or bottom of the document.</p>
+<pre class="eval">void completeScroll(
+  in boolean forward
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>forward</code></dt>
+  <dd>
+    Forward or backward if PR_FALSE.</dd>
+</dl>
+<h3 id="getCaretEnabled()" name="getCaretEnabled()">getCaretEnabled()</h3>
+<p>Gets the current state of the caret, as set by <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsISelectionController#setCaretEnabled()">setCaretEnabled()</a></code>.</p>
+<pre class="eval">boolean getCaretEnabled();
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<p>None.</p>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>If aOutEnabled==<code>null</code>, returns NS_ERROR_INVALID_ARG else NS_OK.</p>
+<h3 id="getDisplaySelection()" name="getDisplaySelection()">getDisplaySelection()</h3>
+<p>Will get the display mode for the selection.</p>
+<pre class="eval">short getDisplaySelection();
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<p>None.</p>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>OFF, ON, DISABLED.</p>
+<h3 id="getSelection()" name="getSelection()">getSelection()</h3>
+<p>Will return the selection that the presentation shell may implement.</p>
+<pre class="eval">nsISelection getSelection(
+  in short type
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>type</code></dt>
+  <dd>
+    Will hold the type of selection. (SelectionType)</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Will hold the return value.</p>
+<h3 id="intraLineMove()" name="intraLineMove()">intraLineMove()</h3>
+<p>Will move the selection to the front of the line or end of the line in the document. This will also have the effect of collapsing the selection if the extend = PR_FALSE the "point" of selection that is extended is considered the "focus" point, or the last point adjusted by the selection.</p>
+<pre class="eval">void intraLineMove(
+  in boolean forward,
+  in boolean extend
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>forward</code></dt>
+  <dd>
+    Forward or backward if PR_FALSE.</dd>
+  <dt>
+    <code>extend</code></dt>
+  <dd>
+    Should it collapse the selection or extend it?</dd>
+</dl>
+<h3 id="lineMove()" name="lineMove()">lineMove()</h3>
+<p>Will move the selection one line forward/backward in the document. This will also have the effect of collapsing the selection if the extend = PR_FALSE the "point" of selection that is extended is considered the "focus" point, or the last point adjusted by the selection.</p>
+<pre class="eval">void lineMove(
+  in boolean forward,
+  in boolean extend
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>forward</code></dt>
+  <dd>
+    Forward or backward if PR_FALSE.</dd>
+  <dt>
+    <code>extend</code></dt>
+  <dd>
+    Should it collapse the selection or extend it?</dd>
+</dl>
+<h3 id="pageMove()" name="pageMove()">pageMove()</h3>
+<p>Will move the selection one page forward/backward in the document. This will also have the effect of collapsing the selection if the extend = PR_FALSE the "point" of selection that is extended is considered the "focus" point, or the last point adjusted by the selection.</p>
+<pre class="eval">void pageMove(
+  in boolean forward,
+  in boolean extend
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>forward</code></dt>
+  <dd>
+    Forward or backward if PR_FALSE</dd>
+  <dt>
+    <code>extend</code></dt>
+  <dd>
+    Should it collapse the selection or extend it?</dd>
+</dl>
+<h3 id="repaintSelection()" name="repaintSelection()">repaintSelection()</h3>
+<p>Repaints the selection specified.</p>
+<pre class="eval">void repaintSelection(
+  in short type
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>type</code></dt>
+  <dd>
+    Specifies the selection to repaint.</dd>
+</dl>
+<h3 id="scrollHorizontal()" name="scrollHorizontal()">scrollHorizontal()</h3>
+<p>Will scroll left or right dependent on the boolean.</p>
+<pre class="eval">void scrollHorizontal(
+  in boolean left
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>left</code></dt>
+  <dd>
+    If true will scroll left. If not will scroll right.</dd>
+</dl>
+<h3 id="scrollLine()" name="scrollLine()">scrollLine()</h3>
+<p>Will scroll line up or down dependent on the boolean.</p>
+<pre class="eval">void scrollLine(
+  in boolean forward
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>forward</code></dt>
+  <dd>
+    Scroll forward or backwards in selection.</dd>
+</dl>
+<h3 id="scrollPage()" name="scrollPage()">scrollPage()</h3>
+<p>Will scroll the page without affecting the selection.</p>
+<pre class="eval">void scrollPage(
+  in boolean forward
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>forward</code></dt>
+  <dd>
+    Scroll forward or backwards in selection.</dd>
+</dl>
+<h3 id="scrollSelectionIntoView()" name="scrollSelectionIntoView()">scrollSelectionIntoView()</h3>
+<p>Scrolls a region of the selection, so that it is visible in the scrolled view.</p>
+<p></p><div class="note"><strong>Note:</strong> If <code>isSynchronous</code> is <code>true</code>, calling this method may flush the pending reflow. This is dangerous for some objects. See <a class="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=418470" title="FIXED: Go to line in View Source broken (NS_ERROR_UNEXPECTED at nsISelectionController.scrollSelectionIntoView)">bug 418470</a>, comment 12 for details.</div><p></p>
+<pre class="eval">void scrollSelectionIntoView(
+  in short type,
+  in short region,
+  in short flags
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>type</code></dt>
+  <dd>
+    The selection to scroll into view. (SelectionType)</dd>
+  <dt>
+    <code>region</code></dt>
+  <dd>
+    The region inside the selection to scroll into view. (SelectionRegion)</dd>
+  <dt>
+    <code>flags</code></dt>
+  <dd>
+    One of the SCROLL_* <a href="#constants">constants</a>.</dd>
+</dl>
+<h6 id="Exceptions_thrown" name="Exceptions_thrown">Exceptions thrown</h6>
+<dl>
+  <dt>
+    <code>Missing Exception</code></dt>
+  <dd>
+    Missing Description</dd>
+</dl>
+<h3 id="selectAll()" name="selectAll()">selectAll()</h3>
+<p>Will select the whole page.</p>
+<pre class="eval">void selectAll();
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<p>None.</p>
+<h3 id="setCaretEnabled()" name="setCaretEnabled()">setCaretEnabled()</h3>
+<p>Set the caret as enabled or disabled. An enabled caret will draw or blink when made visible. A disabled caret will never show up. Can be called any time.</p>
+<pre class="eval">void setCaretEnabled(
+  in boolean enabled
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>enabled</code></dt>
+  <dd>
+    PR_TRUE to enable caret. PR_FALSE to disable.</dd>
+</dl>
+<h3 id="setCaretReadOnly()" name="setCaretReadOnly()">setCaretReadOnly()</h3>
+<p>Set the caret readonly or not. An readonly caret will draw but not blink when made visible.</p>
+<pre class="eval">void setCaretReadOnly(
+  in boolean readOnly
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>readOnly</code></dt>
+  <dd>
+    PR_TRUE to enable caret. PR_FALSE to disable.</dd>
+</dl>
+<h3 id="setCaretVisibilityDuringSelection()" name="setCaretVisibilityDuringSelection()">setCaretVisibilityDuringSelection()</h3>
+<p>Show the caret even in selections. By default the caret is hidden unless the selection is collapsed. Use this function to show the caret even in selections.</p>
+<pre class="eval">void setCaretVisibilityDuringSelection(
+  in boolean visibility
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>visibility</code></dt>
+  <dd>
+    PR_TRUE to show the caret in selections. PR_FALSE to hide.</dd>
+</dl>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.8 (Firefox 1.5 / Thunderbird 1.5 / SeaMonkey 1.0)</span> 
+        <h3 id="setCaretWidth()">setCaretWidth()</h3> 
+        </div><p></p>
+<p>Set the carets width. Can be called any time.</p>
+<pre class="eval">void setCaretWidth(
+  in short pixels
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>pixels</code></dt>
+  <dd>
+    The width to set the caret to in pixels.</dd>
+</dl>
+<h3 id="setDisplaySelection()" name="setDisplaySelection()">setDisplaySelection()</h3>
+<p>Will set the display mode for the selection.</p>
+<pre class="eval">void setDisplaySelection(
+  in short toggle
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>toggle</code></dt>
+  <dd>
+    OFF, ON, DISABLED.</dd>
+</dl>
+<p></p><div><span class="indicatorInHeadline noscript noscriptMethod" title="This method may only be called from C++; don't use it from JavaScript.">Native code only!</span><h3 id="wordExtendForDelete">wordExtendForDelete</h3></div><p></p>
+<p></p>
+<p>Will extend the selection one word forward/backward in the document. This method is used internally for handling ctrl[option]-backspace and ctrl[option]-del.</p>
+<pre class="eval">void wordExtendForDelete(
+  in boolean forward
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>forward</code></dt>
+  <dd>
+    Forward or backward if PR_FALSE.</dd>
+</dl>
+<h3 id="wordMove()" name="wordMove()">wordMove()</h3>
+<p>Wwill move the selection one word forward/backward in the document. This will also have the effect of collapsing the selection if the extend = PR_FALSE the "point" of selection that is extended is considered the "focus" point, or the last point adjusted by the selection.</p>
+<pre class="eval">void wordMove(
+  in boolean forward,
+  in boolean extend
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+  <dt>
+    <code>forward</code></dt>
+  <dd>
+    Forward or backward if PR_FALSE.</dd>
+  <dt>
+    <code>extend</code></dt>
+  <dd>
+    Should it collapse the selection or extend it?</dd>
+</dl>
+                                                </article>
+
+              
+                <!-- attachments list -->
+                
+                <!-- contributors -->
+                <div class="wiki-block contributors">
+                  <h2 class="offscreen">Document Tags and Contributors</h2>
+                                                      <!-- tags if present -->
+                  <div class="tag-attach-list tags contributor-sub">
+                    <i aria-hidden="true" class="icon-tags"></i><strong>Tags:</strong>
+                    <ul class="tag-list"><li><a href="https://developer.mozilla.org/en-US/docs/tag/NeedsContent">NeedsContent</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/XPCOM Interface Reference">XPCOM Interface Reference</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Interfaces">Interfaces</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Interfaces:Scriptable">Interfaces:Scriptable</a></li></ul>
+                  </div>
+                                    <div class="contributor-sub"> <i aria-hidden="true" class="icon-group"></i><strong>Contributors to this page:</strong> <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>, <a href="https://developer.mozilla.org/en-US/profiles/trevorh">trevorh</a> </div>                                      <div class="contributor-sub">
+                      <i aria-hidden="true" class="icon-clock-o"></i><strong>Last updated by:</strong>
+                      <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>,
+                      <time datetime="2014-04-14T10:42:00-07:00">Apr 14, 2014 10:42:00 AM</time>
+                    </div>
+                                  </div>
+                          </div>
+
+                      </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="$edit" label="Edit page"></menuitem>
+    <menuitem data-action="$history" label="View page history"></menuitem>
+  </menu>
+  </div></main>
+
+  <!-- Footer -->
+  <footer><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+                <p>
+          <bdi>&copy; 2005-2014 Mozilla Developer Network and individual contributors<br /> Content is available under <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About#Copyrights_and_licenses">these licenses</a> &middot; <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About">About MDN</a> &middot; <a href="http://github.com/mozilla/kuma">Contribute to the code</a> &middot; <a href="http://www.mozilla.org/privacy/websites/">Privacy policy</a></bdi>        </p>
+              </div>
+      <div class="column-strip">
+                                  </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+    <script src="https://developer.mozilla.org/en-US/jsi18n/build:9fd3034"></script>
+  
+      <!--[if lte IE 8]><script src="/media/redesign/js/libs/selectivizr-1.0.2/selectivizr-build.js?build=9fd3034"></script><![endif]-->
+
+    <script src="../../../../../../../../developer.cdn.mozilla.net/media/js/main-min46d5.js?build=9fd3034"></script>
+
+          <script>
+        mdn.analytics.trackOutboundLinks(document.body);
+      </script>
+    
+          <script src="../../../../../../../../developer.cdn.mozilla.net/media/js/wiki-min46d5.js?build=9fd3034"></script>
+      
+    <script type="text/javascript">
+      jQuery('.from-search-toc').mozSearchResults('');
+  </script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-3.newrelic.com","queueTime":1,"licenseKey":"42869b6ed3","agent":"js-agent.newrelic.com/nr-411.min.js","transactionName":"b1QHMUtVDRdSW0YKXVYeIxBXVxcNXFYdFFtTWEsTUFEUFwlcXQBHVVQLEQ==","applicationID":"3172075","errorBeacon":"bam.nr-data.net","applicationTime":256}</script></body>
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsISelectionController by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Aug 2014 20:23:51 GMT -->
+</html>

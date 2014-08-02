@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="redesign no-js">
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsINavBookmarksService by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Aug 2014 20:21:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+        
+    <title>nsINavBookmarksService - Mozilla | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="https://developer.mozilla.org/en-US/">
+  <link rel="copyright" href="#copyright">
+
+  <link href="../../../../../../../../mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" type="text/css" rel="stylesheet">
+              <link rel="stylesheet" media="all" href="../../../../../../../../developer.cdn.mozilla.net/media/css/mdn-min46d5.css?build=9fd3034" />
+
+      
+    <link rel="stylesheet" media="all" href="../../../../../../../../developer.cdn.mozilla.net/media/css/wiki-min46d5.css?build=9fd3034" />
+
+          <link rel="stylesheet" type="text/css"
+            href="https://developer.mozilla.org/en-US/docs/Template:CustomCSS?raw=1" />
+    
+    
+  <!-- common social tags -->
+    <meta property="og:type" content="website">
+  <meta property="og:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta property="og:site_name" content="Mozilla Developer Network">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta name="twitter:site" content="@NewOnMDN">
+  <meta name="twitter:creator" content="@NewOnMDN">
+
+  <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon144.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon114.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon72.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon57.png">
+  <!-- basic favicon -->
+          <link rel="shortcut icon" href="../../../../../../../../developer.cdn.mozilla.net/media/redesign/img/favicon32.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script src="https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
+
+    <link rel="alternate" type="application/json" href="nsINavBookmarksService%24json.json">
+  <link rel="canonical" href="nsINavBookmarksService.html" >
+
+  
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="nsINavBookmarksService">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsINavBookmarksService">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsINavBookmarksService">
+  <meta name="twitter:title" content="nsINavBookmarksService">
+    <meta property="og:description" content="Implemented by: @mozilla.org/browser/nav-bookmarks-service;1. To use this service, use:">
+  <meta name="description" content="Implemented by: @mozilla.org/browser/nav-bookmarks-service;1. To use this service, use:">
+  <meta name="twitter:description" content="Implemented by: @mozilla.org/browser/nav-bookmarks-service;1. To use this service, use:">
+  
+      <script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+    
+    
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.hash.indexOf('utm') != -1) {
+                var anchor = location.hash.match(/#(?!utm)[^&]+/);
+                anchor = anchor ? anchor[0] : '';
+                if(!anchor && win.history.replaceState){
+                    history.replaceState({}, '', location.pathname + location.search);
+                } else {
+                    location.hash = anchor;
+                }
+            }
+        };
+
+        ga('send', 'pageview', removeUtms(win.location + ''));
+    })();
+</script>
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgAEV1RTGwABU1NSAAQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("https://developer.mozilla.org/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script></head>
+<body data-slug="Mozilla/Tech/XPCOM/Reference/Interface/nsINavBookmarksService" contextmenu="edit-history-menu" class="document  ">
+
+  <script type="text/javascript">
+    (function(win) {
+        'use strict';
+
+                    (function(){
+  var FLAGS = {
+    'derby_closed': true,'ga_outbound_links': true,'kumaediting': false,'page_move': false,'promote_script': false,'redirect_messages': false,'top_contributors': false,'wiki_spellcheck': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'render_stale_documents_async': true,'enable_optimizely': false
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+                
+        // This represents the site configuration
+        win.mdn = {
+            build: '9fd3034',
+            // Properties and settings for CKEditor will go here
+            ckeditor: {},
+            // Feature test results and methods will be placed here
+            features: {},
+            // The path to media (images, CSS, JS) in MDN
+            mediaPath: 'https://developer.cdn.mozilla.net/media/',
+            // Optimizely API
+            optimizely: win['optimizely'] || [],
+            // Site notifications
+            notifications: [],
+            
+            // Wiki-specific settings will be placed here
+            wiki: {
+                autosuggestTitleUrl: '/en-US/docs/get-documents'
+            },
+        };
+
+        // Ensures gettext always returns something, is always set
+        win.gettext = function(x) {
+            return x;
+        }
+    })(window);
+</script>
+  
+
+  
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="#language">Select language</a></li>
+          <li><a href="#q" id="skip-search">Skip to search</a></li>
+      </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <div class="clear header-login">
+      <a href="http://www.mozilla.org/" id="tabzilla" class="no-track">mozilla</a>
+                <script src="../../../../../../../../login.persona.org/include.js"></script>
+<script type="text/javascript">
+(function() {
+  var allauth = window.allauth = window.allauth || {};
+
+  function startWatching() {
+    navigator.id.watch({
+      onlogin: function(assertion) {
+        // TODO: next url handling
+        document.getElementById("_persona_assertion").value = assertion;
+        document.getElementById("_persona_login").submit();
+      },
+      onlogout: function() {
+        // TODO
+      }
+    })
+  };
+
+  allauth.persona = {
+    login: function(nextUrl, process) {
+        document.getElementById("_persona_next_url").value = nextUrl || '';
+        document.getElementById("_persona_process").value = process;
+        startWatching();
+        navigator.id.request({"siteName": "Mozilla Developer Network", "siteLogo": "/media/redesign/img/opengraph-logo.png"});
+    }
+  }
+})();
+</script>
+
+<form id="_persona_login" method="post" action="https://developer.mozilla.org/users/persona/login/">
+  <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='OFUZvWX3cvltHNznKujHNL8vtsBRoNMa' /></div>
+  <input type="hidden" name="next" value="" id="_persona_next_url"/>
+  <input type="hidden" name="process" value="" id="_persona_process"/>
+  <input type="hidden" name="assertion" id="_persona_assertion"/>
+</form>
+
+  <form>
+      <div class="oauth-login-container" tabIndex="0">
+          <div class="oauth-login-options">
+              <span>Sign in with</span>
+              <span class="oauth-icon oauth-persona" title="Sign in with Persona"><i class="icon-user" aria-hidden="true"></i></span>
+                      </div>
+          <div class="submenu oauth-login-picker" aria-hidden="true">
+              <ul>
+                  <li><a href="javascript:allauth.persona.login('/en\u002DUS/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsINavBookmarksService', 'login')" class="persona-button persona-loaded login-link" data-next="/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsINavBookmarksService" data-service="Persona"><i class="icon-user" aria-hidden="true"></i>Persona</a></li>
+                              </ul>
+          </div>
+      </div>
+  </form>
+          </div>
+
+    <a href="https://developer.mozilla.org/en-US/" class="logo">Mozilla Developer Network</a>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="https://developer.mozilla.org/en-US/docs/Zones">Zones<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-single" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/Add-ons">Add-ons</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Apps">App Center</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox">Firefox</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Marketplace">Firefox Marketplace</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox_OS">Firefox OS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Persona">Persona</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Web">Web Platform<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Apps">Apps</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References & Guides</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Tools">Tools</a></li><li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Connect">Connect</a></li><li class="main-nav-search"><form action="https://developer.mozilla.org/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" data-placeholder="Search" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+   <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+            <div class="article-meta">
+        <!-- action buttons -->
+        
+        
+        
+
+  <ul class="page-buttons" data-sticky="false"><li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-globe"></i></button>
+
+        <div class="submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+                              <li class="smaller">No translations exist for this document.</li>
+              
+                              <li><a href="https://developer.mozilla.org/en-US/users/signin/?next=/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsINavBookmarksService%24locales">Add a translation</a></li>
+                          </ul>
+          </div>
+        </div></li><li class="page-buttons-edit"><a href="https://developer.mozilla.org/en-US/users/signin/?next=/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsINavBookmarksService%24edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li><li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+
+        <div class="submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="nsINavBookmarksService%24history.html">History</a></li>
+                                                                
+                
+                                
+                                                                <li class="page-print"><a href="#" onclick="return window.print();"  title="Print page">Print this page</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+        <!-- crumbs -->
+          <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US" rel="v:url" property="v:title">MDN</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla" rel="v:url" property="v:title">Mozilla</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech" rel="v:url" property="v:title">Mozilla technologies</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM" rel="v:url" property="v:title">XPCOM</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference" rel="v:url" property="v:title">XPCOM reference</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="../Interface.html" rel="v:url" property="v:title">XPCOM Interface Reference</a></li>
+        <li class="crumb" typeof="v:Breadcrumb" property="v:title">nsINavBookmarksService</li>
+  </ol></nav>
+      </div>
+
+      <!-- heading -->
+      <div id="wiki-document-head" class="document-head">
+          <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="Previous Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+          <span class="from-search-navigate-wrap">
+            <a href="#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true" class="icon-double-angle-up"></i></span><span class="from-search-navigate-down"><i aria-hidden="true" class="icon-double-angle-down"></i></span></a>
+          </span>
+          <div class="from-search-toc">
+            <span class="title">Your Search Results</span>
+            <ol></ol>
+          </div>
+          <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+        <h1>nsINavBookmarksService</h1>
+        
+      </div>
+      
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-closed wiki-left-none">
+
+          
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+                          <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+                            <!-- table of contents -->
+              <div id="toc" class="toc toggleable">
+                <a href="#toc" class="title toggler" data-open-icon="icon-plus" data-closed-icon="icon-minus">In This Article<i></i></a>
+                <ol class="toggle-container">
+                  <li><a href="#Method_overview" rel="internal">Method overview</a><li><a href="#Attributes" rel="internal">Attributes</a><li><a href="#Constants" rel="internal">Constants</a><li><a href="#Methods" rel="internal">Methods</a><ol><li><a href="#addObserver()" rel="internal">addObserver()</a><li><a href="#beginUpdateBatch()" rel="internal">beginUpdateBatch()</a><li><a href="#changeBookmarkURI()" rel="internal">changeBookmarkURI()</a><li><a href="#createDynamicContainer()" rel="internal">createDynamicContainer()</a><li><a href="#createFolder()" rel="internal">createFolder()</a><li><a href="#endUpdateBatch()" rel="internal">endUpdateBatch()</a><li><a href="#exportBookmarksHTML()" rel="internal">exportBookmarksHTML()</a><li><a href="#getBookmarkedURIFor()" rel="internal">getBookmarkedURIFor()</a><li><a href="#getBookmarkFoldersTArray" rel="internal">getBookmarkFoldersTArray</a><li><a href="#getBookmarkIdsForURI()" rel="internal">getBookmarkIdsForURI()</a><li><a href="#getBookmarkIdsForURITArray" rel="internal">getBookmarkIdsForURITArray</a><li><a href="#getBookmarkURI()" rel="internal">getBookmarkURI()</a><li><a href="#getChildFolder()" rel="internal">getChildFolder()</a><li><a href="#getFolderIdForItem()" rel="internal">getFolderIdForItem()</a><li><a href="#getFolderReadonly()" rel="internal">getFolderReadonly()</a><li><a href="#getFolderTitle()" rel="internal">getFolderTitle()</a><li><a href="#getFolderURI()" rel="internal">getFolderURI()</a><li><a href="#getIdForItemAt()" rel="internal">getIdForItemAt()</a><li><a href="#getItemDateAdded()" rel="internal">getItemDateAdded()</a><li><a href="#getItemGUID()" rel="internal">getItemGUID()</a><li><a href="#getItemIdForGUID()" rel="internal">getItemIdForGUID()</a><li><a href="#getItemIndex()" rel="internal">getItemIndex()</a><li><a href="#getItemLastModified()" rel="internal">getItemLastModified()</a><li><a href="#getItemTitle()" rel="internal">getItemTitle()</a><li><a href="#getItemType()" rel="internal">getItemType()</a><li><a href="#getKeywordForBookmark()" rel="internal">getKeywordForBookmark()</a><li><a href="#getKeywordForURI()" rel="internal">getKeywordForURI()</a><li><a href="#getRemoveFolderTransaction()" rel="internal">getRemoveFolderTransaction()</a><li><a href="#getURIForKeyword()" rel="internal">getURIForKeyword()</a><li><a href="#importBookmarksHTML()" rel="internal">importBookmarksHTML()</a><li><a href="#importBookmarksHTMLToFolder()" rel="internal">importBookmarksHTMLToFolder()</a><li><a href="#indexOfFolder()" rel="internal">indexOfFolder()</a><li><a href="#indexOfItem()" rel="internal">indexOfItem()</a><li><a href="#insertBookmark()" rel="internal">insertBookmark()</a><li><a href="#insertItem()" rel="internal">insertItem()</a><li><a href="#insertSeparator()" rel="internal">insertSeparator()</a><li><a href="#isBookmarked()" rel="internal">isBookmarked()</a><li><a href="#moveFolder()" rel="internal">moveFolder()</a><li><a href="#moveItem()" rel="internal">moveItem()</a><li><a href="#removeChildAt()" rel="internal">removeChildAt()</a><li><a href="#removeFolder()" rel="internal">removeFolder()</a><li><a href="#removeFolderChildren()" rel="internal">removeFolderChildren()</a><li><a href="#removeItem()" rel="internal">removeItem()</a><li><a href="#removeObserver()" rel="internal">removeObserver()</a><li><a href="#replaceItem()" rel="internal">replaceItem()</a><li><a href="#runInBatchMode()" rel="internal">runInBatchMode()</a><li><a href="#setFolderReadonly()" rel="internal">setFolderReadonly()</a><li><a href="#setFolderTitle()" rel="internal">setFolderTitle()</a><li><a href="#setItemDateAdded()" rel="internal">setItemDateAdded()</a><li><a href="#setItemGUID()" rel="internal">setItemGUID()</a><li><a href="#setItemIndex()" rel="internal">setItemIndex()</a><li><a href="#setItemLastModified()" rel="internal">setItemLastModified()</a><li><a href="#setItemTitle()" rel="internal">setItemTitle()</a><li><a href="#setKeywordForBookmark()" rel="internal">setKeywordForBookmark()</a><li><a href="#setKeywordForURI()" rel="internal">setKeywordForURI()</a></ol></li><li><a href="#See_also" rel="internal">See also</a>
+                </ol>
+              </div>
+                            </div>
+            
+                                                  
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-main wiki-column text-content">
+
+              
+              
+                                                                                          
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                                                      <p></p><div style="border: solid #ddd 2px; margin-bottom: 12px;"> 
+<div style="background: #eee; padding: 2px;"><code><a class="external" href="http://mxr.mozilla.org/mozilla-central/source/toolkit/components/places/nsINavBookmarksService.idl" rel="custom">toolkit/components/places/nsINavBookmarksService.idl</a></code><span style="text-align: right; float: right;"><a href="en-US/docs/Interfaces/About_Scriptable_Interfaces.html" style="color: #00cc00; font-weight: 700;">Scriptable</a></span></div> 
+<span style="padding: 4px 2px;"> 
+ 
+The BookmarksService interface provides methods for managing bookmarked history items. Bookmarks consist of a set of user-customizable folders. A URI in history can be contained in one or more such folders. 
+</span> 
+ 
+  <div style="height: 42px; position: relative; padding: 2px; width: auto;"> 
+ 
+  <div style="top: 22px; font-size: 11px; position: absolute;">1.0</div> 
+   
+  <div style="top: 22px; font-size: 11px; position: absolute; left: 0px; text-align: right; float: right; width: 100%;">30</div> 
+   
+  <div style="height: 8px; top: 16px; background: #dd0000; left: 0px; position: absolute; width: 11.76470588235294%;"></div> 
+   
+<div style="height: 8px; top: 16px; left: 11.76470588235294%; background: #00dd00; position: absolute; width: 88.23529411764706%;" title="Introduced in Gecko 1.8 (Firefox 1.5 / Thunderbird 1.5 / SeaMonkey 1.0)"></div> 
+ 
+<div style="top: 0px; font-size: 11px; position: absolute; left: 11.76470588235294%;">Introduced</div> 
+<div style="top: 22px; font-size: 11px; position: absolute; left: 11.76470588235294%;">Gecko 1.8</div> 
+ 
+    <div style="height: 8px; top: 16px; left: 52.44117647058824%; background: #eeee00; position: absolute; width: 1%; border-radius: 4px; -webkit-border-radius: 4px;" title="Last changed in Gecko 14.0 (Firefox 14.0 / Thunderbird 14.0 / SeaMonkey 2.11)"></div> 
+     
+</div> 
+ 
+<div style="background: #eee; padding: 2px;"> 
+Inherits from: <code><a href="nsISupports.html" title="">nsISupports</a></code> 
+<span style="text-align: right; float: right;">Last changed in Gecko 14.0 (Firefox 14.0 / Thunderbird 14.0 / SeaMonkey 2.11)</span></div> 
+</div><p></p>
+<p>Implemented by: <code>@mozilla.org/browser/nav-bookmarks-service;1</code>. To use this service, use:</p>
+<pre class="eval">var navBookmarksService = Components.classes["@mozilla.org/browser/nav-bookmarks-service;1"]
+                          .getService(Components.interfaces.nsINavBookmarksService);
+</pre>
+<h2 id="Method_overview" name="Method_overview">Method overview</h2>
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td><code>void <a href="#addObserver()">addObserver</a>(in nsINavBookmarkObserver observer, in boolean ownsWeak);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#beginUpdateBatch()">beginUpdateBatch</a>();</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#changeBookmarkURI()">changeBookmarkURI</a>(in long long aItemId, in nsIURI aNewURI);</code></td>
+  </tr>
+  <tr>
+   <td><code>long long <a href="#createDynamicContainer()">createDynamicContainer</a>(in long long aParentFolder, in AUTF8String aName, in AString aContractId, in long aIndex);</code> <span class="inlineIndicator renamed renamedInline" title="(Firefox 3)">Renamed from <code>createContainer</code> in Gecko 1.9</span> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 13.0 / Thunderbird 13.0 / SeaMonkey 2.10)">Obsolete since Gecko 13.0</span></td>
+  </tr>
+  <tr>
+   <td><code>long long <a href="#createFolder()">createFolder</a>(in long long aParentFolder, in AUTF8String name, in long index);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#endUpdateBatch()">endUpdateBatch</a>();</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#exportBookmarksHTML()">exportBookmarksHTML</a>(in nsIFile file);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>nsIURI <a href="#getBookmarkedURIFor()">getBookmarkedURIFor</a>(in nsIURI aURI);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#getBookmarkFoldersTArray()">getBookmarkFoldersTArray</a>(in nsIURI aURI, in PRInt64Array aResult);</code> <span class="inlineIndicator noscript noscriptInline" title="This method may only be called from C++; don't use it from JavaScript.">Native code only!</span> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#getBookmarkIdsForURI()">getBookmarkIdsForURI</a>(in nsIURI aURI, [optional] out unsigned long count, [array, retval, size_is(count)] out long long bookmarks);</code> <span class="inlineIndicator renamed renamedInline" title="(Firefox 3)">Renamed from <code>getBookmarkFolders</code> in Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#getBookmarkIdsForURITArray()">getBookmarkIdsForURITArray</a>(in nsIURI aURI, in PRInt64Array aResult);</code> <span class="inlineIndicator noscript noscriptInline" title="This method may only be called from C++; don't use it from JavaScript.">Native code only!</span>  <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)">Obsolete since Gecko 2.0</span></td>
+  </tr>
+  <tr>
+   <td><code>nsIURI <a href="#getBookmarkURI()">getBookmarkURI</a>(in long long aItemId);</code> </td>
+  </tr>
+  <tr>
+   <td><code>long long <a href="#getChildFolder()">getChildFolder</a>(in long long aFolder, in AString aSubFolder);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)">Obsolete since Gecko 2.0</span></td>
+  </tr>
+  <tr>
+   <td><code>long long <a href="#getFolderIdForItem()">getFolderIdForItem</a>(in long long aItemId);</code> </td>
+  </tr>
+  <tr>
+   <td><code>boolean <a href="#getFolderReadonly()">getFolderReadonly</a>(in long long aItemId);</code></td>
+  </tr>
+  <tr>
+   <td><code>AString <a href="#getFolderTitle()">getFolderTitle</a>(in PRInt64 folder);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>nsIURI <a href="#getFolderURI()">getFolderURI</a>(in PRInt64 folder);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>long long <a href="#getIdForItemAt()">getIdForItemAt</a>(in long long aParentId, in long aIndex);</code> </td>
+  </tr>
+  <tr>
+   <td><code>PRTime <a href="#getItemDateAdded()">getItemDateAdded</a>(in long long aItemId);</code> </td>
+  </tr>
+  <tr>
+   <td><code>AString <a href="#getItemGUID()">getItemGUID</a>(in long long aItemId);</code>  <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 14.0 / Thunderbird 14.0 / SeaMonkey 2.11)">Obsolete since Gecko 14.0</span></td>
+  </tr>
+  <tr>
+   <td><code>long long <a href="#getItemIdForGUID()">getItemIdForGUID</a>(in AString aGUID);</code>  <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 14.0 / Thunderbird 14.0 / SeaMonkey 2.11)">Obsolete since Gecko 14.0</span></td>
+  </tr>
+  <tr>
+   <td><code>long <a href="#getItemIndex()">getItemIndex</a>(in long long aItemId);</code> </td>
+  </tr>
+  <tr>
+   <td><code>PRTime <a href="#getItemLastModified()">getItemLastModified</a>(in long long aItemId);</code> </td>
+  </tr>
+  <tr>
+   <td><code>AUTF8String <a href="#getItemTitle()">getItemTitle</a>(in long long aItemId);</code></td>
+  </tr>
+  <tr>
+   <td><code>unsigned short <a href="#getItemType()">getItemType</a>(in long long aItemId);</code> </td>
+  </tr>
+  <tr>
+   <td><code>AString <a href="#getKeywordForBookmark()">getKeywordForBookmark</a>(in long long aItemId);</code> </td>
+  </tr>
+  <tr>
+   <td><code>AString <a href="#getKeywordForURI()">getKeywordForURI</a>(in nsIURI aURI);</code></td>
+  </tr>
+  <tr>
+   <td><code>nsITransaction <a href="#getRemoveFolderTransaction()">getRemoveFolderTransaction</a>(in long long aItemId);</code></td>
+  </tr>
+  <tr>
+   <td><code>nsIURI <a href="#getURIForKeyword()">getURIForKeyword</a>(in AString keyword);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#importBookmarksHTML()">importBookmarksHTML</a>(in nsIURI url);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#importBookmarksHTMLToFolder()">importBookmarksHTMLToFolder</a>(in nsIURI url, in PRInt64 folder);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>PRInt32 <a href="#indexOfFolder()">indexOfFolder</a>(in PRInt64 parent, in PRInt64 folder);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>PRInt32 <a href="#indexOfItem()">indexOfItem</a>(in PRInt64 folder, in nsIURI uri);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>long long <a href="#insertBookmark()">insertBookmark</a>(in long long aParentId, in nsIURI aURI, in long aIndex, in AUTF8String aTitle);</code> </td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#insertItem()">insertItem</a>(in PRInt64 folder, in nsIURI item, in PRInt32 index);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>long long <a href="#insertSeparator()">insertSeparator</a>(in long long aParentId, in long aIndex);</code></td>
+  </tr>
+  <tr>
+   <td><code>boolean <a href="#isBookmarked()">isBookmarked</a>(in nsIURI aURI);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#moveFolder()">moveFolder</a>(in PRInt64 folder, in PRInt64 newParent, in PRInt32 index);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#moveItem()">moveItem</a>(in long long aItemId, in long long aNewParentId, in long aIndex);</code> </td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#removeChildAt()">removeChildAt</a>(in long long aFolder, in long aIndex);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)">Obsolete since Gecko 2.0</span></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#removeFolder()">removeFolder</a>(in long long aFolder);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)">Obsolete since Gecko 2.0</span></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#removeFolderChildren()">removeFolderChildren</a>(in long long aItemId);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#removeItem()">removeItem</a>(in long long aItemId);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#removeObserver()">removeObserver</a>(in nsINavBookmarkObserver observer);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#replaceItem()">replaceItem</a>(in PRInt64 folder, in nsIURI item, in nsIURI newItem);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#runInBatchMode()">runInBatchMode</a>(in nsINavHistoryBatchCallback aCallback, in nsISupports aUserData);</code> </td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#setFolderReadonly()">setFolderReadonly</a>(in long long aFolder, in boolean aReadOnly);</code> </td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#setFolderTitle()">setFolderTitle</a>(in PRInt64 folder, in AString title);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#setItemDateAdded()">setItemDateAdded</a>(in long long aItemId, in PRTime aDateAdded);</code> </td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#setItemGUID()">setItemGUID</a>(in long long aItemId, in AString aGUID);</code>  <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 14.0 / Thunderbird 14.0 / SeaMonkey 2.11)">Obsolete since Gecko 14.0</span></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#setItemIndex()">setItemIndex</a>(in long long aItemId, in long aNewIndex);</code> </td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#setItemLastModified()">setItemLastModified</a>(in long long aItemId, in PRTime aLastModified);</code> </td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#setItemTitle()">setItemTitle</a>(in long long aItemId, in AUTF8String aTitle);</code></td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#setKeywordForBookmark()">setKeywordForBookmark</a>(in long long aItemId, in AString aKeyword);</code> </td>
+  </tr>
+  <tr>
+   <td><code>void <a href="#setKeywordForURI()">setKeywordForURI</a>(in nsIURI uri, in AString keyword);</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></td>
+  </tr>
+ </tbody>
+</table>
+<h2 id="Attributes" name="Attributes">Attributes</h2>
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td class="header">Attribute</td>
+   <td class="header">Type</td>
+   <td class="header">Description</td>
+  </tr>
+  <tr>
+   <td><code>bookmarksMenuFolder</code></td>
+   <td><code><a class="new" href="https://developer.mozilla.org/en-US/docs/long_long" title="en/long long">long long</a></code></td>
+   <td>The item ID of the Bookmarks Menu folder. <strong>Read only.</strong> <span class="inlineIndicator renamed renamedInline" title="(Firefox 3)">Renamed from <code>bookmarksRoot</code> in Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>placesRoot</code></td>
+   <td><code><a class="new" href="https://developer.mozilla.org/en-US/docs/long_long" title="en/long long">long long</a></code></td>
+   <td>The item ID of the top-level folder that contains bookmarks, tags and all other Places data. This contains administrative data as well as user data, and is therefore not recommended for use in queries. <strong>Read only.</strong></td>
+  </tr>
+  <tr>
+   <td><code>tagsFolder</code></td>
+   <td><code><a class="new" href="https://developer.mozilla.org/en-US/docs/long_long" title="en/long long">long long</a></code></td>
+   <td>The item ID of the top-level folder that contains the tag "folders". <strong>Read only.</strong> <span class="inlineIndicator renamed renamedInline" title="(Firefox 3)">Renamed from <code>tagRoot</code> in Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>toolbarFolder</code></td>
+   <td><code><a class="new" href="https://developer.mozilla.org/en-US/docs/long_long" title="en/long long">long long</a></code></td>
+   <td>The item ID of the personal toolbar folder. <strong>Read only.</strong> <span class="inlineIndicator renamed renamedInline" title="(Firefox 3)">Renamed from <code>toolbarRoot</code> in Gecko 1.9</span></td>
+  </tr>
+  <tr>
+   <td><code>unfiledBookmarksFolder</code></td>
+   <td><code><a class="new" href="https://developer.mozilla.org/en-US/docs/long_long" title="en/long long">long long</a></code></td>
+   <td>The item ID of the Unfiled Bookmarks folder. <strong>Read only.</strong> </td>
+  </tr>
+ </tbody>
+</table>
+<h2 id="Constants" name="Constants">Constants</h2>
+<p></p>
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td class="header">Constant</td>
+   <td class="header">Value</td>
+   <td class="header">Description</td>
+  </tr>
+  <tr>
+   <td><code>DEFAULT_INDEX</code></td>
+   <td><code>-1</code></td>
+   <td>This is the default index; this value should be used for APIs that allow passing in an index where the index is not known or is not required to be specified, such as when appending an item to a folder.</td>
+  </tr>
+  <tr>
+   <td><code>TYPE_BOOKMARK</code></td>
+   <td><code>1</code></td>
+   <td>This is an index for type "Bookmark".</td>
+  </tr>
+  <tr>
+   <td><code>TYPE_FOLDER</code></td>
+   <td><code>2</code></td>
+   <td>This is an index for type "Folder".</td>
+  </tr>
+  <tr>
+   <td><code>TYPE_SEPARATOR</code></td>
+   <td><code>3</code></td>
+   <td>This is an index for type "Separator".</td>
+  </tr>
+  <tr>
+   <td><code>TYPE_DYNAMIC_CONTAINER</code></td>
+   <td><code>4</code></td>
+   <td>This is an index for type "Dynamic Container". Dynamic containers were removed in Gecko 11, but the type index remains to prevent reuse.</td>
+  </tr>
+ </tbody>
+</table>
+<h2 id="Methods" name="Methods">Methods</h2>
+<h3 id="addObserver()" name="addObserver()">addObserver()</h3>
+<p>This method adds a bookmark observer. If <code>ownsWeak</code> is <code>false</code>, the bookmark service will keep an owning reference to the observer. If <code>ownsWeak</code> is <code>true</code>, then <code>aObserver</code> must implement <code><a href="nsISupportsWeakReference.html" title="">nsISupportsWeakReference</a></code>, and the bookmark service will keep a weak reference to the observer.</p>
+<pre class="eval">void addObserver(
+  in nsINavBookmarkObserver observer,
+  in boolean ownsWeak
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>observer</code></dt>
+ <dd>
+  The bookmark observer to be added.</dd>
+ <dt>
+  <code>ownsWeak</code></dt>
+ <dd>
+  The owning reference state <code>(boolean)</code>.</dd>
+</dl>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.9 (Firefox 3)</span> 
+        <h3 id="beginUpdateBatch()">beginUpdateBatch()</h3> 
+        </div><p></p>
+<p>Causes observers to be notified of a <code>beginUpdateBatch</code> when a lot of things are about to change. Calls can be nested, observers will only be notified when all batches begin/end.</p>
+<p>It is EXTREMELY IMPORTANT that you call <code><a href="nsINavBookmarksService.html#EndUpdateBatch()">EndUpdateBatch()</a></code> for each call to <code>beginUpdateBatch</code>. If you do not do this, certain parts of the UI will not get updated and any changes to bookmarks will not get written to disk. From C++ code inside the places component, use nsBookmarksUpdateBatcher defined in nsNavBookmarks.h to scope batches. For JS or from other components, just please be very careful to close the batch, especially when encountering an error and returning early.</p>
+<pre class="eval">void beginUpdateBatch();
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<p>None.</p>
+<h3 id="changeBookmarkURI()" name="changeBookmarkURI()">changeBookmarkURI()</h3>
+<p>This method changes the bookmarked URI for a bookmark. It changes which "place" the bookmark points at, which means all annotations, and so on are carried along.</p>
+<pre class="eval">void changeBookmarkURI(
+  in nsIURI oldURI, <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span>
+  in long long aItemId, 
+  in nsIURI aNewURI
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>oldURI</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></dt>
+ <dd>
+  The URI of the item to be changed.</dd>
+ <dt>
+  <code>aItemId</code> </dt>
+ <dd>
+  The item whose bookmark URI needs to be changed.</dd>
+ <dt>
+  <code>aNewURI</code></dt>
+ <dd>
+  The new URI.</dd>
+</dl>
+<p></p><div> 
+<span class="indicatorInHeadline renamed renamedMethod">Renamed from createContainer in Gecko 1.9</span> 
+<h3 id="createDynamicContainer()">createDynamicContainer()</h3> 
+</div><p></p>
+<p></p><div class="overheadIndicator obsolete obsoleteHeader"><p><strong>Obsolete since Gecko 13.0 (Firefox 13.0 / Thunderbird 13.0 / SeaMonkey 2.10)</strong><br>This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time. Try to avoid using it.</p></div><p></p>
+<p>This method creates a dynamic container under the given parent folder.</p>
+<pre class="eval">long long createDynamicContainer(
+  in long long aParentFolder,
+  in AUTF8String aName,
+  in AString aContractId,
+  in long aIndex
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aParentFolder</code></dt>
+ <dd>
+  The ID of the parent folder.</dd>
+ <dt>
+  <code>aName</code></dt>
+ <dd>
+  The name of the new folder.</dd>
+ <dt>
+  <code>aContractId</code></dt>
+ <dd>
+  The contract ID of the service which is to manipulate this container.</dd>
+ <dt>
+  <code>aIndex</code></dt>
+ <dd>
+  The index to insert at, or <code>DEFAULT_INDEX</code> to append to the end of the list.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns the ID of the newly-inserted folder.</p>
+<h3 id="createFolder()" name="createFolder()">createFolder()</h3>
+<p>This method creates a new child folder and inserts it under the given parent.</p>
+<pre class="eval">long long createFolder(
+  in long long aParentFolder,
+  in AUTF8String name,
+  in long index
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aParentFolder</code></dt>
+ <dd>
+  The ID of the parent folder.</dd>
+ <dt>
+  <code>name</code></dt>
+ <dd>
+  The name of the new folder.</dd>
+ <dt>
+  <code>index</code></dt>
+ <dd>
+  The index to insert at, or <code>DEFAULT_INDEX</code> to append to the end of the list.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns the ID of the newly-inserted folder.</p>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.9 (Firefox 3)</span> 
+        <h3 id="endUpdateBatch()">endUpdateBatch()</h3> 
+        </div><p></p>
+<p>Causes observers to be notified of an <code>endUpdateBatch</code> when a batch is done changing. Should match <code><a href="nsINavBookmarksService.html#beginUpdateBatch()">beginUpdateBatch()</a></code> or bad things will happen.</p>
+<pre class="eval">void endUpdateBatch();
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<p>None.</p>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.9 (Firefox 3)</span> 
+        <h3 id="exportBookmarksHTML()">exportBookmarksHTML()</h3> 
+        </div><p></p>
+<p>Saves the current bookmarks hierarchy to a bookmarks.html file.</p>
+<pre class="eval">void exportBookmarksHTML(
+  in nsIFile file
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>file</code></dt>
+ <dd>
+  The <code><a href="nsIFile.html" title="">nsIFile</a></code> to export the bookmarks to.</dd>
+</dl>
+<h3 id="getBookmarkedURIFor()" name="getBookmarkedURIFor()">getBookmarkedURIFor()</h3>
+<p>This method is used to see if the given URI is bookmarked, or any page that redirected to it is bookmarked. For example, if I bookmark <code>"mozilla.org"</code> by manually typing it in, and follow the bookmark, I will get redirected to <code>"www.mozilla.org"</code>. Logically, this new page is also bookmarked. This function, if given <code>"www.mozilla.org"</code>, will return the URI of the bookmark, in this case <code>"mozilla.org"</code>.</p>
+<p></p><div class="note"><strong>Note:</strong> Will only return bookmarks in the first 3 levels of redirection (1 -&gt; 2 -&gt; 3 -&gt; aURI).</div><p></p>
+<pre class="eval">nsIURI getBookmarkedURIFor(
+  in nsIURI aURI
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aURI</code></dt>
+ <dd>
+  The URI that needs to be checked if it is bookmarked or not.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p></p><div><span class="indicatorInHeadline noscript noscriptMethod" title="This method may only be called from C++; don't use it from JavaScript.">Native code only!</span><h3 id="getBookmarkFoldersTArray">getBookmarkFoldersTArray</h3></div><p></p>
+<p></p><div class="overheadIndicator obsolete obsoleteHeader"><p><strong>Obsolete since Gecko 1.9 (Firefox 3)</strong><br>This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time. Try to avoid using it.</p></div><p></p>
+<p>TArray version of <code><a href="nsINavBookmarksService.html#getBookmarkFolders()">getBookmarkFolders()</a></code> for ease of use in C++ code. Pass in a reference to a TArray; it will get cleared and filled with the resulting list of folder IDs.</p>
+<pre class="eval">void getBookmarkFoldersTArray(
+  in nsIURI aURI,
+  in PRInt64Array aResult
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aURI</code></dt>
+ <dd>
+   </dd>
+ <dt>
+  <code>aResult</code></dt>
+ <dd>
+   </dd>
+</dl>
+<p>Returns an <code><a href="nsIURI.html" title="">nsIURI</a></code> representing the URI whose bookmark is to be retrieved. If there is no bookmarked page found, it will return <code>null</code>.</p>
+<p></p><div> 
+<span class="indicatorInHeadline renamed renamedMethod">Renamed from getBookmarkFolders in Gecko 1.9</span> 
+<h3 id="getBookmarkIdsForURI()">getBookmarkIdsForURI()</h3> 
+</div><p></p>
+<p>This method retrieves the list of bookmark IDs that contain the given URI.</p>
+<pre class="eval">void getBookmarkIdsForURI(
+  in nsIURI aURI,
+  out unsigned long count, <span class="inlineIndicator optional optionalInline">Optional</span>
+  [array, retval, size_is(count)] out long long bookmarks
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aURI</code></dt>
+ <dd>
+  The URI whose list of bookmark IDs is to be retrieved.</dd>
+ <dt>
+  <code>count</code></dt>
+ <dd>
+  The count of bookmark IDs.</dd>
+ <dt>
+  <code>bookmarks</code></dt>
+ <dd>
+  The list of bookmark IDs.</dd>
+</dl>
+<p></p><div><span class="indicatorInHeadline noscript noscriptMethod" title="This method may only be called from C++; don't use it from JavaScript.">Native code only!</span><h3 id="getBookmarkIdsForURITArray">getBookmarkIdsForURITArray</h3></div><p></p>
+<p></p>
+<p></p><div class="overheadIndicator obsolete obsoleteHeader"><p><strong>Obsolete since Gecko 2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)</strong><br>This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time. Try to avoid using it.</p></div><p></p>
+<p>This method is a TArray version of <code><a href="nsINavBookmarksService.html#getBookmarkIdsForURI()">getBookmarkIdsForURI()</a></code> for ease of use in C++ code. Pass in a reference to a TArray; it will get cleared and filled with the resulting list of folder IDs.</p>
+<pre class="eval">void getBookmarkIdsForURITArray(
+  in nsIURI aURI,
+  in PRInt64Array aResult
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aURI</code></dt>
+ <dd>
+  The URI whose list of bookmark IDs is to be retrieved.</dd>
+ <dt>
+  <code>aResult</code></dt>
+ <dd>
+  The list of bookmark IDs.</dd>
+</dl>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="getBookmarkURI()" name="getBookmarkURI()">getBookmarkURI()</h3> 
+</div><p></p>
+<p>This method retrieves the URI for a bookmark item.</p>
+<pre class="eval">nsIURI getBookmarkURI(
+  in long long aItemId
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The ID of the bookmark item whose URI is to be retrieved.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns a <code><a href="nsIURI.html" title="">nsIURI</a></code> representing the URI of the bookmark.</p>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)</span> 
+        <h3 id="getChildFolder()">getChildFolder()</h3> 
+        </div><p></p>
+<p>This method retrieves the ID of a child folder with the given name. This does not recurse, so you have to give it an immediate sibling of the given folder.</p>
+<pre class="eval">long long getChildFolder(
+  in long long aFolder,
+  in AString aSubFolder
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aFolder</code></dt>
+ <dd>
+  Parent folder whose children we will search.</dd>
+ <dt>
+  <code>aSubFolder</code></dt>
+ <dd>
+  Name of the folder to search for in folder.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns the ID of a child folder with the given name. If the given subfolder doesn't exist, 0 is returned.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="getFolderIdForItem()" name="getFolderIdForItem()">getFolderIdForItem()</h3> 
+</div><p></p>
+<p>This method retrieves the parent folder's ID for an item.</p>
+<pre class="eval">long long getFolderIdForItem(
+  in long long aItemId
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The item whose parent folder's ID is to retrieved.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns the parent folder's ID for the given item.</p>
+<h3 id="getFolderReadonly()" name="getFolderReadonly()">getFolderReadonly()</h3>
+<p>This method checks whether a folder is marked as read-only. If this is set to <code>true</code>, UI will not allow the user to add, remove, or reorder children in this folder. The default for all folders is <code>false</code>.</p>
+<p></p><div class="note"><strong>Note:</strong> This does not restrict API calls, only UI actions.</div><p></p>
+<pre class="eval">boolean getFolderReadonly(
+  in long long aItemId
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The item ID of the folder.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns <code>true</code> if the folder is marked as read-only, otherwise returns <code>false</code>.</p>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.9 (Firefox 3)</span> 
+        <h3 id="getFolderTitle()">getFolderTitle()</h3> 
+        </div><p></p>
+<p></p><div class="note"><strong>Note:</strong> <code><a href="nsINavBookmarksService.html#getItemTitle()">getItemTitle()</a></code> provides an alternative for this method.</div><p></p>
+<p>Get the title for a bookmark folder.</p>
+<pre class="eval">AString getFolderTitle(
+  in PRInt64 folder
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>folder</code></dt>
+ <dd>
+  The folder whose title should be retrieved.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>The title of the folder.</p>
+<h6 id="Exceptions_thrown" name="Exceptions_thrown">Exceptions thrown</h6>
+<dl>
+ <dt>
+  <code>invalid argument exception</code></dt>
+ <dd>
+  If it can not find a folder with the given ID.</dd>
+</dl>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.9 (Firefox 3)</span> 
+        <h3 id="getFolderURI()">getFolderURI()</h3> 
+        </div><p></p>
+<p></p><div class="note"><strong>Note:</strong> <code><a href="nsINavBookmarksService.html#getBookmarkURI()">getBookmarkURI()</a></code> provides an alternative for this method.</div><p></p>
+<p>Get the url for a bookmark folder.</p>
+<pre class="eval">nsIURI getFolderURI(
+  in PRInt64 folder
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>folder</code></dt>
+ <dd>
+  The folder whose URI should be retrieved.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>The URI of the folder.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="getIdForItemAt()" name="getIdForItemAt()">getIdForItemAt()</h3> 
+</div><p></p>
+<p>Returns the item ID for the item at the specified index within a particular folder.</p>
+<pre class="eval">long long getIdForItemAt(
+  in long long aParentId,
+  in long aIndex
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aParentId</code></dt>
+ <dd>
+  The ID of the direct parent folder of the item whose ID is to be obtained.</dd>
+ <dt>
+  <code>aIndex</code></dt>
+ <dd>
+  The index of the item within the folder specified by <code>aParentID</code> for the item whose ID is to be returned. Specify <code>DEFAULT_INDEX</code> to return the last item in the folder.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>The item ID for the specified item or -1 if the item does not exist.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="getItemDateAdded()" name="getItemDateAdded()">getItemDateAdded()</h3> 
+</div><p></p>
+<p>This method retrieves the date added time for an item.</p>
+<pre class="eval">PRTime getItemDateAdded(
+  in long long aItemId
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The ID of the item whose added date time is to be retrieved.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns the date added time for the given item.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="getItemGUID()" name="getItemGUID()">getItemGUID()</h3> 
+</div><p></p>
+<p></p><div class="overheadIndicator obsolete obsoleteHeader"><p><strong>Obsolete since Gecko 14.0 (Firefox 14.0 / Thunderbird 14.0 / SeaMonkey 2.11)</strong><br>This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time. Try to avoid using it.</p></div><p></p>
+<p>This method retrieves a globally unique identifier for an item, meant to be used in sync scenarios. Even if their contents are exactly the same (including an item in a different profile with the same ItemId), the GUID would be different.</p>
+<pre class="eval">AString getItemGUID(
+  in long long aItemId
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The ID of the item to get the GUID for.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns the GUID string.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="getItemIdForGUID()" name="getItemIdForGUID()">getItemIdForGUID()</h3> 
+</div><p></p>
+<p></p><div class="overheadIndicator obsolete obsoleteHeader"><p><strong>Obsolete since Gecko 14.0 (Firefox 14.0 / Thunderbird 14.0 / SeaMonkey 2.11)</strong><br>This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time. Try to avoid using it.</p></div><p></p>
+<p>This method retrieves the ID of the item with the given GUID.</p>
+<pre class="eval">long long getItemIdForGUID(
+  in AString aGUID
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aGUID</code></dt>
+ <dd>
+  The GUID string of the item to search for.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns the item ID, or <code>-1</code> if not found.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="getItemIndex()" name="getItemIndex()">getItemIndex()</h3> 
+</div><p></p>
+<p>This method retrieves the index for an item.</p>
+<pre class="eval">long getItemIndex(
+  in long long aItemId
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The ID of the item whose index is to be retrieved.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns the index of the given item.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="getItemLastModified()" name="getItemLastModified()">getItemLastModified()</h3> 
+</div><p></p>
+<p>This method retrieves the last modified time for an item.</p>
+<p></p><div class="note"><strong>Note:</strong> When an item is added lastModified is set to the same value as dateAdded.</div><p></p>
+<pre class="eval">PRTime getItemLastModified(
+  in long long aItemId
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The ID of the item whose last modified time is to be retrieved.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns the last modified time for the given item.</p>
+<h3 id="getItemTitle()" name="getItemTitle()">getItemTitle()</h3>
+<p>This method retrieves the title for an item. If no item title is available it will return a <code>void</code> string (<code>null</code> in JS environment).</p>
+<pre class="eval">AUTF8String getItemTitle(
+  in nsIURI uri, <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span>
+  in long long aItemId 
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>uri</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></dt>
+ <dd>
+  The URI of the item whose title should be retrieved.</dd>
+ <dt>
+  <code>aItemId</code> </dt>
+ <dd>
+  The ID of the item whose title should be retrieved.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns the title of the item.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="getItemType()" name="getItemType()">getItemType()</h3> 
+</div><p></p>
+<p>This method retrieves an item's type (bookmark, separator, folder). The type is one of the <code>TYPE_*</code> constants defined above.</p>
+<pre class="eval">unsigned short getItemType(
+  in long long aItemId
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The ID of the item whose type is to be retrieved.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns one of the above defined <code>TYPE_*</code> for the given item.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="getKeywordForBookmark()" name="getKeywordForBookmark()">getKeywordForBookmark()</h3> 
+</div><p></p>
+<p>This method retrieves the keyword for the given bookmark. Will be <code>void</code> string (<code>null</code> in JS) if no such keyword is found.</p>
+<pre class="eval">AString getKeywordForBookmark(
+  in long long aItemId
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The item (bookmark) whose keyword is to be retrieved.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns the keyword for the given bookmark.</p>
+<h3 id="getKeywordForURI()" name="getKeywordForURI()">getKeywordForURI()</h3>
+<p>This method retrieves the keyword for the given URI. Will be <code>void</code> string (<code>null</code> in JS) if no such keyword is found.</p>
+<pre class="eval">AString getKeywordForURI(
+  in nsIURI aURI
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aURI</code></dt>
+ <dd>
+  The URI whose keyword is to be retrieved.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns the keyword for the given URI.</p>
+<h3 id="getRemoveFolderTransaction()" name="getRemoveFolderTransaction()">getRemoveFolderTransaction()</h3>
+<p>This method retrieves an undo-able transaction for removing a folder from the bookmarks tree. This method exists because complex delete-&gt;undo operations rely on recreated folders to have the same ID they had before they were deleted, so that any other items deleted in different transactions can be re-inserted correctly. This provides a safe encapsulation of this functionality without exposing the ability to recreate folders with specific IDs (potentially dangerous if abused by other code!) in the public API.</p>
+<pre class="eval">nsITransaction getRemoveFolderTransaction(
+  in long long aItemId
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The ID of the folder to remove.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns an object implementing <code><a href="nsITransaction.html" title="">nsITransaction</a></code> that can be used to undo or redo the action.</p>
+<h3 id="getURIForKeyword()" name="getURIForKeyword()">getURIForKeyword()</h3>
+<p>This method retrieves the URI associated with the given keyword.</p>
+<pre class="eval">nsIURI getURIForKeyword(
+  in AString keyword
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>keyword</code></dt>
+ <dd>
+  The keyword whose URI is to be retrieved.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns a <code><a href="nsIURI.html" title="">nsIURI</a></code> representing the URI associated with the given keyword. Empty if no such keyword is found.</p>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.9 (Firefox 3)</span> 
+        <h3 id="importBookmarksHTML()">importBookmarksHTML()</h3> 
+        </div><p></p>
+<p>Loads the given bookmarks.html file and merges it with the current bookmarks hierarchy.</p>
+<pre class="eval">void importBookmarksHTML(
+  in nsIURI url
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>url</code></dt>
+ <dd>
+  The url of the bookmarks.html file to be merged.</dd>
+</dl>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.9 (Firefox 3)</span> 
+        <h3 id="importBookmarksHTMLToFolder()">importBookmarksHTMLToFolder()</h3> 
+        </div><p></p>
+<p>Loads the given bookmarks.html file and puts it in the given folder.</p>
+<pre class="eval">void importBookmarksHTMLToFolder(
+  in nsIURI url,
+  in PRInt64 folder
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>url</code></dt>
+ <dd>
+  The url of the bookmarks.html file to be imported.</dd>
+ <dt>
+  <code>folder</code></dt>
+ <dd>
+  The folder where the bookmarks should be imported.</dd>
+</dl>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.9 (Firefox 3)</span> 
+        <h3 id="indexOfFolder()">indexOfFolder()</h3> 
+        </div><p></p>
+<p></p><div class="note"><strong>Note:</strong> <code><a href="nsINavBookmarksService.html#getItemIndex()">getItemIndex()</a></code> provides an alternative for this method.</div><p></p>
+<p>Returns the index of the given subfolder in its parent.</p>
+<pre class="eval">PRInt32 indexOfFolder(
+  in PRInt64 parent,
+  in PRInt64 folder
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>parent</code></dt>
+ <dd>
+  The parent folder containing the folder.</dd>
+ <dt>
+  <code>folder</code></dt>
+ <dd>
+  The ID of the folder.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>The index of the subfolder or -1 if the subfolder is not present in the parent folder.</p>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.9 (Firefox 3)</span> 
+        <h3 id="indexOfItem()">indexOfItem()</h3> 
+        </div><p></p>
+<p></p><div class="note"><strong>Note:</strong> <code><a href="nsINavBookmarksService.html#getItemIndex()">getItemIndex()</a></code> provides an alternative for this method.</div><p></p>
+<p>Returns the index of the given item in the given folder.</p>
+<pre class="eval">PRInt32 indexOfItem(
+  in PRInt64 folder,
+  in nsIURI uri
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>folder</code></dt>
+ <dd>
+  The folder containing the item.</dd>
+ <dt>
+  <code>uri</code></dt>
+ <dd>
+  The uri of the item.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>The index of the item or -1 if the item is not present in the folder.</p>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="insertBookmark()" name="insertBookmark()">insertBookmark()</h3> 
+</div><p></p>
+<p>This method inserts a child bookmark into the given folder.</p>
+<pre class="eval">long long insertBookmark(
+  in long long aParentId,
+  in nsIURI aURI,
+  in long aIndex,
+  in AUTF8String aTitle
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aParentId</code></dt>
+ <dd>
+  The ID of the parent folder.</dd>
+ <dt>
+  <code>aURI</code></dt>
+ <dd>
+  The URI to insert.</dd>
+ <dt>
+  <code>aIndex</code></dt>
+ <dd>
+  The index to insert at, or <code>DEFAULT_INDEX</code> to append to the end of the list.</dd>
+ <dt>
+  <code>aTitle</code></dt>
+ <dd>
+  The title for the new bookmark.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns the ID of the newly-created bookmark.</p>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.9 (Firefox 3)</span> 
+        <h3 id="insertItem()">insertItem()</h3> 
+        </div><p></p>
+<p></p><div class="note"><strong>Note:</strong> <code><a href="nsINavBookmarksService.html#insertBookmark()">insertBookmark()</a></code> provides an alternative for this method.</div><p></p>
+<p>Inserts a child item into the given folder. If this item already exists in the given folder, it will be moved to the new position.</p>
+<pre class="eval">void insertItem(
+  in PRInt64 folder,
+  in nsIURI item,
+  in PRInt32 index
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>folder</code></dt>
+ <dd>
+  The id of the parent folder.</dd>
+ <dt>
+  <code>item</code></dt>
+ <dd>
+  The URI to insert.</dd>
+ <dt>
+  <code>index</code></dt>
+ <dd>
+  The index to insert at, or -1 to append.</dd>
+</dl>
+<h3 id="insertSeparator()" name="insertSeparator()">insertSeparator()</h3>
+<p>This method inserts a bookmark separator into the given folder at the given index. The separator can be removed using <code><a href="nsINavBookmarksService.html#getIdForItemAt()">getIdForItemAt()</a></code> and <code><a href="nsINavBookmarksService.html#removeItem()">removeItem()</a></code>.</p>
+<pre class="eval">long long insertSeparator(
+  in long long aParentId,
+  in long aIndex
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aParentId</code></dt>
+ <dd>
+  The ID of the parent folder in which to insert the separator.</dd>
+ <dt>
+  <code>aIndex</code></dt>
+ <dd>
+  The separator's index under the folder, or <code>DEFAULT_INDEX</code> to append to the end of the list.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>The ID of the new separator.</p>
+<h3 id="isBookmarked()" name="isBookmarked()">isBookmarked()</h3>
+<p>This method checks whether or not the given URI is in any bookmark folder. If you want the results to be redirect-aware, use <code><a href="nsINavBookmarksService.html#getBookmarkedURIFor()">getBookmarkedURIFor()</a></code></p>
+<pre class="eval">boolean isBookmarked(
+  in nsIURI aURI
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aURI</code></dt>
+ <dd>
+  The URI whose existence in any bookmark folder is needed to be checked.</dd>
+</dl>
+<h6 id="Return_value" name="Return_value">Return value</h6>
+<p>Returns <code>true</code> if the given URI is in any bookmark folder, otherwise returns <code>false</code>.</p>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.9 (Firefox 3)</span> 
+        <h3 id="moveFolder()">moveFolder()</h3> 
+        </div><p></p>
+<p></p><div class="note"><strong>Note:</strong> <code><a href="nsINavBookmarksService.html#moveItem()">moveItem()</a></code> provides an alternative for this method.</div><p></p>
+<p>Moves a folder to a different container, preserving its contents.</p>
+<pre class="eval">void moveFolder(
+  in PRInt64 folder,
+  in PRInt64 newParent,
+  in PRInt32 index
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>folder</code></dt>
+ <dd>
+  The folder to move.</dd>
+ <dt>
+  <code>newParent</code></dt>
+ <dd>
+  The id of the folder's new parent.</dd>
+ <dt>
+  <code>index</code></dt>
+ <dd>
+  The folder's index under newParent, or -1 to append.</dd>
+</dl>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="moveItem()" name="moveItem()">moveItem()</h3> 
+</div><p></p>
+<p>This method moves an item to a different container, preserving its contents.</p>
+<p></p><div class="note"><strong>Note:</strong> When moving down in the same container we take into account the removal of the original item. If you want to move from index X to index Y &gt; X you must use moveItem(id, folder, Y + 1)</div><p></p>
+<pre class="eval">void moveItem(
+  in long long aItemId,
+  in long long aNewParentId,
+  in long aIndex
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The ID of the item to move.</dd>
+ <dt>
+  <code>aNewParentId</code></dt>
+ <dd>
+  The ID of the new parent.</dd>
+ <dt>
+  <code>aIndex</code></dt>
+ <dd>
+  The index under <code>aNewParentId</code> to insert at, or <code>DEFAULT_INDEX</code> to append to the end of the list.</dd>
+</dl>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)</span> 
+        <h3 id="removeChildAt()">removeChildAt()</h3> 
+        </div><p></p>
+<p>Use <code><a href="nsINavBookmarksService.html#removeItem()">removeItem()</a></code> instead.</p>
+<p>This method removes any type of child (item, folder, or separator) at the given index.</p>
+<pre class="eval">void removeChildAt(
+  in long long aFolder,
+  in long aIndex
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aFolder</code></dt>
+ <dd>
+  The folder to remove a child from.</dd>
+ <dt>
+  <code>aIndex</code></dt>
+ <dd>
+  The index of the child to remove.</dd>
+</dl>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)</span> 
+        <h3 id="removeFolder()">removeFolder()</h3> 
+        </div><p></p>
+<p>Use <code><a href="nsINavBookmarksService.html#removeItem()">removeItem()</a></code> instead.</p>
+<p>This method removes a folder from the bookmarks tree.</p>
+<pre class="eval">void removeFolder(
+  in long long aFolder
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aFolder</code></dt>
+ <dd>
+  The ID of the folder to remove.</dd>
+</dl>
+<h3 id="removeFolderChildren()" name="removeFolderChildren()">removeFolderChildren()</h3>
+<p>This method removes all children of the given folder. Its a Convenience function for container services.</p>
+<pre class="eval">void removeFolderChildren(
+  in long long aItemId
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The ID of the folder to remove children from.</dd>
+</dl>
+<h3 id="removeItem()" name="removeItem()">removeItem()</h3>
+<p>This method removes a child item. It is used to delete a bookmark or a separator.</p>
+<pre class="eval">void removeItem(
+  in PRInt64 folder, <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span>
+  in nsIURI child, <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span>
+  in long long aItemId 
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>folder</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></dt>
+ <dd>
+  The ID of the items parent folder.</dd>
+ <dt>
+  <code>folder</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></dt>
+ <dd>
+  The URI of the item to remove.</dd>
+ <dt>
+  <code>aItemId</code> </dt>
+ <dd>
+  The child item to remove.</dd>
+</dl>
+<h3 id="removeObserver()" name="removeObserver()">removeObserver()</h3>
+<p>This method removes a bookmark observer.</p>
+<pre class="eval">void removeObserver(
+  in nsINavBookmarkObserver observer
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>observer</code></dt>
+ <dd>
+  The bookmark observer to be removed.</dd>
+</dl>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.9 (Firefox 3)</span> 
+        <h3 id="replaceItem()">replaceItem()</h3> 
+        </div><p></p>
+<p>Replace an item with a different item.</p>
+<pre class="eval">void replaceItem(
+  in PRInt64 folder,
+  in nsIURI item,
+  in nsIURI newItem
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>folder</code></dt>
+ <dd>
+  The folder which contains the item to replace.</dd>
+ <dt>
+  <code>item</code></dt>
+ <dd>
+  The item which should be replaced.</dd>
+ <dt>
+  <code>newItem</code></dt>
+ <dd>
+  The new item.</dd>
+</dl>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="runInBatchMode()" name="runInBatchMode()">runInBatchMode()</h3> 
+</div><p></p>
+<p>This method runs the passed callback in batch mode (Inside a database transaction). Use this when a lot of things are about to change, for example adding or deleting a large number of bookmark items. Calls can be nested. Observers are notified when batches begin and end, via <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsINavBookmarkObserver#onBeginUpdateBatch()">nsINavBookmarkObserver.onBeginUpdateBatch()</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsINavBookmarkObserver#onEndUpdateBatch()">nsINavBookmarkObserver.onEndUpdateBatch()</a></code>.</p>
+<pre class="eval">void runInBatchMode(
+  in nsINavHistoryBatchCallback aCallback,
+  in nsISupports aUserData
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aCallback</code></dt>
+ <dd>
+  <code><a href="nsINavHistoryBatchCallback.html" title="">nsINavHistoryBatchCallback</a></code> interface to call.</dd>
+ <dt>
+  <code>aUserData</code></dt>
+ <dd>
+  Opaque parameter passed to <code><a class="new" href="nsINavBookmarksBatchCallback.html" title="">nsINavBookmarksBatchCallback</a></code>.</dd>
+</dl>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="setFolderReadonly()" name="setFolderReadonly()">setFolderReadonly()</h3> 
+</div><p></p>
+<p>This method sets or unsets the readonly flag from a folder. If this is set to <code>true</code>, UI will not allow the user to add, remove, or reorder children in this folder. The default for all folders is <code>false</code>.</p>
+<p></p><div class="note"><strong>Note:</strong> This does not restrict API calls, only UI actions.</div><p></p>
+<pre class="eval">void setFolderReadonly(
+  in long long aFolder,
+  in boolean aReadOnly
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aFolder</code></dt>
+ <dd>
+  The item-id of the folder.</dd>
+ <dt>
+  <code>aReadOnly</code></dt>
+ <dd>
+  The read-only state.</dd>
+</dl>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.9 (Firefox 3)</span> 
+        <h3 id="setFolderTitle()">setFolderTitle()</h3> 
+        </div><p></p>
+<p></p><div class="note"><strong>Note:</strong> <code><a href="nsINavBookmarksService.html#setItemTitle()">setItemTitle()</a></code> provides an alternative for this method.</div><p></p>
+<p>Set the title for a bookmark folder.</p>
+<pre class="eval">void setFolderTitle(
+  in PRInt64 folder,
+  in AString title
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>folder</code></dt>
+ <dd>
+  The folder whose title should be set.</dd>
+ <dt>
+  <code>title</code></dt>
+ <dd>
+  The new title for the folder.</dd>
+</dl>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="setItemDateAdded()" name="setItemDateAdded()">setItemDateAdded()</h3> 
+</div><p></p>
+<p>This method sets the date added time for an item.</p>
+<pre class="eval">void setItemDateAdded(
+  in long long aItemId,
+  in PRTime aDateAdded
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The ID of the item whose added date time is to be set.</dd>
+ <dt>
+  <code>aDateAdded</code></dt>
+ <dd>
+  The added date of the item.</dd>
+</dl>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="setItemGUID()" name="setItemGUID()">setItemGUID()</h3> 
+</div><p></p>
+<p></p><div class="overheadIndicator obsolete obsoleteHeader"><p><strong>Obsolete since Gecko 14.0 (Firefox 14.0 / Thunderbird 14.0 / SeaMonkey 2.11)</strong><br>This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time. Try to avoid using it.</p></div><p></p>
+<p>This method sets a globally unique identifier. This can be useful when a sync algorithm deems two independently created items (on different profiles) to be the same item.</p>
+<pre class="eval">void setItemGUID(
+  in long long aItemId,
+  in AString aGUID
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The ID of the item to set the GUID of.</dd>
+ <dt>
+  <code>aGUID</code></dt>
+ <dd>
+  The GUID string.</dd>
+</dl>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="setItemIndex()" name="setItemIndex()">setItemIndex()</h3> 
+</div><p></p>
+<p>This method changes the index for a item. This method does not change the indices of any other items in the same folder, so ensure that the new index does not already exist, or change the index of other items accordingly, otherwise the indices will become corrupted.</p>
+<p></p><div class="warning warningHeader"> 
+    <p><strong>Warning:</strong> This is API is intended for scenarios such as folder sorting, where the caller manages the indices of <strong>all</strong> items in the folder. You must always ensure each index is unique after a reordering.</p> 
+</div><p></p>
+<pre class="eval">void setItemIndex(
+  in long long aItemId,
+  in long aNewIndex
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The ID of the item to modify.</dd>
+ <dt>
+  <code>aNewIndex</code></dt>
+ <dd>
+  The new index.</dd>
+</dl>
+<h6 id="Exceptions_thrown" name="Exceptions_thrown">Exceptions thrown</h6>
+<dl>
+ <dt>
+   </dt>
+ <dd>
+  If aNewIndex is out of bounds.</dd>
+</dl>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="setItemLastModified()" name="setItemLastModified()">setItemLastModified()</h3> 
+</div><p></p>
+<p>This method sets the last modified time for an item.</p>
+<p></p><div class="note"><strong>Note:</strong> This is the only method that will send an itemChanged notification for the property. lastModified will still be updated in any other method that changes an item property, but we will send the corresponding itemChanged notification instead.</div><p></p>
+<pre class="eval">void setItemLastModified(
+  in long long aItemId,
+  in PRTime aLastModified
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The ID of the item whose last modified time is to be set.</dd>
+ <dt>
+  <code>aLastModified</code></dt>
+ <dd>
+  The last modified time of the item.</dd>
+</dl>
+<h3 id="setItemTitle()" name="setItemTitle()">setItemTitle()</h3>
+<p>This method sets the title for an item.</p>
+<pre class="eval">void setItemTitle(
+  in nsIURI uri, <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span>
+  in long long aItemId, 
+  in AUTF8String aTitle
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>uri</code> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 3)">Obsolete since Gecko 1.9</span></dt>
+ <dd>
+  The URI of the item whose title should be updated. </dd>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The ID of the item whose title should be updated.</dd>
+ <dt>
+  <code>aTitle</code></dt>
+ <dd>
+  The new title for the bookmark. Will be truncated to TITLE_LENGTH_MAX.</dd>
+</dl>
+<p></p><div> 
+    <span class="indicatorInHeadline standardNote standardNoteMethod">Requires Gecko 1.9 (Firefox 3)</span> 
+    <h3 id="setKeywordForBookmark()" name="setKeywordForBookmark()">setKeywordForBookmark()</h3> 
+</div><p></p>
+<p>This method associates the given keyword with the given bookmark.</p>
+<p>Use an empty keyword to clear the keyword associated with the URI. In both of these cases, succeeds but does nothing if the URL/keyword is not found.</p>
+<pre class="eval">void setKeywordForBookmark(
+  in long long aItemId,
+  in AString aKeyword
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>aItemId</code></dt>
+ <dd>
+  The item (bookmark) that needs to be associated with the keyword.</dd>
+ <dt>
+  <code>aKeyword</code></dt>
+ <dd>
+  The keyword that needs to be associated with the item (bookmark).</dd>
+</dl>
+<p></p><div> 
+        <span class="indicatorInHeadline obsolete obsoleteMethod">Obsolete since Gecko 1.9 (Firefox 3)</span> 
+        <h3 id="setKeywordForURI()">setKeywordForURI()</h3> 
+        </div><p></p>
+<p></p><div class="note"><strong>Note:</strong> <code><a href="nsINavBookmarksService.html#setKeywordForBookmark()">setKeywordForBookmark()</a></code> provides an alternative for this method.</div><p></p>
+<p>Associates the given keyword with the given URI.</p>
+<p>Use an empty keyword to clear the keyword associated with the URI. Use an empty URI to clear the URI associated with that keyword. In both of these cases, succeeds but does nothing if the URL/keyword is not found.</p>
+<p>When setting a keyword (both URI and keyword are specified), the URI must be bookmarked for the keyword to be persistent.</p>
+<pre class="eval">void setKeywordForURI(
+  in nsIURI uri,
+  in AString keyword
+);
+</pre>
+<h6 id="Parameters" name="Parameters">Parameters</h6>
+<dl>
+ <dt>
+  <code>uri</code></dt>
+ <dd>
+  The URI of the bookmark.</dd>
+ <dt>
+  <code>keyword</code></dt>
+ <dd>
+  The keyword that needs to be associated with the URI.</dd>
+</dl>
+<h2 id="See_also" name="See_also">See also</h2>
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Places" title="en/Places">Places</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Manipulating_bookmarks_using_Places" title="en/Manipulating_bookmarks_using_Places">Manipulating bookmarks using Places</a></li>
+ <li><code><a href="nsITransaction.html" title="">nsITransaction</a></code></li>
+ <li><code><a href="nsINavBookmarkObserver.html" title="">nsINavBookmarkObserver</a></code></li>
+ <li><code><a href="nsINavHistoryBatchCallback.html" title="">nsINavHistoryBatchCallback</a></code></li>
+</ul>
+                                                </article>
+
+              
+                <!-- attachments list -->
+                
+                <!-- contributors -->
+                <div class="wiki-block contributors">
+                  <h2 class="offscreen">Document Tags and Contributors</h2>
+                                                      <!-- tags if present -->
+                  <div class="tag-attach-list tags contributor-sub">
+                    <i aria-hidden="true" class="icon-tags"></i><strong>Tags:</strong>
+                    <ul class="tag-list"><li><a href="https://developer.mozilla.org/en-US/docs/tag/Extensions">Extensions</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Interfaces:Scriptable">Interfaces:Scriptable</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/XPCOM">XPCOM</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Interfaces">Interfaces</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/XPCOM API Reference">XPCOM API Reference</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/XPCOM Interface Reference">XPCOM Interface Reference</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Developing Mozilla">Developing Mozilla</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/Places">Places</a></li></ul>
+                  </div>
+                                    <div class="contributor-sub"> <i aria-hidden="true" class="icon-group"></i><strong>Contributors to this page:</strong> <a href="https://developer.mozilla.org/en-US/profiles/Dietrich">Dietrich</a>, <a href="https://developer.mozilla.org/en-US/profiles/MKaply">MKaply</a>, <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>, <a href="https://developer.mozilla.org/en-US/profiles/trevorh">trevorh</a>, <a href="https://developer.mozilla.org/en-US/profiles/rnewman">rnewman</a>, <a href="https://developer.mozilla.org/en-US/profiles/Arehman4">Arehman4</a>, <a href="https://developer.mozilla.org/en-US/profiles/Nicoulas">Nicoulas</a>, <a href="https://developer.mozilla.org/en-US/profiles/Ancestor">Ancestor</a> </div>                                      <div class="contributor-sub">
+                      <i aria-hidden="true" class="icon-clock-o"></i><strong>Last updated by:</strong>
+                      <a href="https://developer.mozilla.org/en-US/profiles/rnewman">rnewman</a>,
+                      <time datetime="2014-06-16T10:16:32-07:00">Jun 16, 2014 10:16:32 AM</time>
+                    </div>
+                                  </div>
+                          </div>
+
+                      </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="$edit" label="Edit page"></menuitem>
+    <menuitem data-action="$history" label="View page history"></menuitem>
+  </menu>
+  </div></main>
+
+  <!-- Footer -->
+  <footer><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+                <p>
+          <bdi>&copy; 2005-2014 Mozilla Developer Network and individual contributors<br /> Content is available under <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About#Copyrights_and_licenses">these licenses</a> &middot; <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About">About MDN</a> &middot; <a href="http://github.com/mozilla/kuma">Contribute to the code</a> &middot; <a href="http://www.mozilla.org/privacy/websites/">Privacy policy</a></bdi>        </p>
+              </div>
+      <div class="column-strip">
+                                  </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+    <script src="https://developer.mozilla.org/en-US/jsi18n/build:9fd3034"></script>
+  
+      <!--[if lte IE 8]><script src="/media/redesign/js/libs/selectivizr-1.0.2/selectivizr-build.js?build=9fd3034"></script><![endif]-->
+
+    <script src="../../../../../../../../developer.cdn.mozilla.net/media/js/main-min46d5.js?build=9fd3034"></script>
+
+          <script>
+        mdn.analytics.trackOutboundLinks(document.body);
+      </script>
+    
+          <script src="../../../../../../../../developer.cdn.mozilla.net/media/js/wiki-min46d5.js?build=9fd3034"></script>
+      
+    <script type="text/javascript">
+      jQuery('.from-search-toc').mozSearchResults('');
+  </script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-3.newrelic.com","queueTime":1,"licenseKey":"42869b6ed3","agent":"js-agent.newrelic.com/nr-411.min.js","transactionName":"b1QHMUtVDRdSW0YKXVYeIxBXVxcNXFYdFFtTWEsTUFEUFwlcXQBHVVQLEQ==","applicationID":"3172075","errorBeacon":"bam.nr-data.net","applicationTime":343}</script></body>
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsINavBookmarksService by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Aug 2014 20:21:19 GMT -->
+</html>
