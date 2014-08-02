@@ -129,44 +129,71 @@ class Main
 					//Lib.println("    method: " + method);
 					if (attrCount > 0 && !blankLineAdded) { outLines.push(""); blankLineAdded = true; }
 					
-					method = ~/\bunsigned\s+long\b/.replace(method, "ulong");
-					
 					var isPropGet = false;
-					if (method.startsWith("[propget]"))
+					var isNoScript = false;
+					var isNotXpcom = false;
+					var isConst = false;
+					var isImplicitJsContext = false;
+					if (method.startsWith("["))
 					{
-						isPropGet = true;
-						method = method.substr("[propget]".length).trim();
+						var i = method.indexOf("]");
+						var metas = parseCSV(method.substr(1, i - 1));
+						for (meta in metas)
+						{
+							switch (meta)
+							{
+								case "propget": isPropGet = true;
+								case "noscript": isNoScript = true;
+								case "notxpcom": isNotXpcom = true;
+								case "const": isConst = true;
+								case "implicit_jscontext": isImplicitJsContext = true;
+								case _: Lib.println("warng: unknow meta " + meta);
+							}
+						}
+						method = method.substr(i + 1).trim();
 					}
 					
-					//              1=type               2=name             3=params
-					var re = ~/^([_a-z][_a-z0-9]*)\s+([_a-z][_a-z0-9]*)[(]([^)]*)[)]$/i;
+					//              1=type                                   2=name             3=params
+					var re = ~/^([_a-z][_a-z0-9]*(?:\s+[_a-z][_a-z0-9]*)?(?:\s+[_a-z][_a-z0-9]*)?)\s+([_a-z][_a-z0-9]*)[(](.*)[)]$/i;
 					if (re.match(method))
 					{
-						var params = parseCSV(re.matched(3));
+						var params = parseCSV(re.matched(3)).filter(function(s) return s != "");
 						
 						var paramsData = params.map(function(s)
 						{
-							var isOpt = false;
-							if (s.startsWith("[optional]"))
+							var isOptional = false;
+							var isOut = false;
+							var isIn = false;
+							var isRetVal = false;
+							var isConst = false;
+							var isArray = false;
+							if (s.startsWith("["))
 							{
-								s = s.substr("[optional]".length).trim();
+								var i = s.indexOf("]");
+								var metas = parseCSV(s.substr(1, i - 1));
+								for (meta in metas)
+								{
+									if (meta.startsWith("size_is(")) continue;
+									if (meta.startsWith("length_is(")) continue;
+									
+									switch (meta)
+									{
+										case "optional": isOptional = true;
+										case "out": isOut = true;
+										case "in": isIn = true;
+										case "retval": isRetVal = true;
+										case "const": isConst = true;
+										case "array": isArray = true;
+										case _: Lib.println("warng: unknow meta " + meta);
+									}
+								}
+								s = s.substr(i + 1).trim();
 							}
 							
-							var isOut = false;
-							if (s.startsWith("[in]"))
-							{
-								s = s.substr("[in]".length).trim();
-							}
-							else
 							if (s.startsWith("in "))
 							{
 								s = s.substr("in ".length).trim();
-							}
-							else
-							if (s.startsWith("[out]"))
-							{
-								s = s.substr("[out]".length).trim();
-								isOut = true;
+								isIn = true;
 							}
 							else
 							if (s.startsWith("out "))
@@ -175,9 +202,10 @@ class Main
 								isOut = true;
 							}
 							else
-							if (s.startsWith("[out,retval]"))
+							if (s.startsWith("inout"))
 							{
-								s = s.substr("[out,retval]".length).trim();
+								s = s.substr("inout".length).trim();
+								isIn = true;
 								isOut = true;
 							}
 							
@@ -188,15 +216,31 @@ class Main
 								isEnumType = true;
 							}
 							
-							return
+							var re = ~/^([_a-z][_a-z0-9]*(?:\s+[_a-z][_a-z0-9]*)?(?:\s+[_a-z][_a-z0-9]*)?)\s+([_a-z][_a-z0-9]*)$/i;
+							if (re.match(s))
 							{
-								isOpt:isOpt,
-								isOut:isOut,
-								name:s
-							};
+								return
+								{
+									isOptional: isOptional,
+									isOut: isOut,
+									isEnumType: isEnumType,
+									type: getType(re.matched(1)),
+									name: re.matched(2)
+								};
+							}
+							else
+							{
+								Lib.println("warng: cannot parse param - " + s);
+								return null;
+							}
 						});
 						
-						outLines.push("\tfunction " + re.matched(2) + "(" + paramsData.map(function(p) return p.name).join(",") + ")" + " : " + getType(re.matched(1)) + ";");
+						outLines.push("\tfunction " + re.matched(2) + "(" + paramsData.map(function(p)
+						{
+							return p != null ? (p.isOptional ? "?":"") + p.name + ":" + p.type : "???";
+						}
+						).join(", ") + ")" + " : " + getType(re.matched(1)) + ";");
+						
 					}
 					else
 					{
@@ -282,13 +326,13 @@ class Main
 		switch (type)
 		{
 			case "boolean": return "Bool";
-			case "void": return "Void";
 			case "AString": return "String";
 			case "long": return "Int";
-			case "ulong": return "Int";
+			case "unsigned long": return "Int";
+			case "unsigned int": return "Int";
 			case "HRESULT": return "Int";
 			case "HWND": return "Int";
-			case _: return type;
+			case _: return capitalize(type);
 		}
 	}
 	
