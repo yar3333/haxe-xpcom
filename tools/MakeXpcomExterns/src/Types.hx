@@ -23,6 +23,7 @@ class Types
 			case "unsigned int": return "UInt";
 			case "unsigned short": return "UShort";
 			case "long long": return "LongLong";
+			case "ACString (US-ASCII)": return "ACString";
 		}
 		
 		return type.capitalize();
