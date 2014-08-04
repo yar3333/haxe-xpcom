@@ -69,6 +69,8 @@ class MdnParser
 				var td = row.find(">td");
 				
 				var name = td[0].innerHTML.stripTags().htmlUnescape();
+				var type = (td[1].findOne(">code") != null ? td[1].findOne(">code").innerHTML : td[1].innerHTML).stripTags().htmlUnescape();
+				var desc = td[2].innerHTML.htmlUnescape();
 				
 				var isUnimplemented = false;
 				var reUnimplemented = ~/\s*Unimplemented\s*$/i;
@@ -76,6 +78,13 @@ class MdnParser
 				{
 					name = name.substr(0, name.length - reUnimplemented.matchedPos().len);
 					isUnimplemented = true;
+				}
+				
+				var isReadOnly = false;
+				if (type.startsWith("readonly "))
+				{
+					type = type.substr("readonly ".length).trim();
+					isReadOnly = true;
 				}
 				
 				var metaObsolete = "";
@@ -86,8 +95,6 @@ class MdnParser
 					metaObsolete = reObsolete.matched(0).trim();
 				}
 				
-				var type = (td[1].findOne(">code") != null ? td[1].findOne(">code").innerHTML : td[1].innerHTML).stripTags().htmlUnescape();
-				
 				var metaNew = "";
 				var reNew = ~/\s*\[\s*(new\s+in\s+\d*(?:[.]\d+)?)\]\s*$/i;
 				if (reNew.match(type))
@@ -96,7 +103,8 @@ class MdnParser
 					metaNew = reNew.matched(1).trim().capitalize();
 				}
 				
-				var desc = td[2].innerHTML.htmlUnescape();
+				type = specialProcessAttrType(name, type, desc);				
+				
 				desc = desc.stripTags();
 				desc = ~/\n[ \t]*\n/g.replace(desc, "\n");
 				desc = ~/\n[ \t]+/g.replace(desc, "\n");
@@ -104,7 +112,7 @@ class MdnParser
 				
 				//Lib.println(" attribute: " + name + " / " + type + " / description =\n" + desc);
 				
-				r.push(new Attribute(type, name, desc, { metaObsolete:metaObsolete, metaNew:metaNew, isUnimplemented:isUnimplemented } ));
+				r.push(new Attribute(type, name, desc, { isReadOnly:isReadOnly, metaObsolete:metaObsolete, metaNew:metaNew, isUnimplemented:isUnimplemented } ));
 			}
 		}
 		else
@@ -298,5 +306,38 @@ class MdnParser
 		/* [optional] in jsval v1, [optional] in jsval v2, ... */
 		var re = ~/\/[*]\s*(\[optional\][^,\/]+(?:,\s*\[optional\][^,\/]+)*),\s*[.][.][.]\s*[*]\//i;
 		return re.map(method, function(_) return ", " + re.matched(1));
+	}
+	
+	function specialProcessAttrType(name:String, type:String, desc:String) : String
+	{
+		if (type == "" && desc.indexOf("object")>=0 && desc.indexOf("properties")>=0)
+		{
+			var xml = new HtmlDocument(desc);
+			var ul = xml.findOne("ul");
+			if (ul != null)
+			{
+				return "{ " + ul.find(">li").map(function(li)
+				{
+					var nameAndDesc = ~/\s*-\s*/.split(li.innerHTML);
+					return nameAndDesc[0].escapeKeyword() + ":" + detectTypeByDesc(li.innerHTML);
+					
+				}).join(", ") + " }";
+			}
+		}
+		return type;
+	}
+	
+	function detectTypeByDesc(s:String) : String
+	{
+		if (~/\bsum\b/i.match(s)) return "Int";
+		if (~/\bsize\b/i.match(s)) return "Int";
+		if (~/\bor\b/i.match(s)) return "Dynamic";
+		if (~/\btrue\b/i.match(s) || ~/\bfalse\b/i.match(s)) return "Bool";
+		if (~/\barray\b/i.match(s))
+		{
+			if (~/\bcounts\b/i.match(s)) return "Array<Int>";
+			return "Array<Dynamic>";
+		}
+		return "Dynamic";
 	}
 }

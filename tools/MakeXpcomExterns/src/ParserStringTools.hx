@@ -30,4 +30,14 @@ class ParserStringTools
 		elems.push(value.substring(lastCommaIndex + 1, value.length).trim());
 		return elems;
 	}
+	
+	public static function escapeKeyword(s:String) : String
+	{
+		switch (s)
+		{
+			case "static", "break":
+				return "_" + s;
+		}
+		return s;
+	}
 }
