@@ -17,7 +17,7 @@ class Main
 	static public function main()
 	{
 		var nativeDir = "../../native";
-		var outDir = "../../library/mozilla/xpcom";
+		var outDir = "../../library/xpcom/mozilla";
 		
 		var klasses = [];
 		
@@ -58,7 +58,7 @@ class Main
 		FileSystem.createDirectory(outDir);
 		for (klass in klasses)
 		{
-			File.saveContent(outDir + "/" + klass.name.capitalize() + ".hx", klass.toString());			
+			File.saveContent(outDir + "/" + klass.name.capitalize() + ".hx", klass.toString("xpcom.mozilla", [ "xpcom.types.*" ]));
 		}
 	}
 	

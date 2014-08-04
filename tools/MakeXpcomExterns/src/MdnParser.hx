@@ -22,20 +22,32 @@ class MdnParser
 			//Lib.println("className = " + className);
 			
 			var inheritsFrom : String = null;
+			var implementedBy = new Array<String>();
+			
 			var article = doc.findOne("#wikiArticle>div");
 			if (article != null)
 			{
-				var articleDivs = article.find(">div");
-				if (articleDivs.length > 0)
+				for (item in article.find(">*"))
 				{
-					if (articleDivs[articleDivs.length - 1].nodes.exists(function(node) return Std.is(node, HtmlNodeText) && cast(node, HtmlNodeText).text.toLowerCase().indexOf("inherits from") >= 0))
+					var text = item.innerHTML.stripTags().trim();
+					
+					var reInherits = ~/^Inherits\s+from\s*[:]?\s*([a-z_][a-z_0-9]*)/i;
+					if (reInherits.match(text))
 					{
-						inheritsFrom = articleDivs[articleDivs.length - 1].findOne(">code").innerHTML.stripTags();
+						inheritsFrom = reInherits.matched(1);
 					}
-				}
-				else
-				{
-					Lib.println("ERROR in " + className + ": article divs not found. inheritsFrom may be wrong.");
+					
+					var reImplemented = ~/^Implemented\s+by\s*[:]?\s*/i;
+					if (reImplemented.match(text))
+					{
+						var s = reImplemented.matchedRight();
+						
+						var reInterfaceUrl = ~/[@][-_a-z.;0-9]/i;
+						if (reInterfaceUrl.match(s))
+						{
+							implementedBy.push(reInterfaceUrl.matched(0).rtrim("."));
+						}
+					}
 				}
 			}
 			else
@@ -49,7 +61,7 @@ class MdnParser
 				inheritsFrom = null;
 			}
 			
-			return new Klass(className, inheritsFrom, parseAttributes(doc), parseMethods(doc));
+			return new Klass(className, inheritsFrom, parseAttributes(doc), parseMethods(doc), implementedBy);
 		}
 		
 		return null;
