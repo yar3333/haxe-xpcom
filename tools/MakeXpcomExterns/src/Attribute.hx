@@ -2,10 +2,10 @@ package ;
 
 class Attribute
 {
-	var type : String;
-	var name : String;
-	var desc : String;
-	var metas : AttributeMetas;
+	public var type : String;
+	public var name : String;
+	public var desc : String;
+	public var metas : AttributeMetas;
 	
 	public function new(type:String, name:String, desc:String, metas:AttributeMetas)
 	{
@@ -18,7 +18,7 @@ class Attribute
 	public function toString() : String
 	{
 		var r = "";
-		if (desc != null && desc != "" || metas.metaObsolete != "" || metas.metaNew != "" || metas.isUnimplemented)
+		if (desc != null && desc != "" || metas.metaObsolete != "" || metas.metaNew != "" || metas.isUnimplemented || metas.isReadOnly)
 		{
 			r += "\t/**\n";
 			if (desc!= null && desc != "")
@@ -28,6 +28,7 @@ class Attribute
 			if (metas.metaObsolete != "") r += "\t * " + metas.metaObsolete + "\n";
 			if (metas.metaNew != "")      r += "\t * " + metas.metaNew + "\n";
 			if (metas.isUnimplemented)    r += "\t * Unimplemented.\n";
+			if (metas.isReadOnly)         r += "\t * ReadOnly.\n";
 			r += "\t */\n";
 		}
 		r += "\tvar " + name + " : " + Types.convert(type) + ";\n";

@@ -5,10 +5,9 @@ using ParserStringTools;
 class Klass
 {
 	public var name : String;
-	
-	var inheritsFrom : String;
-	var attributes : Array<Attribute>;
-	var methods : Array<Method>;
+	public var inheritsFrom : String;
+	public var attributes : Array<Attribute>;
+	public var methods : Array<Method>;
 	
 	public function new(name:String, inheritsFrom:String, attributes:Array<Attribute>, methods:Array<Method>)
 	{

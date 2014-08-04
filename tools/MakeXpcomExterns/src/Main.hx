@@ -19,18 +19,50 @@ class Main
 		var nativeDir = "../../native";
 		var outDir = "../../library/mozilla/xpcom";
 		
-		FileSystem.createDirectory(outDir);
+		var klasses = [];
 		
 		for (file in FileSystem.readDirectory(nativeDir))
 		{
 			if (file.endsWith(".html"))
 			{
-				processFile(nativeDir + "/" + file, outDir);
+				var klass = parseFile(nativeDir + "/" + file, outDir);
+				if (klass != null)
+				{
+					klasses.push(klass);
+				}
+				else
+				{
+					Lib.println("ERROR in " + file + ": className not found.");
+				}
 			}
+		}
+		
+		var klassMap = new Map<String, Klass>();
+		for (klass in klasses) klassMap.set(klass.name, klass);
+		
+		for (klass in klasses)
+		{
+			if (klass.inheritsFrom != null && klass.inheritsFrom != "")
+			{
+				var parent = klassMap.get(klass.inheritsFrom);
+				if (parent != null)
+				{
+					klass.attributes = klass.attributes.filter(function(attr)
+					{
+						return !parent.attributes.exists(function(e) return e.name == attr.name);
+					});
+				}
+			}
+		}
+		
+		FileSystem.createDirectory(outDir);
+		for (klass in klasses)
+		{
+			File.saveContent(outDir + "/" + klass.name.capitalize() + ".hx", klass.toString());			
 		}
 	}
 	
-	static function processFile(path:String, outDir:String)
+	static function parseFile(path:String, outDir:String) : Klass
 	{
 		//Lib.print("Parsing " + path + ": ");
 		
@@ -46,20 +78,12 @@ class Main
 		try doc = new HtmlDocument(text) catch (e:Dynamic)
 		{
 			Lib.println("ERROR in " + path + ": parsing fail - " + e);
-			return;
+			return null;
 		}
 		
 		fixCode(doc);
 		
-		var klass = new MdnParser().parse(doc);
-		if (klass != null)
-		{
-			File.saveContent(outDir + "/" + klass.name.capitalize() + ".hx", klass.toString());
-		}
-		else
-		{
-			Lib.println("ERROR in " + path + ": className not found.");
-		}
+		return new MdnParser().parse(doc);
 	}
 	
 	static function fixLi(text:String) : String
