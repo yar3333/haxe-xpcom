@@ -1,5 +1,6 @@
 package ;
 
+using Lambda;
 using ParserStringTools;
 
 class Klass
@@ -8,26 +9,32 @@ class Klass
 	public var inheritsFrom : String;
 	public var attributes : Array<Attribute>;
 	public var methods : Array<Method>;
+	public var implementedBy : Array<String>;
 	
-	public function new(name:String, inheritsFrom:String, attributes:Array<Attribute>, methods:Array<Method>)
+	public function new(name:String, inheritsFrom:String, attributes:Array<Attribute>, methods:Array<Method>, implementedBy:Array<String>)
 	{
 		this.name = name;
 		this.inheritsFrom = inheritsFrom;
 		this.attributes = attributes;
 		this.methods = methods;
+		this.implementedBy = implementedBy;
 	}
 	
-	public function toString() : String
+	public function toString(pack:String, imports:Array<String>) : String
 	{
-		var r = 
-		[
-			"package mozilla.xpcom;",
-			"",
-			"import mozilla.xpcom.types.*;",
-			"",
-			"@:native(\"" + name+"\") extern class " + name.capitalize() + (inheritsFrom != null ? " extends " + inheritsFrom.capitalize() : ""),
-			"{"
-		].join("\n") + "\n";
+		var r = "";
+		
+		r += "package " + pack + ";\n\n";
+		r += imports.map(function(s) return "import " + s + ";\n").join("");
+		
+		if (imports.length > 0) r += "\n";
+		
+		r += "@:native(\"" + name+"\") extern class " + name.capitalize() + (inheritsFrom != null ? " extends " + inheritsFrom.capitalize() : "") + "\n{\n";
+		
+		for (implement in implementedBy)
+		{
+			r += "\tstatic function create() : " + name.capitalize() + " xpcom.Components.Constructor\n";
+		}
 		
 		for (attr in attributes)
 		{
