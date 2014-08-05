@@ -31,7 +31,7 @@ class MdnParser
 				{
 					var text = item.innerHTML.stripTags().trim();
 					
-					if (inheritsFrom != null)
+					if (inheritsFrom == null)
 					{
 						var reInherits = ~/^Inherits\s+from\s*[:]?\s*([a-z_][a-z_0-9]*)/i;
 						if (reInherits.match(text))
