@@ -73,6 +73,7 @@ class Main
 		text = fixLi(text);
 		text = fixSelectOptionSelected(text);
 		text = fixObsolete(text);
+		text = fixCodeCloseOpen(text);
 		
 		var doc : HtmlDocument;
 		try doc = new HtmlDocument(text) catch (e:Dynamic)
@@ -81,7 +82,7 @@ class Main
 			return null;
 		}
 		
-		fixCode(doc);
+		fixCodeNesting(doc);
 		
 		return new MdnParser().parse(doc);
 	}
@@ -135,12 +136,17 @@ class Main
 		});
 	}
 	
-	static function fixCode(doc:HtmlNodeElement)
+	static function fixCodeCloseOpen(s:String) : String
+	{
+		return s.replace("</code><code>", "");
+	}
+	
+	static function fixCodeNesting(doc:HtmlNodeElement)
 	{
 		if (doc.parent != null && doc.name == "code" && doc.children.foreach(function(e) return e.name == "code"))
 		{
 			doc.parent.replaceChildWithInner(doc, doc);
 		}
-		for (child in doc.children) fixCode(child);
+		for (child in doc.children) fixCodeNesting(child);
 	}
 }

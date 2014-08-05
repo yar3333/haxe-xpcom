@@ -22,19 +22,22 @@ class MdnParser
 			//Lib.println("className = " + className);
 			
 			var inheritsFrom : String = null;
-			var implementedBy = new Array<String>();
+			var implementedBy = new Array<{ res:String, type:String }>();
 			
-			var article = doc.findOne("#wikiArticle>div");
+			var article = doc.findOne("#wikiArticle");
 			if (article != null)
 			{
-				for (item in article.find(">*"))
+				for (item in article.find(">*>*").concat(article.find(">*")))
 				{
 					var text = item.innerHTML.stripTags().trim();
 					
-					var reInherits = ~/^Inherits\s+from\s*[:]?\s*([a-z_][a-z_0-9]*)/i;
-					if (reInherits.match(text))
+					if (inheritsFrom != null)
 					{
-						inheritsFrom = reInherits.matched(1);
+						var reInherits = ~/^Inherits\s+from\s*[:]?\s*([a-z_][a-z_0-9]*)/i;
+						if (reInherits.match(text))
+						{
+							inheritsFrom = reInherits.matched(1);
+						}
 					}
 					
 					var reImplemented = ~/^Implemented\s+by\s*[:]?\s*/i;
@@ -42,10 +45,31 @@ class MdnParser
 					{
 						var s = reImplemented.matchedRight();
 						
-						var reInterfaceUrl = ~/[@][-_a-z.;0-9]/i;
+						var reInterfaceUrl = ~/[@][-_a-z.;0-9\/]+/i;
 						if (reInterfaceUrl.match(s))
 						{
-							implementedBy.push(reInterfaceUrl.matched(0).rtrim("."));
+							var type = "";
+							if (~/\binstances?\b/i.match(reInterfaceUrl.matchedRight()))
+							{
+								type = "instance";
+							}
+							else
+							if (~/\bservice\b/i.match(reInterfaceUrl.matchedRight()) || ~/service/i.match(className))
+							{
+								type = "service";
+							}
+							else
+							if (~/\binterface\b/i.match(reInterfaceUrl.matchedRight()))
+							{
+								type = "instance";
+							}
+							
+							if (type == "")
+							{
+								Lib.println("warng unknow type for className = " + className + "; s = " + s);
+							}
+							
+							implementedBy.push({ res:reInterfaceUrl.matched(0).rtrim("."), type:type });
 						}
 					}
 				}
@@ -61,20 +85,49 @@ class MdnParser
 				inheritsFrom = null;
 			}
 			
-			return new Klass(className, inheritsFrom, parseAttributes(doc), parseMethods(doc), implementedBy);
+			return new Klass(className, inheritsFrom, parseConstants(className, doc), parseAttributes(className, doc), parseMethods(className, doc), implementedBy);
 		}
 		
 		return null;
 	}
 	
-	function parseAttributes(doc:HtmlDocument) : Array<Attribute>
+	function parseConstants(className:String, doc:HtmlDocument) : Array<Constant>
 	{
 		var r = [];
 		
-		var attributesOverview = doc.findOne("#Attributes");
-		if (attributesOverview != null)
+		var constantsH2 = doc.findOne("h2#Constants");
+		if (constantsH2 != null)
 		{
-			var table = attributesOverview.getNextSiblingElement();
+			var table = constantsH2.getNextSiblingElement();
+			var rows = table.find(">tbody>tr").slice(1);
+			for (row in rows)
+			{
+				var td = row.find(">td");
+				
+				if (td.length == 0 || Std.string(td[0].getAttr("class", "")).indexOf("header") >= 0) continue;
+				
+				var name = td[0].innerHTML.stripTags().htmlUnescape();
+				var value = (td[td.length - 2].findOne(">code") != null ? td[td.length - 2].findOne(">code").innerHTML : td[td.length - 2].innerHTML).stripTags().htmlUnescape().trim();
+				var desc = td[td.length - 1].innerHTML.htmlUnescape();
+				
+				if (value != "" && Std.parseInt(value) != null)
+				{
+					r.push(new Constant(name, value, desc));
+				}
+			}
+		}
+		
+		return r;
+	}
+	
+	function parseAttributes(className:String, doc:HtmlDocument) : Array<Attribute>
+	{
+		var r = [];
+		
+		var attributesH2 = doc.findOne("h2#Attributes");
+		if (attributesH2 != null)
+		{
+			var table = attributesH2.getNextSiblingElement();
 			var rows = table.find(">tbody>tr").slice(1);
 			for (row in rows)
 			{
@@ -135,14 +188,14 @@ class MdnParser
 		return r;
 	}
 	
-	function parseMethods(doc:HtmlDocument) : Array<Method>
+	function parseMethods(className:String, doc:HtmlDocument) : Array<Method>
 	{
 		var r = [];
 		
-		var methodsOverview = doc.findOne("#Method_overview");
-		if (methodsOverview != null)
+		var methodsH2 = doc.findOne("h2#Method_overview");
+		if (methodsH2 != null)
 		{
-			var table = methodsOverview.getNextSiblingElement();
+			var table = methodsH2.getNextSiblingElement();
 			
 			var methods = new Array<{ name:String, params:Array<MethodParam>, metas:MethodMetas, type:String }>();
 			
@@ -284,8 +337,18 @@ class MdnParser
 							};
 						}
 						else
+						if (s=="targetObj")
 						{
-							Lib.println("warng: cannot parse param - " + s + "\nmethod: " + method);
+							return
+							{
+								name: s,
+								type: "Dynamic",
+								metas: metas
+							};
+						}
+						else
+						{
+							Lib.println("warng in " + className + ": cannot parse param - " + s + "\nmethod: " + method);
 							return null;
 						}
 					});
@@ -294,7 +357,7 @@ class MdnParser
 				}
 				else
 				{
-					Lib.println("warng: cannot parse method - " + method);
+					Lib.println("warng in " + className+": cannot parse method - " + method);
 				}
 			}
 			
