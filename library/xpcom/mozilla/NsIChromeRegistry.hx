@@ -19,4 +19,9 @@ import xpcom.types.*;
 	 *  
 	 */
 	static inline var FULL = 2;
+	
+	function canonify(aChromeURL:NsIURI) : Void;
+	function checkForNewChrome() : Void;
+	function convertChromeURL(aChromeURL:NsIURI) : NsIURI;
+	function wrappersEnabled(aURI:NsIURI) : Bool;
 }

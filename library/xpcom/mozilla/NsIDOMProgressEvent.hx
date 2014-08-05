@@ -16,4 +16,6 @@ import xpcom.types.*;
 	 * The total number of bytes of content that will be transferred during the operation. If the total size is unknown, this value is zero. Read only.
 	 */
 	var total : ULongLong;
+	
+	function initProgressEvent(typeArg:DOMString, canBubbleArg:Bool, cancelableArg:Bool, lengthComputableArg:Bool, loadedArg:ULongLong, totalArg:ULongLong) : Void;
 }

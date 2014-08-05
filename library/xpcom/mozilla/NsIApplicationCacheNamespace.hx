@@ -29,4 +29,6 @@ import xpcom.types.*;
 	 * The prefix of this namespace. This should be the asciiSpec of the URI prefix. Read only.
 	 */
 	var namespaceSpec : ACString;
+	
+	function init(itemType:ULong, namespaceSpec:ACString, data:ACString) : Void;
 }

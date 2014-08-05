@@ -8,4 +8,7 @@ import xpcom.types.*;
 	 * Private parameter used by the autocomplete widget.
 	 */
 	var param : NsISupports;
+	
+	function onAutoComplete(result:NsIAutoCompleteResults, status:AutoCompleteStatus) : Void;
+	function onStatus(statusText:Wstring) : Void;
 }

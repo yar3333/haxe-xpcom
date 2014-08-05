@@ -22,4 +22,6 @@ import xpcom.types.*;
 	 * Note: Changing this value is computationally expensive for tab previews, because doing so causes the proxy window to be destroyed and rebuilt, then re-registered with the taskbar. If any step of that process fails, an exception is thrown. For window previews, changing this value is computationally trivial.
 	 */
 	var visible : Bool;
+	
+	function invalidate() : Void;
 }

@@ -25,4 +25,6 @@ import xpcom.types.*;
 	 * Retrieves the jump list item type. Read only.
 	 */
 	var type : Short;
+	
+	function equals(item:NsIJumpListItem) : Bool;
 }

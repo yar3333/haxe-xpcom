@@ -84,4 +84,34 @@ import xpcom.types.*;
 	 * Readonly: Use lines for size. If false kB are used.
 	 */
 	var usingLines : Bool;
+	
+	function open(folder:NsIMsgFolder, sortType:NsMsgViewSortTypeValue, sortOrder:NsMsgViewSortOrderValue, viewFlags:NsMsgViewFlagsTypeValue, count:Long) : Void;
+	function openWithHdrs(aHeaders:NsISimpleEnumerator, aSortType:NsMsgViewSortTypeValue, aSortOrder:NsMsgViewSortOrderValue, aViewFlags:NsMsgViewFlagsTypeValue, aCount:Long) : Void;
+	function close() : Void;
+	function init(aMessengerInstance:NsIMessenger, aMsgWindow:NsIMsgWindow, aCommandUpdater:NsIMsgDBViewCommandUpdater) : Void;
+	function sort(sortType:NsMsgViewSortTypeValue, sortOrder:NsMsgViewSortOrderValue) : Void;
+	function doCommand(command:NsMsgViewCommandTypeValue) : Void;
+	function doCommandWithFolder(command:NsMsgViewCommandTypeValue, destFolder:NsIMsgFolder) : Void;
+	function getCommandStatus(command:NsMsgViewCommandTypeValue, selectable_p:Bool, selected_p:NsMsgViewCommandCheckStateValue) : Void;
+	function viewNavigate(motion:NsMsgNavigationTypeValue, resultId:NsMsgKey, resultIndex:NsMsgViewIndex, threadIndex:NsMsgViewIndex, wrap:Bool) : Void;
+	function navigateStatus(motion:NsMsgNavigationTypeValue) : Bool;
+	function getKeyAt(index:NsMsgViewIndex) : NsMsgKey;
+	function getFolderForViewIndex(index:NsMsgViewIndex) : NsIMsgFolder;
+	function getURIForViewIndex(index:NsMsgViewIndex) : ACString;
+	function cloneDBView(aMessengerInstance:NsIMessenger, aMsgWindow:NsIMsgWindow, aCommandUpdater:NsIMsgDBViewCommandUpdater) : NsIMsgDBView;
+	function getURIsForSelection(uris:Array<String>, count:ULong) : Void;
+	function getIndicesForSelection(indices:Array<NsMsgViewIndex>, count:ULong) : Void;
+	function loadMessageByMsgKey(aMsgKey:NsMsgKey) : Void;
+	function loadMessageByViewIndex(aIndex:NsMsgViewIndex) : Void;
+	function loadMessageByUrl(aUrl:String) : Void;
+	function reloadMessage() : Void;
+	function reloadMessageWithAllParts() : Void;
+	function selectMsgByKey(key:NsMsgKey) : Void;
+	function selectFolderMsgByKey(aFolder:NsIMsgFolder, aKey:NsMsgKey) : Void;
+	function onDeleteCompleted(succeeded:Bool) : Void;
+	function findIndexFromKey(aMsgKey:NsMsgKey, aExpand:Bool) : NsMsgViewIndex;
+	function ExpandAndSelectThreadByIndex(aIndex:NsMsgViewIndex, aAugment:Bool) : Void;
+	function addColumnHandler(aColumn:AString, aHandler:NsIMsgCustomColumnHandler) : Void;
+	function removeColumnHandler(aColumn:AString) : Void;
+	function getColumnHandler(aColumn:AString) : NsIMsgCustomColumnHandler;
 }

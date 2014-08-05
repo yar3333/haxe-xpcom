@@ -24,4 +24,9 @@ import xpcom.types.*;
 	 * The minimum interval after which this microsummary would like to be refreshed or null if it doesn't care. Read only.
 	 */
 	var updateInterval : Long;
+	
+	function addObserver(observer:NsIMicrosummaryObserver) : Void;
+	function equals(aOther:NsIMicrosummary) : Bool;
+	function removeObserver(observer:NsIMicrosummaryObserver) : Void;
+	function update() : Void;
 }

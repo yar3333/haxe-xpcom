@@ -37,4 +37,12 @@ import xpcom.types.*;
 	 * This attribute is no longer implemented as of Gecko 1.9.1, and is removed entirely in Gecko 1.9.2.
 	 */
 	var processSignature : ULong;
+	
+	function init(executable:NsIFile) : Void;
+	function initWithPid(pid:ULong) : Void;
+	function kill() : Void;
+	function run(blocking:Bool, args:Array<String>, count:ULong) : Void;
+	function runAsync(args:Array<String>, count:ULong, ?observer:NsIObserver, ?holdWeak:Bool) : Void;
+	function runw(blocking:Bool, args:Array<Wstring>, count:ULong) : Void;
+	function runwAsync(args:Array<Wstring>, count:ULong, ?observer:NsIObserver, ?holdWeak:Bool) : Void;
 }

@@ -8,4 +8,6 @@ import xpcom.types.*;
 	 * An object to receive notifications when messages are received on the worker's message port.
 	 */
 	var onmessage : NsIDOMEventListener;
+	
+	function postMessage(aMessage:DOMString, ?aMessagePort:NsIWorkerMessagePort) : Void;
 }

@@ -29,4 +29,17 @@ import xpcom.types.*;
 	 * File type and creator attributes. Native code only!
 	 */
 	var fileType : OSType;
+	
+	function getCFURL() : CFURLRef;
+	function getFSRef() : FSRef;
+	function getFSSpec() : FSSpec;
+	function initToAppWithCreatorCode(aAppCreator:OSType) : Void;
+	function initWithCFURL(aCFURL:CFURLRef) : Void;
+	function initWithFSRef(aFSRef:FSRefPtr) : Void;
+	function initWithFSSpec(aFileSpec:FSSpecPtr) : Void;
+	function isPackage() : Bool;
+	function launchWithDoc(aDocToLoad:NsILocalFile, aLaunchInBackground:Bool) : Void;
+	function openDocWithApp(aAppToOpenWith:NsILocalFile, aLaunchInBackground:Bool) : Void;
+	function setFileTypeAndCreatorFromExtension(aExtension:String) : Void;
+	function setFileTypeAndCreatorFromMIMEType(aMIMEType:String) : Void;
 }

@@ -49,4 +49,14 @@ import xpcom.types.*;
 	 * The disk usage of the application cache, in bytes. Read only.
 	 */
 	var usage : ULong;
+	
+	function activate() : Void;
+	function addNamespaces(namespaces:NsIArray) : Void;
+	function discard() : Void;
+	function gatherEntries(typeBits:PRUint32, count:ULong, keys:Array<String>) : Void;
+	function getMatchingNamespace(key:ACString) : NsIApplicationCacheNamespace;
+	function getTypes(key:ACString) : ULong;
+	function initAsHandle(groupId:ACString, clientId:ACString) : Void;
+	function markEntry(key:ACString, typeBits:ULong) : Void;
+	function unmarkEntry(key:ACString, typeBits:ULong) : Void;
 }

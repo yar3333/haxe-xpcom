@@ -32,4 +32,8 @@ import xpcom.types.*;
 	 * The search engine type. Read only.
 	 */
 	var type : Long;
+	
+	function addParam(name:AString, value:AString, responseType:AString) : Void;
+	function getSubmission(data:AString, ?responseType:AString, ?purpose:AString) : NsISearchSubmission;
+	function supportsResponseType(responseType:AString) : Bool;
 }

@@ -45,4 +45,6 @@ import xpcom.types.*;
 	 * A string containing the date the feed or entry was last updated, in RFC822 form. This string is parsable by JavaScript and mail code.
 	 */
 	var updated : AString;
+	
+	function normalize() : Void;
 }

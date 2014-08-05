@@ -17,4 +17,10 @@ import xpcom.types.*;
 	 * Internal key identifying itself
 	 */
 	var key : ACString;
+	
+	function addIdentity(identity:NsIMsgIdentity) : Void;
+	function clearAllValues() : Void;
+	function init() : Void;
+	function removeIdentity(identity:NsIMsgIdentity) : Void;
+	function toString() : AString;
 }

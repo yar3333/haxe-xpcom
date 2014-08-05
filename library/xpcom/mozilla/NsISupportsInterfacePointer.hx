@@ -12,4 +12,6 @@ import xpcom.types.*;
 	 * Stores an IID corresponding to the data attribute.
 	 */
 	var dataIID : NsIDPtr;
+	
+	function toString() : String;
 }

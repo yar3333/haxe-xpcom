@@ -16,4 +16,6 @@ import xpcom.types.*;
 	 * If this is set, the file will be reopened whenever Seek(0) occurs. If the file is already open and the seek occurs, it will happen naturally. (The file will only be reopened if it is closed for some reason.)
 	 */
 	static inline var REOPEN_ON_REWIND = 1<<3;
+	
+	function init(file:NsIFile, ioFlags:Long, perm:Long, behaviorFlags:Long) : Void;
 }

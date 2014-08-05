@@ -40,4 +40,10 @@ import xpcom.types.*;
 	 * The remote port number to which the channel is bound. This may throw an NS_ERROR_NOT_AVAILABLE exception if accessed when the channel's endpoints haven't been determined yet, or any time the nsIHttpActivityObserver.isActive attribute is false. See bug 534698 and bug 526207. Read only.
 	 */
 	var remotePort : PRInt32;
+	
+	function getRequestVersion(major:ULong, minor:ULong) : Void;
+	function getResponseVersion(major:ULong, minor:ULong) : Void;
+	function HTTPUpgrade(aProtocolName:ACString, aListener:NsIHttpUpgradeListener) : Void;
+	function setCookie(aCookieHeader:String) : Void;
+	function setupFallbackChannel(aFallbackKey:String) : Void;
 }

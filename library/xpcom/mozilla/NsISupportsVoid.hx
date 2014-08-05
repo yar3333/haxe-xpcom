@@ -8,4 +8,6 @@ import xpcom.types.*;
 	 * This attribute provides access to the native type represented by the object. Native code only!
 	 */
 	var data : VoidPtr;
+	
+	function toString() : String;
 }

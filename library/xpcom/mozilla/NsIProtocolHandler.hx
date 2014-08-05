@@ -84,4 +84,8 @@ import xpcom.types.*;
 	 * The scheme for this protocol ("file", "http", and so forth). Read only.
 	 */
 	var scheme : ACString;
+	
+	function allowPort(port:Long, scheme:String) : Bool;
+	function newChannel(aURI:NsIURI) : NsIChannel;
+	function newURI(aSpec:AUTF8String, aOriginCharset:String, aBaseURI:NsIURI) : NsIURI;
 }

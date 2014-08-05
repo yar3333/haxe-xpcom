@@ -44,4 +44,25 @@ import xpcom.types.*;
 	 * The summary description for the table. For example, @summary attribute on html:table element. Read only.
 	 */
 	var summary : AString;
+	
+	function getCellAt(rowIndex:Long, columnIndex:Long) : NsIAccessible;
+	function getCellIndexAt(rowIndex:Long, columnIndex:Long) : Long;
+	function getColumnDescription(columnIndex:Long) : AString;
+	function getColumnExtentAt(row:Long, column:Long) : Long;
+	function getColumnIndexAt(cellIndex:Long) : Long;
+	function getRowAndColumnIndicesAt(cellIndex:Long, rowIndex:Long, columnIndex:Long) : Void;
+	function getRowDescription(rowIndex:Long) : AString;
+	function getRowExtentAt(row:Long, column:Long) : Long;
+	function getRowIndexAt(cellIndex:Long) : Long;
+	function getSelectedCellIndices(cellsArraySize:ULong, cellsArray:Array<Long>) : Void;
+	function getSelectedColumnIndices(columnsArraySize:ULong, columnsArray:Array<Long>) : Void;
+	function getSelectedRowIndices(rowsArraySize:ULong, rowsArray:Array<Long>) : Void;
+	function isCellSelected(rowIndex:Long, columnIndex:Long) : Bool;
+	function isColumnSelected(columnIndex:Long) : Bool;
+	function isProbablyForLayout() : Bool;
+	function isRowSelected(rowIndex:Long) : Bool;
+	function selectColumn(columnIndex:Long) : Void;
+	function selectRow(rowIndex:Long) : Void;
+	function unselectColumn(columnIndex:Long) : Void;
+	function unselectRow(rowIndex:Long) : Void;
 }

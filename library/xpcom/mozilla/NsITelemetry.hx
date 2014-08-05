@@ -40,4 +40,7 @@ import xpcom.types.*;
 	 * Read only.
 	 */
 	var histogramSnapshots : { min:Int, max:Int, histogram_type:Dynamic, counts:Array<Int>, ranges:Array<Dynamic>, sum:Int, _static:Bool };
+	
+	function getHistogramById(id:ACString) : JSVal;
+	function newHistogram(name:ACString, min:PRUint32, max:PRUint32, bucket_count:PRUint32, histogram_type:ULong) : JSVal;
 }

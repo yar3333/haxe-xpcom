@@ -8,4 +8,6 @@ import xpcom.types.*;
 	 * The number of items in the list. Read only.
 	 */
 	var length : ULong;
+	
+	function item(index:ULong) : NsIDOMFontFace;
 }

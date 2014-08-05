@@ -16,4 +16,8 @@ import xpcom.types.*;
 	 * Specifies that the offset is relative to the end of the stream.
 	 */
 	static inline var NS_SEEK_END = 2;
+	
+	function seek(whence:Long, offset:LongLong) : Void;
+	function setEOF() : Void;
+	function tell() : LongLong;
 }

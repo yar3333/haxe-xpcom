@@ -12,4 +12,9 @@ import xpcom.types.*;
 	 * The top level docshell or null. Read only.
 	 */
 	var docShell : NsIDocShell;
+	
+	function dump(aStr:DOMString) : Void;
+	function sendSyncMessage(messageName:String, JSON:String, jsObjects:Array<Dynamic>) : Void;
+	function atob(aAsciiString:DOMString) : DOMString;
+	function btoa(aBase64Data:DOMString) : DOMString;
 }

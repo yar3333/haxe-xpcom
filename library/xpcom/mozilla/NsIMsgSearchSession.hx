@@ -38,4 +38,27 @@ import xpcom.types.*;
 	 */
 	var numResults : Long;
 	var window : NsIMsgWindow;
+	
+	function addSearchTerm(attrib:NsMsgSearchAttribValue, op:NsMsgSearchOpValue, value:NsIMsgSearchValue, BooleanAND:Bool, arbitraryHeader:String) : Void;
+	function createTerm() : NsIMsgSearchTerm;
+	function appendTerm(term:NsIMsgSearchTerm) : Void;
+	function registerListener(listener:NsIMsgSearchNotify) : Void;
+	function unregisterListener(listener:NsIMsgSearchNotify) : Void;
+	function getNthSearchTerm(whichTerm:Long, attrib:NsMsgSearchAttribValue, op:NsMsgSearchOpValue, value:NsIMsgSearchValue) : Void;
+	function countSearchScopes() : Long;
+	function getNthSearchScope(which:Long, scopeId:NsMsgSearchScopeValue, folder:NsIMsgFolder) : Void;
+	function addScopeTerm(scope:NsMsgSearchScopeValue, folder:NsIMsgFolder) : Void;
+	function addDirectoryScopeTerm(scope:NsMsgSearchScopeValue) : Void;
+	function clearScopes() : Void;
+	function ScopeUsesCustomHeaders(scope:NsMsgSearchScopeValue, selection:VoidPtr, forFilters:Bool) : Bool;
+	function IsStringAttribute(attrib:NsMsgSearchAttribValue) : Bool;
+	function AddAllScopes(attrib:NsMsgSearchScopeValue) : Void;
+	function search(aWindow:NsIMsgWindow) : Void;
+	function interruptSearch() : Void;
+	function pauseSearch() : Void;
+	function resumeSearch() : Void;
+	function SetSearchParam(type:NsMsgSearchType, param:VoidPtr) : NsMsgSearchType;
+	function AddResultElement(element:NsMsgResultElement) : Void;
+	function MatchHdr(aMsgHdr:NsIMsgDBHdr, aDatabase:NsIMsgDatabase) : Bool;
+	function addSearchHit(header:NsIMsgDBHdr, folder:NsIMsgFolder) : Void;
 }

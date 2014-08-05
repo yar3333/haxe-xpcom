@@ -17,4 +17,7 @@ import xpcom.types.*;
 	 * This tells you how many items are in the flattened list of results, that is how many rows are in this tree right now. The tree adaptor will also QI to nsITreeView, and this will be the same as nsITreeView.rowCount. This is only valid when a tree is attached, the result will be 0 otherwise. Read only. Obsolete since Gecko 1.9
 	 */
 	var flatItemCount : PRUint32;
+	
+	function nodeForTreeIndex(aIndex:ULong) : NsINavHistoryResultNode;
+	function treeIndexForNode(aNode:NsINavHistoryResultNode) : ULong;
 }

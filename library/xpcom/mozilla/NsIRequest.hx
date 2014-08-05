@@ -20,4 +20,9 @@ import xpcom.types.*;
 	 * The error status associated with the request. Read only.
 	 */
 	var status : Nsresult;
+	
+	function cancel(aStatus:Nsresult) : Void;
+	function isPending() : Bool;
+	function resume() : Void;
+	function suspend() : Void;
 }

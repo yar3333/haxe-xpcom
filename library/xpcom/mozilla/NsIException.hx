@@ -41,4 +41,6 @@ import xpcom.types.*;
 	 * The nsresult associated with this exception. Read only.
 	 */
 	var result : Nsresult;
+	
+	function toString() : String;
 }

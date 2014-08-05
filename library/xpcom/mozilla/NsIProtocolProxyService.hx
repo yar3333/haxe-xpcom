@@ -14,4 +14,10 @@ import xpcom.types.*;
 	 *         When this flag is passed to resolve, resolve may throw the exception NS_BASE_STREAM_WOULD_BLOCK to indicate that it failed due to this flag being present.
 	 */
 	static inline var RESOLVE_NON_BLOCKING = 1<<0;
+	
+	function asyncResolve(aURI:NsIURI, aFlags:ULong, aCallback:NsIProtocolProxyCallback) : NsICancelable;
+	function newProxyInfo(aType:ACString, aHost:AUTF8String, aPort:Long, aFlags:ULong, aFailoverTimeout:ULong, aFailoverProxy:NsIProxyInfo) : NsIProxyInfo;
+	function getFailoverForProxy(aProxyInfo:NsIProxyInfo, aURI:NsIURI, aReason:Nsresult) : NsIProxyInfo;
+	function registerFilter(aFilter:NsIProtocolProxyFilter, aPosition:ULong) : Void;
+	function unregisterFilter(aFilter:NsIProtocolProxyFilter) : Void;
 }

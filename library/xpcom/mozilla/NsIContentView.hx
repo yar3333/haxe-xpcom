@@ -32,4 +32,8 @@ import xpcom.types.*;
 	 * Width of the viewport in chrome-document CSS pixels. Read only.
 	 */
 	var viewportWidth : Float;
+	
+	function scrollBy(dxPx:Float, dyPx:Float) : Void;
+	function scrollTo(xPx:Float, yPx:Float) : Void;
+	function setScale(xScale:Float, yScale:Float) : Void;
 }

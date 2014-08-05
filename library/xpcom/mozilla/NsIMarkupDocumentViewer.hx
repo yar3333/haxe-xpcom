@@ -60,4 +60,7 @@ import xpcom.types.*;
 	 * The amount by which to scale all text. Default is 1.0.
 	 */
 	var textZoom : Float;
+	
+	function scrollToNode(node:NsIDOMNode) : Void;
+	function sizeToContent() : Void;
 }

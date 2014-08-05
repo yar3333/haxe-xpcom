@@ -64,4 +64,14 @@ import xpcom.types.*;
 	 * If called before the response has been received (before onStartRequest()).
 	 */
 	var responseStatusText : ACString;
+	
+	function getRequestHeader(aHeader:ACString) : ACString;
+	function getResponseHeader(header:ACString) : ACString;
+	function isNoCacheResponse() : Bool;
+	function isNoStoreResponse() : Bool;
+	function redirectTo(aNewURI:NsIURI) : Void;
+	function setRequestHeader(aHeader:ACString, aValue:ACString, aMerge:Bool) : Void;
+	function setResponseHeader(header:ACString, value:ACString, merge:Bool) : Void;
+	function visitRequestHeaders(aVisitor:NsIHttpHeaderVisitor) : Void;
+	function visitResponseHeaders(aVisitor:NsIHttpHeaderVisitor) : Void;
 }

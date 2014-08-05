@@ -76,4 +76,11 @@ import xpcom.types.*;
 	 * The number of milliseconds after a keystroke before a search begins.
 	 */
 	var timeout : ULong;
+	
+	function getSearchAt(index:ULong) : ACString;
+	function onSearchBegin() : Void;
+	function onSearchComplete() : Void;
+	function onTextEntered() : Bool;
+	function onTextReverted() : Bool;
+	function selectTextRange(startIndex:Long, endIndex:Long) : Void;
 }

@@ -15,4 +15,10 @@ import xpcom.types.*;
 	 * The default application user model ID the application registers with the system. This ID is used by the taskbar for grouping windows and when associating pinned shortcuts with running instances and jump lists. Read only.
 	 */
 	var defaultGroupId : AString;
+	
+	function createJumpListBuilder() : NsIJumpListBuilder;
+	function createTaskbarTabPreview(shell:NsIDocShell, controller:NsITaskbarPreviewController) : NsITaskbarTabPreview;
+	function getTaskbarProgress(shell:NsIDocShell) : NsITaskbarProgress;
+	function getTaskbarWindowPreview(shell:NsIDocShell) : NsITaskbarWindowPreview;
+	function setGroupIdForWindow(aParent:NsIDOMWindow, aIdentifier:AString) : Void;
 }

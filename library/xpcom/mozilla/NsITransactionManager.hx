@@ -16,4 +16,17 @@ import xpcom.types.*;
 	 * The number of items on the undo stack. Read only.
 	 */
 	var numberOfUndoItems : Long;
+	
+	function AddListener(aListener:NsITransactionListener) : Void;
+	function beginBatch() : Void;
+	function clear() : Void;
+	function doTransaction(aTransaction:NsITransaction) : Void;
+	function endBatch() : Void;
+	function getRedoList() : NsITransactionList;
+	function getUndoList() : NsITransactionList;
+	function peekRedoStack() : NsITransaction;
+	function peekUndoStack() : NsITransaction;
+	function redoTransaction() : Void;
+	function RemoveListener(aListener:NsITransactionListener) : Void;
+	function undoTransaction() : Void;
 }

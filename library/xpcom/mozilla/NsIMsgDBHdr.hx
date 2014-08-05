@@ -125,4 +125,25 @@ import xpcom.types.*;
 	 * Readonly: Enumerator for names of all database properties in the header. (new in 3.1?)
 	 */
 	var propertyEnumerator : NsIUTF8StringEnumerator;
+	
+	function getProperty(propertyName:String) : AString;
+	function setProperty(propertyName:String, propertyStr:AString) : Void;
+	function setStringProperty(propertyName:String, propertyValue:String) : Void;
+	function getStringProperty(propertyName:String) : String;
+	function getUint32Property(propertyName:String) : ULong;
+	function setUint32Property(propertyName:String, propertyVal:ULong) : Void;
+	function markRead(read:Bool) : Void;
+	function markFlagged(flagged:Bool) : Void;
+	function markHasAttachments(hasAttachments:Bool) : Void;
+	function setPriorityString(priority:String) : Void;
+	function OrFlags(flags:ULong) : ULong;
+	function AndFlags(flags:ULong) : ULong;
+	function setReferences(references:String) : Void;
+	function getStringReference(refNum:Long) : ACString;
+	function setRecipientsArray(names:String, addresses:String, numAddresses:ULong) : Void;
+	function setCCListArray(names:String, addresses:String, numAddresses:ULong) : Void;
+	function setBCCListArray(names:String, addresses:String, numAddresses:ULong) : Void;
+	function getAuthorCollationKey(key:OctetPtr, len:ULong) : Void;
+	function getSubjectCollationKey(key:OctetPtr, len:ULong) : Void;
+	function getRecipientsCollationKey(key:OctetPtr, len:ULong) : Void;
 }

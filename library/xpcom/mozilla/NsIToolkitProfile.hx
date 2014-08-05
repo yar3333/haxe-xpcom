@@ -16,4 +16,7 @@ import xpcom.types.*;
 	 * The location of the profile directory. Read only.
 	 */
 	var rootDir : NsILocalFile;
+	
+	function lock(aUnlocker:NsIProfileUnlocker) : NsIProfileLock;
+	function remove(removeFiles:Bool) : Void;
 }

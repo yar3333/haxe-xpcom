@@ -222,4 +222,59 @@ import xpcom.types.*;
 	 * Range: greater or equal to 0. The real volume level is affected by the volume of all ancestor windows.
 	 */
 	var audioVolume : Float;
+	
+	function activateNativeMenuItemAt(indexString:AString) : Void;
+	function clearMozAfterPaintEvents() : Void;
+	function compareCanvases(aCanvas1:NsIDOMHTMLCanvasElement, aCanvas2:NsIDOMHTMLCanvasElement, aMaxDifference:ULong) : PRUint32;
+	function computeAnimationDistance(element:NsIDOMElement, property:AString, value1:AString, value2:AString) : Float;
+	function disableNonTestMouseEvents(aDisable:Bool) : Void;
+	function dispatchDOMEventViaPresShell(aTarget:NsIDOMNode, aEvent:NsIDOMEvent, aTrusted:Bool) : Bool;
+	function elementFromPoint(aX:Float, aY:Float, aIgnoreRootScrollFrame:Bool, aFlushLayout:Bool) : NsIDOMElement;
+	function enterModalState() : Void;
+	function findElementWithViewId(aId:NsViewID) : NsIDOMElement;
+	function focus(aElement:NsIDOMElement) : Void;
+	function forceUpdateNativeMenuAt(indexString:AString) : Void;
+	function garbageCollect(?aListener:NsICycleCollectorListener) : Void;
+	function getCursorType() : Short;
+	function getDocumentMetadata(aName:AString) : AString;
+	function getOuterWindowWithId(aOuterWindowID:ULongLong) : NsIDOMWindow;
+	function getPCCountScriptCount() : Long;
+	function getPCCountScriptSummary(aScript:Long) : AString;
+	function getPCCountScriptContents(aScript:Long) : AString;
+	function getScrollXY(aFlushLayout:Bool, aScrollX:Long, aScrollY:Long) : Void;
+	function getVisitedDependentComputedStyle(aElement:NsIDOMElement, aPseudoElement:AString, aPropertyName:AString) : AString;
+	function isInModalState() : Bool;
+	function leaveModalState() : Void;
+	function nodesFromRect(aX:Float, aY:Float, aTopSize:Float, aRightSize:Float, aBottomSize:Float, aLeftSize:Float, aIgnoreRootScrollFrame:Bool, aFlushLayout:Bool) : NsIDOMNodeList;
+	function processUpdates() : Void;
+	function purgePCCounts() : Void;
+	function redraw(?aCount:ULong) : ULong;
+	function RenderDocument(aRect:NsConstRect, aFlags:PRUint32, aBackgroundColor:Nscolor, aThebesContext:GfxContext) : Void;
+	function resumeTimeouts() : Void;
+	function sendCompositionEvent(aType:AString) : Void;
+	function sendContentCommandEvent(aType:AString, ?aTransferable:NsITransferable) : Void;
+	function getClassName(aObj:Object) : Void;
+	@:overload(function(aType:AString, aKeyCode:Long, aCharCode:Long, aModifiers:Long, ?aPreventDefault:Bool) : Bool {})
+	function sendKeyEvent(aType:AString, aKeyCode:Long, aCharCode:Long, aModifiers:Long, ?aAdditionalFlags:ULong) : Bool;
+	function sendMouseEvent(aType:AString, aX:Float, aY:Float, aButton:Long, aClickCount:Long, aModifiers:Long, ?aIgnoreRootScrollFrame:Bool) : Void;
+	function sendMouseEventToWindow(aType:AString, aX:Float, aY:Float, aButton:Long, aClickCount:Long, aModifiers:Long, ?aIgnoreRootScrollFrame:Bool) : Void;
+	function sendMouseScrollEvent(aType:AString, aX:Float, aY:Float, aButton:Long, aScrollFlags:Long, aDelta:Long, aModifiers:Long) : Void;
+	function sendWheelEvent(aX:Float, aY:Float, aDeltaX:Float, aDeltaY:Float, aDeltaZ:Float, aDeltaMode:ULong, aModifiers:Long, aLineOrPageDeltaX:Long, aLineOrPageDeltaY:Long, aOptions:ULong) : Void;
+	function sendNativeKeyEvent(aNativeKeyboardLayout:Long, aNativeKeyCode:Long, aModifierFlags:Long, aCharacters:AString, aUnmodifiedCharacters:AString) : Void;
+	function sendNativeMouseEvent(aScreenX:Long, aScreenY:Long, aNativeMessage:Long, aModifierFlags:Long, aElement:NsIDOMElement) : Void;
+	@:overload(function(aType:ULong, aOffset:ULong, aLength:ULong, aX:Long, aY:Long) : NsIQueryContentEventResult {})
+	function sendQueryContentEvent(aType:ULong, aOffset:ULong, aLength:ULong, aX:Long, aY:Long, ?aAdditionalFlags:ULong) : NsIQueryContentEventResult;
+	@:overload(function(aOffset:ULong, aLength:ULong, aReverse:Bool) : Bool {})
+	function sendSelectionSetEvent(aOffset:ULong, aLength:ULong, ?aAdditionalFlags:ULong) : Bool;
+	function sendSimpleGestureEvent(aType:AString, aX:Float, aY:Float, aDirection:ULong, aDelta:Float, aModifiers:Long) : Void;
+	function sendTextEvent(aCompositionString:AString, aFirstClauseLength:Long, aFirstClauseAttr:ULong, aSecondClauseLength:Long, aSecondClauseAttr:ULong, aThirdClauseLength:Long, aThirdClauseAttr:ULong, aCaretStart:Long, aCaretLength:Long) : Void;
+	function sendTouchEvent(aType:AString, aIdentifiers:Array<PRUint32>, aXs:Array<PRInt32>, aYs:Array<PRInt32>, aRxs:Array<PRUint32>, aRys:Array<PRUint32>, aRotationAngles:Array<Float>, aForces:Array<Float>, count:PRUint32, aModifiers:Long, ?aIgnoreRootScrollFrame:Bool) : Bool;
+	function setCSSViewport(aWidthPx:Float, aHeightPx:Float) : Void;
+	function setDisplayPort(aXPx:Float, aYPx:Float, aWidthPx:Float, aHeightPx:Float) : Void;
+	function setResolution(aXResolution:Float, aYResolution:Float) : Void;
+	function startPCCountProfiling() : Void;
+	function stopPCCountProfiling() : Void;
+	function suppressEventHandling(aSuppress:Bool) : Void;
+	function suspendTimeouts() : Void;
+	function wrapDOMFile(aFile:NsIFile) : NsIDOMFile;
 }

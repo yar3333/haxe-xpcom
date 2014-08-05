@@ -24,4 +24,10 @@ import xpcom.types.*;
 	 * true if a download is in progress, otherwise false. Read only.
 	 */
 	var isDownloading : Bool;
+	
+	function addDownloadListener(listener:NsIRequestObserver) : Void;
+	function downloadUpdate(update:NsIUpdate, background:Bool) : AString;
+	function pauseDownload() : Void;
+	function removeDownloadListener(listener:NsIRequestObserver) : Void;
+	function selectUpdate(updates:Array<NsIUpdate>, updateCount:ULong) : NsIUpdate;
 }

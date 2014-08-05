@@ -44,4 +44,10 @@ import xpcom.types.*;
 	 * The (0-based) index of the filter which is currently selected in the file picker dialog. Set this to choose a particular filter to be selected by default.
 	 */
 	var filterIndex : Long;
+	
+	function appendFilter(title:AString, filter:AString) : Void;
+	function appendFilters(filterMask:Long) : Void;
+	function init(parent:NsIDOMWindow, title:AString, mode:Short) : Void;
+	function open(aFilePickerShownCallback:NsIFilePickerShownCallback) : Void;
+	function show() : Short;
 }

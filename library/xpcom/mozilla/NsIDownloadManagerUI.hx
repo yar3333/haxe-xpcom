@@ -17,4 +17,7 @@ import xpcom.types.*;
 	 * true if the Download Manager UI is visible; otherwise false. Read only.
 	 */
 	var visible : Bool;
+	
+	function getAttention() : Void;
+	function show(?aWindowContext:NsIInterfaceRequestor, ?aID:ULong, ?aReason:Short) : Void;
 }

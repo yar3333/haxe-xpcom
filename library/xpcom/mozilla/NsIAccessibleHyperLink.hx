@@ -24,4 +24,9 @@ import xpcom.types.*;
 	 * Determines whether the hyperlink is valid, for example points to a valid URL. Read only.  Note: Currently only used with ARIA links, and the author has to specify that the link is invalid via the aria-invalid='true' attribute. In all other cases, true is returned. Exceptions thrown  NS_ERROR_FAILURE Indicates that the accessible is unattached from the accessible tree.
 	 */
 	var valid : Bool;
+	
+	function getAnchor(index:Long) : NsIAccessible;
+	function getURI(index:Long) : NsIURI;
+	function isSelected() : Bool;
+	function isValid() : Bool;
 }

@@ -24,4 +24,19 @@ import xpcom.types.*;
 	 * [noscript] Readonly: The query processor used to generate results.
 	 */
 	var queryProcessor : NsIXULTemplateQueryProcessor;
+	
+	function rebuild() : Void;
+	function refresh() : Void;
+	function addResult(aResult:NsIXULTemplateResult, aQueryNode:NsIDOMNode) : Void;
+	function removeResult(aResult:NsIXULTemplateResult) : Void;
+	function replaceResult(aOldResult:NsIXULTemplateResult, aNewResult:NsIXULTemplateResult, aQueryNode:NsIDOMNode) : Void;
+	function resultBindingChanged(aResult:NsIXULTemplateResult) : Void;
+	function getResultForId(aId:AString) : NsIXULTemplateResult;
+	function getResultForContent(aElement:NsIDOMElement) : NsIXULTemplateResult;
+	function hasGeneratedContent(aNode:NsIRDFResource, aTag:NsIAtom) : Bool;
+	function addRuleFilter(aRule:NsIDOMNode, aFilter:NsIXULTemplateRuleFilter) : Void;
+	function init(aElement:NsIContent) : Void;
+	function createContents(aElement:NsIContent, aForceCreation:Bool) : Void;
+	function addListener(aListener:NsIXULBuilderListener) : Void;
+	function removeListener(aListener:NsIXULBuilderListener) : Void;
 }

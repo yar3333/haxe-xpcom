@@ -18,4 +18,12 @@ import xpcom.types.*;
 	 * This reporter is special-cased because it is interesting, is available on all platforms, and returns a meaningful result on all common platforms. -1 means unknown. Read only.
 	 */
 	var resident : PRInt64;
+	
+	function enumerateMultiReporters() : NsISimpleEnumerator;
+	function enumerateReporters() : NsISimpleEnumerator;
+	function init() : Void;
+	function registerMultiReporter(reporter:NsIMemoryMultiReporter) : Void;
+	function registerReporter(reporter:NsIMemoryReporter) : Void;
+	function unregisterMultiReporter(reporter:NsIMemoryMultiReporter) : Void;
+	function unregisterReporter(reporter:NsIMemoryReporter) : Void;
 }

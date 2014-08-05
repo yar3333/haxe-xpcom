@@ -33,4 +33,10 @@ import xpcom.types.*;
 	 * The maximum number of jump list items the current desktop can support. Read only.
 	 */
 	var maxListItems : Short;
+	
+	function abortListBuild() : Void;
+	function addListToBuild(aCatType:Short, ?items:NsIArray, ?catName:AString) : Bool;
+	function commitListBuild() : Bool;
+	function deleteActiveList() : Bool;
+	function initListBuild(removedItems:NsIMutableArray) : Bool;
 }

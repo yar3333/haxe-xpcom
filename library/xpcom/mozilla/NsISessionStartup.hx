@@ -14,5 +14,7 @@ import xpcom.types.*;
 	/**
 	 * The session state, as a JavaScript object. Read only. Note: Prior to Gecko 8.0 (Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5), this was a string. It was changed in order to improve performance, which was suffering due to the need to parse and stringify the data.
 	 */
-	var state : Jsval;
+	var state : JSVal;
+	
+	function doRestore() : Bool;
 }

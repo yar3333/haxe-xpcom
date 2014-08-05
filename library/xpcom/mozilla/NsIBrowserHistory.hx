@@ -17,4 +17,16 @@ import xpcom.types.*;
 	 * Obsolete since Gecko 10.0
 	 */
 	var lastPageVisited  : AUTF8String;
+	
+	function addPageWithDetails(aURI:NsIURI, aTitle:Wstring, aLastVisited:LongLong) : Void;
+	function markPageAsFollowedLink(aURI:NsIURI) : Void;
+	function markPageAsTyped(aURI:NsIURI) : Void;
+	function registerOpenPage(aURI:NsIURI) : Void;
+	function removeAllPages() : Void;
+	function removePage(aURI:NsIURI) : Void;
+	function removePages(aURIs:Array<NsIURI>, aLength:ULong, aDoBatchNotify:Bool) : Void;
+	function removePagesByTimeframe(aBeginTime:LongLong, aEndTime:LongLong) : Void;
+	function removePagesFromHost(aHost:AUTF8String, aEntireDomain:Bool) : Void;
+	function removeVisitsByTimeframe(aBeginTime:LongLong, aEndTime:LongLong) : Void;
+	function unregisterOpenPage(aURI:NsIURI) : Void;
 }

@@ -65,4 +65,9 @@ import xpcom.types.*;
 	 * The X position in the tree of the left edge of the nsITreeColumn. Read only.
 	 */
 	var x : Long;
+	
+	function getIdConst(idConst:Wstring) : Void;
+	function getNext() : NsITreeColumn;
+	function getPrevious() : NsITreeColumn;
+	function invalidate() : Void;
 }

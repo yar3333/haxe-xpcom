@@ -33,4 +33,28 @@ import xpcom.types.*;
 	 */
 	var previousViewer : NsIContentViewer;
 	var sticky : Bool;
+	
+	function clearHistoryEntry() : Void;
+	function close(historyEntry:NsISHEntry) : Void;
+	function destroy() : Void;
+	function findContainerView() : NsIViewPtr;
+	function getBounds(aBounds:NsIntRectRef) : Void;
+	function getDocument() : NsIDocumentPtr;
+	function hide() : Void;
+	function init(aParentWidget:NsIWidgetPtr, aBounds:NsIntRectRef) : Void;
+	function loadComplete(aStatus:ULong) : Void;
+	function loadStart(aDoc:NsISupports) : Void;
+	function move(aX:Long, aY:Long) : Void;
+	function open(aState:NsISupports, aSHEntry:NsISHEntry) : Void;
+	function pageHide(isUnload:Bool) : Void;
+	function permitUnload(?aCallerClosesWindow:Bool) : Bool;
+	function requestWindowClose() : Bool;
+	function resetCloseWindow() : Void;
+	function setBounds(aBounds:NsIntRectRef) : Void;
+	function setDocumentInternal(aDocument:NsIDocumentPtr, aForceReuseInnerWindow:Bool) : Void;
+	function setNavigationTiming(aTiming:NsDOMNavigationTimingPtr) : Void;
+	function setPageMode(aPageMode:Bool, aPrintSettings:NsIPrintSettings) : Void;
+	function show() : Void;
+	function stop() : Void;
+	function unload() : Void;
 }

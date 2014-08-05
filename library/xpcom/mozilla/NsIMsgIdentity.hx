@@ -94,4 +94,16 @@ import xpcom.types.*;
 	 * Readonly: Default request for DSN option for this identity. If this is set, the DSN menu item on the compose window will be checked.
 	 */
 	var requestDSN : Bool;
+	
+	function clearAllValues() : Void;
+	function copy(identity:NsIMsgIdentity) : Void;
+	function getUnicharAttribute(name:String) : AString;
+	function setUnicharAttribute(name:String, value:AString) : Void;
+	function getCharAttribute(name:String) : ACString;
+	function setCharAttribute(name:String, value:ACString) : Void;
+	function getBoolAttribute(name:String) : Bool;
+	function setBoolAttribute(name:String, value:Bool) : Void;
+	function getIntAttribute(name:String) : Long;
+	function setIntAttribute(name:String, value:Long) : Void;
+	function toString() : AString;
 }

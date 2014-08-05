@@ -87,4 +87,25 @@ import xpcom.types.*;
 	 * Saved state of the global window object.
 	 */
 	var windowState : NsISupports;
+	
+	function addChildShell(shell:NsIDocShellTreeItem) : Void;
+	function childShellAt(index:Long) : NsIDocShellTreeItem;
+	function clearChildShells() : Void;
+	function clone() : NsISHEntry;
+	function create(URI:NsIURI, title:AString, inputStream:NsIInputStream, layoutHistoryState:NsILayoutHistoryState, cacheKey:NsISupports, contentType:ACString, owner:NsISupports, docshellID:ULongLong, dynamicCreation:Bool) : Void;
+	function forgetEditorData() : NsDocShellEditorDataPtr;
+	function getAnyContentViewer(ownerEntry:NsISHEntry) : NsIContentViewer;
+	function getScrollPosition(x:Long, y:Long) : Void;
+	function getViewerBounds(bounds:NsIntRect) : Void;
+	function hasDetachedEditor() : Bool;
+	function hasDynamicallyAddedChild() : Bool;
+	function isDynamicallyAdded() : Bool;
+	function setEditorData(aData:NsDocShellEditorDataPtr) : Void;
+	function setIsSubFrame(aFlag:Bool) : Void;
+	function setScrollPosition(x:Long, y:Long) : Void;
+	function setTitle(aTitle:AString) : Void;
+	function setUniqueDocIdentifier() : Void;
+	function setURI(aURI:NsIURI) : Void;
+	function setViewerBounds(bounds:NsIntRect) : Void;
+	function syncPresentationState() : Void;
 }

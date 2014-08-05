@@ -23,4 +23,8 @@ import xpcom.types.*;
 	 * Use UTF-8 to encode the URI instead of the platform character set. 
 	 */
 	static inline var FIXUP_FLAG_USE_UTF8 = 4;
+	
+	function createExposableURI(aURI:NsIURI) : NsIURI;
+	function createFixupURI(aURIText:AUTF8String, aFixupFlags:ULong) : NsIURI;
+	function keywordToURI(aKeyword:AUTF8String) : NsIURI;
 }

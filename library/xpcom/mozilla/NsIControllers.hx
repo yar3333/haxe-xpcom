@@ -11,4 +11,14 @@ import xpcom.types.*;
 	 * Obsolete since Gecko 1.9
 	 */
 	var commandDispatcher : NsIDOMXULCommandDispatcher;
+	
+	function appendController(controller:NsIController) : Void;
+	function getControllerAt(index:ULong) : NsIController;
+	function getControllerById(controllerID:ULong) : NsIController;
+	function getControllerCount() : ULong;
+	function getControllerForCommand(command:String) : NsIController;
+	function getControllerId(controller:NsIController) : ULong;
+	function insertControllerAt(index:ULong, controller:NsIController) : Void;
+	function removeController(controller:NsIController) : Void;
+	function removeControllerAt(index:ULong) : NsIController;
 }

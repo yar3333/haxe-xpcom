@@ -16,4 +16,7 @@ import xpcom.types.*;
 	 * The main thread. Read only.
 	 */
 	var mainThread : NsIThread;
+	
+	function getThreadFromPRThread(prthread:PRThread) : NsIThread;
+	function newThread(creationFlags:ULong) : NsIThread;
 }

@@ -61,4 +61,6 @@ import xpcom.types.*;
 	 * The URL of the XPI where this item can be downloaded. Read only.
 	 */
 	var xpiURL : AString;
+	
+	function init(id:AString, version:AString, installLocationKey:AString, minAppVersion:AString, maxAppVersion:AString, name:AString, downloadURL:AString, xpiHash:AString, iconURL:AString, updateURL:AString, updateKey:AString, type:Long, targetAppID:AString) : Void;
 }

@@ -20,4 +20,7 @@ import xpcom.types.*;
 	 * The type of the event for which the listener was added. Read only.
 	 */
 	var type : AString;
+	
+	function getDebugObject() : NsISupports;
+	function toSource() : AString;
 }

@@ -16,4 +16,6 @@ import xpcom.types.*;
 	 * Returns offset of changed text in accessible. Read only.
 	 */
 	var start : Long;
+	
+	function isInserted() : Bool;
 }

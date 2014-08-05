@@ -8,4 +8,6 @@ import xpcom.types.*;
 	 * Provides access to the native type represented by the object.
 	 */
 	var data : PRInt16;
+	
+	function toString() : String;
 }

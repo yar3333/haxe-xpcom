@@ -13,4 +13,6 @@ import xpcom.types.*;
 	 * In some cases, this directory may just be the main profile directory. Read only.
 	 */
 	var localDirectory : NsILocalFile;
+	
+	function unlock() : Void;
 }

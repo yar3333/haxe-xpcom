@@ -12,4 +12,7 @@ import xpcom.types.*;
 	 * true if the menubar was opened using the keyboard; otherwise false.
 	 */
 	var openedWithKey : Bool;
+	
+	function handleKeyPress(keyEvent:NsIDOMKeyEvent) : Bool;
+	function openMenu(openFlag:Bool) : Void;
 }

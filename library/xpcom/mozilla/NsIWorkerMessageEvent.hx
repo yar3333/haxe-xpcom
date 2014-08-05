@@ -16,4 +16,6 @@ import xpcom.types.*;
 	 * The event's source. Read only.
 	 */
 	var source : NsISupports;
+	
+	function initMessageEvent(aTypeArg:DOMString, aCanBubbleArg:Bool, aCancelableArg:Bool, aDataArg:DOMString, aOriginArg:DOMString, aSourceArg:NsISupports) : Void;
 }

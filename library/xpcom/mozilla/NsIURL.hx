@@ -33,4 +33,7 @@ import xpcom.types.*;
 	 * Query portion (the part after the "?") of the URL. If there isn't one, an empty string is returned. Some characters may be escaped.
 	 */
 	var query : AUTF8String;
+	
+	function getCommonBaseSpec(aURIToCompare:NsIURI) : AUTF8String;
+	function getRelativeSpec(aURIToCompare:NsIURI) : AUTF8String;
 }

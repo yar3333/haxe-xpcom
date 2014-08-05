@@ -8,4 +8,8 @@ import xpcom.types.*;
 	 * The number of links contained within this hypertext object. Read only. Renamed from links in Gecko 1.9
 	 */
 	var linkCount : Long;
+	
+	function getLink(linkIndex:Long) : NsIAccessibleHyperLink;
+	function getLinkIndex(charIndex:Long) : Long;
+	function getSelectedLinkIndex() : Long;
 }

@@ -28,4 +28,7 @@ import xpcom.types.*;
 	 * The language type in which this class is implemented. See nsIProgrammingLanguage.Constants for a list of possible values. Read only.
 	 */
 	var implementationLanguage : PRUint32;
+	
+	function getHelperForLanguage(language:PRUint32) : NsISupports;
+	function getInterfaces(count:PRUint32, array:Array<NsIIDPtr>) : Void;
 }

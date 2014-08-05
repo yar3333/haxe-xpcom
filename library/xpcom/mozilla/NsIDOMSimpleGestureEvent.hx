@@ -12,4 +12,6 @@ import xpcom.types.*;
 	 * The direction in which the gesture moved. See Direction constants and Rotation constants on this page. Read only.
 	 */
 	var direction : ULong;
+	
+	function initSimpleGestureEvent(typeArg:DOMString, canBubbleArg:Bool, cancelableArg:Bool, viewArg:NsIDOMAbstractView, detailArg:Long, screenXArg:Long, screenYArg:Long, clientXArg:Long, clientYArg:Long, ctrlKeyArg:Bool, altKeyArg:Bool, shiftKeyArg:Bool, metaKeyArg:Bool, buttonArg:UShort, relatedTargetArg:NsIDOMEventTarget, directionArg:ULong, deltaArg:Float) : Void;
 }

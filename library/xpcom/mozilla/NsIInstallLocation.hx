@@ -28,4 +28,12 @@ import xpcom.types.*;
 	 * Whether or not this Install Location is on an area of the file system that could be restricted on a restricted-access account, regardless of whether or not the location is restricted with the current user privileges. Read only.
 	 */
 	var restricted : Bool;
+	
+	function getIDForLocation(file:NsIFile) : AString;
+	function getItemFile(id:AString, path:AString) : NsIFile;
+	function getItemLocation(id:AString) : NsIFile;
+	function getStageFile(id:AString) : NsIFile;
+	function itemIsManagedIndependently(id:AString) : Bool;
+	function removeFile(file:NsIFile) : Void;
+	function stageFile(file:NsIFile, id:AString) : NsIFile;
 }

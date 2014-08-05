@@ -8,4 +8,6 @@ import xpcom.types.*;
 	 * Provides access to the native type represented by the object.
 	 */
 	var data : PRBool;
+	
+	function toString() : String;
 }

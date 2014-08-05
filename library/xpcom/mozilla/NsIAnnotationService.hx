@@ -51,4 +51,48 @@ import xpcom.types.*;
 	 * INT64 type constant.
 	 */
 	static inline var TYPE_INT64 = 5;
+	
+	function setPageAnnotation(aURI:NsIURI, aName:AUTF8String, aValue:NsIVariant, aFlags:Long, aExpiration:UShort) : Void;
+	function setItemAnnotation(aItemId:LongLong, aName:AUTF8String, aValue:NsIVariant, aFlags:Long, aExpiration:UShort) : Void;
+	function setPageAnnotationString(aURI:NsIURI, aName:AUTF8String, aValue:AString, aFlags:Long, aExpiration:UShort) : Void;
+	function setItemAnnotationString(aItemId:LongLong, aName:AUTF8String, aValue:AString, aFlags:Long, aExpiration:UShort) : Bool;
+	function setPageAnnotationInt32(aURI:NsIURI, aName:AUTF8String, aValue:Long, aFlags:Long, aExpiration:UShort) : Void;
+	function setItemAnnotationInt32(aItemId:LongLong, aName:AUTF8String, aValue:Long, aFlags:Long, aExpiration:UShort) : Void;
+	function setPageAnnotationInt64(aURI:NsIURI, aName:AUTF8String, aValue:LongLong, aFlags:Long, aExpiration:UShort) : Void;
+	function setItemAnnotationInt64(aItemId:LongLong, aName:AUTF8String, aValue:LongLong, aFlags:Long, aExpiration:UShort) : Void;
+	function setPageAnnotationDouble(aURI:NsIURI, aName:AUTF8String, aValue:Float, aFlags:Long, aExpiration:UShort) : Void;
+	function setItemAnnotationDouble(aItemId:LongLong, aName:AUTF8String, aValue:Float, aFlags:Long, aExpiration:UShort) : Void;
+	function setPageAnnotationBinary(aURI:NsIURI, aName:AUTF8String, aData:Array<Octet>, aDataLen:ULong, aMimeType:AUTF8String, aFlags:Long, aExpiration:UShort) : Void;
+	function setItemAnnotationBinary(aItemId:LongLong, aName:AUTF8String, aData:Array<Octet>, aDataLen:ULong, aMimeType:AUTF8String, aFlags:Long, aExpiration:UShort) : Void;
+	function getPageAnnotation(aURI:NsIURI, aName:AUTF8String) : NsIVariant;
+	function getItemAnnotation(aItemId:LongLong, aName:AUTF8String) : NsIVariant;
+	function getPageAnnotationString(aURI:NsIURI, aName:AUTF8String) : AString;
+	function getItemAnnotationString(aItemId:LongLong, aName:AUTF8String) : AString;
+	function getPageAnnotationInt32(aURI:NsIURI, aName:AUTF8String) : Long;
+	function getItemAnnotationInt32(aItemId:LongLong, aName:AUTF8String) : Long;
+	function getPageAnnotationInt64(aURI:NsIURI, aName:AUTF8String) : LongLong;
+	function getItemAnnotationInt64(aItemId:LongLong, aName:AUTF8String) : LongLong;
+	function getPageAnnotationDouble(aURI:NsIURI, aName:AUTF8String) : Float;
+	function getItemAnnotationDouble(aItemId:LongLong, aName:AUTF8String) : Float;
+	function getPageAnnotationBinary(aURI:NsIURI, aName:AUTF8String, aData:Array<Octet>, aDataLen:ULong, aMimeType:AUTF8String) : Void;
+	function getItemAnnotationBinary(aItemId:LongLong, aName:AUTF8String, aData:Array<Octet>, aDataLen:ULong, aMimeType:AUTF8String) : Void;
+	function getPageAnnotationInfo(aURI:NsIURI, aName:AUTF8String, aFlags:PRInt32, aExpiration:UShort, aMimeType:AUTF8String, aType:UShort) : Void;
+	function getItemAnnotationInfo(aItemId:LongLong, aName:AUTF8String, aFlags:Long, aExpiration:UShort, aMimeType:AUTF8String, aType:UShort) : Void;
+	function getPageAnnotationType(aURI:NsIURI, aName:AUTF8String) : PRUint16;
+	function getItemAnnotationType(aItemId:LongLong, aName:AUTF8String) : PRUint16;
+	function getPagesWithAnnotation(name:AUTF8String, ?resultCount:ULong, results:Array<NsIURI>) : Void;
+	function getItemsWithAnnotation(name:AUTF8String, ?resultCount:ULong, results:Array<LongLong>) : Void;
+	function getPageAnnotationNames(aURI:NsIURI, ?count:ULong, result:Array<NsIVariant>) : Void;
+	function getItemAnnotationNames(aItemId:LongLong, ?count:ULong, result:Array<NsIVariant>) : Void;
+	function pageHasAnnotation(aURI:NsIURI, aName:AUTF8String) : Bool;
+	function itemHasAnnotation(aItemId:LongLong, aName:AUTF8String) : Bool;
+	function removePageAnnotation(aURI:NsIURI, aName:AUTF8String) : Void;
+	function removeItemAnnotation(aItemId:LongLong, aName:AUTF8String) : Void;
+	function removePageAnnotations(aURI:NsIURI) : Void;
+	function removeItemAnnotations(aItemId:LongLong) : Void;
+	function copyPageAnnotations(aSourceURI:NsIURI, aDestURI:NsIURI, aOverwriteDest:Bool) : Void;
+	function copyItemAnnotations(aSourceItemId:LongLong, aDestItemId:LongLong, aOverwriteDest:Bool) : Void;
+	function addObserver(aObserver:NsIAnnotationObserver) : Void;
+	function removeObserver(aObserver:NsIAnnotationObserver) : Void;
+	function getAnnotationURI(aURI:NsIURI, aName:AUTF8String) : NsIURI;
 }

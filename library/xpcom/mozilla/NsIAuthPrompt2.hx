@@ -16,4 +16,7 @@ import xpcom.types.*;
 	 * The connection, both for password and data, is secure.
 	 */
 	static inline var LEVEL_SECURE = 2;
+	
+	function asyncPromptAuth(aChannel:NsIChannel, aCallback:NsIAuthPromptCallback, aContext:NsISupports, level:PRUint32, authInfo:NsIAuthInformation) : NsICancelable;
+	function promptAuth(aChannel:NsIChannel, level:PRUint32, authInfo:NsIAuthInformation) : Bool;
 }

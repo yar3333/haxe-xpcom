@@ -67,4 +67,13 @@ import xpcom.types.*;
 	 * The URI the image load was started with. Note that this might not be the actual URI for the image (for example if HTTP redirects happened during the load). Read only.
 	 */
 	var URI : NsIURI;
+	
+	function cancelAndForgetObserver(aStatus:Nsresult) : Void;
+	function clone(aObserver:ImgIDecoderObserver) : ImgIRequest;
+	function decrementAnimationConsumers() : Void;
+	function getStaticRequest() : ImgIRequest;
+	function incrementAnimationConsumers() : Void;
+	function lockImage() : Void;
+	function requestDecode() : Void;
+	function unlockImage() : Void;
 }

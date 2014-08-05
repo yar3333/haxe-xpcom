@@ -17,4 +17,6 @@ import xpcom.types.*;
 	 * Note: Prior to Gecko 8.0 (Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5), this was an nsIDOMWindowInternal.
 	 */
 	var originatingWindow : NsIDOMWindow;
+	
+	function install() : Void;
 }

@@ -12,4 +12,6 @@ import xpcom.types.*;
 	 * chrome package, where the files for the new panel are located. This is usually GUID of the ID of the addons which adds the new Panel. This attribute is readonly!
 	 */
 	var chromePackageName : ACString;
+	
+	function showPanel(server:NsIMsgIncomingServer) : Bool;
 }

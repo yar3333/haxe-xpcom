@@ -24,4 +24,12 @@ import xpcom.types.*;
 	 * The working directory for this command line. Use this property instead of the working directory for the current process, since a redirected command line may have had a different working directory. Read only.
 	 */
 	var workingDirectory : NsIFile;
+	
+	function findFlag(aFlag:AString, aCaseSensitive:Bool) : Long;
+	function getArgument(aIndex:Long) : AString;
+	function handleFlag(aFlag:AString, aCaseSensitive:Bool) : Bool;
+	function handleFlagWithParam(aFlag:AString, aCaseSensitive:Bool) : AString;
+	function removeArguments(aStart:Long, aEnd:Long) : Void;
+	function resolveFile(aArgument:AString) : NsIFile;
+	function resolveURI(aArgument:AString) : NsIURI;
 }

@@ -19,4 +19,7 @@ import xpcom.types.*;
 	 * Maximum number of samples stored in the database per connection type.
 	 */
 	var maxStorageSamples : Long;
+	
+	function getNetworkStats(aOptions:NetworkStatsOptions) : NsIDOMDOMRequest;
+	function clearAllData() : NsIDOMDOMRequest;
 }

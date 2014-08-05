@@ -31,4 +31,6 @@ import xpcom.types.*;
 	 * A string tag identifying the binary ABI of the current processor and compiler vtable. This is taken from the TARGET_XPCOM_ABI configure variable. It may not be available on all platforms, especially unusual processor or compiler combinations. The result takes the form -, for example: x86-msvc ppc-gcc3. This value should almost always be used in combination with OS. May throw NS_ERROR_NOT_AVAILABLE. Read only.
 	 */
 	var XPCOMABI : AUTF8String;
+	
+	function invalidateCachesOnRestart() : Void;
 }

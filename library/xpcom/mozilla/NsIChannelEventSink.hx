@@ -22,4 +22,7 @@ import xpcom.types.*;
 	 *     The new URI may be identical to the old one.
 	 */
 	static inline var REDIRECT_INTERNAL = 1 << 2;
+	
+	function asyncOnChannelRedirect(oldChannel:NsIChannel, newChannel:NsIChannel, flags:ULong, callback:NsIAsyncVerifyRedirectCallback) : Void;
+	function onChannelRedirect(oldChannel:NsIChannel, newChannel:NsIChannel, flags:ULong) : Void;
 }

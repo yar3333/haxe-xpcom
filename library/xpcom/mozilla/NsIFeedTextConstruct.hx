@@ -23,4 +23,7 @@ import xpcom.types.*;
 	 * The type of content described; one of "text", "html", or "xhtml".
 	 */
 	var type : AString;
+	
+	function createDocumentFragment(element:NsIDOMElement) : NsIDOMDocumentFragment;
+	function plainText() : AString;
 }

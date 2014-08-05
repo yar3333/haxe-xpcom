@@ -9,4 +9,7 @@ import xpcom.types.*;
 	 */
 	var forceHandshake : Bool;
 	var notificationCallbacks : NsIInterfaceRequestor;
+	
+	function proxyStartSSL() : Void;
+	function StartTLS() : Void;
 }

@@ -100,4 +100,19 @@ import xpcom.types.*;
 	 * The name of the event (case-insensitive). The name must be an XML name. Read only.
 	 */
 	var type : DOMString;
+	
+	function Deserialize(aMsg:ConstIPCMessagePtr, aIter:VoidPtr) : Bool;
+	function duplicatePrivateData() : Void;
+	function GetInternalNSEvent() : NsEventPtr;
+	function getPreventDefault() : Bool;
+	function initEvent(eventTypeArg:DOMString, canBubbleArg:Bool, cancelableArg:Bool) : Void;
+	function IsDispatchStopped() : Bool;
+	function preventBubble() : Void;
+	function preventCapture() : Void;
+	function preventDefault() : Void;
+	function Serialize(aMsg:IPCMessagePtr, aSerializeInterfaceType:Bool) : Void;
+	function setTarget(aTarget:NsIDOMEventTarget) : Void;
+	function SetTrusted(aTrusted:Bool) : Void;
+	function stopImmediatePropagation() : Void;
+	function stopPropagation() : Void;
 }

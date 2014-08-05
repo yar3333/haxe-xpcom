@@ -12,4 +12,6 @@ import xpcom.types.*;
 	 * The pipe's output end. Read only.
 	 */
 	var outputStream : NsIAsyncOutputStream;
+	
+	function init(nonBlockingInput:Bool, nonBlockingOutput:Bool, segmentSize:ULong, segmentCount:ULong, segmentAllocator:NsIMemory) : Void;
 }

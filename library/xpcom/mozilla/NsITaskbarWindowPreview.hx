@@ -13,4 +13,6 @@ import xpcom.types.*;
 	 * If true, the nsITaskbarPreviewController object's nsITaskbarPreviewController.drawPreview() and nsITaskbarPreviewController.drawThumbnail() methods will be called to draw the preview. If false, the operating system draws these for you.
 	 */
 	var enableCustomDrawing : Bool;
+	
+	function getButton(index:ULong) : NsITaskbarPreviewButton;
 }

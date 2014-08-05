@@ -12,4 +12,8 @@ import xpcom.types.*;
 	 * The number of unread mail messages for the current user. Read only.
 	 */
 	var unreadMailCount : ULong;
+	
+	function getRegistryEntry(aHKeyConstant:Long, aSubKeyName:String, aValueName:String) : String;
+	function restoreFileSettings(aForAllUsers:Bool) : Void;
+	function shortcutMaintenance() : Void;
 }

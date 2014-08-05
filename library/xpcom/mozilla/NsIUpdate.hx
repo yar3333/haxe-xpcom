@@ -104,4 +104,7 @@ import xpcom.types.*;
 	 * The application version of the update.Obsolete since Gecko 2.0
 	 */
 	var version : AString;
+	
+	function getPatchAt(index:ULong) : NsIUpdatePatch;
+	function serialize(updates:NsIDOMDocument) : NsIDOMElement;
 }

@@ -28,4 +28,9 @@ import xpcom.types.*;
 	 * The session history object used by this web navigation instance.
 	 */
 	var sessionHistory : NsISHistory;
+	
+	function gotoIndex(index:Long) : Void;
+	function loadURI(URI:Wstring, loadFlags:ULong, referrer:NsIURI, postData:NsIInputStream, headers:NsIInputStream) : Void;
+	function reload(reloadFlags:ULong) : Void;
+	function stop(stopFlags:ULong) : Void;
 }

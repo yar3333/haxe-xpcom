@@ -40,4 +40,15 @@ import xpcom.types.*;
 	 * true if operations are being performed in the background queue, or false if background operations are not in progress. Read only.
 	 */
 	var inQueue : Bool;
+	
+	function addEntryChannel(aZipEntry:AUTF8String, aModTime:PRTime, aCompression:PRInt32, aChannel:NsIChannel, aQueue:Bool) : Void;
+	function addEntryDirectory(aZipEntry:AUTF8String, aModTime:PRTime, aQueue:Bool) : Void;
+	function addEntryFile(aZipEntry:AUTF8String, aCompression:PRInt32, aFile:NsIFile, aQueue:Bool) : Void;
+	function addEntryStream(aZipEntry:AUTF8String, aModTime:PRTime, aCompression:PRInt32, aStream:NsIInputStream, aQueue:Bool) : Void;
+	function close() : Void;
+	function getEntry(aZipEntry:AUTF8String) : NsIZipEntry;
+	function hasEntry(aZipEntry:AUTF8String) : Bool;
+	function open(aFile:NsIFile, aIoFlags:PRInt32) : Void;
+	function processQueue(aObserver:NsIRequestObserver, aContext:NsISupports) : Void;
+	function removeEntry(aZipEntry:AUTF8String, aQueue:Bool) : Void;
 }

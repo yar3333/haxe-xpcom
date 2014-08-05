@@ -6,4 +6,7 @@ import xpcom.types.*;
 @:native("nsIDOMSerializer") extern class NsIDOMSerializer extends NsISupports
 {
 	public static inline function createInstance() : NsIDOMSerializer return Components.Constructor("@mozilla.org/xmlextras/xmlserializer;1", Components.interfaces.nsIDOMSerializer);
+	
+	function serializeToStream(root:NsIDOMNode, stream:NsIOutputStream, charset:AUTF8String) : Void;
+	function serializeToString(root:NsIDOMNode) : AString;
 }

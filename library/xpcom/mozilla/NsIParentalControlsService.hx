@@ -28,4 +28,8 @@ import xpcom.types.*;
 	 * true if the current user account has parental controls restrictions enabled. Read only.
 	 */
 	var parentalControlsEnabled : Bool;
+	
+	function log(aEntryType:Short, aFlag:Bool, aSource:NsIURI, ?aTarget:NsIFile) : Void;
+	function requestURIOverride(aTarget:NsIURI, ?aWindowContext:NsIInterfaceRequestor) : Bool;
+	function requestURIOverrides(aTargets:NsIArray, ?aWindowContext:NsIInterfaceRequestor) : Bool;
 }

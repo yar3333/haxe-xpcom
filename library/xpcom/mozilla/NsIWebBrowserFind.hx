@@ -29,4 +29,6 @@ import xpcom.types.*;
 	 * Whether the search wraps around to the start (or end) of the document if no match was found between the current position and the end (or beginning). Works correctly when searching backwards. Default is false.
 	 */
 	var wrapFind : Bool;
+	
+	function findNext() : Bool;
 }

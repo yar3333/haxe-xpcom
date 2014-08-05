@@ -24,4 +24,21 @@ import xpcom.types.*;
 	 * Note: Setting this attribute will not initiate a search.
 	 */
 	var searchString : AString;
+	
+	function getCommentAt(index:Long) : AString;
+	function getImageAt(index:Long) : AString;
+	function getLabelAt(index:Long) : AString;
+	function getStyleAt(index:Long) : AString;
+	function getValueAt(index:Long) : AString;
+	function handleDelete() : Bool;
+	function handleEndComposition() : Void;
+	function handleEnter(aIsPopupSelection:Bool) : Bool;
+	function handleEscape() : Bool;
+	function handleKeyNavigation(key:ULong) : Bool;
+	function handleStartComposition() : Void;
+	function handleTab() : Void;
+	function handleText() : Void;
+	function setSearchString(aSearchString:AString) : Void;
+	function startSearch(searchString:AString) : Void;
+	function stopSearch() : Void;
 }

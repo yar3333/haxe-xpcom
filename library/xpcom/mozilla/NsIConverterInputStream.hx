@@ -11,4 +11,6 @@ import xpcom.types.*;
 	 * Default replacement character value.
 	 */
 	static inline var DEFAULT_REPLACEMENT_CHARACTER = 0xFFFD;
+	
+	function init(aStream:NsIInputStream, aCharset:String, aBufferSize:Long, aReplacementChar:PRUnichar) : Void;
 }

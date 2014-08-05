@@ -172,4 +172,10 @@ import xpcom.types.*;
 	 * Value indicating the success or failure of the persist operation. Read only.
 	 */
 	var result : ULong;
+	
+	function cancelSave() : Void;
+	function saveChannel(aChannel:NsIChannel, aFile:NsISupports) : Void;
+	function saveDocument(aDocument:NsIDOMDocument, aFile:NsISupports, aDataPath:NsISupports, aOutputContentType:String, aEncodingFlags:ULong, aWrapColumn:ULong) : Void;
+	function saveURI(aURI:NsIURI, aCacheKey:NsISupports, aReferrer:NsIURI, aPostData:NsIInputStream, aExtraHeaders:String, aFile:NsISupports, aPrivacyContext:NsILoadContext) : Void;
+	function savePrivacyAwareURI(aURI:NsIURI, aCacheKey:NsISupports, aReferrer:NsIURI, aPostData:NsIInputStream, aExtraHeaders:String, aFile:NsISupports, aIsPrivate:Bool) : Void;
 }

@@ -46,4 +46,21 @@ import xpcom.types.*;
 	 * Returns the type of the selection (see nsISelectionController for available constants). Read only.
 	 */
 	var type : Short;
+	
+	function addSelectionListener(newListener:NsISelectionListener) : Void;
+	function endBatchChanges() : Void;
+	function getCachedFrameOffset(aFrame:NsIFrame, inOffset:PRInt32, aPoint:NsPointRef) : Void;
+	function getEnumerator() : NsIEnumerator;
+	function getFrameSelection() : NsFrameSelection;
+	function GetRangesForInterval(beginNode:NsIDOMNode, beginOffset:PRInt32, endNode:NsIDOMNode, endOffset:PRInt32, allowAdjacent:PRBool, resultCount:PRUint32, results:Array<NsIDOMRange>) : Void;
+	function GetRangesForIntervalArray(beginNode:NsINode, beginoffset:PRInt32, endNode:NsINode, endOffset:PRInt32, allowAdjacent:Bool, results:RangeArray) : Void;
+	function GetRangesForIntervalCOMArray(beginNode:NsIDOMNode, beginOffset:PRInt32, endNode:NsIDOMNode, endOffset:PRInt32, allowAdjacent:PRBool, results:RangeArray) : Void;
+	function getTableSelectionType(range:NsIDOMRange) : Long;
+	function removeSelectionListener(listenerToRemove:NsISelectionListener) : Void;
+	function scrollIntoView(aRegion:Short, aIsSynchronous:Bool, aVPercent:Short, aHPercent:Short) : Void;
+	function setAncestorLimiter(aContent:NsIContent) : Void;
+	function setPresShell(aPresShell:NsIPresShell) : Void;
+	function setTextRangeStyle(range:NsIDOMRange, textRangeStyle:ConstTextRangeStyleRef) : Void;
+	function startBatchChanges() : Void;
+	function toStringWithFormat(formatType:String, flags:ULong, wrapColumn:PRInt32) : Wstring;
 }

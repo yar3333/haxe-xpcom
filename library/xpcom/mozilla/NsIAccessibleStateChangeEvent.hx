@@ -8,4 +8,7 @@ import xpcom.types.*;
 	 * Returns the state of accessible (see constants declared in nsIAccessibleStates). Read only.
 	 */
 	var state : ULong;
+	
+	function isEnabled() : Bool;
+	function isExtraState() : Bool;
 }

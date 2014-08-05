@@ -20,4 +20,8 @@ import xpcom.types.*;
 	 * Read only. Returns true if the JSID has been initialised.
 	 */
 	var valid : Bool;
+	
+	function equals(other:NsIJSID) : Bool;
+	function initialize(idString:String) : Void;
+	function toString() : String;
 }

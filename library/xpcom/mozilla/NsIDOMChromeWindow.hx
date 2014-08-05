@@ -37,4 +37,13 @@ import xpcom.types.*;
 	 * Returns current window state, the value is one of STATE_* constants. Read only.
 	 */
 	var windowState : UShort;
+	
+	function beginWindowMove(mouseDownEvent:NsIDOMEvent) : Void;
+	function getAttention() : Void;
+	function getAttentionWithCycleCount(aCycleCount:Long) : Void;
+	function maximize() : Void;
+	function minimize() : Void;
+	function notifyDefaultButtonLoaded(defaultButton:NsIDOMElement) : Void;
+	function restore() : Void;
+	function setCursor(cursor:DOMString) : Void;
 }

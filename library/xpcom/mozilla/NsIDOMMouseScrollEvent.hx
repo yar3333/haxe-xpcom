@@ -17,4 +17,6 @@ import xpcom.types.*;
 	 * Indicates which mouse wheel axis changed; this will be either HORIZONTAL_AXIS or VERTICAL_AXIS. Read only.
 	 */
 	var axis : Long;
+	
+	function initMouseScrollEvent(typeArg:DOMString, canBubbleArg:Bool, cancelableArg:Bool, viewArg:NsIDOMAbstractView, detailArg:Long, screenXArg:Long, screenYArg:Long, clientXArg:Long, clientYArg:Long, ctrlKeyArg:Bool, altKeyArg:Bool, shiftKeyArg:Bool, metaKeyArg:Bool, buttonArg:UShort, relatedTargetArg:NsIDOMEventTarget, axis:Long) : Void;
 }

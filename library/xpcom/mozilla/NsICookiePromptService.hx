@@ -16,4 +16,6 @@ import xpcom.types.*;
 	 * Holds the value for accepting the session cookie.
 	 */
 	static inline var ACCEPT_SESSION_COOKIE = 2;
+	
+	function cookieDialog(parent:NsIDOMWindow, cookie:NsICookie, hostname:ACString, cookiesFromHost:Long, changingCookie:Bool, rememberDecision:Bool) : Long;
 }

@@ -56,4 +56,21 @@ import xpcom.types.*;
 	 * The width of the body element. Read only. Obsolete since Gecko 6.0
 	 */
 	var width : Long;
+	
+	function captureEvents(eventFlags:Long) : Void;
+	function clear() : Void;
+	function execCommand(commandID:DOMString, doShowUI:Bool, value:DOMString) : Bool;
+	function execCommandShowHelp(commandID:DOMString) : Bool;
+	function getSelection() : DOMString;
+	function open(aContentType:ACString, aReplace:Bool) : NsIDOMDocument;
+	function queryCommandEnabled(commandID:DOMString) : Bool;
+	function queryCommandIndeterm(commandID:DOMString) : Bool;
+	function queryCommandState(commandID:DOMString) : Bool;
+	function queryCommandSupported(commandID:DOMString) : Bool;
+	function queryCommandText(commandID:DOMString) : DOMString;
+	function queryCommandValue(commandID:DOMString) : DOMString;
+	function releaseEvents(eventFlags:Long) : Void;
+	function routeEvent(evt:NsIDOMEvent) : Void;
+	function write() : Void;
+	function writeln() : Void;
 }
