@@ -133,8 +133,8 @@ class MdnParser
 			{
 				var td = row.find(">td");
 				
-				var name = td[0].innerHTML.htmlUnescape().stripTags().trim();
-				var type = (td[1].findOne(">code") != null ? td[1].findOne(">code").innerHTML : td[1].innerHTML).stripTags().htmlUnescape().trim();
+				var name = (td[0].findOne(">code") != null ? td[0].findOne(">code") : td[0]).innerHTML.stripTags().htmlUnescape().trim();
+				var type = (td[1].findOne(">code") != null ? td[1].findOne(">code") : td[1]).innerHTML.stripTags().htmlUnescape().trim();
 				var desc = td[2].innerHTML.htmlUnescape().trim();
 				
 				var isUnimplemented = false;
