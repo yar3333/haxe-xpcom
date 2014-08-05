@@ -190,14 +190,12 @@ class MdnParser
 	
 	function parseMethods(className:String, doc:HtmlDocument) : Array<Method>
 	{
-		var r = [];
+		var r = new Array<Method>();
 		
 		var methodsH2 = doc.findOne("h2#Method_overview");
 		if (methodsH2 != null)
 		{
 			var table = methodsH2.getNextSiblingElement();
-			
-			var methods = new Array<{ name:String, params:Array<MethodParam>, metas:MethodMetas, type:String }>();
 			
 			for (item in table.find(">tbody>tr>td>code"))
 			{
@@ -353,20 +351,13 @@ class MdnParser
 						}
 					});
 					
-					methods.push({ name:re.matched(2), params:params, type:Types.convert(re.matched(1)), metas:metas });
+					r.push(new Method(Types.convert(re.matched(1)), re.matched(2), params, metas));
 				}
 				else
 				{
 					Lib.println("warng in " + className+": cannot parse method - " + method);
 				}
 			}
-			
-			methods.sort(function(a, b) return Reflect.compare(a.name, b.name));
-			for (i in 0...methods.length)
-			{
-			}
-			
-
 		}
 		else
 		{
