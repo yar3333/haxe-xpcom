@@ -4,10 +4,10 @@ using Lambda;
 
 class Method
 {
-	var type : String;
-	var name : String;
-	var params : Array<MethodParam>;
-	var metas : MethodMetas;
+	public var type : String;
+	public var name : String;
+	public var params : Array<MethodParam>;
+	public var metas : MethodMetas;
 	
 	public function new(type:String, name:String, params:Array<MethodParam>, metas:MethodMetas)
 	{
