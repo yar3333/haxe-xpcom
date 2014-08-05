@@ -20,4 +20,6 @@ import xpcom.types.*;
 	 * The maximum number of threads allowed at once in the pool; you may change this value by altering this attribute.
 	 */
 	var threadLimit : ULong;
+	
+	function shutdown() : Void;
 }

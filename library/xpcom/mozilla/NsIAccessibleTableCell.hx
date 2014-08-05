@@ -32,4 +32,6 @@ import xpcom.types.*;
 	 * Return host table accessible. Read only.
 	 */
 	var table : NsIAccessibleTable;
+	
+	function isSelected() : Bool;
 }

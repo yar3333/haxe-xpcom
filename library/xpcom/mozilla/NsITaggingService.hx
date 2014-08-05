@@ -15,4 +15,9 @@ import xpcom.types.*;
 	 * Retrieves the URL spec for the tag container icon
 	 */
 	var tagContainerIconSpec : AUTF8String;
+	
+	function tagURI(aURI:NsIURI, aTags:NsIVariant) : Void;
+	function untagURI(aURI:NsIURI, aTags:NsIVariant) : Void;
+	function getURIsForTag(aTag:AString) : NsIVariant;
+	function getTagsForURI(aURI:NsIURI, ?length:ULong, aTags:Array<Wstring>) : NsIVariant;
 }

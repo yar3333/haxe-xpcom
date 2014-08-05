@@ -103,4 +103,14 @@ import xpcom.types.*;
 	 * Read only.
 	 */
 	var previousSibling : NsIDOMNode;
+	
+	function appendChild(newChild:NsIDOMNode) : NsIDOMNode;
+	function cloneNode(deep:Bool) : NsIDOMNode;
+	function hasAttributes() : Bool;
+	function hasChildNodes() : Bool;
+	function insertBefore(newChild:NsIDOMNode, refChild:NsIDOMNode) : NsIDOMNode;
+	function isSupported(feature:DOMString, version:DOMString) : Bool;
+	function normalize() : Void;
+	function removeChild(oldChild:NsIDOMNode) : NsIDOMNode;
+	function replaceChild(newChild:NsIDOMNode, oldChild:NsIDOMNode) : NsIDOMNode;
 }

@@ -25,4 +25,7 @@ import xpcom.types.*;
 	 * Note: If this attribute is set to an object that implements nsISupportsWeakReference, the implementation should get the nsIWeakReference and hold that. Otherwise, the implementation should not refcount this interface; it should assume that a non null value is always valid. In that case, the embedder should explicitly set this value back to null if the parent content listener is destroyed before the browser object.
 	 */
 	var parentURIContentListener : NsIURIContentListener;
+	
+	function addWebBrowserListener(aListener:NsIWeakReference, aIID:NsIIDRef) : Void;
+	function removeWebBrowserListener(aListener:NsIWeakReference, aIID:NsIIDRef) : Void;
 }

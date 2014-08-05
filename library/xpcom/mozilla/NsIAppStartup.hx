@@ -15,4 +15,17 @@ import xpcom.types.*;
 	 * Getter for "native application support." Read only. Obsolete since Gecko 1.9.1
 	 */
 	var nativeAppSupport : NsINativeAppSupport;
+	
+	function createHiddenWindow() : Void;
+	function createStartupState(aWindowWidth:Long, aWindowHeight:Long) : Bool;
+	function destroyHiddenWindow() : Void;
+	function doProfileStartup(aCmdLineService:NsICmdLineService, canInteract:Bool) : Void;
+	function ensure1Window(aCmdLineService:NsICmdLineService) : Void;
+	function enterLastWindowClosingSurvivalArea() : Void;
+	function exitLastWindowClosingSurvivalArea() : Void;
+	function getStartupInfo() : Void;
+	function hideSplashScreen() : Void;
+	function initialize(nativeAppSupportOrSplashScreen:NsISupports) : Void;
+	function quit(aMode:PRUint32) : Void;
+	function run() : Void;
 }

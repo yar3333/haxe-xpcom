@@ -47,4 +47,9 @@ import xpcom.types.*;
 	 * Defines the timer type: one shot, repeating slack or repeating precise. Must be one of the constants defined under Constants on this page.
 	 */
 	var type : ULong;
+	
+	function cancel() : Void;
+	function init(aObserver:NsIObserver, aDelay:ULong, aType:ULong) : Void;
+	function initWithCallback(aCallback:NsITimerCallback, aDelay:ULong, aType:ULong) : Void;
+	function initWithFuncCallback(aCallback:NsTimerCallbackFunc, aClosure:VoidPtr, aDelay:ULong, aType:ULong) : Void;
 }

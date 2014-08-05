@@ -16,4 +16,6 @@ import xpcom.types.*;
 	 *  
 	 */
 	static inline var SELECT_DIALOG = 2;
+	
+	function openDialog(aType:ULong, aName:ACString, aFeatures:ACString, aArguments:NsIDialogParamBlock, ?aFrameElement:NsIDOMElement) : Void;
 }

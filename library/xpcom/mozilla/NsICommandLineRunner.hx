@@ -8,4 +8,8 @@ import xpcom.types.*;
 	 * Process and combine the help text provided by each command-line handler. Read only.
 	 */
 	var helpText : AUTF8String;
+	
+	function init(argc:Long, argv:NsCharPtrArray, workingDir:NsIFile, state:ULong) : Void;
+	function run() : Void;
+	function setWindowContext(aWindow:NsIDOMWindow) : Void;
 }

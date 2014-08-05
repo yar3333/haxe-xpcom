@@ -12,4 +12,7 @@ import xpcom.types.*;
 	 * Indicates whether or not a document is currently being loaded in the context of this nsIWebProgress instance. Read only.
 	 */
 	var isLoadingDocument : PRBool;
+	
+	function addProgressListener(aListener:NsIWebProgressListener, aNotifyMask:ULong) : Void;
+	function removeProgressListener(aListener:NsIWebProgressListener) : Void;
 }

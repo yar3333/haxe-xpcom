@@ -40,4 +40,8 @@ import xpcom.types.*;
 	 * The current sort type in effect. Read only.
 	 */
 	var sortType : Short;
+	
+	function setDirectory(directory:NsIFile) : Void;
+	function setFilter(filterString:AString) : Void;
+	function sort(sortType:Short, reverseSort:Bool) : Void;
 }

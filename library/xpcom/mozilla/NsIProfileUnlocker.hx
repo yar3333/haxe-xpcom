@@ -12,4 +12,6 @@ import xpcom.types.*;
 	 * Forcibly terminate the process holding the profile lock.
 	 */
 	static inline var FORCE_QUIT = 1;
+	
+	function unlock(aSeverity:ULong) : Void;
 }

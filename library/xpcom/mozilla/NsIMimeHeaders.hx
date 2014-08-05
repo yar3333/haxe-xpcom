@@ -8,4 +8,7 @@ import xpcom.types.*;
 	 * Read only.
 	 */
 	var allHeaders : String;
+	
+	function extractHeader(headerName:String, getAllOfThem:Bool) : String;
+	function initialize(allHeaders:String, allHeadersSize:Long) : Void;
 }

@@ -24,4 +24,6 @@ import xpcom.types.*;
 	 *  The node was adopted into a new document.
 	 */
 	static inline var NODE_ADOPTED = 5;
+	
+	function handle(operation:UShort, key:DOMString, data:NsIVariant, src:NsIDOMNode, dst:NsIDOMNode) : Void;
 }

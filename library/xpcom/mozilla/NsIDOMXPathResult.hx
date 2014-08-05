@@ -32,4 +32,7 @@ import xpcom.types.*;
 	 * If resultType is STRING_TYPE, the boolean value. Read only.
 	 */
 	var stringValue : DOMString;
+	
+	function iterateNext() : NsIDOMNode;
+	function snapshotItem(index:ULong) : NsIDOMNode;
 }

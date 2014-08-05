@@ -11,4 +11,6 @@ import xpcom.types.*;
 	 * Control whether or not this URL can be modified. Protocol handlers can set this flag before handing out an URL to ensure that it is not inadvertently modified. Obsolete since Gecko 1.9
 	 */
 	var mutable : Bool;
+	
+	function init(aUrlType:ULong, aDefaultPort:Long, aSpec:AUTF8String, aOriginCharset:String, aBaseURI:NsIURI) : Void;
 }

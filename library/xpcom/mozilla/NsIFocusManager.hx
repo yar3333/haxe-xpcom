@@ -80,4 +80,18 @@ import xpcom.types.*;
 	 * The child window within the activeWindow that is focused. This will always be activeWindow, a child window of activeWindow or null if no child window is focused. Setting the focusedWindow changes the focused window and raises the toplevel window it is in. If the current focus within the new focusedWindow is a frame element, then the focusedWindow will actually be set to the child window and the current element within that set as the focused element. This process repeats downwards until a non-frame element is found.
 	 */
 	var focusedWindow : NsIDOMWindow;
+	
+	function clearFocus(aWindow:NsIDOMWindow) : Void;
+	function contentRemoved(aDocument:NsIDocument, aElement:NsIContent) : Void;
+	function fireDelayedEvents(aDocument:NsIDocument) : Void;
+	function focusPlugin(aPlugin:NsIContent) : Void;
+	function getFocusedElementForWindow(aWindow:NsIDOMWindow, aDeep:PRBool, aFocusedWindow:NsIDOMWindow) : NsIDOMElement;
+	function getLastFocusMethod(window:NsIDOMWindow) : PRUint32;
+	function moveCaretToFocus(aWindow:NsIDOMWindow) : Void;
+	function moveFocus(aWindow:NsIDOMWindow, aStartElement:NsIDOMElement, aType:ULong, aFlags:ULong) : NsIDOMElement;
+	function setFocus(aElement:NsIDOMElement, aFlags:ULong) : Void;
+	function windowHidden(aWindow:NsIDOMWindow) : Void;
+	function windowLowered(aWindow:NsIDOMWindow) : Void;
+	function windowRaised(aWindow:NsIDOMWindow) : Void;
+	function windowShown(aWindow:NsIDOMWindow, aNeedsFocus:PRBool) : Void;
 }

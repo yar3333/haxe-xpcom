@@ -49,4 +49,8 @@ import xpcom.types.*;
 	 * Elapsed time, in milliseconds, from a platform-specific zero time to the time the message was created. Read only.
 	 */
 	var timeStamp : LongLong;
+	
+	function init(message:Wstring, sourceName:Wstring, sourceLine:Wstring, lineNumber:PRUint32, columnNumber:PRUint32, flags:PRUint32, category:String) : Void;
+	function initWithWindowID(message:Wstring, sourceName:Wstring, sourceLine:Wstring, lineNumber:PRUint32, columnNumber:PRUint32, flags:PRUint32, category:String, innerWindowID:ULongLong) : Void;
+	function toString() : AUTF8String;
 }

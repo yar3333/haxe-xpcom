@@ -34,4 +34,18 @@ import xpcom.types.*;
 	 * The tree widget for this selection.
 	 */
 	var tree : NsITreeBoxObject;
+	
+	function adjustSelection(index:Long, count:Long) : Void;
+	function clearRange(startIndex:Long, endIndex:Long) : Void;
+	function clearSelection() : Void;
+	function getRangeAt(i:Long, min:Long, max:Long) : Void;
+	function getRangeCount() : Long;
+	function invalidateSelection() : Void;
+	function invertSelection() : Void;
+	function isSelected(index:Long) : Bool;
+	function rangedSelect(startIndex:Long, endIndex:Long, augment:Bool) : Void;
+	function select(index:Long) : Void;
+	function selectAll() : Void;
+	function timedSelect(index:Long, delay:Long) : Void;
+	function toggleSelect(index:Long) : Void;
 }

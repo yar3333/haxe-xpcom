@@ -16,4 +16,6 @@ import xpcom.types.*;
 	 * true if the resource was loaded from the application cache, otherwise false. This value may be false even if the resource is assigned to an application cache if, for example, it was loaded as a fallback. Read only.
 	 */
 	var loadedFromApplicationCache : PRBool;
+	
+	function markOfflineCacheEntryAsForeign() : Void;
 }

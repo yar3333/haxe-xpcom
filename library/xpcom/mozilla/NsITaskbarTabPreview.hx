@@ -12,4 +12,8 @@ import xpcom.types.*;
 	 * The title displayed above the thumbnail. By default, this is an empty string.
 	 */
 	var title : DOMString;
+	
+	function EnsureRegistration() : Void;
+	function GetHWND() : NativeWindow;
+	function move(aNext:NsITaskbarTabPreview) : Void;
 }

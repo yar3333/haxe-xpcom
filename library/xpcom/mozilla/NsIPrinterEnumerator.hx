@@ -12,4 +12,8 @@ import xpcom.types.*;
 	 * The list of printer names. Read only.
 	 */
 	var printerNameList : NsIStringEnumerator;
+	
+	function displayPropertiesDlg(aPrinter:Wstring, aPrintSettings:NsIPrintSettings) : Void;
+	function enumeratePrinters(aCount:PRUint32, aResult:Array<Wstring>) : Void;
+	function initPrintSettingsFromPrinter(aPrinterName:Wstring, aPrintSettings:NsIPrintSettings) : Void;
 }

@@ -16,4 +16,7 @@ import xpcom.types.*;
 	 * Constant for the <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIUpdateChecker#stopChecking()">stopChecking()</a></code> method indicating that all update checking should be stopped. This disables the update checking preferences.
 	 */
 	static inline var ANY_CHECKS = 3;
+	
+	function checkForUpdates(listener:NsIUpdateCheckListener, force:Bool) : Void;
+	function stopChecking(duration:UShort) : Void;
 }

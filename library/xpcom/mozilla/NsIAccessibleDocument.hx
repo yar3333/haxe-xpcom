@@ -40,4 +40,8 @@ import xpcom.types.*;
 	 * The window handle for the OS window the document is being displayed in. For example, in Windows you can static cast it to an HWND. Read only. Native code only!
 	 */
 	var windowHandle : VoidPtr;
+	
+	function getAccessibleInParentChain(aDOMNode:NsIDOMNode, aCanCreate:Bool) : NsIAccessible;
+	function getCachedAccessNode(aUniqueID:VoidPtr) : NsIAccessNode;
+	function getNameSpaceURIForID(nameSpaceID:Short) : AString;
 }

@@ -117,4 +117,10 @@ import xpcom.types.*;
 	 * Controls the interpretation of uri. When unset (default), the URI will request an exact match of the specified URI. When set, any history entry beginning in uri will match. For example http://bar.com/foo will match http://bar.com/foo as well as http://bar.com/foo/baz.gif.
 	 */
 	var uriIsPrefix : Bool;
+	
+	function clone() : NsINavHistoryQuery;
+	function getFolders(?count:ULong, folders:Array<LongLong>) : Void;
+	function getTransitions(?count:ULong, transitions:Array<ULong>) : Void;
+	function setFolders(folders:Array<LongLong>, folderCount:ULong) : Void;
+	function setTransitions(transitions:Array<ULong>, count:ULong) : Void;
 }

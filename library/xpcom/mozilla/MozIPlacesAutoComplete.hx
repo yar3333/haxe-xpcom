@@ -52,4 +52,7 @@ import xpcom.types.*;
 	 * Search for pages that have been marked as being opened, such as a tab in a tabbrowser. 
 	 */
 	static inline var BEHAVIOR_OPENPAGE = 1 << 7;
+	
+	function registerOpenPage(aURI:NsIURI) : Void;
+	function unregisterOpenPage(aURI:NsIURI) : Void;
 }

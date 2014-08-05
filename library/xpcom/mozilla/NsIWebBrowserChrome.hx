@@ -125,4 +125,11 @@ import xpcom.types.*;
 	 * The currently loaded WebBrowser. The browser chrome may be told to set the WebBrowser object to a new object by setting this attribute. In this case the implementer is responsible for taking the new WebBrowser object and doing any necessary initialization or setup as if it had created the WebBrowser itself. This includes positioning setting up listeners etc.
 	 */
 	var webBrowser : NsIWebBrowser;
+	
+	function destroyBrowserWindow() : Void;
+	function exitModalEventLoop(aStatus:Nsresult) : Void;
+	function isWindowModal() : Bool;
+	function setStatus(statusType:ULong, status:Wstring) : Void;
+	function showAsModal() : Void;
+	function sizeBrowserTo(aCX:Long, aCY:Long) : Void;
 }

@@ -32,4 +32,6 @@ import xpcom.types.*;
 	 * The location of this function in filename Read only.
 	 */
 	var sourceLine : String;
+	
+	function toString() : String;
 }

@@ -118,4 +118,42 @@ import xpcom.types.*;
 	 * The width of the container rectangle. In the case of any error, zero is returned, and an exception will be thrown. Read only.
 	 */
 	var width : PRInt32;
+	
+	function addRestoreData(data:Array<Char>, aCount:ULong) : Void;
+	function appendFrame(aX:PRInt32, aY:PRInt32, aWidth:PRInt32, aHeight:PRInt32, aFormat:GfxImageFormat, imageData:Array<PRUint8>, imageLength:ULong) : Void;
+	function appendPalettedFrame(aX:PRInt32, aY:PRInt32, aWidth:PRInt32, aHeight:PRInt32, aFormat:GfxImageFormat, aPaletteDepth:PRUint8, imageData:Array<PRUint8>, imageLength:ULong, paletteData:Array<PRUint32>, paletteLength:ULong) : Void;
+	function clear() : Void;
+	function copyCurrentFrame() : GfxImageSurface;
+	function copyFrame(aWhichFrame:PRUint32, aFlags:PRUint32) : GfxImageSurface;
+	function decodingComplete() : Void;
+	function draw(aContext:GfxContext, aFilter:GfxGraphicsFilter, aUserSpaceToImageSpace:GfxMatrix, aFill:GfxRect, aSubimage:NsIntRect, aViewportSize:NsIntSize, aFlags:PRUint32) : Void;
+	function endFrameDecode(framenumber:ULong) : Void;
+	function ensureCleanFrame(aFramenum:ULong, aX:PRInt32, aY:PRInt32, aWidth:PRInt32, aHeight:PRInt32, aFormat:GfxImageFormat, imageData:Array<PRUint8>, imageLength:ULong) : Void;
+	function extractCurrentFrame(aRect:NsIntRect) : ImgIContainer;
+	function extractFrame(aWhichFrame:PRUint32, aRect:NsIntRect, aFlags:PRUint32) : ImgIContainer;
+	function frameUpdated(framenum:ULong, aNewRect:NsIntRect) : Void;
+	function getCurrentFrameRect(aFrameRect:NsIntRect) : Void;
+	function getFrame(aWhichFrame:PRUint32, aFlags:PRUint32) : GfxASurface;
+	function getFrameAt(index:ULong) : GfxIImageFrame;
+	function getFrameColormap(framenumber:ULong, paletteData:Array<PRUint32>, paletteLength:ULong) : Void;
+	function getFrameImageDataLength(framenumber:ULong) : ULong;
+	function getImageContainer() : ImageContainer;
+	function GetRootLayoutFrame() : NsIFrame;
+	function GetType() : PRUint16;
+	function init(aWidth:PRInt32, aHeight:PRInt32, aObserver:ImgIContainerObserver) : Void;
+	function lockImage() : Void;
+	function removeFrame(item:GfxIImageFrame) : Void;
+	function requestDecode() : Void;
+	function requestDiscard() : Void;
+	function requestRefresh(aTime:TimeStamp) : Void;
+	function resetAnimation() : Void;
+	function restoreDataDone() : Void;
+	function setDiscardable(aMimeType:String) : Void;
+	function setFrameBlendMethod(framenumber:ULong, aBlendMethod:PRInt32) : Void;
+	function setFrameDisposalMethod(framenumber:ULong, aDisposalMethod:PRInt32) : Void;
+	function setFrameHasNoAlpha(framenumber:ULong) : Void;
+	function setFrameTimeout(framenumber:ULong, aTimeout:PRInt32) : Void;
+	function startAnimation() : Void;
+	function stopAnimation() : Void;
+	function unlockImage() : Void;
 }

@@ -36,4 +36,6 @@ import xpcom.types.*;
 	 * The URL from which the patch was downloaded.
 	 */
 	var URL : AString;
+	
+	function serialize(updates:NsIDOMDocument) : NsIDOMElement;
 }

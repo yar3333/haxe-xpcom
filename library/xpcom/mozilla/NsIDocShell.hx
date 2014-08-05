@@ -272,4 +272,28 @@ import xpcom.types.*;
 	 * Set/Get the document scale factor. When setting this attribute, a NS_ERROR_NOT_IMPLEMENTED error may be returned by implementations not supporting zoom. Implementations not supporting zoom should return 1.0 all the time for the Get operation. 1.0 by the way is the default of zoom. This means 100% of normal scaling or in other words normal size no zoom.
 	 */
 	var zoom : Float;
+	
+	function addSessionStorage(principal:NsIPrincipal, storage:NsIDOMStorage) : Void;
+	function addState(aData:NsIVariant, aTitle:DOMString, aURL:DOMString, aReplace:Bool) : Void;
+	function beginRestore(viewer:NsIContentViewer, top:Bool) : Void;
+	function createAboutBlankContentViewer(aPrincipal:NsIPrincipal) : Void;
+	function createLoadInfo(loadInfo:NsIDocShellLoadInfo) : Void;
+	function DetachEditorFromWindow() : Void;
+	function finishRestore() : Void;
+	function firePageHideNotification(isUnload:Bool) : Void;
+	function fireUnloadNotification() : Void;
+	function getDocShellEnumerator(aItemType:Long, aDirection:Long) : NsISimpleEnumerator;
+	function getSessionStorageForPrincipal(principal:NsIPrincipal, documentURI:DOMString, create:Bool) : NsIDOMStorage;
+	function getSessionStorageForURI(uri:NsIURI, documentURI:DOMString) : NsIDOMStorage;
+	function historyPurged(numEntries:Long) : Void;
+	function internalLoad(aURI:NsIURI, aReferrer:NsIURI, aOwner:NsISupports, aFlags:PRUint32, aWindowTarget:Wstring, aTypeHint:String, aPostDataStream:NsIInputStream, aHeadersStream:NsIInputStream, aLoadFlags:ULong, aSHEntry:NsISHEntry, firstParty:Bool, aDocShell:NsIDocShell, aRequest:NsIRequest) : Void;
+	function isBeingDestroyed() : Bool;
+	function loadStream(aStream:NsIInputStream, aURI:NsIURI, aContentType:ACString, aContentCharset:ACString, aLoadInfo:NsIDocShellLoadInfo) : Void;
+	function loadURI(uri:NsIURI, loadInfo:NsIDocShellLoadInfo, aLoadFlags:ULong, firstParty:Bool) : Void;
+	function prepareForNewContentModel() : Void;
+	function resumeRefreshURIs() : Void;
+	function setChildOffset(offset:ULong) : Void;
+	function setCurrentURI(aURI:NsIURI) : Void;
+	function suspendRefreshURIs() : Void;
+	function tabToTreeOwner(forward:Bool, tookFocus:Bool) : Void;
 }

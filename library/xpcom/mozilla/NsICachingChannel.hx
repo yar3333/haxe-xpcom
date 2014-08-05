@@ -57,4 +57,6 @@ import xpcom.types.*;
 	 * The same as cacheToken but accessing the offline app cache token if there is any.  Exceptions thrown  NS_ERROR_NOT_AVAILABLE When there is not offline cache token.
 	 */
 	var offlineCacheToken : NsISupports;
+	
+	function isFromCache() : Bool;
 }

@@ -24,4 +24,11 @@ import xpcom.types.*;
 	 * When set to true, content load-blocking and fail-closed are disabled: Content Security Policy will only send reports, and not modify behavior.
 	 */
 	var reportOnlyMode : Bool;
+	
+	function permitsAncestry(docShell:NsIDocShell) : Bool;
+	function refinePolicy(policyString:AString, selfURI:NsIURI) : Void;
+	function scanRequestData(aChannel:NsIHttpChannel) : Void;
+	function sendReports(blockedURI:AString, violatedDirective:AString) : Void;
+	function shouldLoad(aContentType:ULong, aContentLocation:NsIURI, aRequestOrigin:NsIURI, aContext:NsISupports, aMimeTypeGuess:ACString, aExtra:NsISupports) : Short;
+	function shouldProcess(aContentType:ULong, aContentLocation:NsIURI, aRequestOrigin:NsIURI, aContext:NsISupports, aMimeType:ACString, aExtra:NsISupports) : Short;
 }

@@ -28,4 +28,6 @@ import xpcom.types.*;
 	 * The version of the feed; null if a non-feed is processed. This value will be one of the following: atom, rss2, rss09, rss091, rss091userland, rss092, rss1, atom03, atomEntry, rssItem
 	 */
 	var version : AString;
+	
+	function registerExtensionPrefix(aNamespace:AString, aPrefix:AString) : Void;
 }

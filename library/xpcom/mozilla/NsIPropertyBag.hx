@@ -8,4 +8,6 @@ import xpcom.types.*;
 	 * Get a nsISimpleEnumerator whose elements are nsIProperty objects. Read only.
 	 */
 	var enumerator : NsISimpleEnumerator;
+	
+	function getProperty(name:AString) : NsIVariant;
 }

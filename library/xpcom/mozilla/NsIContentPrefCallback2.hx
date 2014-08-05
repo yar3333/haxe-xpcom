@@ -12,4 +12,8 @@ import xpcom.types.*;
 	 *  
 	 */
 	static inline var COMPLETE_ERROR = 1;
+	
+	function handleCompletion(reason:UShort) : Void;
+	function handleError(error:Nsresult) : Void;
+	function handleResult(pref:NsIContentPref) : Void;
 }

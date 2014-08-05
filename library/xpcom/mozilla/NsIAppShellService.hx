@@ -40,4 +40,22 @@ import xpcom.types.*;
 	 * Getter for "native application support." Read only. Obsolete since Gecko 1.8
 	 */
 	var nativeAppSupport : NsINativeAppSupport;
+	
+	function closeTopLevelWindow(aWindow:NsIXULWindow) : Void;
+	function createHiddenWindow(aAppShell:NsIAppShell) : Void;
+	function createStartupState(aWindowWidth:Long, aWindowHeight:Long) : Bool;
+	function createTopLevelWindow(aParent:NsIXULWindow, aUrl:NsIURI, aChromeMask:PRUint32, aInitialWidth:Long, aInitialHeight:Long, aAppShell:NsIAppShell) : NsIXULWindow;
+	function destroyHiddenWindow() : Void;
+	function doProfileStartup(aCmdLineService:NsICmdLineService, canInteract:Bool) : Void;
+	function ensure1Window(aCmdLineService:NsICmdLineService) : Void;
+	function enterLastWindowClosingSurvivalArea() : Void;
+	function exitLastWindowClosingSurvivalArea() : Void;
+	function getHiddenWindowAndJSContext(aHiddenDOMWindow:NsIDOMWindow, aJSContext:JSContext) : Void;
+	function hideSplashScreen() : Void;
+	function initialize(aCmdLineService:NsICmdLineService, nativeAppSupportOrSplashScreen:NsISupports) : Void;
+	function quit(aFerocity:PRUint32) : Void;
+	function registerTopLevelWindow(aWindow:NsIXULWindow) : Void;
+	function run() : Void;
+	function topLevelWindowIsModal(aWindow:NsIXULWindow, aModal:Bool) : Void;
+	function unregisterTopLevelWindow(aWindow:NsIXULWindow) : Void;
 }

@@ -44,4 +44,10 @@ import xpcom.types.*;
 	 * One of the Application cache state constants indicating the status of the application cache.
 	 */
 	var status : UShort;
+	
+	function mozAdd(uri:DOMString) : Void;
+	function mozItem(index:ULong) : DOMString;
+	function mozRemove(uri:DOMString) : Void;
+	function swapCache() : Void;
+	function update() : Void;
 }

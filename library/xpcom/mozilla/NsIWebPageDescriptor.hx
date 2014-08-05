@@ -8,4 +8,6 @@ import xpcom.types.*;
 	 * Retrieves the page descriptor for the current document. Read only.
 	 */
 	var currentDescriptor : NsISupports;
+	
+	function loadPage(aPageDescriptor:NsISupports, aDisplayType:ULong) : Void;
 }

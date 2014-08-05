@@ -73,4 +73,6 @@ import xpcom.types.*;
 	 * The sorting annotation to use; see Sorting methods for possible values.
 	 */
 	var sortingMode : Short;
+	
+	function clone() : NsINavHistoryQueryOptions;
 }

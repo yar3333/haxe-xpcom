@@ -4,4 +4,5 @@ import xpcom.types.*;
 
 @:native("mozIStorageProgressHandler") extern class MozIStorageProgressHandler extends NsISupports
 {
+	function onProgress(aConnection:MozIStorageConnection) : Bool;
 }

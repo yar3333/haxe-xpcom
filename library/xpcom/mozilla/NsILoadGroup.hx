@@ -25,4 +25,7 @@ import xpcom.types.*;
 	 * Returns the requests contained directly in this group. Enumerator element type: nsIRequest. Read only.
 	 */
 	var requests : NsISimpleEnumerator;
+	
+	function addRequest(aRequest:NsIRequest, aContext:NsISupports) : Void;
+	function removeRequest(aRequest:NsIRequest, aContext:NsISupports, aStatus:Nsresult) : Void;
 }

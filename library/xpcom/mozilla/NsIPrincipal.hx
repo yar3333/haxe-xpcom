@@ -59,4 +59,16 @@ import xpcom.types.*;
 	 * Note: This wasn't accessible by scripts prior to Gecko 2.0.
 	 */
 	var URI : NsIURI;
+	
+	function canEnableCapability(capability:String) : Short;
+	function checkMayLoad(uri:NsIURI, report:Bool) : Void;
+	function disableCapability(capability:String, annotation:VoidPtr) : Void;
+	function enableCapability(capability:String, annotation:VoidPtr) : Void;
+	function equals(other:NsIPrincipal) : Bool;
+	function getJSPrincipals(cx:JSContext) : JSPrincipals;
+	function getPreferences(prefBranch:String, id:String, subjectName:String, grantedList:String, deniedList:String, isTrusted:Bool) : Void;
+	function isCapabilityEnabled(capability:String, annotation:VoidPtr) : Bool;
+	function revertCapability(capability:String, annotation:VoidPtr) : Void;
+	function setCanEnableCapability(capability:String, canEnable:Short) : Void;
+	function subsumes(other:NsIPrincipal) : Bool;
 }

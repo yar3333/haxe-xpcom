@@ -33,4 +33,8 @@ import xpcom.types.*;
 	 * The current state of the container. This is one of the state constants.
 	 */
 	var state : UShort;
+	
+	function findNodeByDetails(aURIString:AUTF8String, aTime:PRTime, aItemId:LongLong, aRecursive:Bool) : NsINavHistoryResultNode;
+	function getChild(aIndex:ULong) : NsINavHistoryResultNode;
+	function getChildIndex(aNode:NsINavHistoryResultNode) : ULong;
 }

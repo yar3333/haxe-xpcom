@@ -52,4 +52,7 @@ import xpcom.types.*;
 	 * The URI corresponding to the channel. Its value is immutable. Read only.
 	 */
 	var URI : NsIURI;
+	
+	function asyncOpen(aListener:NsIStreamListener, aContext:NsISupports) : Void;
+	function open() : NsIInputStream;
 }

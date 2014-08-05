@@ -34,4 +34,10 @@ import xpcom.types.*;
 	 * ReadOnly.
 	 */
 	var responseString : ULong;
+	
+	function init(serverURL:String) : Void;
+	function setAuthentication(username:String, password:String) : Void;
+	function clearAuthentication(username:String, password:String) : Void;
+	@:overload(function(encoding:String) : Void {})
+	function setEncoding(type:ULong, uuid:NsIIDRef, result:NsQIResult) : Void;
 }

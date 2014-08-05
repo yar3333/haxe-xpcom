@@ -11,4 +11,10 @@ import xpcom.types.*;
 	 * Returns the port of this server socket. Read only.
 	 */
 	var port : Long;
+	
+	function init(aPort:Long, aLoopbackOnly:Bool, aBackLog:Long) : Void;
+	function initWithAddress(aAddr:PRNetAddrPtr, aBackLog:Long) : Void;
+	function close() : Void;
+	function asyncListen(aListener:NsIServerSocketListener) : Void;
+	function getAddress() : PRNetAddr;
 }

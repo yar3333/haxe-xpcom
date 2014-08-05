@@ -87,4 +87,7 @@ import xpcom.types.*;
 	 * Returns the number of targets for this relation. Read only.
 	 */
 	var targetsCount : ULong;
+	
+	function getTarget(index:ULong) : NsIAccessible;
+	function getTargets() : NsIArray;
 }

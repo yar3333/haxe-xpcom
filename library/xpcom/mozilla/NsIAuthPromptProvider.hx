@@ -12,4 +12,6 @@ import xpcom.types.*;
 	 * Proxy authentication request.
 	 */
 	static inline var PROMPT_PROXY = 1;
+	
+	function getAuthPrompt(aPromptReason:PRUint32, iid:NsIIDRef, result:NsQIResult) : Void;
 }

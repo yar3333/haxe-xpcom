@@ -11,4 +11,9 @@ import xpcom.types.*;
 	 * Read only.
 	 */
 	var myHostName : AUTF8String;
+	
+	function asyncResolve(aHostName:AUTF8String, aFlags:ULong, aListener:NsIDNSListener, aListenerTarget:NsIEventTarget) : NsICancelable;
+	function init() : Void;
+	function resolve(aHostName:AUTF8String, aFlags:ULong) : NsIDNSRecord;
+	function shutdown() : Void;
 }

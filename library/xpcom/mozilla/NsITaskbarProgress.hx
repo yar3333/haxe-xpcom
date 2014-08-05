@@ -24,4 +24,6 @@ import xpcom.types.*;
 	 * Display a determinate progress bar indicating that the operation has paused.
 	 */
 	static inline var STATE_PAUSED = 4;
+	
+	function setProgressState(state:NsTaskbarProgressState, ?currentValue:ULongLong, ?maxValue:ULongLong) : Void;
 }

@@ -36,4 +36,6 @@ import xpcom.types.*;
 	 * Get the last time the cache entry was modified (in seconds since the Epoch). Read only.
 	 */
 	var lastModified : PRUint32;
+	
+	function isStreamBased() : Bool;
 }

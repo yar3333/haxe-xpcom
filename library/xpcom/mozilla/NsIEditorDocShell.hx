@@ -16,4 +16,6 @@ import xpcom.types.*;
 	 * This docShell has an editing session. Read only.
 	 */
 	var hasEditingSession : Bool;
+	
+	function makeEditable(inWaitForUriLoad:Bool) : Void;
 }

@@ -84,4 +84,11 @@ import xpcom.types.*;
 	 * Note: Some characters may be escaped.
 	 */
 	var userPass : AUTF8String;
+	
+	function clone() : NsIURI;
+	function cloneIgnoringRef() : NsIURI;
+	function equals(other:NsIURI) : Bool;
+	function equalsExceptRef(other:NsIURI) : Bool;
+	function resolve(relativePath:AUTF8String) : AUTF8String;
+	function schemeIs(scheme:String) : Bool;
 }

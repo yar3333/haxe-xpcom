@@ -60,4 +60,12 @@ import xpcom.types.*;
 	 * The window root for this window. This is useful for connecting event listeners to this window as well as every other window nested in that window root. Read only. Native code only! Note: Prior to Gecko 7.0 this attribute was part of nsIDOMWindow2.
 	 */
 	var windowRoot : NsIDOMEventTarget;
+	
+	function getComputedStyle(elt:NsIDOMElement, ?pseudoElt:DOMString) : NsIDOMCSSStyleDeclaration;
+	function getSelection() : NsISelection;
+	function scrollBy(xScrollDif:Long, yScrollDif:Long) : Void;
+	function scrollByLines(numLines:Long) : Void;
+	function scrollByPages(numPages:Long) : Void;
+	function scrollTo(xScroll:Long, yScroll:Long) : Void;
+	function sizeToContent() : Void;
 }

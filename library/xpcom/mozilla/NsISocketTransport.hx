@@ -26,4 +26,10 @@ import xpcom.types.*;
 	 * This attribute is only available once the socket is connected. Read only.
 	 */
 	var securityInfo : NsISupports;
+	
+	function getPeerAddr() : PRNetAddr;
+	function getSelfAddr() : PRNetAddr;
+	function getTimeout(aType:ULong) : ULong;
+	function isAlive() : Bool;
+	function setTimeout(aType:ULong, aValue:ULong) : Void;
 }

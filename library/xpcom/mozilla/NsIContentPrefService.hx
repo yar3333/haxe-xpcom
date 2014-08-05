@@ -15,4 +15,15 @@ import xpcom.types.*;
 	 * The component that the service uses to determine the groups to which URIs belong. By default, this is the "hostname grouper," which groups URIs by full hostname (in otherwords, by site). Read only.
 	 */
 	var grouper : NsIContentURIGrouper;
+	
+	function addObserver(aName:AString, aObserver:NsIContentPrefObserver) : Void;
+	function getPref(aGroup:NsIVariant, aName:AString, ?aCallback:NsIContentPrefCallback) : NsIVariant;
+	function getPrefs(aGroup:NsIVariant) : NsIPropertyBag2;
+	function getPrefsByName(aName:AString) : NsIPropertyBag2;
+	function hasPref(aGroup:NsIVariant, aName:AString) : Bool;
+	function removeGroupedPrefs() : Void;
+	function removeObserver(aName:AString, aObserver:NsIContentPrefObserver) : Void;
+	function removePref(aGroup:NsIVariant, aName:AString) : Void;
+	function removePrefsByName(aName:AString) : Void;
+	function setPref(aGroup:NsIVariant, aName:AString, aValue:NsIVariant) : Void;
 }

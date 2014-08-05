@@ -53,4 +53,13 @@ import xpcom.types.*;
 	 * One of the Z level constants below. On some platforms, windows with a higher zLevel will be kept above windows with a lower zLevel.
 	 */
 	var zLevel : ULong;
+	
+	function addChildWindow(aChild:NsIXULWindow) : Void;
+	function applyChromeFlags() : Void;
+	function assumeChromeFlagsAreFrozen() : Void;
+	function center(aRelative:NsIXULWindow, aScreen:Bool, aAlert:Bool) : Void;
+	function createNewWindow(aChromeFlags:PRInt32, aAppShell:NsIAppShell) : NsIXULWindow;
+	function getContentShellById(ID:Wstring) : NsIDocShellTreeItem;
+	function removeChildWindow(aChild:NsIXULWindow) : Void;
+	function showModal() : Void;
 }

@@ -15,4 +15,7 @@ import xpcom.types.*;
 	 * The primary display screen; this is the screen with the menu bar (on the Mac) or taskbar or equivalent on Windows or Linux. Read only.
 	 */
 	var primaryScreen : NsIScreen;
+	
+	function screenForNativeWidget(nativeWidget:VoidPtr) : NsIScreen;
+	function screenForRect(left:Long, top:Long, width:Long, height:Long) : NsIScreen;
 }

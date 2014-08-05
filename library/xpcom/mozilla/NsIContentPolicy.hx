@@ -128,4 +128,7 @@ import xpcom.types.*;
 	 * <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 1.5 / Thunderbird 1.5 / SeaMonkey 1.0)">Obsolete since Gecko 1.8</span>
 	 */
 	static inline var DOCUMENT = 8;
+	
+	function shouldLoad(aContentType:ULong, aContentLocation:NsIURI, aRequestOrigin:NsIURI, aContext:NsISupports, aMimeTypeGuess:ACString, aExtra:NsISupports, aRequestPrincipal:NsIPrincipal) : Short;
+	function shouldProcess(aContentType:ULong, aContentLocation:NsIURI, aRequestOrigin:NsIURI, aContext:NsISupports, aMimeType:ACString, aExtra:NsISupports, aRequestPrincipal:NsIPrincipal) : Short;
 }

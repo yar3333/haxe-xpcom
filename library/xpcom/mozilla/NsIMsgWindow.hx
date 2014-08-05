@@ -59,4 +59,8 @@ import xpcom.types.*;
 	 * The message window's global chrome window object. Set this to initialize the rootDocShell.
 	 */
 	var domWindow : NsIDOMWindow;
+	
+	function displayHTMLInMessagePane(title:AString, body:AString, clearMsgHdr:Bool) : Void;
+	function StopUrls() : Void;
+	function closeWindow() : Void;
 }

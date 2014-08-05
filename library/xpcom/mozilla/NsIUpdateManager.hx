@@ -12,4 +12,7 @@ import xpcom.types.*;
 	 * The number of updates in the history list; the updates can be fetched by calling getUpdateAt(). Read only.
 	 */
 	var updateCount : Long;
+	
+	function getUpdateAt(index:Long) : NsIUpdate;
+	function saveUpdates() : Void;
 }

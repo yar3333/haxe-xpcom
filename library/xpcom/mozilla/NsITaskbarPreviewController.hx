@@ -16,4 +16,10 @@ import xpcom.types.*;
 	 * The width in pixels of the preview image. This value may change at any time. See drawPreview() for more information. Read only.
 	 */
 	var width : ULong;
+	
+	function drawPreview(ctx:NsIDOMCanvasRenderingContext2D) : Bool;
+	function drawThumbnail(ctx:NsIDOMCanvasRenderingContext2D, width:ULong, height:ULong) : Bool;
+	function onActivate() : Bool;
+	function onClick(button:NsITaskbarPreviewButton) : Void;
+	function onClose() : Void;
 }

@@ -12,4 +12,7 @@ import xpcom.types.*;
 	 * true when a master password prompt is being displayed. Read only.
 	 */
 	var uiBusy : Bool;
+	
+	function decrypt(cipherText:AString) : AString;
+	function encrypt(plainText:AString) : AString;
 }

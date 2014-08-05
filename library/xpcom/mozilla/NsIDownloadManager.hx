@@ -94,4 +94,23 @@ import xpcom.types.*;
 	 * Read only.
 	 */
 	var userDownloadsDirectory : NsILocalFile;
+	
+	function addDownload(aDownloadType:Short, aSource:NsIURI, aTarget:NsIURI, aDisplayName:AString, aMIMEInfo:NsIMIMEInfo, aStartTime:PRTime, aTempFile:NsILocalFile, aCancelable:NsICancelable, aIsPrivate:Bool) : NsIDownload;
+	function addListener(aListener:NsIDownloadProgressListener) : Void;
+	function cancelDownload(aID:ULong) : Void;
+	function cleanUp() : Void;
+	function endBatchUpdate() : Void;
+	function flush() : Void;
+	function getDownload(aID:ULong) : NsIDownload;
+	function onClose() : Void;
+	function open(aParent:NsIDOMWindow, aDownload:NsIDownload) : Void;
+	function openProgressDialogFor(aDownload:NsIDownload, aParent:NsIDOMWindow, aCancelDownloadOnClose:Bool) : Void;
+	function pauseDownload(aID:ULong) : Void;
+	function removeDownload(aID:ULong) : Void;
+	function removeDownloadsByTimeframe(aBeginTime:LongLong, aEndTime:LongLong) : Void;
+	function removeListener(aListener:NsIDownloadProgressListener) : Void;
+	function resumeDownload(aID:ULong) : Void;
+	function retryDownload(aID:ULong) : Void;
+	function saveState() : Void;
+	function startBatchUpdate() : Void;
 }

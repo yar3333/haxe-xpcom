@@ -35,4 +35,26 @@ import xpcom.types.*;
 	 * Returns true if there is a transaction in progress on the database. Otherwise returns false. Read only.
 	 */
 	var transactionInProgress : Bool;
+	
+	function asyncClose(?aCallback:MozIStorageCompletionCallback) : Void;
+	function beginTransaction() : Void;
+	function beginTransactionAs(transactionType:PRInt32) : Void;
+	function clone(?aReadOnly:Bool) : MozIStorageStatement;
+	function close() : Void;
+	function commitTransaction() : Void;
+	function createAggregateFunction(aFunctionName:AUTF8String, aNumArguments:Long, aFunction:MozIStorageAggregateFunction) : Void;
+	function createAsyncStatement(aSQLStatement:AUTF8String) : MozIStorageAsyncStatement;
+	function createFunction(aFunctionName:AUTF8String, aNumArguments:Long, aFunction:MozIStorageFunction) : Void;
+	function createStatement(aSQLStatement:AUTF8String) : MozIStorageStatement;
+	function createTable(aTableName:String, aTableSchema:String) : Void;
+	function executeAsync(aStatements:Array<MozIStorageBaseStatement>, aNumStatements:ULong, ?aCallback:MozIStorageStatementCallback) : MozIStoragePendingStatement;
+	function executeSimpleSQL(aSQLStatement:AUTF8String) : Void;
+	function indexExists(aIndexName:AUTF8String) : Bool;
+	function preload() : Void;
+	function removeFunction(aFunctionName:AUTF8String) : Void;
+	function removeProgressHandler() : MozIStorageProgressHandler;
+	function rollbackTransaction() : Void;
+	function setGrowthIncrement(aIncrement:PRInt32, aDatabaseName:AUTF8String) : Void;
+	function setProgressHandler(aGranularity:PRInt32, aHandler:MozIStorageProgressHandler) : MozIStorageProgressHandler;
+	function tableExists(aTableName:AUTF8String) : Bool;
 }

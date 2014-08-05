@@ -12,4 +12,7 @@ import xpcom.types.*;
 	 * Read only.
 	 */
 	var faultString : String;
+	
+	function init(faultCode:PRInt32, faultSring:String) : Void;
+	function toString() : String;
 }

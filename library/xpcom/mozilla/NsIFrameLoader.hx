@@ -20,4 +20,13 @@ import xpcom.types.*;
 	 * The message manager handling messages for this frame. Read only.
 	 */
 	var messageManager : NsIChromeFrameMessageManager;
+	
+	function activateFrameEvent(aType:AString, capture:Bool) : Void;
+	function activateRemoteFrame() : Void;
+	function destroy() : Void;
+	function loadFrame() : Void;
+	function loadURI(aURI:NsIURI) : Void;
+	function sendCrossProcessKeyEvent(aType:AString, aKeyCode:Long, aCharCode:Long, aModifiers:Long, ?aPreventDefault:Bool) : Void;
+	function sendCrossProcessMouseEvent(aType:AString, aX:Float, aY:Float, aButton:Long, aClickCount:Long, aModifiers:Long, ?aIgnoreRootScrollFrame:Bool) : Void;
+	function updatePositionAndSize(aIFrame:NsIFrame) : Void;
 }

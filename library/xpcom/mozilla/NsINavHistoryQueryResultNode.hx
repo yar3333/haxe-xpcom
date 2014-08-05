@@ -12,4 +12,6 @@ import xpcom.types.*;
 	 * The options that group the node's children; only valid for RESULT_TYPE_QUERY nodes. Read only.
 	 */
 	var queryOptions : NsINavHistoryQueryOptions;
+	
+	function getQueries(?queryCount:ULong, queries:Array<NsINavHistoryQuery>) : Void;
 }

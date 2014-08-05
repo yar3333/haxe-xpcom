@@ -28,4 +28,16 @@ import xpcom.types.*;
 	 * Get or set the storage policy of the cache entry. See nsICache for the definitions of the storage policies.
 	 */
 	var storagePolicy : NsCacheStoragePolicy;
+	
+	function close() : Void;
+	function doom() : Void;
+	function doomAndFailPendingRequests(status:Nsresult) : Void;
+	function getMetaDataElement(key:String) : String;
+	function markValid() : Void;
+	function openInputStream(offset:ULong) : NsIInputStream;
+	function openOutputStream(offset:ULong) : NsIOutputStream;
+	function setDataSize(size:ULong) : Void;
+	function setExpirationTime(expirationTime:PRUint32) : Void;
+	function setMetaDataElement(key:String, value:String) : Void;
+	function visitMetaData(visitor:NsICacheMetaDataVisitor) : Void;
 }

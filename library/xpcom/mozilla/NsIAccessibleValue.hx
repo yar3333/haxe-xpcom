@@ -17,4 +17,6 @@ import xpcom.types.*;
 	 * Read only.
 	 */
 	var minimumValue : Float;
+	
+	function setCurrentValue(value:Float) : Bool;
 }

@@ -28,4 +28,9 @@ import xpcom.types.*;
 	 * The type of the object. The predefined value 'separator' may be used for separators. Other values may be used for application specific purposes. Read only.
 	 */
 	var type : AString;
+	
+	function getBindingFor(aVar:NsIAtom) : AString;
+	function getBindingObjectFor(aVar:NsIAtom) : NsISupports;
+	function hasBeenRemoved() : Void;
+	function ruleMatched(aQuery:NsISupports, aRuleNode:NsIDOMNode) : Void;
 }

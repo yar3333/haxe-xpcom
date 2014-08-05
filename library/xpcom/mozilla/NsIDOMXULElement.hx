@@ -144,4 +144,11 @@ import xpcom.types.*;
 	 * Gets/sets the value of the element's width attribute.
 	 */
 	var width : DOMString;
+	
+	function blur() : Void;
+	function click() : Void;
+	function doCommand() : Void;
+	function focus() : Void;
+	function getElementsByAttribute(name:DOMString, value:DOMString) : NsIDOMNodeList;
+	function getElementsByAttributeNS(namespaceURI:DOMString, name:DOMString, value:DOMString) : NsIDOMNodeList;
 }

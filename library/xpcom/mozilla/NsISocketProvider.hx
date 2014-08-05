@@ -15,4 +15,7 @@ import xpcom.types.*;
 	 * When setting this flag, the socket will not apply any credentials when establishing a connection. For example, an SSL connection would not send any client-certificates if this flag is set. 
 	 */
 	static inline var ANONYMOUS_CONNECT = 1 << 1;
+	
+	function addToSocket(aFamily:Long, aHost:String, aPort:Long, aProxyHost:String, aProxyPort:Long, aFlags:ULong, aFileDesc:PRFileDescStar, aSecurityInfo:NsISupports) : Void;
+	function newSocket(aFamily:Long, aHost:String, aPort:Long, aProxyHost:String, aProxyPort:Long, aFlags:ULong, aFileDesc:PRFileDescStar, aSecurityInfo:NsISupports) : Void;
 }

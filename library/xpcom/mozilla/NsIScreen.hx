@@ -19,4 +19,9 @@ import xpcom.types.*;
 	 * The screen's current rotation; you may set this to any of the values listed in Screen rotation constants. This will only have an effect on platforms that support screen rotation.
 	 */
 	var rotation : ULong;
+	
+	function GetAvailRect(left:Long, top:Long, width:Long, height:Long) : Void;
+	function GetRect(left:Long, top:Long, width:Long, height:Long) : Void;
+	function lockMinimumBrightness(brightness:ULong) : Void;
+	function unlockMinimumBrightness(brightness:ULong) : Void;
 }

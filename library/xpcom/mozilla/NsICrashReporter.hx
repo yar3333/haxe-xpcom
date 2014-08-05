@@ -20,4 +20,9 @@ import xpcom.types.*;
 	 * User preference for submitting crash reports.
 	 */
 	var submitReports : Bool;
+	
+	function annotateCrashReport(key:ACString, data:ACString) : Void;
+	function appendAppNotesToCrashReport(data:ACString) : Void;
+	function appendObjCExceptionInfoToAppNotes(aException:VoidPtr) : Void;
+	function writeMinidumpForException(aExceptionInfo:VoidPtr) : Void;
 }

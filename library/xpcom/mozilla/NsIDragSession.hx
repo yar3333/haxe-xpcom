@@ -36,4 +36,7 @@ import xpcom.types.*;
 	 * Sets the current width and height of the drag target area. It will contain the current size of the Frame that the drag is currently in. Native code only!
 	 */
 	var targetSize : NsSize;
+	
+	function getData(aTransferable:NsITransferable, aItemIndex:ULong) : Void;
+	function isDataFlavorSupported(aDataFlavor:String) : Bool;
 }

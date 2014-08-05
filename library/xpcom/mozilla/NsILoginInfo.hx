@@ -35,4 +35,9 @@ import xpcom.types.*;
 	 * The name attribute for the username input in a form. Non-form logins should specify an empty string ("").
 	 */
 	var usernameField : AString;
+	
+	function clone() : NsILoginInfo;
+	function equals(aLoginInfo:NsILoginInfo) : Bool;
+	function init(aHostname:AString, aFormSubmitURL:AString, aHttpRealm:AString, aUsername:AString, aPassword:AString, aUsernameField:AString, aPasswordField:AString) : Void;
+	function matches(aLoginInfo:NsILoginInfo, ignorePassword:Bool) : Bool;
 }

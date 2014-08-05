@@ -19,4 +19,14 @@ import xpcom.types.*;
 	 * Read only.
 	 */
 	var loadGroup : NsILoadGroup;
+	
+	function clearParentDocLoader() : Void;
+	function createDocumentLoader(anInstance:NsIDocumentLoader) : Void;
+	function destroy() : Void;
+	function fireOnLocationChange(aWebProgress:NsIWebProgress, aRequest:NsIRequest, aUri:NsIURI) : Void;
+	function fireOnStatusChange(aWebProgress:NsIWebProgress, aRequest:NsIRequest, aStatus:Nsresult, aMessage:Wstring) : Void;
+	function getContentViewerContainer(aDocumentID:NsISupports, aResult:NsIContentViewerContainer) : Void;
+	function getLoadGroup() : NsILoadGroup;
+	function isBusy() : Bool;
+	function stop() : Void;
 }

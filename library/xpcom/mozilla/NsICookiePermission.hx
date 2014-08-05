@@ -20,4 +20,9 @@ import xpcom.types.*;
 	 * Additional values for nsCookieAccess, which are not directly used by any methods on this interface, but are nevertheless convenient to define here. These may be relocated somewhere else if we ever consider freezing this interface.
 	 */
 	static inline var ACCESS_SESSION = 8;
+	
+	function canAccess(aURI:NsIURI, aChannel:NsIChannel) : NsCookieAccess;
+	function canSetCookie(aURI:NsIURI, aChannel:NsIChannel, aCookie:NsICookie2, aIsSession:Bool, aExpiry:PRInt64) : Bool;
+	function getOriginatingURI(aChannel:NsIChannel) : NsIURI;
+	function setAccess(aURI:NsIURI, aAccess:NsCookieAccess) : Void;
 }

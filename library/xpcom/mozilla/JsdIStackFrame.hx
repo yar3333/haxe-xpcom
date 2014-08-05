@@ -64,4 +64,6 @@ import xpcom.types.*;
 	 * |this| object for this stack frame. Read only.
 	 */
 	var thisValue : JsdIValue;
+	
+	function eval(bytes:AString, fileName:AUTF8String, line:ULong, result:JsdIValue) : Bool;
 }

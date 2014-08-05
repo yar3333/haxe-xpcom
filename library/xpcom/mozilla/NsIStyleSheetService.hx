@@ -19,4 +19,8 @@ import xpcom.types.*;
 	 *  
 	 */
 	static inline var AUTHOR_SHEET = 2;
+	
+	function loadAndRegisterSheet(sheetURI:NsIURI, type:ULong) : Void;
+	function sheetRegistered(sheetURI:NsIURI, type:ULong) : Bool;
+	function unregisterSheet(sheetURI:NsIURI, type:ULong) : Void;
 }

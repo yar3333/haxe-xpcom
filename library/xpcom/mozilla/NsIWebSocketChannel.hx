@@ -32,4 +32,9 @@ import xpcom.types.*;
 	 * The URI corresponding to the protocol connection after any redirections are completed. Read only.
 	 */
 	var URI : NsIURI;
+	
+	function asyncOpen(aURI:NsIURI, aOrigin:ACString, aListener:NsIWebSocketListener, aContext:NsISupports) : Void;
+	function close(aCode:UShort, aReason:AUTF8String) : Void;
+	function sendBinaryMsg(aMsg:ACString) : Void;
+	function sendMsg(aMsg:AUTF8String) : Void;
 }

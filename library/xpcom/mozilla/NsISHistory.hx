@@ -33,4 +33,10 @@ import xpcom.types.*;
 	 * Read only.
 	 */
 	var SHistoryEnumerator : NsISimpleEnumerator;
+	
+	function addSHistoryListener(aListener:NsISHistoryListener) : Void;
+	function getEntryAtIndex(index:Long, modifyIndex:Bool) : NsISHEntry;
+	function PurgeHistory(numEntries:Long) : Void;
+	function reloadCurrentEntry() : Void;
+	function removeSHistoryListener(aListener:NsISHistoryListener) : Void;
 }

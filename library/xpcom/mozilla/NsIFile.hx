@@ -114,4 +114,42 @@ import xpcom.types.*;
 	 * Indicates that this nsIFile does not reference a symbolic links.
 	 */
 	var target : AString;
+	
+	function append(node:AString) : Void;
+	function appendNative(node:ACString) : Void;
+	function appendRelativeNativePath(relativeFilePath:ACString) : Void;
+	function appendRelativePath(relativeFilePath:AString) : Void;
+	function clone() : NsIFile;
+	function contains(inFile:NsIFile) : Bool;
+	function copyTo(newParentDir:NsIFile, newName:AString) : Void;
+	function copyToFollowingLinks(newParentDir:NsIFile, newName:AString) : Void;
+	function copyToFollowingLinksNative(newParentDir:NsIFile, newName:ACString) : Void;
+	function CopyToNative(newParentDir:NsIFile, newName:ACString) : Void;
+	function create(type:ULong, permissions:ULong) : Void;
+	function createUnique(type:ULong, permissions:ULong) : Void;
+	function equals(inFile:NsIFile) : Bool;
+	function exists() : Bool;
+	function getRelativeDescriptor(fromFile:NsIFile) : ACString;
+	function initWithFile(aFile:NsIFile) : Void;
+	function initWithNativePath(filePath:ACString) : Void;
+	function initWithPath(filePath:AString) : Void;
+	function isDirectory() : Bool;
+	function isExecutable() : Bool;
+	function isFile() : Bool;
+	function isHidden() : Bool;
+	function isReadable() : Bool;
+	function isSpecial() : Bool;
+	function isSymlink() : Bool;
+	function isWritable() : Bool;
+	function launch() : Void;
+	function load() : PRLibraryStar;
+	function moveTo(newParentDir:NsIFile, newName:AString) : Void;
+	function moveToNative(newParentDir:NsIFile, newName:ACString) : Void;
+	function normalize() : Void;
+	function openANSIFileDesc(mode:String) : FILE;
+	function openNSPRFileDesc(flags:Long, mode:Long) : PRFileDescStar;
+	function renameTo(newParentDir:NsIFile, newName:AString) : Void;
+	function remove(recursive:Bool) : Void;
+	function reveal() : Void;
+	function setRelativeDescriptor(fromFile:NsIFile, relativeDesc:ACString) : Void;
 }
