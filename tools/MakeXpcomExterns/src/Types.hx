@@ -11,7 +11,7 @@ class Types
 		
 		if (type.endsWith(" array"))
 		{
-			return "Array<" + Types.convert(type.substr(0, type.length - " array".length)) + ">";
+			return "Array<" + convert(type.substr(0, type.length - " array".length)) + ">";
 		}
 		
 		switch (type)
@@ -24,6 +24,7 @@ class Types
 			case "unsigned short": return "UShort";
 			case "long long": return "LongLong";
 			case "ACString (US-ASCII)": return "ACString";
+			case "jsval": return "JSVal";
 		}
 		
 		return type.capitalize();

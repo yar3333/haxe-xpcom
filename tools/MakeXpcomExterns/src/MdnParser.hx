@@ -335,12 +335,32 @@ class MdnParser
 							};
 						}
 						else
-						if (s=="targetObj")
+						if (s == "targetObj")
 						{
 							return
 							{
 								name: s,
 								type: "Dynamic",
+								metas: metas
+							};
+						}
+						else
+						if (s == "charset")
+						{
+							return
+							{
+								name: s,
+								type: "String",
+								metas: metas
+							};
+						}
+						else
+						if (s == "nsIFile")
+						{
+							return
+							{
+								name: "aFile",
+								type: Types.convert(s),
 								metas: metas
 							};
 						}
