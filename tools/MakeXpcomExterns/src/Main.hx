@@ -51,6 +51,11 @@ class Main
 					{
 						return !parent.attributes.exists(function(e) return e.name == attr.name);
 					});
+					
+					klass.methods = klass.methods.filter(function(method)
+					{
+						return !parent.methods.exists(function(e) return e.name == method.name);
+					});
 				}
 			}
 		}
