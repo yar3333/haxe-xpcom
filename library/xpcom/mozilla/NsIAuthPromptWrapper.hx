@@ -2,6 +2,6 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIAuthPromptWrapper") extern class NsIAuthPromptWrapper
+@:native("nsIAuthPromptWrapper") extern class NsIAuthPromptWrapper extends NsIAuthPrompt
 {
 }

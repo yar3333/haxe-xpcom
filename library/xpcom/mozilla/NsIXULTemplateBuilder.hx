@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIXULTemplateBuilder") extern class NsIXULTemplateBuilder
+@:native("nsIXULTemplateBuilder") extern class NsIXULTemplateBuilder extends NsISupports
 {
 	/**
 	 * Readonly: The root node in the DOM to which this builder is attached.

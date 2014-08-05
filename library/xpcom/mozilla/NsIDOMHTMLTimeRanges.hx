@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIDOMHTMLTimeRanges") extern class NsIDOMHTMLTimeRanges
+@:native("nsIDOMHTMLTimeRanges") extern class NsIDOMHTMLTimeRanges extends NsISupports
 {
 	/**
 	 * The number of ranges represented by the nsIDOMHTMLTimeRanges object. Read only.

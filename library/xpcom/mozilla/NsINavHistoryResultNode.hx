@@ -5,6 +5,39 @@ import xpcom.types.*;
 @:native("nsINavHistoryResultNode") extern class NsINavHistoryResultNode extends NsISupports
 {
 	/**
+	 * nsINavHistoryResultNode.
+	 */
+	static inline var RESULT_TYPE_URI = 0;
+	/**
+	 * <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsINavHistoryVisitResultNode" title="">nsINavHistoryVisitResultNode</a></code>.
+	 */
+	static inline var RESULT_TYPE_VISIT = 1;
+	/**
+	 * <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsINavHistoryFullVisitResultNode" title="">nsINavHistoryFullVisitResultNode</a></code>.
+	 */
+	static inline var RESULT_TYPE_FULL_VISIT = 2;
+	/**
+	 * <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsINavHistoryContainerResultNode" title="">nsINavHistoryContainerResultNode</a></code>.
+	 */
+	static inline var RESULT_TYPE_DYNAMIC_CONTAINER = 4;
+	/**
+	 * <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsINavHistoryQueryResultNode" title="">nsINavHistoryQueryResultNode</a></code>.
+	 */
+	static inline var RESULT_TYPE_QUERY = 5;
+	/**
+	 * <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsINavHistoryQueryResultNode" title="">nsINavHistoryQueryResultNode</a></code>.
+	 */
+	static inline var RESULT_TYPE_FOLDER = 6;
+	/**
+	 * nsINavHistoryResultNode.
+	 */
+	static inline var RESULT_TYPE_SEPARATOR = 7;
+	/**
+	 * <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsINavHistoryQueryResultNode" title="">nsINavHistoryQueryResultNode</a></code>.
+	 */
+	static inline var RESULT_TYPE_FOLDER_SHORTCUT = 9;
+	
+	/**
 	 * Total number of times the URI has been accessed. For hosts, this is the total number of the children under it, rather than the total number of times the host has been accessed (getting that information would require an additional query, so for performance reasons that information isn't given by default). Read only.
 	 */
 	var accessCount : ULong;

@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIDOMHTMLSourceElement") extern class NsIDOMHTMLSourceElement
+@:native("nsIDOMHTMLSourceElement") extern class NsIDOMHTMLSourceElement extends NsIDOMHTMLElement
 {
 	/**
 	 * The src attribute gives the address of the media resource. The value must be a valid URL. This attribute must be present. Note that dynamically manipulating this value after the page has loaded has no effect on the containing element; instead, change the src attribute of that element (audio or video) instead.

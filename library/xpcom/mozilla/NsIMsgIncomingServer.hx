@@ -4,6 +4,15 @@ import xpcom.types.*;
 
 @:native("nsIMsgIncomingServer") extern class NsIMsgIncomingServer extends NsISupports
 {
+	static inline var defaultSocket = 0;
+	static inline var tryTLS = 1;
+	static inline var alwaysUseTLS = 2;
+	static inline var useSSL = 3;
+	static inline var keepDups = 0;
+	static inline var deleteDups = 1;
+	static inline var moveDupsToTrash = 2;
+	static inline var markDupsRead = 3;
+	
 	/**
 	 * Read only.
 	 */

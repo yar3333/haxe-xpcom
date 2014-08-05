@@ -5,6 +5,19 @@ import xpcom.types.*;
 @:native("nsINavHistoryQuery") extern class NsINavHistoryQuery extends NsISupports
 {
 	/**
+	 * Default value. The time is relative to Jan 1 1970 GMT, (this is a normal PRTime). As a special case, a 0 time relative to TIME_RELATIVE_EPOCH indicates that the time is not part of the query. This is the default, so an empty query will match any time.
+	 */
+	static inline var TIME_RELATIVE_EPOCH = 0;
+	/**
+	 * The time is relative to this morning at midnight. Normally used for queries relative to today. For example, a "past week" query would be (today-6 days -> today+1 day).
+	 */
+	static inline var TIME_RELATIVE_TODAY = 1;
+	/**
+	 * The time is relative to right now.
+	 */
+	static inline var TIME_RELATIVE_NOW = 2;
+	
+	/**
 	 * Read only: Retrieves the begin time value that the currently loaded reference points + offset resolve to.
 	 */
 	var absoluteBeginTime : PRTime;
@@ -75,11 +88,11 @@ import xpcom.types.*;
 	/**
 	 * Set upper limits for how many times an item has been visited. The default value is "-1", and in that case all items are matched regardless of their visit count.
 	 */
-	var  maxVisits   : Long;
+	var maxVisits : Long;
 	/**
 	 * Set lower limits for how many times an item has been visited. The default value is "-1", and in that case all items are matched regardless of their visit count.
 	 */
-	var  minVisits   : Long;
+	var minVisits : Long;
 	/**
 	 * When set, returns only bookmarked items, when unset, returns anything. Setting this is equivalent to listing all bookmark folders in the folders parameter.
 	 */
@@ -91,11 +104,11 @@ import xpcom.types.*;
 	/**
 	 * A list of tags to use for filtering query results. This attribute must be an array of strings. Duplicate tags may be specified, but when reading the list, only unique tags are returned. When called as a getter, this returns an array of strings sorted in ascending lexicographical (alphabetical) order. This array may be empty, in which case no filtering by tags is performed. To search for items that are tagged with any given tags instead of all, multiple queries may be passed to the nsINavHistoryService method nsINavHistoryService.executeQueries().
 	 */
-	var tags  : NsIVariant;
+	var tags : NsIVariant;
 	/**
 	 * If true, the results include only items that are not tagged with the specified tags. If false, only tags in the tags list are included in the results.
 	 */
-	var tagsAreNot  : Bool;
+	var tagsAreNot : Bool;
 	/**
 	 * This is a URI to match, to, for example, find out every time you visited a given URI. Use uriIsPrefix to control whether this is an exact match.
 	 */

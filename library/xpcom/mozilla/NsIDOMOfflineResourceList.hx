@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIDOMOfflineResourceList") extern class NsIDOMOfflineResourceList
+@:native("nsIDOMOfflineResourceList") extern class NsIDOMOfflineResourceList extends NsISupports
 {
 	/**
 	 * The list of dynamically-managed entries in the offline resource list. Read only.

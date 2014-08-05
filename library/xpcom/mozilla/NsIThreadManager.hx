@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIThreadManager") extern class NsIThreadManager
+@:native("nsIThreadManager") extern class NsIThreadManager extends NsISupports
 {
 	/**
 	 * The currently executing thread. If the calling thread does not already have a nsIThread associated with it, one is created and associate with the current PRThread. Read only.

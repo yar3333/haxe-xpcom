@@ -1,9 +1,12 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
 @:native("nsIDOMMozNetworkStats") extern class NsIDOMMozNetworkStats extends NsISupports
 {
+	public static inline function createInstance() : NsIDOMMozNetworkStats return Components.Constructor("@mozilla.org/networkStats;1", Components.interfaces.nsIDOMMozNetworkStats);
+	
 	/**
 	 * Connection type of the stats. Read only.
 	 */

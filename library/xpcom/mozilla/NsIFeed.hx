@@ -5,6 +5,23 @@ import xpcom.types.*;
 @:native("nsIFeed") extern class NsIFeed extends NsIFeedContainer
 {
 	/**
+	 * A standard text-based feed.
+	 */
+	static inline var TYPE_FEED = 0;
+	/**
+	 * An audio feed, such as a podcast.
+	 */
+	static inline var TYPE_AUDIO = 1;
+	/**
+	 * An image feed, such as a photocast.
+	 */
+	static inline var TYPE_IMAGE = 2;
+	/**
+	 * A video feed, such as a videocast.
+	 */
+	static inline var TYPE_VIDEO = 4;
+	
+	/**
 	 * The cloud element on a feed is used to identify the API endpoint of an rssCloud ping server, which distributes notifications of changes to this feed.
 	 */
 	var cloud : NsIWritablePropertyBag2;

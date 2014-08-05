@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsITreeBoxObject") extern class NsITreeBoxObject
+@:native("nsITreeBoxObject") extern class NsITreeBoxObject extends NsISupports
 {
 	/**
 	 * Readonly: Obtain the columns.

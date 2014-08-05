@@ -19,7 +19,7 @@ import xpcom.types.*;
 	/**
 	 * A JavaScript function object that gets invoked when the operation is completed for any reason; it will always follow a an abort, error, or load event.
 	 */
-	var onloadend  : NsIDOMEventListener;
+	var onloadend : NsIDOMEventListener;
 	/**
 	 * A JavaScript function object that gets invoked exactly once when the operation begins.
 	 */

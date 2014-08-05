@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIPermission") extern class NsIPermission
+@:native("nsIPermission") extern class NsIPermission extends NsISupports
 {
 	/**
 	 * The permission to set: allow, deny, or unknown (which is the default). See nsIPermissionManager.Permission_type_constants for allowed values. Read only.

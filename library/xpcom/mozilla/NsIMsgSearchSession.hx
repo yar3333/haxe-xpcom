@@ -2,8 +2,17 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIMsgSearchSession") extern class NsIMsgSearchSession
+@:native("nsIMsgSearchSession") extern class NsIMsgSearchSession extends NsISupports
 {
+	/**
+	 *  
+	 */
+	static inline var BooleanOR = 0;
+	/**
+	 *  
+	 */
+	static inline var BooleanAND = 1;
+	
 	/**
 	 * Readonly:
 	 */

@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsICookie2") extern class NsICookie2
+@:native("nsICookie2") extern class NsICookie2 extends NsICookie
 {
 	/**
 	 * The creation time of the cookie, in microseconds since midnight (00:00:00), January 1, 1970 UTC. Read only.

@@ -1,9 +1,12 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
 @:native("nsIScriptError") extern class NsIScriptError extends NsIConsoleMessage
 {
+	public static inline function createInstance() : NsIScriptError return Components.Constructor("@mozilla.org/scripterror;1", Components.interfaces.nsIScriptError);
+	
 	/**
 	 * A string indicating the category of error that occurred See Categories for a list. Read only.
 	 */

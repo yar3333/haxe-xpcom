@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIDOMOrientationEvent") extern class NsIDOMOrientationEvent
+@:native("nsIDOMOrientationEvent") extern class NsIDOMOrientationEvent extends NsIDOMEvent
 {
 	/**
 	 * The amount of tilt along the X axis.  Read only.

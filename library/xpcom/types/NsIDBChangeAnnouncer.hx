@@ -1,3 +1,5 @@
 package xpcom.types;
 
-typedef NsIDBChangeAnnouncer = Dynamic;
+@:native("nsIDBChangeAnnouncer") extern class NsIDBChangeAnnouncer
+{
+}

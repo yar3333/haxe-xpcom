@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIDOMGeoPositionError") extern class NsIDOMGeoPositionError
+@:native("nsIDOMGeoPositionError") extern class NsIDOMGeoPositionError extends NsISupports
 {
 	/**
 	 * Numerical error code; see Error constants for a complete list. Read only.

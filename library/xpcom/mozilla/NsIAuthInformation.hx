@@ -5,6 +5,27 @@ import xpcom.types.*;
 @:native("nsIAuthInformation") extern class NsIAuthInformation extends NsISupports
 {
 	/**
+	 * This dialog belongs to a network host.
+	 */
+	static inline var AUTH_HOST = 1;
+	/**
+	 * This dialog belongs to a proxy.
+	 */
+	static inline var AUTH_PROXY = 2;
+	/**
+	 * This dialog needs domain information. The user interface should show a domain field, prefilled with the domain attributes value.
+	 */
+	static inline var NEED_DOMAIN = 4;
+	/**
+	 *  <p>This dialog only asks for password information. Authentication prompts SHOULD NOT show a username field. Attempts to change the username field will have no effect. <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAuthPrompt2" title="">nsIAuthPrompt2</a></code> implementations should, however, show its initial value to the user in some form. For example, a paragraph in the dialog might say "Please enter your password for user jsmith at server intranet".</p> This flag is mutually exclusive with #NEED_DOMAIN.
+	 */
+	static inline var ONLY_PASSWORD = 8;
+	/**
+	 * We have already tried to log in for this channel (with auth values from a previous promptAuth call), but it failed, so we now ask the user to provide a new, correct login. 
+	 */
+	static inline var PREVIOUS_FAILED = 16;
+	
+	/**
 	 * The authentication scheme used for this request, if applicable. If the protocol for this authentication does not support schemes, this will be the empty string. Otherwise, this will be a string such as "basic" or "digest". This string will always be in lowercase. Read only.
 	 */
 	var authenticationScheme : AUTF8String;

@@ -5,6 +5,31 @@ import xpcom.types.*;
 @:native("nsICachingChannel") extern class NsICachingChannel extends NsICacheInfoChannel
 {
 	/**
+	 *  <p>This load flag inhibits fetching from the net. An error of NS_ERROR_DOCUMENT_NOT_CACHED will be sent to the listener's onStopRequest if network IO is necessary to complete the request.</p> <p>This flag can be used to find out whether fetching this URL would cause validation of the cache entry via the network.</p> Combining this flag with LOAD_BYPASS_LOCAL_CACHE will cause all loads to fail. This flag differs from LOAD_ONLY_FROM_CACHE in that this flag fails the load if validation is required while LOAD_ONLY_FROM_CACHE skips validation where possible. 
+	 */
+	static inline var LOAD_NO_NETWORK_IO = 1 << 26;
+	/**
+	 *  <p>This load flag causes the offline cache to be checked when fetching a request. It will be set automatically if the browser is offline.</p> This flag will not be transferred through a redirect. 
+	 */
+	static inline var LOAD_CHECK_OFFLINE_CACHE = 1 << 27;
+	/**
+	 * This load flag causes the local cache to be skipped when fetching a request. Unlike LOAD_BYPASS_CACHE, it does not force an end-to-end load (That is, it does not affect proxy caches). 
+	 */
+	static inline var LOAD_BYPASS_LOCAL_CACHE = 1 << 28;
+	/**
+	 * This load flag causes the local cache to be skipped if the request would otherwise block waiting to access the cache. 
+	 */
+	static inline var LOAD_BYPASS_LOCAL_CACHE_IF_BUSY = 1 << 29;
+	/**
+	 * This load flag inhibits fetching from the net if the data in the cache has been evicted. An error of NS_ERROR_DOCUMENT_NOT_CACHED will be sent to the listener's onStopRequest in this case. This flag is set automatically when the application is offline.
+	 */
+	static inline var LOAD_ONLY_FROM_CACHE = 1 << 30;
+	/**
+	 *  <p>This load flag controls what happens when a document would be loaded from the cache to satisfy a call to AsyncOpen. If this attribute is set to true, then the document will not be loaded from the cache. A stream listener can check <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICachingChannel#isFromCache()">isFromCache()</a></code> to determine if the AsyncOpen will actually result in data being streamed.</p> If this flag has been set, and the request can be satisfied via the cache, then the OnDataAvailable events will be skipped. The listener will only see OnStartRequest followed by OnStopRequest.
+	 */
+	static inline var LOAD_ONLY_IF_MODIFIED = 1 << 31;
+	
+	/**
 	 * Specifies whether or not the data should be cached to a file. This may fail if the disk cache is not present. The value of this attribute is usually only settable during the processing of a channel's OnStartRequest. The default value of this attribute depends on the particular implementation of nsICachingChannel.
 	 */
 	var cacheAsFile : Bool;

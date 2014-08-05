@@ -1,9 +1,12 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
 @:native("nsINetworkLinkService") extern class NsINetworkLinkService extends NsISupports
 {
+	public static inline function getService() : NsINetworkLinkService return Components.classes[cast "@mozilla.org/network/network-link-service;1"].getService(Components.interfaces.nsINetworkLinkService);
+	
 	/**
 	 * This is set to true when the system is believed to have a usable network connection.
 	 * The link is only up when network connections can be established. For example, the link is down during DHCP configuration (unless there is another usable interface already configured).

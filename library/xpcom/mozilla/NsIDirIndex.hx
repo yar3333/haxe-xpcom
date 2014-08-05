@@ -5,6 +5,23 @@ import xpcom.types.*;
 @:native("nsIDirIndex") extern class NsIDirIndex extends NsISupports
 {
 	/**
+	 * The type is unknown.
+	 */
+	static inline var TYPE_UNKNOWN = 0;
+	/**
+	 * The directory entry represents a directory.
+	 */
+	static inline var TYPE_DIRECTORY = 1;
+	/**
+	 * The directory entry represents a file.
+	 */
+	static inline var TYPE_FILE = 2;
+	/**
+	 * The directory entry represents a symlink.
+	 */
+	static inline var TYPE_SYMLINK = 3;
+	
+	/**
 	 * The content type; may be null if it is unknown. Unspecified for directories.
 	 */
 	var contentType : String;

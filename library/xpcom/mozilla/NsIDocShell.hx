@@ -1,9 +1,93 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
 @:native("nsIDocShell") extern class NsIDocShell extends NsISupports
 {
+	public static inline function createInstance() : NsIDocShell return Components.Constructor("@mozilla.org/docshell;1", Components.interfaces.nsIDocShell);
+	
+	/**
+	 * Used as a placeholder when you don't want to explicitly specify flags.
+	 */
+	static inline var INTERNAL_LOAD_FLAGS_NONE = 0x0;
+	/**
+	 * Used to indicate that it may be safe to inherit the owner of a javascript: or data: URL from the existing document.
+	 */
+	static inline var INTERNAL_LOAD_FLAGS_INHERIT_OWNER = 0x1;
+	/**
+	 * Used to indicate that the load was caused by a meta refresh and the current document URI shouldn't be sent as the HTTP referrer.
+	 */
+	static inline var INTERNAL_LOAD_FLAGS_DONT_SEND_REFERRER = 0x2;
+	/**
+	 *  Used to indicate that LOAD_FLAGS_ALLOW_THIRD_PARTY_FIXUP was passed as one of the flags to <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDocShell#loadURI()">loadURI()</a></code>.
+	 */
+	static inline var INTERNAL_LOAD_FLAGS_ALLOW_THIRD_PARTY_FIXUP = 0x4;
+	/**
+	 * This flag marks the first load in this object. See <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIWebNavigation" title="">nsIWebNavigation</a>.LOAD_FLAGS_FIRST_LOAD</code>. 
+	 */
+	static inline var INTERNAL_LOAD_FLAGS_FIRST_LOAD = 0x8;
+	/**
+	 *  Used to indicate that LOAD_FLAGS_BYPASS_CLASSIFIER was passed as one of the flags to <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDocShell#loadURI()">loadURI()</a></code>.
+	 */
+	static inline var INTERNAL_LOAD_FLAGS_BYPASS_CLASSIFIER = 0x10;
+	/**
+	 *  Used to indicate that LOAD_FLAGS_FORCE_ALLOW_COOKIES was passed as one of the flags to <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDocShell#loadURI()">loadURI()</a></code>.
+	 */
+	static inline var INTERNAL_LOAD_FLAGS_FORCE_ALLOW_COOKIES = 0x20;
+	/**
+	 * Used by <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDocShell#getDocShellEnumerator()">getDocShellEnumerator()</a></code>to determine the direction of the enumeration.
+	 */
+	static inline var ENUMERATE_FORWARDS = 0;
+	/**
+	 * Used by <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDocShell#getDocShellEnumerator()">getDocShellEnumerator()</a></code>to determine the direction of the enumeration.
+	 */
+	static inline var ENUMERATE_BACKWARDS = 1;
+	/**
+	 * This is the default value of the appType attribute.
+	 */
+	static inline var APP_TYPE_UNKNOWN = 0;
+	/**
+	 * This is the value of the appType attribute used by Thunderbird and SeaMonkey to indicate that email messages are displayed in this window.
+	 */
+	static inline var APP_TYPE_MAIL = 1;
+	/**
+	 * This is the value of the appType attribute used by Thunderbird and SeaMonkey to indicate that email messages or web pages are composed in this window.
+	 */
+	static inline var APP_TYPE_EDITOR = 2;
+	/**
+	 * Returned by the busyFlags attribute when the nsIDocShell is not loading a document.
+	 */
+	static inline var BUSY_FLAGS_NONE = 0;
+	/**
+	 * Returned by the busyFlags attribute when the nsIDocShell is loading a document from the network.
+	 */
+	static inline var BUSY_FLAGS_BUSY = 1;
+	/**
+	 * Returned by the busyFlags attribute when the nsIDocShell has started loading a document from the network, but no data has been received yet.
+	 */
+	static inline var BUSY_FLAGS_BEFORE_PAGE_LOAD = 2;
+	/**
+	 * Returned by the busyFlags attribute when the nsIDocShell is receiving data from the network.
+	 */
+	static inline var BUSY_FLAGS_PAGE_LOADING = 4;
+	/**
+	 * Returned by the loadType attribute for normal loads.
+	 */
+	static inline var LOAD_CMD_NORMAL = 0x1;
+	/**
+	 * Returned by the loadType attribute for reloads.
+	 */
+	static inline var LOAD_CMD_RELOAD = 0x2;
+	/**
+	 * Returned by the loadType attribute for history navigation.
+	 */
+	static inline var LOAD_CMD_HISTORY = 0x4;
+	/**
+	 * Returned by the loadType attribute when the page has used history.pushState() 
+	 */
+	static inline var LOAD_CMD_PUSHSTATE = 0x8;
+	
 	/**
 	 * Certain dochshells (like the message pane) should not throw up auth dialogs because it can act as a password trojan.
 	 */
