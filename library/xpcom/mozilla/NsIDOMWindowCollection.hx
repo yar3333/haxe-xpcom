@@ -4,5 +4,8 @@ import xpcom.types.*;
 
 @:native("nsIDOMWindowCollection") extern class NsIDOMWindowCollection extends NsISupports
 {
-	var length : Int;
+	var length(default, never) : Int;
+	
+	function item(index:Int) : NsIDOMWindow;
+	function namedItem(name:DOMString) : NsIDOMWindow;
 }
