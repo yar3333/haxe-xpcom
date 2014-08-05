@@ -1,6 +1,4 @@
-package xpcom.mozilla;
-
-import xpcom.types.*;
+package xpcom.types;
 
 @:native("IAccessible") extern class IAccessible
 {

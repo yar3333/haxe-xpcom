@@ -1,5 +1,3 @@
-package xpcom.mozilla;
-
-import xpcom.types.*;
+package xpcom.types;
 
 typedef NsIDOMCSSStyleDeclaration = Dynamic;
