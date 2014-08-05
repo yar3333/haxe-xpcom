@@ -7,7 +7,7 @@ import xpcom.types.*;
 	/**
 	 * Initialize the object implementing nsISerializable, which must have been freshly constructed via CreateInstance.
 	 */
-	function read(aInputStream:nsIObjectInputStream) : Void;
+	function read(aInputStream:NsIObjectInputStream) : Void;
  	
 	/**
 	 * Serialize the object implementing nsISerializable to aOutputStream, 
@@ -15,5 +15,5 @@ import xpcom.types.*;
 	 * to reconstitute a working replica of this object, 
 	 * in a canonical member and byte order, to aOutputStream.
 	 */
-	function write(aOutputStream:nsIObjectOutputStream) : Void;
+	function write(aOutputStream:NsIObjectOutputStream) : Void;
 }
