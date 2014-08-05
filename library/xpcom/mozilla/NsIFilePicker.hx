@@ -1,13 +1,16 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
 @:native("nsIFilePicker") extern class NsIFilePicker extends NsISupports
 {
+	public static inline function createInstance() : NsIFilePicker return Components.Constructor("@mozilla.org/filepicker;1", Components.interfaces.nsIFilePicker);
+	
 	/**
 	 * If true, the file is added to the operating system's "recent documents" list (if the operating system has one; nothing happens if there is no such concept on the user's platform). This attribute has no effect if private browsing mode is in effect.
 	 */
-	var addToRecentDocs  : Bool;
+	var addToRecentDocs : Bool;
 	/**
 	 * The extension for the type of files you want to work with. On some platforms, this is automatically appended to filenames the user enters, if required.  Specify it without a leading dot, for example "jpg".
 	 */

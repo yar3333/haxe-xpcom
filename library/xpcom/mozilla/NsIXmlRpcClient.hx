@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIXmlRpcClient") extern class NsIXmlRpcClient
+@:native("nsIXmlRpcClient") extern class NsIXmlRpcClient extends NsISupports
 {
 	/**
 	 * The URL of the XML-RPC server

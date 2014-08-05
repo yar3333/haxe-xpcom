@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("mozIPlaceInfo") extern class MozIPlaceInfo
+@:native("mozIPlaceInfo") extern class MozIPlaceInfo extends NsISupports
 {
 	/**
 	 * Read only: The frecency of the place.

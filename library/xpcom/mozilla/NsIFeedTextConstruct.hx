@@ -1,9 +1,12 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
 @:native("nsIFeedTextConstruct") extern class NsIFeedTextConstruct extends NsISupports
 {
+	public static inline function createInstance() : NsIFeedTextConstruct return Components.Constructor("@mozilla.org/feed-textconstruct;1", Components.interfaces.nsIFeedTextConstruct);
+	
 	/**
 	 * If the text construct contains HTML or XHTML, relative references in the content should be resolved against this base URI.
 	 */

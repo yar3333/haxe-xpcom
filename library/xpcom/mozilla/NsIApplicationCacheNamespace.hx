@@ -5,6 +5,19 @@ import xpcom.types.*;
 @:native("nsIApplicationCacheNamespace") extern class NsIApplicationCacheNamespace extends NsISupports
 {
 	/**
+	 * Items matching this namespace can be fetched from the network when loading from this cache. The data attribute is not used.
+	 */
+	static inline var NAMESPACE_BYPASS = 1;
+	/**
+	 * Items matching this namespace can be fetched from the network when loading from this cache; however, if the load fails, the cache entry specified by the data attribute should be loaded intstead.
+	 */
+	static inline var NAMESPACE_FALLBACK = 2;
+	/**
+	 * Items matching this namespace should be cached opportunistically. Successful top-level loads of resources in this namespace should be placed into the application cache. This can be combined with NAMESPACE_FALLBACK to provide a fallback entry in the data attribute.
+	 */
+	static inline var NAMESPACE_OPPORTUNISTIC = 4;
+	
+	/**
 	 * Data associated with the namespace, such as a fallback. How this attribute is used varies depending on the namespace type. If the data is a URI, this attribute should be the URI's asciiSpec. Read only.
 	 */
 	var data : ACString;

@@ -52,7 +52,7 @@ import xpcom.types.*;
 	 * Specifies how to handle redirects; see Redirects mode constants for details. The default value is REDIRECTS_MODE_ALL.
 	 * Note: This option is only used on QUERY_TYPE_HISTORY.
 	 */
-	var redirectsMode  : UShort;
+	var redirectsMode : UShort;
 	/**
 	 * If a bookmark title is NULL (note, not empty), attempt to use the history title. It is set to false by default.
 	 */

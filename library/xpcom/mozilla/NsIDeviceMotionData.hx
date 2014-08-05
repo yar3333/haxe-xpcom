@@ -7,7 +7,7 @@ import xpcom.types.*;
 	/**
 	 * The type of motion data reported by this object; see Motion type constants for possible values. Read only.
 	 */
-	var type  : ULong;
+	var type : ULong;
 	/**
 	 * The amount of tilt along the X axis. Read only.
 	 */

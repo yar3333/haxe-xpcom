@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIMsgDatabase") extern class NsIMsgDatabase
+@:native("nsIMsgDatabase") extern class NsIMsgDatabase extends NsIDBChangeAnnouncer
 {
 	/**
 	 * Readonly:

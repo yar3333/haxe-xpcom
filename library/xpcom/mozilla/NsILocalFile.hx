@@ -1,21 +1,14 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
-@:native("nsILocalFile") extern class NsILocalFile
+@:native("nsILocalFile") extern class NsILocalFile extends NsIFile
 {
+	public static inline function createInstance() : NsILocalFile return Components.Constructor("@mozilla.org/file/local;1", Components.interfaces.nsILocalFile);
+	
 	/**
-	 * The number of bytes available to non-superuser on the disk volume containing the nsILocalFile. Read only.
+	 * Optional parameter used by <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsILocalFile#openNSPRFileDesc()">openNSPRFileDesc()</a></code>. 
 	 */
-	var diskSpaceAvailable : PRInt64;
-	/**
-	 * Determines whether or not the nsILocalFile will automatically resolve symbolic links.
-	 * By default, this value is false on all non-UNIX systems. As of Mozilla 1.7, this attribute is ignored on UNIX systems.
-	 */
-	var followLinks : PRBool;
-	/**
-	 * On some platforms, the value of nsIFile.path may be insufficient to uniquely identify the file on the local file system. The persistent descriptor is intended to be used whenever a nsILocalFile needs to be serialized to disk and later recovered. This string is not intended for display to users.
-	 * Note: The value of the followLinks attribute is not encoded in the persistent descriptor.
-	 */
-	var persistentDescriptor : ACString;
+	static inline var DELETE_ON_CLOSE = 0x80000000;
 }

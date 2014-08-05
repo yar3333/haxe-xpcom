@@ -11,5 +11,5 @@ import xpcom.types.*;
 	/**
 	 * true if the menubar was opened using the keyboard; otherwise false.
 	 */
-	var openedWithKey  : Bool;
+	var openedWithKey : Bool;
 }

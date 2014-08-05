@@ -1,9 +1,12 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
 @:native("nsIAutoCompleteController") extern class NsIAutoCompleteController extends NsISupports
 {
+	public static inline function getService() : NsIAutoCompleteController return Components.classes[cast "@mozilla.org/autocomplete/controller;1"].getService(Components.interfaces.nsIAutoCompleteController);
+	
 	/**
 	 * Either the XUL autocomplete textbox that is currently being controlled, or a form fill controller that handles website form history.
 	 */

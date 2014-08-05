@@ -1,9 +1,29 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
 @:native("nsITelemetry") extern class NsITelemetry extends NsISupports
 {
+	public static inline function getService() : NsITelemetry return Components.classes[cast "@mozilla.org/base/telemetry;1"].getService(Components.interfaces.nsITelemetry);
+	
+	/**
+	 * Buckets increase exponentially.
+	 */
+	static inline var HISTOGRAM_EXPONENTIAL = 0;
+	/**
+	 * Buckets increase linearly.
+	 */
+	static inline var HISTOGRAM_LINEAR = 1;
+	/**
+	 * For storing 0/1 values. 
+	 */
+	static inline var HISTOGRAM_BOOLEAN = 2;
+	/**
+	 * For storing a single value; its count is always == 1. 
+	 */
+	static inline var HISTOGRAM_FLAG = 3;
+	
 	/**
 	 * Set this to false to disable gathering of telemetry statistics.
 	 */

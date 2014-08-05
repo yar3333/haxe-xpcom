@@ -1,9 +1,12 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
 @:native("nsIWinTaskbar") extern class NsIWinTaskbar extends NsISupports
 {
+	public static inline function createInstance() : NsIWinTaskbar return Components.Constructor("@mozilla.org/windows-taskbar;1", Components.interfaces.nsIWinTaskbar);
+	
 	/**
 	 * Returns true if the operating system supports Windows 7 or later taskbar features; you can use this instead of in-place operating system version checking. Read only.
 	 */

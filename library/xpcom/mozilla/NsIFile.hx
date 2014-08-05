@@ -5,6 +5,19 @@ import xpcom.types.*;
 @:native("nsIFile") extern class NsIFile extends NsISupports
 {
 	/**
+	 * A normal file.
+	 */
+	static inline var NORMAL_FILE_TYPE = 0;
+	/**
+	 * A directory/folder.
+	 */
+	static inline var DIRECTORY_TYPE = 1;
+	/**
+	 * Optional parameter used by <a href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsILocalFile#openNSPRFileDesc()" title="/en/XPCOM_Interface_Reference/nsILocalFile#openNSPRFileDesc()">openNSPRFileDesc</a>
+	 */
+	static inline var DELETE_ON_CLOSE  = 0x80000000;
+	
+	/**
 	 * Returns an enumeration of the elements in a directory. Each element in the enumeration is an nsIFile. Read only.
 	 * Exceptions thrown
 	 * 
@@ -15,7 +28,7 @@ import xpcom.types.*;
 	/**
 	 * The number of bytes available to non-superuser on the disk volume containing the nsIFile. Read only.
 	 */
-	var diskSpaceAvailable  : PRInt64;
+	var diskSpaceAvailable : PRInt64;
 	/**
 	 * The value of this attribute is the number of bytes corresponding to the data represented by the file.
 	 * On the Mac, getting/setting the file size with nsIFile only deals with the size of the data fork. If you need to know the size of the combined data and resource forks use nsILocalFileMac.GetFileSizeWithResFork().
@@ -32,7 +45,7 @@ import xpcom.types.*;
 	 * Determines whether or not the nsIFile will automatically resolve symbolic links.
 	 * By default, this value is false on all non-UNIX systems. As of Mozilla 1.7, this attribute is ignored on UNIX systems.
 	 */
-	var followLinks  : PRBool;
+	var followLinks : PRBool;
 	/**
 	 * This attribute exposes the time when the file referenced by this nsIFile was last modified.
 	 * The value of this attribute is milliseconds since midnight (00:00:00), January 1, 1970 Greenwich Mean Time (GMT).
@@ -91,7 +104,7 @@ import xpcom.types.*;
 	 * On some platforms, the value of nsIFile.path may be insufficient to uniquely identify the file on the local file system. The persistent descriptor is intended to be used whenever a nsIFile needs to be serialized to disk and later recovered. This string is not intended for display to users.
 	 * Note: The value of the followLinks attribute is not encoded in the persistent descriptor.
 	 */
-	var persistentDescriptor  : ACString;
+	var persistentDescriptor : ACString;
 	/**
 	 * This attribute exposes the full target of the nsIFile - the full path with any symbolic links dereferenced.
 	 * Accessor to the string path. The native version of these strings are not guaranteed to be a usable path to pass to NSPR or the C stdlib. There are problems that affect platforms on which a path does not fully specify a file because two volumes can have the same name (For example Mac). This is solved by holding "private", native data in the nsIFile implementation. This native data is lost when you convert to a string. DO NOT PASS TO USE WITH NSPR OR STDLIB! Read only.

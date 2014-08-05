@@ -2,6 +2,6 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIFileUtilities") extern class NsIFileUtilities
+@:native("nsIFileUtilities") extern class NsIFileUtilities extends NsISupports
 {
 }

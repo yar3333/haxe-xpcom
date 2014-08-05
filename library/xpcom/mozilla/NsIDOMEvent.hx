@@ -5,6 +5,58 @@ import xpcom.types.*;
 @:native("nsIDOMEvent") extern class NsIDOMEvent extends NsISupports
 {
 	/**
+	 * The event is not being dispatched. 
+	 */
+	static inline var NONE = 0;
+	/**
+	 * The current event phase is the capturing phase.
+	 */
+	static inline var CAPTURING_PHASE = 1;
+	/**
+	 * The event is currently being evaluated at the target EventTarget.
+	 */
+	static inline var AT_TARGET = 2;
+	/**
+	 * The current event phase is the bubbling phase.
+	 */
+	static inline var BUBBLING_PHASE = 3;
+	static inline var MOUSEDOWN = 0x00000001;
+	static inline var MOUSEUP = 0x00000002;
+	static inline var MOUSEOVER = 0x00000004;
+	static inline var MOUSEOUT = 0x00000008;
+	static inline var MOUSEMOVE = 0x00000010;
+	static inline var MOUSEDRAG = 0x00000020;
+	static inline var CLICK = 0x00000040;
+	static inline var DBLCLICK = 0x00000080;
+	static inline var KEYDOWN = 0x00000100;
+	static inline var KEYUP = 0x00000200;
+	static inline var KEYPRESS = 0x00000400;
+	static inline var DRAGDROP = 0x00000800;
+	static inline var FOCUS = 0x00001000;
+	static inline var BLUR = 0x00002000;
+	static inline var SELECT = 0x00004000;
+	static inline var CHANGE = 0x00008000;
+	static inline var RESET = 0x00010000;
+	static inline var SUBMIT = 0x00020000;
+	static inline var SCROLL = 0x00040000;
+	static inline var LOAD = 0x00080000;
+	static inline var UNLOAD = 0x00100000;
+	static inline var XFER_DONE = 0x00200000;
+	static inline var ABORT = 0x00400000;
+	static inline var ERROR = 0x00800000;
+	static inline var LOCATE = 0x01000000;
+	static inline var MOVE = 0x02000000;
+	static inline var RESIZE = 0x04000000;
+	static inline var FORWARD = 0x08000000;
+	static inline var HELP = 0x10000000;
+	static inline var BACK = 0x20000000;
+	static inline var TEXT = 0x40000000;
+	static inline var ALT_MASK = 0x00000001;
+	static inline var CONTROL_MASK = 0x00000002;
+	static inline var SHIFT_MASK = 0x00000004;
+	static inline var META_MASK = 0x00000008;
+	
+	/**
 	 * Used to indicate whether or not an event is a bubbling event. If the event can bubble the value is true, else the value is false. Read only.
 	 */
 	var bubbles : Bool;

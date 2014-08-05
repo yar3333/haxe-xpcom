@@ -1,9 +1,12 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
 @:native("nsISHistory") extern class NsISHistory extends NsISupports
 {
+	public static inline function createInstance() : NsISHistory return Components.Constructor("@mozilla.org/browser/shistory;1", Components.interfaces.nsISHistory);
+	
 	/**
 	 * The number of toplevel documents currently available in session history. Read only.
 	 */

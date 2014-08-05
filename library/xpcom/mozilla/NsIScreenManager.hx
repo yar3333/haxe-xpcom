@@ -1,9 +1,12 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
 @:native("nsIScreenManager") extern class NsIScreenManager extends NsISupports
 {
+	public static inline function getService() : NsIScreenManager return Components.classes[cast "@mozilla.org/gfx/screenmanager;1"].getService(Components.interfaces.nsIScreenManager);
+	
 	/**
 	 * The number of screens on the user's computer. Read only.
 	 */

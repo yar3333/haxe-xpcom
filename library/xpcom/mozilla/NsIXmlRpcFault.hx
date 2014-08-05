@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIXmlRpcFault") extern class NsIXmlRpcFault
+@:native("nsIXmlRpcFault") extern class NsIXmlRpcFault extends NsISupports
 {
 	/**
 	 * Read only.

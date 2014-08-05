@@ -5,6 +5,23 @@ import xpcom.types.*;
 @:native("nsIDOMChromeWindow") extern class NsIDOMChromeWindow extends NsISupports
 {
 	/**
+	 * The window is maximized.
+	 */
+	static inline var STATE_MAXIMIZED = 1;
+	/**
+	 * The window is minimized.
+	 */
+	static inline var STATE_MINIMIZED = 2;
+	/**
+	 * The window is normal.
+	 */
+	static inline var STATE_NORMAL = 3;
+	/**
+	 * The window is in full screen mode. 
+	 */
+	static inline var STATE_FULLSCREEN = 4;
+	
+	/**
 	 * The related nsIBrowserDOMWindow instance which provides access to yet another layer of utility functions by chrome script. It will be null for DOMWindows not corresponding to browsers.
 	 */
 	var browserDOMWindow : NsIBrowserDOMWindow;

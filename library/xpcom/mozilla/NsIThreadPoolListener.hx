@@ -2,6 +2,6 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIThreadPoolListener") extern class NsIThreadPoolListener
+@:native("nsIThreadPoolListener") extern class NsIThreadPoolListener extends NsISupports
 {
 }

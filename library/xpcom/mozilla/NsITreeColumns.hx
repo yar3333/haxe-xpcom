@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsITreeColumns") extern class NsITreeColumns
+@:native("nsITreeColumns") extern class NsITreeColumns extends NsISupports
 {
 	/**
 	 * The number of columns. Read only.

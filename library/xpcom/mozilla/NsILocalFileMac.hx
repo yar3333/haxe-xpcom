@@ -5,6 +5,11 @@ import xpcom.types.*;
 @:native("nsILocalFileMac") extern class NsILocalFileMac extends NsILocalFile
 {
 	/**
+	 * Use with SetFileType() to specify the signature of current process. <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)">Obsolete since Gecko 2.0</span>
+	 */
+	static inline var CURRENT_PROCESS_CREATOR = 0x8000000;
+	
+	/**
 	 * Returns the display name of the application bundle (usually the human readable name of the application) Read only.
 	 */
 	var bundleDisplayName : AString;

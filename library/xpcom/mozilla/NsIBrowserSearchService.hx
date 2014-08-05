@@ -1,9 +1,12 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
 @:native("nsIBrowserSearchService") extern class NsIBrowserSearchService extends NsISupports
 {
+	public static inline function getService() : NsIBrowserSearchService return Components.classes[cast "@mozilla.org/browser/search-service;1"].getService(Components.interfaces.nsIBrowserSearchService);
+	
 	/**
 	 * The currently active search engine. May be null if there are no visible search engines.
 	 */

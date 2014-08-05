@@ -2,8 +2,21 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsITreeColumn") extern class NsITreeColumn
+@:native("nsITreeColumn") extern class NsITreeColumn extends NsISupports
 {
+	/**
+	 * Text column type.
+	 */
+	static inline var TYPE_TEXT = 1;
+	/**
+	 * Checkbox column type.
+	 */
+	static inline var TYPE_CHECKBOX = 2;
+	/**
+	 * Progress meter column type.
+	 */
+	static inline var TYPE_PROGRESSMETER = 3;
+	
 	/**
 	 * The atom attribute of nsITreeColumn which returns an nsIAtom for the column, making it fast to do comparisons. Read only. Native code only!
 	 */

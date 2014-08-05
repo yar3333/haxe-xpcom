@@ -1,9 +1,12 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
 @:native("nsISessionStartup") extern class NsISessionStartup extends NsISupports
 {
+	public static inline function getService() : NsISessionStartup return Components.classes[cast "@mozilla.org/browser/sessionstartup;1"].getService(Components.interfaces.nsISessionStartup);
+	
 	/**
 	 * The type of session being restored; this will be one of the Session type constants. Read only.
 	 */

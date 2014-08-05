@@ -5,6 +5,27 @@ import xpcom.types.*;
 @:native("nsIXULWindow") extern class NsIXULWindow extends NsISupports
 {
 	/**
+	 *  
+	 */
+	static inline var lowestZ = 0;
+	/**
+	 * The Z level of an independent window opened with the "alwaysLowered" chrome flag.
+	 */
+	static inline var loweredZ = 4;
+	/**
+	 * The default Z level of an independent window.
+	 */
+	static inline var normalZ = 5;
+	/**
+	 * The Z level of an independent window opened with the "alwaysRaised" chrome flag.
+	 */
+	static inline var raisedZ = 6;
+	/**
+	 *  
+	 */
+	static inline var highestZ = 9;
+	
+	/**
 	 * chromeFlags are from nsIWebBrowserChrome.
 	 */
 	var chromeFlags : PRUint32;

@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIDownload") extern class NsIDownload
+@:native("nsIDownload") extern class NsIDownload extends NsITransfer
 {
 	/**
 	 * The number of bytes downloaded so far. Read only.

@@ -2,10 +2,6 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIEditorBoxObject") extern class NsIEditorBoxObject
+@:native("nsIEditorBoxObject") extern class NsIEditorBoxObject extends NsIContainerBoxObject
 {
-	/**
-	 * Read only. Obsolete since Gecko 1.9 The nsIDocShell object that manages the contained document. The editor.xml binding uses this property to gain access to the webNavigation, contentDocument, contentWindow, webBrowserFind, editingSession and commandManager properties.
-	 */
-	var docShell : NsIDocShell;
 }

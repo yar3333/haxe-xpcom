@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIMsgDBHdr") extern class NsIMsgDBHdr
+@:native("nsIMsgDBHdr") extern class NsIMsgDBHdr extends NsISupports
 {
 	/**
 	 * Readonly: Indicates whether or not the message is read.

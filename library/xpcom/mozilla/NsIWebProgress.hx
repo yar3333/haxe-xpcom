@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIWebProgress") extern class NsIWebProgress
+@:native("nsIWebProgress") extern class NsIWebProgress extends NsISupports
 {
 	/**
 	 * The DOM window associated with this nsIWebProgress instance. Read only. Exceptions thrown  NS_ERROR_FAILURE Indicates that there is no associated DOM window.

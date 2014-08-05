@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIProxyInfo") extern class NsIProxyInfo
+@:native("nsIProxyInfo") extern class NsIProxyInfo extends NsISupports
 {
 	/**
 	 * This attribute specifies the proxy to failover to when this proxy fails.

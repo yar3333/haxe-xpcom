@@ -2,6 +2,6 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIDOMHTMLAudioElement") extern class NsIDOMHTMLAudioElement
+@:native("nsIDOMHTMLAudioElement") extern class NsIDOMHTMLAudioElement extends NsIDOMHTMLMediaElement
 {
 }

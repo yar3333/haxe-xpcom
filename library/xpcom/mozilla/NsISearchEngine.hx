@@ -2,7 +2,7 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsISearchEngine") extern class NsISearchEngine
+@:native("nsISearchEngine") extern class NsISearchEngine extends NsISupports
 {
 	/**
 	 * An optional shortcut alias for the engine. When non-null, this is a unique identifier.

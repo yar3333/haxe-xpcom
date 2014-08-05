@@ -1,9 +1,12 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
 @:native("nsINavBookmarksService") extern class NsINavBookmarksService extends NsISupports
 {
+	public static inline function getService() : NsINavBookmarksService return Components.classes[cast "@mozilla.org/browser/nav-bookmarks-service;1"].getService(Components.interfaces.nsINavBookmarksService);
+	
 	/**
 	 * The item ID of the Bookmarks Menu folder. Read only. Renamed from bookmarksRoot in Gecko 1.9
 	 */

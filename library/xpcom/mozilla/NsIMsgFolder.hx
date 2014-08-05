@@ -2,8 +2,37 @@ package xpcom.mozilla;
 
 import xpcom.types.*;
 
-@:native("nsIMsgFolder") extern class NsIMsgFolder
+@:native("nsIMsgFolder") extern class NsIMsgFolder extends NsISupports
 {
+	/**
+	 * User has new mail waiting.
+	 */
+	static inline var nsMsgBiffState_NewMail = 0;
+	/**
+	 * No new mail is waiting.
+	 */
+	static inline var nsMsgBiffState_NoMail = 1;
+	/**
+	 * We dunno whether there is new mail.
+	 */
+	static inline var nsMsgBiffState_Unknown = 2;
+	/**
+	 *  
+	 */
+	static inline var nsMsgDispositionState_None = -1;
+	/**
+	 *  
+	 */
+	static inline var nsMsgDispositionState_Replied = 0;
+	/**
+	 *  
+	 */
+	static inline var nsMsgDispositionState_Forwarded = 1;
+	/**
+	 * Turn notifications on/off for various notification types. Currently only supporting allMessageCountNotifications which refers to both total and unread message counts.
+	 */
+	static inline var allMessageCountNotifications = 0;
+	
 	/**
 	 * readonly
 	 */

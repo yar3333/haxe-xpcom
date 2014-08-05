@@ -1,9 +1,12 @@
 package xpcom.mozilla;
 
+import xpcom.Components;
 import xpcom.types.*;
 
-@:native("nsIMsgDBView") extern class NsIMsgDBView
+@:native("nsIMsgDBView") extern class NsIMsgDBView extends NsISupports
 {
+	public static inline function createInstance() : NsIMsgDBView return Components.Constructor("@mozilla.org/messenger/msgdbview;1", Components.interfaces.nsIMsgDBView);
+	
 	/**
 	 * Readonly: Type of view. Constants are defined in nsMsgViewType.
 	 */

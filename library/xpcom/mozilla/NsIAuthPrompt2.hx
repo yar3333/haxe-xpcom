@@ -4,4 +4,16 @@ import xpcom.types.*;
 
 @:native("nsIAuthPrompt2") extern class NsIAuthPrompt2 extends NsISupports
 {
+	/**
+	 * The password will be sent unencrypted. No security provided.
+	 */
+	static inline var LEVEL_NONE = 0;
+	/**
+	 * Password will be sent encrypted, but the connection is otherwise insecure.
+	 */
+	static inline var LEVEL_PW_ENCRYPTED = 1;
+	/**
+	 * The connection, both for password and data, is secure.
+	 */
+	static inline var LEVEL_SECURE = 2;
 }

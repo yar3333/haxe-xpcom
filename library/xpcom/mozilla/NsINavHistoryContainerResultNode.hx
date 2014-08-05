@@ -32,5 +32,5 @@ import xpcom.types.*;
 	/**
 	 * The current state of the container. This is one of the state constants.
 	 */
-	var state  : UShort;
+	var state : UShort;
 }
