@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIRadioInterfaceLayer") extern class NsIRadioInterfaceLayer extends NsISupports
 {
-	public static inline function createInstance() : NsIRadioInterfaceLayer return Components.Constructor("@mozilla.org/telephony/system-worker-manager;1", Components.interfaces.nsIRadioInterfaceLayer);
+	public static inline function createInstance() : NsIRadioInterfaceLayer return xpcom.Components.Constructor("@mozilla.org/telephony/system-worker-manager;1", xpcom.Components.interfaces.nsIRadioInterfaceLayer);
 	
 	/**
 	 * Read only. Obsolete since Gecko 13.0

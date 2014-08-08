@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIScreen") extern class NsIScreen extends NsISupports
 {
-	public static inline function getService() : NsIScreen return Components.classes[cast "@mozilla.org/gfx/screenmanager;1"].getService(Components.interfaces.nsIScreen);
+	public static inline function getService() : NsIScreen return xpcom.Components.classes[cast "@mozilla.org/gfx/screenmanager;1"].getService(xpcom.Components.interfaces.nsIScreen);
 	
 	/**
 	 * The screen's color depth; this is the number of bits used to represent a color. Read only.

@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsISmsRequestManager") extern class NsISmsRequestManager extends NsISupports
 {
-	public static inline function createInstance() : NsISmsRequestManager return Components.Constructor("@mozilla.org/sms/smsrequestmanager;1", Components.interfaces.nsISmsRequestManager);
+	public static inline function createInstance() : NsISmsRequestManager return xpcom.Components.Constructor("@mozilla.org/sms/smsrequestmanager;1", xpcom.Components.interfaces.nsISmsRequestManager);
 	
 	function addRequest(aRequest:NsIDOMMozSmsRequest) : Long;
 	function createRequest(aManager:NsIDOMMozSmsManager, aRequest:NsIDOMMozSmsRequest) : Long;

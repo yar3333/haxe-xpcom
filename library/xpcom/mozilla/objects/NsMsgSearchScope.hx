@@ -2,6 +2,6 @@ package xpcom.mozilla.objects;
 
 import xpcom.types.*;
 
-extern class NsMsgSearchScope
+@:native("nsMsgSearchScope") extern class NsMsgSearchScope
 {
 }

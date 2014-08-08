@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsISHEntry") extern class NsISHEntry extends NsIHistoryEntry
 {
-	public static inline function createInstance() : NsISHEntry return Components.Constructor("@mozilla.org/browser/session-history-entry;1", Components.interfaces.nsISHEntry);
+	public static inline function createInstance() : NsISHEntry return xpcom.Components.Constructor("@mozilla.org/browser/session-history-entry;1", xpcom.Components.interfaces.nsISHEntry);
 	
 	/**
 	 * Set and get the cache key for the entry.

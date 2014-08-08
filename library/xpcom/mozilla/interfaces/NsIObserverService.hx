@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIObserverService") extern class NsIObserverService extends NsISupports
 {
-	public static inline function getService() : NsIObserverService return Components.classes[cast "@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+	public static inline function getService() : NsIObserverService return xpcom.Components.classes[cast "@mozilla.org/observer-service;1"].getService(xpcom.Components.interfaces.nsIObserverService);
 	
 	function addObserver(anObserver:NsIObserver, aTopic:String, ownsWeak:Bool) : Void;
 	function enumerateObservers(aTopic:String) : NsISimpleEnumerator;

@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIXULRuntime") extern class NsIXULRuntime extends NsISupports
 {
-	public static inline function createInstance() : NsIXULRuntime return Components.Constructor("@mozilla.org/xre/app-info;1", Components.interfaces.nsIXULRuntime);
+	public static inline function createInstance() : NsIXULRuntime return xpcom.Components.Constructor("@mozilla.org/xre/app-info;1", xpcom.Components.interfaces.nsIXULRuntime);
 	
 	/**
 	 * Whether the application was launched in safe mode. Read only.

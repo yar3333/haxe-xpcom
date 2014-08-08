@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIMicrosummaryService") extern class NsIMicrosummaryService extends NsISupports
 {
-	public static inline function getService() : NsIMicrosummaryService return Components.classes[cast "@mozilla.org/microsummary/service;1"].getService(Components.interfaces.nsIMicrosummaryService);
+	public static inline function getService() : NsIMicrosummaryService return xpcom.Components.classes[cast "@mozilla.org/microsummary/service;1"].getService(xpcom.Components.interfaces.nsIMicrosummaryService);
 	
 	function addGenerator(generatorURI:NsIURI) : Void;
 	function createMicrosummary(pageURI:NsIURI, generatorURI:NsIURI) : NsIMicrosummary;

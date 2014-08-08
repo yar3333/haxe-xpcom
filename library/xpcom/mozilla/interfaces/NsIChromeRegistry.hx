@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIChromeRegistry") extern class NsIChromeRegistry extends NsISupports
 {
-	public static inline function getService() : NsIChromeRegistry return Components.classes[cast "@mozilla.org/chrome/chrome-registry;1"].getService(Components.interfaces.nsIChromeRegistry);
+	public static inline function getService() : NsIChromeRegistry return xpcom.Components.classes[cast "@mozilla.org/chrome/chrome-registry;1"].getService(xpcom.Components.interfaces.nsIChromeRegistry);
 	
 	/**
 	 *  

@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsINetworkLinkService") extern class NsINetworkLinkService extends NsISupports
 {
-	public static inline function getService() : NsINetworkLinkService return Components.classes[cast "@mozilla.org/network/network-link-service;1"].getService(Components.interfaces.nsINetworkLinkService);
+	public static inline function getService() : NsINetworkLinkService return xpcom.Components.classes[cast "@mozilla.org/network/network-link-service;1"].getService(xpcom.Components.interfaces.nsINetworkLinkService);
 	
 	/**
 	 * This is set to true when the system is believed to have a usable network connection.

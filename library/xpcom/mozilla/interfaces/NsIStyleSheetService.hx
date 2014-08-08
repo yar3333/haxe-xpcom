@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIStyleSheetService") extern class NsIStyleSheetService extends NsISupports
 {
-	public static inline function createInstance() : NsIStyleSheetService return Components.Constructor("@mozilla.org/content/style-sheet-service;1", Components.interfaces.nsIStyleSheetService);
+	public static inline function createInstance() : NsIStyleSheetService return xpcom.Components.Constructor("@mozilla.org/content/style-sheet-service;1", xpcom.Components.interfaces.nsIStyleSheetService);
 	
 	/**
 	 *  

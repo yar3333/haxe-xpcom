@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIZipReader") extern class NsIZipReader extends NsISupports
 {
-	public static inline function createInstance() : NsIZipReader return Components.Constructor("@mozilla.org/libjar/zip-reader;1", Components.interfaces.nsIZipReader);
+	public static inline function createInstance() : NsIZipReader return xpcom.Components.Constructor("@mozilla.org/libjar/zip-reader;1", xpcom.Components.interfaces.nsIZipReader);
 	
 	/**
 	 * The file that represents the zip with which this zip reader was initialized. Read only.

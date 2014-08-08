@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIEditorSpellCheck") extern class NsIEditorSpellCheck extends NsISupports
 {
-	public static inline function createInstance() : NsIEditorSpellCheck return Components.Constructor("@mozilla.org/editor/editorspellchecker;1", Components.interfaces.nsIEditorSpellCheck);
+	public static inline function createInstance() : NsIEditorSpellCheck return xpcom.Components.Constructor("@mozilla.org/editor/editorspellchecker;1", xpcom.Components.interfaces.nsIEditorSpellCheck);
 	
 	function AddWordToDictionary(word:Wstring) : Void;
 	function canSpellCheck() : Bool;

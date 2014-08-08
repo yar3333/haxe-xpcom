@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIAppStartup") extern class NsIAppStartup extends NsISupports
 {
-	public static inline function getService() : NsIAppStartup return Components.classes[cast "@mozilla.org/toolkit/app-startup;1"].getService(Components.interfaces.nsIAppStartup);
+	public static inline function getService() : NsIAppStartup return xpcom.Components.classes[cast "@mozilla.org/toolkit/app-startup;1"].getService(xpcom.Components.interfaces.nsIAppStartup);
 	
 	/**
 	 * true if the startup process was interrupted by an interactive prompt. This can be used, for example, when doing performance testing of the startup process to discount numbers for tests that were interrupted by a user prompt.

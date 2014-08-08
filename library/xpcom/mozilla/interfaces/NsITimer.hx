@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsITimer") extern class NsITimer extends NsISupports
 {
-	public static inline function createInstance() : NsITimer return Components.Constructor("@mozilla.org/timer;1", Components.interfaces.nsITimer);
+	public static inline function createInstance() : NsITimer return xpcom.Components.Constructor("@mozilla.org/timer;1", xpcom.Components.interfaces.nsITimer);
 	
 	/**
 	 * Type of a timer that fires once only.
