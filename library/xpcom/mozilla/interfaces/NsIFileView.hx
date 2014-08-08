@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIFileView") extern class NsIFileView extends NsISupports
 {
-	public static inline function createInstance() : NsIFileView return Components.Constructor("@mozilla.org/filepicker/fileview;1", Components.interfaces.nsIFileView);
+	public static inline function createInstance() : NsIFileView return xpcom.Components.Constructor("@mozilla.org/filepicker/fileview;1", xpcom.Components.interfaces.nsIFileView);
 	
 	/**
 	 * Sort by file name.

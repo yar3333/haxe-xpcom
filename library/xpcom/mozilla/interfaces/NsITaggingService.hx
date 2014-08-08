@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsITaggingService") extern class NsITaggingService extends NsISupports
 {
-	public static inline function getService() : NsITaggingService return Components.classes[cast "@mozilla.org/browser/tagging-service;1"].getService(Components.interfaces.nsITaggingService);
+	public static inline function getService() : NsITaggingService return xpcom.Components.classes[cast "@mozilla.org/browser/tagging-service;1"].getService(xpcom.Components.interfaces.nsITaggingService);
 	
 	/**
 	 * Retrieves all tags used to tag URIs in the data-base (sorted by name).

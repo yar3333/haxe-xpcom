@@ -2,6 +2,6 @@ package xpcom.mozilla.objects;
 
 import xpcom.types.*;
 
-extern class NsMsgLabelValue
+@:native("nsMsgLabelValue") extern class NsMsgLabelValue
 {
 }

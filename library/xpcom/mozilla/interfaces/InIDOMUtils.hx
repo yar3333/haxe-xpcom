@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.inIDOMUtils") extern class InIDOMUtils extends NsISupports
 {
-	public static inline function getService() : InIDOMUtils return Components.classes[cast "@mozilla.org/inspector/dom-utils;1"].getService(Components.interfaces.inIDOMUtils);
+	public static inline function getService() : InIDOMUtils return xpcom.Components.classes[cast "@mozilla.org/inspector/dom-utils;1"].getService(xpcom.Components.interfaces.inIDOMUtils);
 	
 	function addPseudoClassLock(aElement:NsIDOMElement, aPseudoClass:DOMString) : Void;
 	function clearPseudoClassLocks(aElement:NsIDOMElement) : Void;

@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIFaviconService") extern class NsIFaviconService extends NsISupports
 {
-	public static inline function getService() : NsIFaviconService return Components.classes[cast "@mozilla.org/browser/favicon-service;1"].getService(Components.interfaces.nsIFaviconService);
+	public static inline function getService() : NsIFaviconService return xpcom.Components.classes[cast "@mozilla.org/browser/favicon-service;1"].getService(xpcom.Components.interfaces.nsIFaviconService);
 	
 	/**
 	 * The default favicon URI. Read only.

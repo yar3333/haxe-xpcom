@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIMessenger") extern class NsIMessenger extends NsISupports
 {
-	public static inline function createInstance() : NsIMessenger return Components.Constructor("@mozilla.org/messenger;1", Components.interfaces.nsIMessenger);
+	public static inline function createInstance() : NsIMessenger return xpcom.Components.Constructor("@mozilla.org/messenger;1", xpcom.Components.interfaces.nsIMessenger);
 	
 	/**
 	 * Unknown transaction type.

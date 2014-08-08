@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIBrowserHistory") extern class NsIBrowserHistory extends NsIGlobalHistory2
 {
-	public static inline function getService() : NsIBrowserHistory return Components.classes[cast "@mozilla.org/browser/nav-history-service;1"].getService(Components.interfaces.nsIBrowserHistory);
+	public static inline function getService() : NsIBrowserHistory return xpcom.Components.classes[cast "@mozilla.org/browser/nav-history-service;1"].getService(xpcom.Components.interfaces.nsIBrowserHistory);
 	
 	/**
 	 * Indicates if there are entries in global history. For performance reasons this does not return the real number of entries. Read only.

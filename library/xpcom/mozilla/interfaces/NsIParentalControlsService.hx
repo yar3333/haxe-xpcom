@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIParentalControlsService") extern class NsIParentalControlsService extends NsISupports
 {
-	public static inline function createInstance() : NsIParentalControlsService return Components.Constructor("@mozilla.org/parental-controls-service;1", Components.interfaces.nsIParentalControlsService);
+	public static inline function createInstance() : NsIParentalControlsService return xpcom.Components.Constructor("@mozilla.org/parental-controls-service;1", xpcom.Components.interfaces.nsIParentalControlsService);
 	
 	/**
 	 * This log entry type represents an access to web content.

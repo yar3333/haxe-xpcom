@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIControllers") extern class NsIControllers extends NsISupports
 {
-	public static inline function createInstance() : NsIControllers return Components.Constructor("@mozilla.org/xul/xul-controllers;1", Components.interfaces.nsIControllers);
+	public static inline function createInstance() : NsIControllers return xpcom.Components.Constructor("@mozilla.org/xul/xul-controllers;1", xpcom.Components.interfaces.nsIControllers);
 	
 	/**
 	 * Obsolete since Gecko 1.9

@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIFocusManager") extern class NsIFocusManager extends NsISupports
 {
-	public static inline function getService() : NsIFocusManager return Components.classes[cast "@mozilla.org/focus-manager;1"].getService(Components.interfaces.nsIFocusManager);
+	public static inline function getService() : NsIFocusManager return xpcom.Components.classes[cast "@mozilla.org/focus-manager;1"].getService(xpcom.Components.interfaces.nsIFocusManager);
 	
 	/**
 	 *  

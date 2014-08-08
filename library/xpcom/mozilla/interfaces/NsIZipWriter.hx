@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIZipWriter") extern class NsIZipWriter extends NsISupports
 {
-	public static inline function createInstance() : NsIZipWriter return Components.Constructor("@mozilla.org/zipwriter;1", Components.interfaces.nsIZipWriter);
+	public static inline function createInstance() : NsIZipWriter return xpcom.Components.Constructor("@mozilla.org/zipwriter;1", xpcom.Components.interfaces.nsIZipWriter);
 	
 	/**
 	 * Do not compress the file.

@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIErrorService") extern class NsIErrorService extends NsISupports
 {
-	public static inline function getService() : NsIErrorService return Components.classes[cast "@mozilla.org/xpcom/error-service;1"].getService(Components.interfaces.nsIErrorService);
+	public static inline function getService() : NsIErrorService return xpcom.Components.classes[cast "@mozilla.org/xpcom/error-service;1"].getService(xpcom.Components.interfaces.nsIErrorService);
 	
 	function getErrorStringBundle(errorModule:Short) : String;
 	function getErrorStringBundleKey(error:Nsresult) : String;

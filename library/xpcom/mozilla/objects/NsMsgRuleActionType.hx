@@ -2,6 +2,6 @@ package xpcom.mozilla.objects;
 
 import xpcom.types.*;
 
-extern class NsMsgRuleActionType
+@:native("nsMsgRuleActionType") extern class NsMsgRuleActionType
 {
 }

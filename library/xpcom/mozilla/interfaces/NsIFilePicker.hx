@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIFilePicker") extern class NsIFilePicker extends NsISupports
 {
-	public static inline function createInstance() : NsIFilePicker return Components.Constructor("@mozilla.org/filepicker;1", Components.interfaces.nsIFilePicker);
+	public static inline function createInstance() : NsIFilePicker return xpcom.Components.Constructor("@mozilla.org/filepicker;1", xpcom.Components.interfaces.nsIFilePicker);
 	
 	/**
 	 * If true, the file is added to the operating system's "recent documents" list (if the operating system has one; nothing happens if there is no such concept on the user's platform). This attribute has no effect if private browsing mode is in effect.

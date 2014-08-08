@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIDocShell") extern class NsIDocShell extends NsISupports
 {
-	public static inline function createInstance() : NsIDocShell return Components.Constructor("@mozilla.org/docshell;1", Components.interfaces.nsIDocShell);
+	public static inline function createInstance() : NsIDocShell return xpcom.Components.Constructor("@mozilla.org/docshell;1", xpcom.Components.interfaces.nsIDocShell);
 	
 	/**
 	 * Used as a placeholder when you don't want to explicitly specify flags.

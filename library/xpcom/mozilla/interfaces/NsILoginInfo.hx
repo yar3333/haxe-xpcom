@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsILoginInfo") extern class NsILoginInfo extends NsISupports
 {
-	public static inline function createInstance() : NsILoginInfo return Components.Constructor("@mozilla.org/login-manager/loginInfo;1", Components.interfaces.nsILoginInfo);
+	public static inline function createInstance() : NsILoginInfo return xpcom.Components.Constructor("@mozilla.org/login-manager/loginInfo;1", xpcom.Components.interfaces.nsILoginInfo);
 	
 	/**
 	 * The URL a form-based login was submitted to. For logins obtained from HTML forms, this field is the action attribute from the form element, with the path removed (for example, "http://www.site.com"). Forms with no action attribute default to submitting to their origin URL, so that is stored here. This field is null for logins attained from protocol authentications.

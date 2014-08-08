@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIProtocolProxyService") extern class NsIProtocolProxyService extends NsISupports
 {
-	public static inline function getService() : NsIProtocolProxyService return Components.classes[cast "@mozilla.org/network/protocol-proxy-service;1"].getService(Components.interfaces.nsIProtocolProxyService);
+	public static inline function getService() : NsIProtocolProxyService return xpcom.Components.classes[cast "@mozilla.org/network/protocol-proxy-service;1"].getService(xpcom.Components.interfaces.nsIProtocolProxyService);
 	
 	/**
 	 * 

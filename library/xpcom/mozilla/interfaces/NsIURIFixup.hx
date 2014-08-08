@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIURIFixup") extern class NsIURIFixup extends NsISupports
 {
-	public static inline function getService() : NsIURIFixup return Components.classes[cast "@mozilla.org/docshell/urifixup;1"].getService(Components.interfaces.nsIURIFixup);
+	public static inline function getService() : NsIURIFixup return xpcom.Components.classes[cast "@mozilla.org/docshell/urifixup;1"].getService(xpcom.Components.interfaces.nsIURIFixup);
 	
 	/**
 	 * No fixup flags.

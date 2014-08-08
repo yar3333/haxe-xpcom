@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIAnnotationService") extern class NsIAnnotationService extends NsISupports
 {
-	public static inline function getService() : NsIAnnotationService return Components.classes[cast "@mozilla.org/browser/annotation-service;1"].getService(Components.interfaces.nsIAnnotationService);
+	public static inline function getService() : NsIAnnotationService return xpcom.Components.classes[cast "@mozilla.org/browser/annotation-service;1"].getService(xpcom.Components.interfaces.nsIAnnotationService);
 	
 	/**
 	 * For temporary data that can be discarded when the user exits. Removed at application exit.

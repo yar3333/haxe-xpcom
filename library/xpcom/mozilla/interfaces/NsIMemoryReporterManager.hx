@@ -1,12 +1,11 @@
 package xpcom.mozilla.interfaces;
 
-import xpcom.Components;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIMemoryReporterManager") extern class NsIMemoryReporterManager extends NsISupports
 {
-	public static inline function getService() : NsIMemoryReporterManager return Components.classes[cast "@mozilla.org/memory-reporter-manager;1"].getService(Components.interfaces.nsIMemoryReporterManager);
+	public static inline function getService() : NsIMemoryReporterManager return xpcom.Components.classes[cast "@mozilla.org/memory-reporter-manager;1"].getService(xpcom.Components.interfaces.nsIMemoryReporterManager);
 	
 	/**
 	 * Gets the total size of explicit memory allocations, both at the operating system level (for example, via mmap, VirtualAlloc) and at the heap level (for example, via malloc(), calloc(), operator new).
