@@ -29,7 +29,7 @@ import xpcom.mozilla.objects.*;
 	function createHTMLTextAccessible(aFrame:NsISupports) : NsIAccessible;
 	function createHTMLTextFieldAccessible(aFrame:NsISupports) : NsIAccessible;
 	function createHTMLCaptionAccessible(aFrame:NsISupports) : NsIAccessible;
-	function getAccessible(aNode:NsIDOMNode, aPresShell:NsIPresShell, aWeakShell:NsIWeakReference, frameHint:NsIFrame, aIsHidden:Bool) : NsIAccessible;
+	function getAccessible(aNode:NsIDOMNode, aPresShell:NsIPresShell, aWeakShell:NsIWeakReference, frameHint:{value:NsIFrame}, aIsHidden:{value:Bool}) : NsIAccessible;
 	function addNativeRootAccessible(aAtkAccessible:VoidPtr) : NsIAccessible;
 	function removeNativeRootAccessible(aRootAccessible:NsIAccessible) : Void;
 	function invalidateSubtreeFor(aPresShell:NsIPresShell, aChangedContent:NsIContent, aEvent:PRUint32) : Void;

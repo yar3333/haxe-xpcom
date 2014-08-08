@@ -18,6 +18,6 @@ import xpcom.mozilla.objects.*;
 	 */
 	var rootDir : NsILocalFile;
 	
-	function lock(aUnlocker:NsIProfileUnlocker) : NsIProfileLock;
+	function lock(aUnlocker:{value:NsIProfileUnlocker}) : NsIProfileLock;
 	function remove(removeFiles:Bool) : Void;
 }

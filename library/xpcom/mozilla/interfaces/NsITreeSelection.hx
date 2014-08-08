@@ -39,7 +39,7 @@ import xpcom.mozilla.objects.*;
 	function adjustSelection(index:Long, count:Long) : Void;
 	function clearRange(startIndex:Long, endIndex:Long) : Void;
 	function clearSelection() : Void;
-	function getRangeAt(i:Long, min:Long, max:Long) : Void;
+	function getRangeAt(i:Long, min:{value:Long}, max:{value:Long}) : Void;
 	function getRangeCount() : Long;
 	function invalidateSelection() : Void;
 	function invertSelection() : Void;

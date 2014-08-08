@@ -27,11 +27,11 @@ import xpcom.mozilla.objects.*;
 	
 	function addEngine(engineURL:AString, dataType:Long, iconURL:AString, confirm:Bool, ?callback:NsISearchInstallCallback) : Void;
 	function addEngineWithDetails(name:AString, iconURL:AString, alias:AString, description:AString, method:AString, url:AString) : Void;
-	function getDefaultEngines(?engineCount:ULong, engines:Array<NsISearchEngine>) : Void;
+	function getDefaultEngines(?engineCount:{value:ULong}, engines:Array<NsISearchEngine>) : Void;
 	function getEngineByAlias(alias:AString) : NsISearchEngine;
 	function getEngineByName(aEngineName:AString) : NsISearchEngine;
-	function getEngines(?engineCount:ULong, engines:Array<NsISearchEngine>) : Void;
-	function getVisibleEngines(?engineCount:ULong, engines:Array<NsISearchEngine>) : Void;
+	function getEngines(?engineCount:{value:ULong}, engines:Array<NsISearchEngine>) : Void;
+	function getVisibleEngines(?engineCount:{value:ULong}, engines:Array<NsISearchEngine>) : Void;
 	function init(?observer:NsIBrowserSearchInitObserver) : Void;
 	function moveEngine(engine:NsISearchEngine, newIndex:Long) : Void;
 	function removeEngine(engine:NsISearchEngine) : Void;

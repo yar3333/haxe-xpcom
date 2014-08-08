@@ -10,5 +10,5 @@ import xpcom.mozilla.objects.*;
 	 */
 	var rootContentView : NsIContentView;
 	
-	function getContentViewsIn(aXPx:Float, aYPx:Float, aTopSize:Float, aRightSize:Float, aBottomSize:Float, aLeftSize:Float, ?aLength:ULong, aResult:Array<NsIContentView>) : Void;
+	function getContentViewsIn(aXPx:Float, aYPx:Float, aTopSize:Float, aRightSize:Float, aBottomSize:Float, aLeftSize:Float, ?aLength:{value:ULong}, aResult:Array<NsIContentView>) : Void;
 }

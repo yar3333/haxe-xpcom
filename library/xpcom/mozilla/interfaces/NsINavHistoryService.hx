@@ -29,7 +29,7 @@ import xpcom.mozilla.objects.*;
 	function getNewQueryOptions() : NsINavHistoryQueryOptions;
 	function executeQuery(aQuery:NsINavHistoryQuery, options:NsINavHistoryQueryOptions) : NsINavHistoryResult;
 	function executeQueries(aQueries:Array<NsINavHistoryQuery>, aQueryCount:ULong, options:NsINavHistoryQueryOptions) : NsINavHistoryResult;
-	function queryStringToQueries(aQueryString:AUTF8String, aQueries:Array<NsINavHistoryQuery>, aResultCount:ULong, options:NsINavHistoryQueryOptions) : Void;
+	function queryStringToQueries(aQueryString:AUTF8String, aQueries:Array<NsINavHistoryQuery>, aResultCount:{value:ULong}, options:{value:NsINavHistoryQueryOptions}) : Void;
 	function queriesToQueryString(aQueries:Array<NsINavHistoryQuery>, aQueryCount:ULong, options:NsINavHistoryQueryOptions) : AUTF8String;
 	function addObserver(observer:NsINavHistoryObserver, ownsWeak:Bool) : Void;
 	function removeObserver(observer:NsINavHistoryObserver) : Void;

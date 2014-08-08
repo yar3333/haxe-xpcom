@@ -16,7 +16,7 @@ import xpcom.mozilla.objects.*;
 	function CheckCurrentWord(suggestedWord:Wstring) : Bool;
 	function CheckCurrentWordNoSuggest(suggestedWord:Wstring) : Bool;
 	function GetCurrentDictionary() : AString;
-	function GetDictionaryList(dictionaryList:Array<Wstring>, count:PRUint32) : Void;
+	function GetDictionaryList(dictionaryList:Array<Wstring>, count:{value:PRUint32}) : Void;
 	function GetNextMisspelledWord() : Wstring;
 	function GetPersonalDictionary() : Void;
 	function GetPersonalDictionaryWord() : Wstring;

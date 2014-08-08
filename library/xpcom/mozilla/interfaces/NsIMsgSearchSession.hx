@@ -47,7 +47,7 @@ import xpcom.mozilla.objects.*;
 	function unregisterListener(listener:NsIMsgSearchNotify) : Void;
 	function getNthSearchTerm(whichTerm:Long, attrib:NsMsgSearchAttribValue, op:NsMsgSearchOpValue, value:NsIMsgSearchValue) : Void;
 	function countSearchScopes() : Long;
-	function getNthSearchScope(which:Long, scopeId:NsMsgSearchScopeValue, folder:NsIMsgFolder) : Void;
+	function getNthSearchScope(which:Long, scopeId:{value:NsMsgSearchScopeValue}, folder:{value:NsIMsgFolder}) : Void;
 	function addScopeTerm(scope:NsMsgSearchScopeValue, folder:NsIMsgFolder) : Void;
 	function addDirectoryScopeTerm(scope:NsMsgSearchScopeValue) : Void;
 	function clearScopes() : Void;

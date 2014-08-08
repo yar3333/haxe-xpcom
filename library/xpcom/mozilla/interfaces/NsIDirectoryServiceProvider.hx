@@ -5,5 +5,5 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIDirectoryServiceProvider") extern class NsIDirectoryServiceProvider extends NsISupports
 {
-	function getFile(prop:String, persistent:PRBool) : NsIFile;
+	function getFile(prop:String, persistent:{value:PRBool}) : NsIFile;
 }

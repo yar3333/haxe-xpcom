@@ -15,8 +15,8 @@ import xpcom.mozilla.objects.*;
 	 */
 	var systemEventGroup : NsIDOMEventGroup;
 	
-	function getEventTargetChainFor(aEventTarget:NsIDOMEventTarget, ?aCount:ULong, aOutArray:Array<NsIDOMEventTarget>) : Void;
-	function getListenerInfoFor(aEventTarget:NsIDOMEventTarget, ?aCount:ULong, aOutArray:Array<NsIEventListenerInfo>) : Void;
+	function getEventTargetChainFor(aEventTarget:NsIDOMEventTarget, ?aCount:{value:ULong}, aOutArray:Array<NsIDOMEventTarget>) : Void;
+	function getListenerInfoFor(aEventTarget:NsIDOMEventTarget, ?aCount:{value:ULong}, aOutArray:Array<NsIEventListenerInfo>) : Void;
 	function hasListenersFor(aEventTarget:NsIDOMEventTarget, aType:DOMString) : Bool;
 	function addSystemEventListener(target:NsIDOMEventTarget, type:DOMString, listener:NsIDOMEventListener, useCapture:Bool) : Void;
 	function removeSystemEventListener(target:NsIDOMEventTarget, type:DOMString, listener:NsIDOMEventListener, useCapture:Bool) : Void;

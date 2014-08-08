@@ -140,7 +140,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	var scriptableFlags : PRUint32;
 	
-	function preCreate(nativeObj:NsISupports, cx:JSContextPtr, globalObj:JSObjectPtr, parentObj:JSObjectPtr) : Void;
+	function preCreate(nativeObj:NsISupports, cx:JSContextPtr, globalObj:JSObjectPtr, parentObj:{value:JSObjectPtr}) : Void;
 	function create(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr) : Void;
 	function postCreate(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr) : Void;
 	function addProperty(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr, id:JSVal, vp:JSValPtr) : PRBool;
@@ -148,14 +148,14 @@ import xpcom.mozilla.objects.*;
 	function getProperty(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr, id:JSVal, vp:JSValPtr) : PRBool;
 	function setProperty(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr, id:JSVal, vp:JSValPtr) : PRBool;
 	function enumerate(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr) : PRBool;
-	function newEnumerate(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr, enum_op:PRUint32, statep:JSValPtr, idp:JSID) : PRBool;
-	function newResolve(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr, id:JSVal, flags:PRUint32, objp:JSObjectPtr) : PRBool;
+	function newEnumerate(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr, enum_op:PRUint32, statep:JSValPtr, idp:{value:JSID}) : PRBool;
+	function newResolve(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr, id:JSVal, flags:PRUint32, objp:{value:JSObjectPtr}) : PRBool;
 	function convert(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr, type:PRUint32, vp:JSValPtr) : PRBool;
 	function finalize(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr) : Void;
 	function checkAccess(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr, id:JSVal, mode:PRUint32, vp:JSValPtr) : PRBool;
 	function call(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr, argc:PRUint32, argv:JSValPtr, vp:JSValPtr) : PRBool;
 	function construct(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr, argc:PRUint32, argv:JSValPtr, vp:JSValPtr) : PRBool;
-	function hasInstance(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr, val:JSVal, bp:PRBool) : PRBool;
+	function hasInstance(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr, val:JSVal, bp:{value:PRBool}) : PRBool;
 	function trace(wrapper:NsIXPConnectWrappedNative, trc:JSTracerPtr, obj:JSObjectPtr) : Void;
 	function equality(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr, val:JSVal) : PRBool;
 	function outerObject(wrapper:NsIXPConnectWrappedNative, cx:JSContextPtr, obj:JSObjectPtr) : JSObjectPtr;

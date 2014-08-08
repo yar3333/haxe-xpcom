@@ -99,9 +99,9 @@ import xpcom.mozilla.objects.*;
 	function RemoveOfflineOp(op:NsIMsgOfflineImapOperation) : Void;
 	function EnumerateOfflineOps() : NsISimpleEnumerator;
 	function setAttributesOnPendingHdr(pendingHdr:NsIMsgDBHdr, property:String, propertyVal:String, flags:Long) : Void;
-	function getNewList(count:ULong, newKeys:Array<NsMsgKey>) : Void;
+	function getNewList(count:{value:ULong}, newKeys:Array<NsMsgKey>) : Void;
 	function getCachedHits(aSearchFolderUri:String) : NsISimpleEnumerator;
-	function refreshCache(aSearchFolderUri:String, aNumKeys:ULong, aNewHits:Array<NsMsgKey>, aNumBadHits:ULong, aStaleHits:Array<NsMsgKey>) : Void;
+	function refreshCache(aSearchFolderUri:String, aNumKeys:ULong, aNewHits:Array<NsMsgKey>, aNumBadHits:{value:ULong}, aStaleHits:Array<NsMsgKey>) : Void;
 	function updateHdrInCache(aSearchFolderUri:String, aHdr:NsIMsgDBHdr, aAdd:Bool) : Void;
 	function hdrIsInCache(aSearchFolderUri:String, aHdr:NsIMsgDBHdr) : Bool;
 }

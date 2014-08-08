@@ -10,7 +10,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	var eventloopNestingLevel : ULong;
 	
-	function Create(argc:Int, argv:String) : Void;
+	function Create(argc:{value:Int}, argv:{value:String}) : Void;
 	function DispatchNativeEvent(aRealEvent:PRBool, aEvent:VoidPtr) : Void;
 	function exit() : Void;
 	function favorPerformanceHint(favorPerfOverStarvation:Bool, starvationDelay:ULong) : Void;

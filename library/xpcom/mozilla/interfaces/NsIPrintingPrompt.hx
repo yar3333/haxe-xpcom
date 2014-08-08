@@ -8,5 +8,5 @@ import xpcom.mozilla.objects.*;
 	function showPageSetup(printSettings:NsIPrintSettings, aObs:NsIObserver) : Void;
 	function showPrintDialog(webBrowserPrint:NsIWebBrowserPrint, printSettings:NsIPrintSettings) : Void;
 	function showPrinterProperties(printerName:Wstring, printSettings:NsIPrintSettings) : Void;
-	function showProgress(webBrowserPrint:NsIWebBrowserPrint, printSettings:NsIPrintSettings, openDialogObserver:NsIObserver, isForPrinting:Bool, webProgressListener:NsIWebProgressListener, printProgressParams:NsIPrintProgressParams, notifyOnOpen:Bool) : Void;
+	function showProgress(webBrowserPrint:NsIWebBrowserPrint, printSettings:NsIPrintSettings, openDialogObserver:NsIObserver, isForPrinting:Bool, webProgressListener:{value:NsIWebProgressListener}, printProgressParams:{value:NsIPrintProgressParams}, notifyOnOpen:{value:Bool}) : Void;
 }

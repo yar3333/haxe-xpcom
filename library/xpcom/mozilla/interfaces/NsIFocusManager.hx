@@ -88,7 +88,7 @@ import xpcom.mozilla.objects.*;
 	function contentRemoved(aDocument:NsIDocument, aElement:NsIContent) : Void;
 	function fireDelayedEvents(aDocument:NsIDocument) : Void;
 	function focusPlugin(aPlugin:NsIContent) : Void;
-	function getFocusedElementForWindow(aWindow:NsIDOMWindow, aDeep:PRBool, aFocusedWindow:NsIDOMWindow) : NsIDOMElement;
+	function getFocusedElementForWindow(aWindow:NsIDOMWindow, aDeep:PRBool, aFocusedWindow:{value:NsIDOMWindow}) : NsIDOMElement;
 	function getLastFocusMethod(window:NsIDOMWindow) : PRUint32;
 	function moveCaretToFocus(aWindow:NsIDOMWindow) : Void;
 	function moveFocus(aWindow:NsIDOMWindow, aStartElement:NsIDOMElement, aType:ULong, aFlags:ULong) : NsIDOMElement;

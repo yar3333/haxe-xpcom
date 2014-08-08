@@ -90,22 +90,22 @@ import xpcom.mozilla.objects.*;
 	 */
 	var usingLines : Bool;
 	
-	function open(folder:NsIMsgFolder, sortType:NsMsgViewSortTypeValue, sortOrder:NsMsgViewSortOrderValue, viewFlags:NsMsgViewFlagsTypeValue, count:Long) : Void;
-	function openWithHdrs(aHeaders:NsISimpleEnumerator, aSortType:NsMsgViewSortTypeValue, aSortOrder:NsMsgViewSortOrderValue, aViewFlags:NsMsgViewFlagsTypeValue, aCount:Long) : Void;
+	function open(folder:NsIMsgFolder, sortType:NsMsgViewSortTypeValue, sortOrder:NsMsgViewSortOrderValue, viewFlags:NsMsgViewFlagsTypeValue, count:{value:Long}) : Void;
+	function openWithHdrs(aHeaders:NsISimpleEnumerator, aSortType:NsMsgViewSortTypeValue, aSortOrder:NsMsgViewSortOrderValue, aViewFlags:NsMsgViewFlagsTypeValue, aCount:{value:Long}) : Void;
 	function close() : Void;
 	function init(aMessengerInstance:NsIMessenger, aMsgWindow:NsIMsgWindow, aCommandUpdater:NsIMsgDBViewCommandUpdater) : Void;
 	function sort(sortType:NsMsgViewSortTypeValue, sortOrder:NsMsgViewSortOrderValue) : Void;
 	function doCommand(command:NsMsgViewCommandTypeValue) : Void;
 	function doCommandWithFolder(command:NsMsgViewCommandTypeValue, destFolder:NsIMsgFolder) : Void;
-	function getCommandStatus(command:NsMsgViewCommandTypeValue, selectable_p:Bool, selected_p:NsMsgViewCommandCheckStateValue) : Void;
-	function viewNavigate(motion:NsMsgNavigationTypeValue, resultId:NsMsgKey, resultIndex:NsMsgViewIndex, threadIndex:NsMsgViewIndex, wrap:Bool) : Void;
+	function getCommandStatus(command:NsMsgViewCommandTypeValue, selectable_p:{value:Bool}, selected_p:{value:NsMsgViewCommandCheckStateValue}) : Void;
+	function viewNavigate(motion:NsMsgNavigationTypeValue, resultId:{value:NsMsgKey}, resultIndex:{value:NsMsgViewIndex}, threadIndex:{value:NsMsgViewIndex}, wrap:Bool) : Void;
 	function navigateStatus(motion:NsMsgNavigationTypeValue) : Bool;
 	function getKeyAt(index:NsMsgViewIndex) : NsMsgKey;
 	function getFolderForViewIndex(index:NsMsgViewIndex) : NsIMsgFolder;
 	function getURIForViewIndex(index:NsMsgViewIndex) : ACString;
 	function cloneDBView(aMessengerInstance:NsIMessenger, aMsgWindow:NsIMsgWindow, aCommandUpdater:NsIMsgDBViewCommandUpdater) : NsIMsgDBView;
-	function getURIsForSelection(uris:Array<String>, count:ULong) : Void;
-	function getIndicesForSelection(indices:Array<NsMsgViewIndex>, count:ULong) : Void;
+	function getURIsForSelection(uris:Array<String>, count:{value:ULong}) : Void;
+	function getIndicesForSelection(indices:Array<NsMsgViewIndex>, count:{value:ULong}) : Void;
 	function loadMessageByMsgKey(aMsgKey:NsMsgKey) : Void;
 	function loadMessageByViewIndex(aIndex:NsMsgViewIndex) : Void;
 	function loadMessageByUrl(aUrl:String) : Void;

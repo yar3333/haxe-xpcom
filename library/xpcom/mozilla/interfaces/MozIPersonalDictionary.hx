@@ -19,7 +19,7 @@ import xpcom.mozilla.objects.*;
 	function addWord(word:Wstring, lang:Wstring) : Void;
 	function check(word:Wstring, lang:Wstring) : Bool;
 	function endSession() : Void;
-	function getCorrection(word:Wstring, words:Array<Wstring>, count:PRUint32) : Void;
+	function getCorrection(word:Wstring, words:Array<Wstring>, count:{value:PRUint32}) : Void;
 	function ignoreWord(word:Wstring) : Void;
 	function load() : Void;
 	function removeCorrection(word:Wstring, correction:Wstring, lang:Wstring) : Void;

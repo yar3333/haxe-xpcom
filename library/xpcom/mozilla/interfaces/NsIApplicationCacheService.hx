@@ -11,5 +11,5 @@ import xpcom.mozilla.objects.*;
 	function deactivateGroup(group:ACString) : Void;
 	function getActiveCache(group:ACString) : NsIApplicationCache;
 	function getApplicationCache(clientID:ACString) : NsIApplicationCache;
-	function getGroups(?count:ULong, groupIDs:Array<String>) : Void;
+	function getGroups(?count:{value:ULong}, groupIDs:Array<String>) : Void;
 }

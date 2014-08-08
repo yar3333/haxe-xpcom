@@ -32,7 +32,7 @@ import xpcom.mozilla.objects.*;
 	function getChildKeyAt(index:Long) : NsMsgKey;
 	function getChild(msgKey:NsMsgKey) : NsIMsgDBHdr;
 	function getChildHdrAt(index:Long) : NsIMsgDBHdr;
-	function getRootHdr(index:Long) : NsIMsgDBHdr;
+	function getRootHdr(index:{value:Long}) : NsIMsgDBHdr;
 	function removeChildAt(index:Long) : Void;
 	function removeChildHdr(child:NsIMsgDBHdr, announcer:NsIDBChangeAnnouncer) : Void;
 	function markChildRead(bRead:Bool) : Void;

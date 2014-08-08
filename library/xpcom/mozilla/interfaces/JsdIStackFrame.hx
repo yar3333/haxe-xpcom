@@ -66,5 +66,5 @@ import xpcom.mozilla.objects.*;
 	 */
 	var thisValue : JsdIValue;
 	
-	function eval(bytes:AString, fileName:AUTF8String, line:ULong, result:JsdIValue) : Bool;
+	function eval(bytes:AString, fileName:AUTF8String, line:ULong, result:{value:JsdIValue}) : Bool;
 }

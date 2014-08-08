@@ -11,7 +11,7 @@ import xpcom.mozilla.objects.*;
 	}
 	
 	function addRequest(aRequest:NsIDOMMozSmsRequest) : Long;
-	function createRequest(aManager:NsIDOMMozSmsManager, aRequest:NsIDOMMozSmsRequest) : Long;
+	function createRequest(aManager:NsIDOMMozSmsManager, aRequest:{value:NsIDOMMozSmsRequest}) : Long;
 	function notifyCreateMessageList(aRequestId:Long, aListId:Long, aMessage:NsIDOMMozSmsMessage) : Void;
 	function notifyGetSmsFailed(aRequestId:Long, aError:Long) : Void;
 	function notifyGotNextMessage(aRequestId:Long, aMessage:NsIDOMMozSmsMessage) : Void;

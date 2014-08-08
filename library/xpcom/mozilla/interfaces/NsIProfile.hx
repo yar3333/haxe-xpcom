@@ -22,7 +22,7 @@ import xpcom.mozilla.objects.*;
 	function cloneProfile(profileName:Wstring) : Void;
 	function createNewProfile(profileName:Wstring, nativeProfileDir:Wstring, langcode:Wstring, useExistingDir:Bool) : Void;
 	function deleteProfile(name:Wstring, canDeleteFiles:Bool) : Void;
-	function getProfileList(length:ULong, profileNames:Array<Wstring>) : Void;
+	function getProfileList(length:{value:ULong}, profileNames:Array<Wstring>) : Void;
 	function profileExists(profileName:Wstring) : Bool;
 	function renameProfile(oldName:Wstring, newName:Wstring) : Void;
 	function shutDownCurrentProfile(shutDownType:ULong) : Void;

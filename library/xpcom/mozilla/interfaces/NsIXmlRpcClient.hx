@@ -40,5 +40,5 @@ import xpcom.mozilla.objects.*;
 	function setAuthentication(username:String, password:String) : Void;
 	function clearAuthentication(username:String, password:String) : Void;
 	@:overload(function(encoding:String) : Void {})
-	function setEncoding(type:ULong, uuid:NsIIDRef, result:NsQIResult) : Void;
+	function setEncoding(type:ULong, uuid:{value:NsIIDRef}, result:{value:NsQIResult}) : Void;
 }

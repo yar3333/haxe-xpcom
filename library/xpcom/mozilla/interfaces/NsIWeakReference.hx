@@ -5,5 +5,5 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIWeakReference") extern class NsIWeakReference extends NsISupports
 {
-	function QueryReferent(uuid:NsIIDRef, result:NsQIResult) : Void;
+	function QueryReferent(uuid:NsIIDRef, result:{value:NsQIResult}) : Void;
 }

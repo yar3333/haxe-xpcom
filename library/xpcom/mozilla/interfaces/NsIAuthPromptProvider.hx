@@ -14,5 +14,5 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var PROMPT_PROXY = 1;
 	
-	function getAuthPrompt(aPromptReason:PRUint32, iid:NsIIDRef, result:NsQIResult) : Void;
+	function getAuthPrompt(aPromptReason:PRUint32, iid:NsIIDRef, result:{value:NsQIResult}) : Void;
 }

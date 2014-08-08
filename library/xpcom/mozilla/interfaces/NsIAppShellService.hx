@@ -53,7 +53,7 @@ import xpcom.mozilla.objects.*;
 	function ensure1Window(aCmdLineService:NsICmdLineService) : Void;
 	function enterLastWindowClosingSurvivalArea() : Void;
 	function exitLastWindowClosingSurvivalArea() : Void;
-	function getHiddenWindowAndJSContext(aHiddenDOMWindow:NsIDOMWindow, aJSContext:JSContext) : Void;
+	function getHiddenWindowAndJSContext(aHiddenDOMWindow:{value:NsIDOMWindow}, aJSContext:{value:JSContext}) : Void;
 	function hideSplashScreen() : Void;
 	function initialize(aCmdLineService:NsICmdLineService, nativeAppSupportOrSplashScreen:NsISupports) : Void;
 	function quit(aFerocity:PRUint32) : Void;

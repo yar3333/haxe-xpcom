@@ -67,7 +67,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	var x : Long;
 	
-	function getIdConst(idConst:Wstring) : Void;
+	function getIdConst(idConst:{value:Wstring}) : Void;
 	function getNext() : NsITreeColumn;
 	function getPrevious() : NsITreeColumn;
 	function invalidate() : Void;

@@ -17,7 +17,7 @@ import xpcom.mozilla.objects.*;
 	
 	function addFailedFavicon(aFaviconURI:NsIURI) : Void;
 	function expireAllFavicons() : Void;
-	function getFaviconData(aFaviconURI:NsIURI, aMimeType:AUTF8String, ?aDataLen:ULong, aData:Array<Octet>) : Void;
+	function getFaviconData(aFaviconURI:NsIURI, aMimeType:{value:AUTF8String}, ?aDataLen:{value:ULong}, aData:Array<Octet>) : Void;
 	function getFaviconDataAsDataURL(aFaviconURI:NsIURI) : AString;
 	function getFaviconForPage(aPageURI:NsIURI) : NsIURI;
 	function getFaviconImageForPage(aPageURI:NsIURI) : NsIURI;

@@ -226,7 +226,7 @@ import xpcom.mozilla.objects.*;
 	
 	function activateNativeMenuItemAt(indexString:AString) : Void;
 	function clearMozAfterPaintEvents() : Void;
-	function compareCanvases(aCanvas1:NsIDOMHTMLCanvasElement, aCanvas2:NsIDOMHTMLCanvasElement, aMaxDifference:ULong) : PRUint32;
+	function compareCanvases(aCanvas1:NsIDOMHTMLCanvasElement, aCanvas2:NsIDOMHTMLCanvasElement, aMaxDifference:{value:ULong}) : PRUint32;
 	function computeAnimationDistance(element:NsIDOMElement, property:AString, value1:AString, value2:AString) : Float;
 	function disableNonTestMouseEvents(aDisable:Bool) : Void;
 	function dispatchDOMEventViaPresShell(aTarget:NsIDOMNode, aEvent:NsIDOMEvent, aTrusted:Bool) : Bool;
@@ -242,7 +242,7 @@ import xpcom.mozilla.objects.*;
 	function getPCCountScriptCount() : Long;
 	function getPCCountScriptSummary(aScript:Long) : AString;
 	function getPCCountScriptContents(aScript:Long) : AString;
-	function getScrollXY(aFlushLayout:Bool, aScrollX:Long, aScrollY:Long) : Void;
+	function getScrollXY(aFlushLayout:Bool, aScrollX:{value:Long}, aScrollY:{value:Long}) : Void;
 	function getVisitedDependentComputedStyle(aElement:NsIDOMElement, aPseudoElement:AString, aPropertyName:AString) : AString;
 	function isInModalState() : Bool;
 	function leaveModalState() : Void;

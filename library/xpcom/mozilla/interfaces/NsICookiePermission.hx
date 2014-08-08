@@ -23,7 +23,7 @@ import xpcom.mozilla.objects.*;
 	static inline var ACCESS_SESSION = 8;
 	
 	function canAccess(aURI:NsIURI, aChannel:NsIChannel) : NsCookieAccess;
-	function canSetCookie(aURI:NsIURI, aChannel:NsIChannel, aCookie:NsICookie2, aIsSession:Bool, aExpiry:PRInt64) : Bool;
+	function canSetCookie(aURI:NsIURI, aChannel:NsIChannel, aCookie:NsICookie2, aIsSession:{value:Bool}, aExpiry:{value:PRInt64}) : Bool;
 	function getOriginatingURI(aChannel:NsIChannel) : NsIURI;
 	function setAccess(aURI:NsIURI, aAccess:NsCookieAccess) : Void;
 }

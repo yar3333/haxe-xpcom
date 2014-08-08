@@ -14,6 +14,6 @@ import xpcom.mozilla.objects.*;
 	static inline var LOAD_CORS_USE_CREDENTIALS = 1 << 17;
 	
 	function loadImage(aURI:NsIURI, aInitialDocumentURL:NsIURI, aReferrerURI:NsIURI, aLoadingPrincipal:NsIPrincipal, aLoadGroup:NsILoadGroup, aObserver:ImgIDecoderObserver, aCX:NsISupports, aLoadFlags:NsLoadFlags, cacheKey:NsISupports, aRequest:ImgIRequest, channelPolicy:NsIChannelPolicy) : ImgIRequest;
-	function loadImageWithChannel(aChannel:NsIChannel, aObserver:ImgIDecoderObserver, cx:NsISupports, aListener:NsIStreamListener) : ImgIRequest;
+	function loadImageWithChannel(aChannel:NsIChannel, aObserver:ImgIDecoderObserver, cx:NsISupports, aListener:{value:NsIStreamListener}) : ImgIRequest;
 	function supportImageWithMimeType(mimeType:String) : Bool;
 }

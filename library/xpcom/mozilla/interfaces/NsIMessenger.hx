@@ -69,5 +69,5 @@ import xpcom.mozilla.objects.*;
 	function msgHdrFromURI(aUri:ACString) : NsIMsgDBHdr;
 	function getMsgUriAtNavigatePos(aPos:Long) : ACString;
 	function getFolderUriAtNavigatePos(aPos:Long) : ACString;
-	function getNavigateHistory(aCurPos:ULong, aCount:ULong, aHistory:Array<String>) : Void;
+	function getNavigateHistory(aCurPos:{value:ULong}, aCount:{value:ULong}, aHistory:Array<String>) : Void;
 }

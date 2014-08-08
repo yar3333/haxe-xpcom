@@ -15,6 +15,6 @@ import xpcom.mozilla.objects.*;
 	var printerNameList : NsIStringEnumerator;
 	
 	function displayPropertiesDlg(aPrinter:Wstring, aPrintSettings:NsIPrintSettings) : Void;
-	function enumeratePrinters(aCount:PRUint32, aResult:Array<Wstring>) : Void;
+	function enumeratePrinters(aCount:{value:PRUint32}, aResult:Array<Wstring>) : Void;
 	function initPrintSettingsFromPrinter(aPrinterName:Wstring, aPrintSettings:NsIPrintSettings) : Void;
 }
