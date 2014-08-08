@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function createInstance(cacheSize:ULong) : NsIZipReaderCache
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/libjar/zip-reader-cache;1"].createInstance(NsIZipReaderCache);
+		var r : NsIZipReaderCache = xpcom.Components.classes[cast "@mozilla.org/libjar/zip-reader-cache;1"].createInstance(NsIZipReaderCache);
 		r.init(cacheSize);
 		return r;
 	}

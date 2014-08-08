@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function createInstance() : NsISocketTransportService
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/network/socket-transport-service;1"].createInstance(NsISocketTransportService);
+		var r : NsISocketTransportService = xpcom.Components.classes[cast "@mozilla.org/network/socket-transport-service;1"].createInstance(NsISocketTransportService);
 		r.init();
 		return r;
 	}

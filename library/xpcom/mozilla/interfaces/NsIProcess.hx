@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function createInstance(executable:NsIFile) : NsIProcess
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/process/util;1"].createInstance(NsIProcess);
+		var r : NsIProcess = xpcom.Components.classes[cast "@mozilla.org/process/util;1"].createInstance(NsIProcess);
 		r.init(executable);
 		return r;
 	}

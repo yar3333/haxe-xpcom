@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function createInstance(aOutStream:NsIOutputStream, aCharset:String, aBufferSize:ULong, aReplacementCharacter:PRUnichar) : NsIConverterOutputStream
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/intl/converter-output-stream;1"].createInstance(NsIConverterOutputStream);
+		var r : NsIConverterOutputStream = xpcom.Components.classes[cast "@mozilla.org/intl/converter-output-stream;1"].createInstance(NsIConverterOutputStream);
 		r.init(aOutStream, aCharset, aBufferSize, aReplacementCharacter);
 		return r;
 	}

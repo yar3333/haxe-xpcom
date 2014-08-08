@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function createInstance(aPort:Long, aLoopbackOnly:Bool, aBackLog:Long) : NsIServerSocket
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/network/server-socket;1"].createInstance(NsIServerSocket);
+		var r : NsIServerSocket = xpcom.Components.classes[cast "@mozilla.org/network/server-socket;1"].createInstance(NsIServerSocket);
 		r.init(aPort, aLoopbackOnly, aBackLog);
 		return r;
 	}

@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function createInstance(aUrlType:ULong, aDefaultPort:Long, aSpec:AUTF8String, aOriginCharset:String, aBaseURI:NsIURI) : NsIStandardURL
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/network/standard-url;1"].createInstance(NsIStandardURL);
+		var r : NsIStandardURL = xpcom.Components.classes[cast "@mozilla.org/network/standard-url;1"].createInstance(NsIStandardURL);
 		r.init(aUrlType, aDefaultPort, aSpec, aOriginCharset, aBaseURI);
 		return r;
 	}

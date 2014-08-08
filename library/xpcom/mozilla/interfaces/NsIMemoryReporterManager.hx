@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function getService() : NsIMemoryReporterManager
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/memory-reporter-manager;1"].getService(NsIMemoryReporterManager);
+		var r : NsIMemoryReporterManager = xpcom.Components.classes[cast "@mozilla.org/memory-reporter-manager;1"].getService(NsIMemoryReporterManager);
 		r.init();
 		return r;
 	}

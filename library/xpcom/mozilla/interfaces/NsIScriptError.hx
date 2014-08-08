@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function createInstance(message:Wstring, sourceName:Wstring, sourceLine:Wstring, lineNumber:PRUint32, columnNumber:PRUint32, flags:PRUint32, category:String) : NsIScriptError
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/scripterror;1"].createInstance(NsIScriptError);
+		var r : NsIScriptError = xpcom.Components.classes[cast "@mozilla.org/scripterror;1"].createInstance(NsIScriptError);
 		r.init(message, sourceName, sourceLine, lineNumber, columnNumber, flags, category);
 		return r;
 	}

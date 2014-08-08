@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function createInstance(aMessengerInstance:NsIMessenger, aMsgWindow:NsIMsgWindow, aCommandUpdater:NsIMsgDBViewCommandUpdater) : NsIMsgDBView
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/messenger/msgdbview;1"].createInstance(NsIMsgDBView);
+		var r : NsIMsgDBView = xpcom.Components.classes[cast "@mozilla.org/messenger/msgdbview;1"].createInstance(NsIMsgDBView);
 		r.init(aMessengerInstance, aMsgWindow, aCommandUpdater);
 		return r;
 	}

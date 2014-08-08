@@ -6,5 +6,5 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsIUnicharInputStream") extern class NsIUnicharInputStream
 {
 	function close() : Void;
-	function readString(aCount:ULong, aString:AString) : ULong;
+	function readString(aCount:ULong, aString:{value:AString}) : ULong;
 }

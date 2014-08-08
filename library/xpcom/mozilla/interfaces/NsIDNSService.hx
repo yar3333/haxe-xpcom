@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function getService() : NsIDNSService
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/network/dns-service;1"].getService(NsIDNSService);
+		var r : NsIDNSService = xpcom.Components.classes[cast "@mozilla.org/network/dns-service;1"].getService(NsIDNSService);
 		r.init();
 		return r;
 	}

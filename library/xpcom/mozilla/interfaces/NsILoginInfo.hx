@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function createInstance(aHostname:AString, aFormSubmitURL:AString, aHttpRealm:AString, aUsername:AString, aPassword:AString, aUsernameField:AString, aPasswordField:AString) : NsILoginInfo
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/login-manager/loginInfo;1"].createInstance(NsILoginInfo);
+		var r : NsILoginInfo = xpcom.Components.classes[cast "@mozilla.org/login-manager/loginInfo;1"].createInstance(NsILoginInfo);
 		r.init(aHostname, aFormSubmitURL, aHttpRealm, aUsername, aPassword, aUsernameField, aPasswordField);
 		return r;
 	}

@@ -52,7 +52,7 @@ class Klass
 				var init = methods.filter(function(m) return m.name == "init")[0];
 				r += "\tpublic static inline function " + constructorName + "(" + init.params.map(Method.methodParamToString).join(", ") + ") : " + name.capitalize() + "\n";
 				r += "\t{\n";
-				r += "\t\tvar r = xpcom.Components.classes[cast \"" + implement.res + "\"]." + constructorName + "(" + name.capitalize() + ");\n";
+				r += "\t\tvar r : " + name.capitalize() + " = xpcom.Components.classes[cast \"" + implement.res + "\"]." + constructorName + "(" + name.capitalize() + ");\n";
 				r += "\t\tr.init(" + init.params.map(function(p) return p.name).join(", ") + ");\n";
 				r += "\t\treturn r;\n";
 				r += "\t}\n";
