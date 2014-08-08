@@ -49,22 +49,16 @@ class MdnParser
 						if (reInterfaceUrl.match(s))
 						{
 							var type = "";
-							if (~/\binstances?\b/i.match(reInterfaceUrl.matchedRight()))
-							{
-								type = "instance";
-							}
-							else
-							if (~/\bservice\b/i.match(reInterfaceUrl.matchedRight()) || ~/service/i.match(className))
+							if (~/\bservice\b/i.match(className + " " + reInterfaceUrl.matched(0) + " " + reInterfaceUrl.matchedRight()))
 							{
 								type = "service";
 							}
 							else
-							if (~/\binterface\b/i.match(reInterfaceUrl.matchedRight()))
+							if (~/\b(?:instance|interface)s?\b/i.match(reInterfaceUrl.matchedRight()))
 							{
 								type = "instance";
 							}
-							
-							if (type == "")
+							else
 							{
 								Lib.println("warng unknow type for className = " + className + "; s = " + s);
 							}

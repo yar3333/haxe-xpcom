@@ -5,9 +5,9 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIContentPrefService") extern class NsIContentPrefService extends NsISupports
 {
-	public static inline function createInstance() : NsIContentPrefService
+	public static inline function getService() : NsIContentPrefService
 	{
-		return xpcom.Components.classes[cast "@mozilla.org/content-pref/service;1"].createInstance(NsIContentPrefService);
+		return xpcom.Components.classes[cast "@mozilla.org/content-pref/service;1"].getService(NsIContentPrefService);
 	}
 	
 	/**
