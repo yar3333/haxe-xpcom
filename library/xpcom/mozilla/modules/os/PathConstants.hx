@@ -1,5 +1,7 @@
 package xpcom.mozilla.modules.os;
 
+import xpcom.mozilla.modules.os.File;
+
 @:native("OS.Constants.Path") extern class PathConstants
 {
 	/**
