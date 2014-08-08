@@ -25,6 +25,9 @@ class Types
 			case "long long": return "LongLong";
 			case "ACString (US-ASCII)": return "ACString";
 			case "jsval": return "JSVal";
+			case "octet_ptr": return "OctetPtr";
+			case "uint32_t": return "UInt32";
+			case "int64_t": return "Int64";
 		}
 		
 		return type.capitalize();

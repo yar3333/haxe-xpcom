@@ -1,6 +1,7 @@
 package ;
 
-import mozilla.xpcom.*;
+import mozilla.xpcom.interfaces.*;
+import mozilla.xpcom.objects.*;
 
 class Main
 {

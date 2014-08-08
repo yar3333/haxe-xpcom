@@ -7,8 +7,8 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function getService() : NsIConsoleService return xpcom.Components.classes[cast "@mozilla.org/consoleservice;1"].getService(xpcom.Components.interfaces.nsIConsoleService);
 	
-	@:overload(function(messages:Array<NsIConsoleMessage>, count:Uint32_t) : Void {})
-	function getMessageArray(?count:Uint32_t, messages:Array<NsIConsoleMessage>) : Void;
+	@:overload(function(messages:Array<NsIConsoleMessage>, count:UInt32) : Void {})
+	function getMessageArray(?count:UInt32, messages:Array<NsIConsoleMessage>) : Void;
 	function logMessage(message:NsIConsoleMessage) : Void;
 	function logStringMessage(message:Wstring) : Void;
 	function registerListener(listener:NsIConsoleListener) : Void;

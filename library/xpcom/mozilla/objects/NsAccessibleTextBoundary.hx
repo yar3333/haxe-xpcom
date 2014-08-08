@@ -1,3 +1,3 @@
 package xpcom.mozilla.objects;
 
-typedef NsAccessibleTextBoundary = NsISelectionDisplay;
+typedef NsAccessibleTextBoundary = Dynamic;

@@ -15,7 +15,7 @@ import xpcom.mozilla.objects.*;
 	 * The length of the data associated with the channel if available. A value of -1 indicates that the content length is unknown.
 	 * Note: As of Gecko 19.0, this parameter changed from long to int64_t. In earlier versions callers could get the "content-length" property as 64-bit value by QueryInterfacing the channel to nsIPropertyBag2, if that interface is exposed by the channel.
 	 */
-	var contentLength : Int64_t;
+	var contentLength : Int64;
 	/**
 	 * The MIME type of the channel's content if available.
 	 * Note: The content type can often be wrongly specified (For example wrong file extension, wrong MIME type, wrong document type stored on a server and so on.), and the caller most likely wants to verify with the actual data.

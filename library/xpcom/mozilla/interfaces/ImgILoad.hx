@@ -1,3 +1,3 @@
-package xpcom.types;
+package xpcom.mozilla.interfaces;
 
 typedef ImgILoad = Dynamic;
