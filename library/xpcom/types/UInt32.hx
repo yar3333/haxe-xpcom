@@ -1,3 +1,3 @@
 package xpcom.types;
 
-typedef Uint32_t = Int;
+typedef UInt32 = Int;

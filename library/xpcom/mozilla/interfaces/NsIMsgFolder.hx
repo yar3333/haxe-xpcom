@@ -313,7 +313,7 @@ import xpcom.mozilla.objects.*;
 	function getStringWithFolderNameFromBundle(msgName:String) : AString;
 	function notifyCompactCompleted() : Void;
 	function compareSortKeys(msgFolder:NsIMsgFolder) : Long;
-	function getSortKey(key:Octet_ptr, length:ULong) : Void;
+	function getSortKey(key:OctetPtr, length:ULong) : Void;
 	function callFilterPlugins(aMsgWindow:NsIMsgWindow) : Bool;
 	function getStringProperty(propertyName:String) : ACString;
 	function setStringProperty(propertyName:String, propertyValue:ACString) : Void;
