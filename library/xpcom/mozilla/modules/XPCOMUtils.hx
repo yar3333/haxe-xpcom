@@ -1,4 +1,4 @@
-package xpcom;
+package xpcom.mozilla.modules;
 
 import xpcom.mozilla.NsICategoryManager;
 import xpcom.mozilla.NsIModule;
