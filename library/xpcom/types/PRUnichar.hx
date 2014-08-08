@@ -1,3 +1,3 @@
 package xpcom.types;
 
-typedef PRUnichar = String;
+typedef PRUnichar = Int;
