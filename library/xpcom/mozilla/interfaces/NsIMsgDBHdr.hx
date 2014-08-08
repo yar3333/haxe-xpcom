@@ -144,7 +144,7 @@ import xpcom.mozilla.objects.*;
 	function setRecipientsArray(names:String, addresses:String, numAddresses:ULong) : Void;
 	function setCCListArray(names:String, addresses:String, numAddresses:ULong) : Void;
 	function setBCCListArray(names:String, addresses:String, numAddresses:ULong) : Void;
-	function getAuthorCollationKey(key:OctetPtr, len:ULong) : Void;
-	function getSubjectCollationKey(key:OctetPtr, len:ULong) : Void;
-	function getRecipientsCollationKey(key:OctetPtr, len:ULong) : Void;
+	function getAuthorCollationKey(key:{value:OctetPtr}, len:{value:ULong}) : Void;
+	function getSubjectCollationKey(key:{value:OctetPtr}, len:{value:ULong}) : Void;
+	function getRecipientsCollationKey(key:{value:OctetPtr}, len:{value:ULong}) : Void;
 }

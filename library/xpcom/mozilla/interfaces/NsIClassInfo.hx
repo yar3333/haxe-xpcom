@@ -31,5 +31,5 @@ import xpcom.mozilla.objects.*;
 	var implementationLanguage : PRUint32;
 	
 	function getHelperForLanguage(language:PRUint32) : NsISupports;
-	function getInterfaces(count:PRUint32, array:Array<NsIIDPtr>) : Void;
+	function getInterfaces(count:{value:PRUint32}, array:Array<NsIIDPtr>) : Void;
 }

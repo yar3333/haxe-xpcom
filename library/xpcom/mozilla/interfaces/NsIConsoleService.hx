@@ -10,8 +10,8 @@ import xpcom.mozilla.objects.*;
 		return xpcom.Components.classes[cast "@mozilla.org/consoleservice;1"].getService(NsIConsoleService);
 	}
 	
-	@:overload(function(messages:Array<NsIConsoleMessage>, count:UInt32) : Void {})
-	function getMessageArray(?count:UInt32, messages:Array<NsIConsoleMessage>) : Void;
+	@:overload(function(messages:Array<NsIConsoleMessage>, count:{value:UInt32}) : Void {})
+	function getMessageArray(?count:{value:UInt32}, messages:Array<NsIConsoleMessage>) : Void;
 	function logMessage(message:NsIConsoleMessage) : Void;
 	function logStringMessage(message:Wstring) : Void;
 	function registerListener(listener:NsIConsoleListener) : Void;

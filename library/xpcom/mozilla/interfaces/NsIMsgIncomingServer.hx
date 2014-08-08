@@ -186,7 +186,7 @@ import xpcom.mozilla.objects.*;
 	function getIntValue(attr:String) : Long;
 	function getMsgFolderFromURI(aFolderResource:NsIMsgFolder, aURI:ACString) : NsIMsgFolder;
 	function getNewMessages(aFolder:NsIMsgFolder, aMsgWindow:NsIMsgWindow, aUrlListener:NsIUrlListener) : Void;
-	function getPasswordWithUI(aPromptString:AString, aPromptTitle:AString, aMsgWindow:NsIMsgWindow, okayValue:Bool) : ACString;
+	function getPasswordWithUI(aPromptString:AString, aPromptTitle:AString, aMsgWindow:NsIMsgWindow, okayValue:{value:Bool}) : ACString;
 	function getUnicharAttribute(name:String) : AString;
 	function getUnicharValue(attr:String) : AString;
 	function isNewHdrDuplicate(aNewHdr:NsIMsgDBHdr) : Bool;

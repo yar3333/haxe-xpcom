@@ -63,13 +63,13 @@ import xpcom.mozilla.objects.*;
 	
 	function canEnableCapability(capability:String) : Short;
 	function checkMayLoad(uri:NsIURI, report:Bool) : Void;
-	function disableCapability(capability:String, annotation:VoidPtr) : Void;
-	function enableCapability(capability:String, annotation:VoidPtr) : Void;
+	function disableCapability(capability:String, annotation:{value:VoidPtr}) : Void;
+	function enableCapability(capability:String, annotation:{value:VoidPtr}) : Void;
 	function equals(other:NsIPrincipal) : Bool;
 	function getJSPrincipals(cx:JSContext) : JSPrincipals;
-	function getPreferences(prefBranch:String, id:String, subjectName:String, grantedList:String, deniedList:String, isTrusted:Bool) : Void;
+	function getPreferences(prefBranch:{value:String}, id:{value:String}, subjectName:{value:String}, grantedList:{value:String}, deniedList:{value:String}, isTrusted:{value:Bool}) : Void;
 	function isCapabilityEnabled(capability:String, annotation:VoidPtr) : Bool;
-	function revertCapability(capability:String, annotation:VoidPtr) : Void;
+	function revertCapability(capability:String, annotation:{value:VoidPtr}) : Void;
 	function setCanEnableCapability(capability:String, canEnable:Short) : Void;
 	function subsumes(other:NsIPrincipal) : Bool;
 }

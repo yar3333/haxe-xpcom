@@ -5,5 +5,5 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIInterfaceRequestor") extern class NsIInterfaceRequestor extends NsISupports
 {
-	function getInterface(uuid:NsIIDRef, result:NsQIResult) : Void;
+	function getInterface(uuid:NsIIDRef, result:{value:NsQIResult}) : Void;
 }

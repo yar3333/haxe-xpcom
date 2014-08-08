@@ -19,6 +19,6 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var ANONYMOUS_CONNECT = 1 << 1;
 	
-	function addToSocket(aFamily:Long, aHost:String, aPort:Long, aProxyHost:String, aProxyPort:Long, aFlags:ULong, aFileDesc:PRFileDescStar, aSecurityInfo:NsISupports) : Void;
-	function newSocket(aFamily:Long, aHost:String, aPort:Long, aProxyHost:String, aProxyPort:Long, aFlags:ULong, aFileDesc:PRFileDescStar, aSecurityInfo:NsISupports) : Void;
+	function addToSocket(aFamily:Long, aHost:String, aPort:Long, aProxyHost:String, aProxyPort:Long, aFlags:ULong, aFileDesc:PRFileDescStar, aSecurityInfo:{value:NsISupports}) : Void;
+	function newSocket(aFamily:Long, aHost:String, aPort:Long, aProxyHost:String, aProxyPort:Long, aFlags:ULong, aFileDesc:{value:PRFileDescStar}, aSecurityInfo:{value:NsISupports}) : Void;
 }

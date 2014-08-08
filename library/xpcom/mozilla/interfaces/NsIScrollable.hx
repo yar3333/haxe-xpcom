@@ -7,8 +7,8 @@ import xpcom.mozilla.objects.*;
 {
 	function getCurScrollPos(scrollOrientation:Long) : Long;
 	function getDefaultScrollbarPreferences(scrollOrientation:Long) : Long;
-	function getScrollbarVisibility(verticalVisible:Bool, horizontalVisible:Bool) : Void;
-	function getScrollRange(scrollOrientation:Long, minPos:Long, maxPos:Long) : Void;
+	function getScrollbarVisibility(verticalVisible:{value:Bool}, horizontalVisible:{value:Bool}) : Void;
+	function getScrollRange(scrollOrientation:Long, minPos:{value:Long}, maxPos:{value:Long}) : Void;
 	function setCurScrollPos(scrollOrientation:Long, curPos:Long) : Void;
 	function setCurScrollPosEx(curHorizontalPos:Long, curVerticalPos:Long) : Void;
 	function setDefaultScrollbarPreferences(scrollOrientation:Long, scrollbarPref:Long) : Void;

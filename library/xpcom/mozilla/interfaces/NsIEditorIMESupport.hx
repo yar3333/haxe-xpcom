@@ -13,7 +13,7 @@ import xpcom.mozilla.objects.*;
 	function beginComposition(aReply:NsTextEventReplyPtr) : Void;
 	function endComposition() : Void;
 	function forceCompositionEnd() : Void;
-	function getPreferredIMEState(aState:ULong) : Void;
+	function getPreferredIMEState(aState:{value:ULong}) : Void;
 	function getQueryCaretRect(aReply:NsQueryCaretRectEventReplyPtr) : Void;
 	function getReconversionString(aReply:NsReconversionEventReplyPtr) : Void;
 	function notifyIMEOnBlur() : Void;

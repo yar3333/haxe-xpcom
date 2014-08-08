@@ -18,7 +18,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var SAVE_PASSWORD_PERMANENTLY = 2;
 	
-	function prompt(dialogTitle:Wstring, text:Wstring, passwordRealm:Wstring, savePassword:PRUint32, defaultText:Wstring, result:Wstring) : Bool;
-	function promptPassword(dialogTitle:Wstring, text:Wstring, passwordRealm:Wstring, savePassword:PRUint32, pwd:Wstring) : Bool;
-	function promptUsernameAndPassword(dialogTitle:Wstring, text:Wstring, passwordRealm:Wstring, savePassword:PRUint32, user:Wstring, pwd:Wstring) : Bool;
+	function prompt(dialogTitle:Wstring, text:Wstring, passwordRealm:Wstring, savePassword:PRUint32, defaultText:Wstring, result:{value:Wstring}) : Bool;
+	function promptPassword(dialogTitle:Wstring, text:Wstring, passwordRealm:Wstring, savePassword:PRUint32, pwd:{value:Wstring}) : Bool;
+	function promptUsernameAndPassword(dialogTitle:Wstring, text:Wstring, passwordRealm:Wstring, savePassword:PRUint32, user:{value:Wstring}, pwd:{value:Wstring}) : Bool;
 }

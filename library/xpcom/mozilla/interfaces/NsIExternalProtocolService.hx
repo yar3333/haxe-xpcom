@@ -8,7 +8,7 @@ import xpcom.mozilla.objects.*;
 	function externalProtocolHandlerExists(aProtocolScheme:String) : Bool;
 	function getApplicationDescription(aScheme:AUTF8String) : AString;
 	function getProtocolHandlerInfo(aProtocolScheme:ACString) : NsIHandlerInfo;
-	function getProtocolHandlerInfoFromOS(aProtocolScheme:ACString, aFound:Bool) : NsIHandlerInfo;
+	function getProtocolHandlerInfoFromOS(aProtocolScheme:ACString, aFound:{value:Bool}) : NsIHandlerInfo;
 	function isExposedProtocol(aProtocolScheme:String) : Bool;
 	function loadURI(aURI:NsIURI, ?aWindowContext:NsIInterfaceRequestor) : Void;
 	function loadUrl(aURL:NsIURI) : Void;

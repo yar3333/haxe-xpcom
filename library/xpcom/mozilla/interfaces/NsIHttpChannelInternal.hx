@@ -42,8 +42,8 @@ import xpcom.mozilla.objects.*;
 	 */
 	var remotePort : PRInt32;
 	
-	function getRequestVersion(major:ULong, minor:ULong) : Void;
-	function getResponseVersion(major:ULong, minor:ULong) : Void;
+	function getRequestVersion(major:{value:ULong}, minor:{value:ULong}) : Void;
+	function getResponseVersion(major:{value:ULong}, minor:{value:ULong}) : Void;
 	function HTTPUpgrade(aProtocolName:ACString, aListener:NsIHttpUpgradeListener) : Void;
 	function setCookie(aCookieHeader:String) : Void;
 	function setupFallbackChannel(aFallbackKey:String) : Void;

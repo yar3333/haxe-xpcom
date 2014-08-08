@@ -19,6 +19,6 @@ import xpcom.mozilla.objects.*;
 	function Finish() : ACString;
 	function ConvertToUnicode(aSrc:ACString) : AString;
 	function convertFromByteArray(aData:Array<Octet>, aCount:ULong) : AString;
-	function convertToByteArray(aString:AString, ?aLen:ULong, aData:Array<Octet>) : Void;
+	function convertToByteArray(aString:AString, ?aLen:{value:ULong}, aData:Array<Octet>) : Void;
 	function convertToInputStream(aString:AString) : NsIInputStream;
 }

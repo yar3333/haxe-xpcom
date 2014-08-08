@@ -40,7 +40,7 @@ import xpcom.mozilla.objects.*;
 	function exportBookmarksHTML(file:NsIFile) : Void;
 	function getBookmarkedURIFor(aURI:NsIURI) : NsIURI;
 	function getBookmarkFoldersTArray(aURI:NsIURI, aResult:PRInt64Array) : Void;
-	function getBookmarkIdsForURI(aURI:NsIURI, ?count:ULong, bookmarks:Array<LongLong>) : Void;
+	function getBookmarkIdsForURI(aURI:NsIURI, ?count:{value:ULong}, bookmarks:Array<LongLong>) : Void;
 	function getBookmarkIdsForURITArray(aURI:NsIURI, aResult:PRInt64Array) : Void;
 	function getBookmarkURI(aItemId:LongLong) : NsIURI;
 	function getChildFolder(aFolder:LongLong, aSubFolder:AString) : LongLong;

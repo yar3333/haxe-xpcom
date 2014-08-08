@@ -18,5 +18,5 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var ACCEPT_SESSION_COOKIE = 2;
 	
-	function cookieDialog(parent:NsIDOMWindow, cookie:NsICookie, hostname:ACString, cookiesFromHost:Long, changingCookie:Bool, rememberDecision:Bool) : Long;
+	function cookieDialog(parent:NsIDOMWindow, cookie:NsICookie, hostname:ACString, cookiesFromHost:Long, changingCookie:Bool, rememberDecision:{value:Bool}) : Long;
 }

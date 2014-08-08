@@ -10,8 +10,8 @@ import xpcom.mozilla.objects.*;
 		return xpcom.Components.classes[cast "@mozilla.org/file/directory_service;1"].createInstance(NsIProperties);
 	}
 	
-	function get(prop:String, iid:NsIIDRef, result:NsQIResult) : Void;
-	function getKeys(count:PRUint32, keys:Array<String>) : Void;
+	function get(prop:String, iid:NsIIDRef, result:{value:NsQIResult}) : Void;
+	function getKeys(count:{value:PRUint32}, keys:Array<String>) : Void;
 	function has(prop:String) : Bool;
 	function set(prop:String, value:NsISupports) : Void;
 	function undefine(prop:String) : Void;

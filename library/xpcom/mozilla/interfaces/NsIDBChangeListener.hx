@@ -12,6 +12,6 @@ import xpcom.mozilla.objects.*;
 	function onAnnouncerGoingAway(instigator:NsIDBChangeAnnouncer) : Void;
 	function onReadChanged(aInstigator:NsIDBChangeListener) : Void;
 	function onJunkScoreChanged(aInstigator:NsIDBChangeListener) : Void;
-	function onHdrPropertyChanged(aHdrToChange:NsIMsgDBHdr, aOldFlags:ULong, aPreChange:PRBool, aStatus:PRUint32, aInstigator:NsIDBChangeListener) : Void;
+	function onHdrPropertyChanged(aHdrToChange:NsIMsgDBHdr, aOldFlags:ULong, aPreChange:PRBool, aStatus:{value:PRUint32}, aInstigator:NsIDBChangeListener) : Void;
 	function onEvent(aDB:NsIMsgDatabase, aEvent:String) : Void;
 }

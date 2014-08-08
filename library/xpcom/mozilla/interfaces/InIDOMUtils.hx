@@ -16,7 +16,7 @@ import xpcom.mozilla.objects.*;
 	function getBindingURLs(aElement:NsIDOMElement) : NsIArray;
 	function getChildrenForNode(aNode:NsIDOMNode, aShowingAnonymousContent:Bool) : NsIDOMNodeList;
 	function getContentState(aElement:NsIDOMElement) : ULongLong;
-	function getCSSPropertyNames(?aFlags:ULong, ?aCount:ULong, aProps:Array<Wstring>) : Void;
+	function getCSSPropertyNames(?aFlags:ULong, ?aCount:{value:ULong}, aProps:Array<Wstring>) : Void;
 	function getCSSStyleRules(aElement:NsIDOMElement, ?aPseudo:DOMString) : NsISupportsArray;
 	function getParentForNode(aNode:NsIDOMNode, aShowingAnonymousContent:Bool) : NsIDOMNode;
 	function getRuleLine(aRule:NsIDOMCSSStyleRule) : ULong;

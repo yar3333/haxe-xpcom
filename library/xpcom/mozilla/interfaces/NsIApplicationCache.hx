@@ -54,7 +54,7 @@ import xpcom.mozilla.objects.*;
 	function activate() : Void;
 	function addNamespaces(namespaces:NsIArray) : Void;
 	function discard() : Void;
-	function gatherEntries(typeBits:PRUint32, count:ULong, keys:Array<String>) : Void;
+	function gatherEntries(typeBits:PRUint32, count:{value:ULong}, keys:Array<String>) : Void;
 	function getMatchingNamespace(key:ACString) : NsIApplicationCacheNamespace;
 	function getTypes(key:ACString) : ULong;
 	function initAsHandle(groupId:ACString, clientId:ACString) : Void;

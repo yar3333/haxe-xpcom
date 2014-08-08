@@ -24,7 +24,7 @@ import xpcom.mozilla.objects.*;
 	static inline var zLevelBelow = 3;
 	
 	function addListener(aListener:NsIWindowMediatorListener) : Void;
-	function calculateZPosition(inWindow:NsIXULWindow, inPosition:ULong, inBelow:NsIWidget, outPosition:ULong, outBelow:NsIWidget) : Bool;
+	function calculateZPosition(inWindow:NsIXULWindow, inPosition:ULong, inBelow:NsIWidget, outPosition:{value:ULong}, outBelow:{value:NsIWidget}) : Bool;
 	function getEnumerator(aWindowType:Wstring) : NsISimpleEnumerator;
 	function getMostRecentWindow(aWindowType:Wstring) : NsIDOMWindow;
 	function getOuterWindowWithId(aOuterWindowID:ULongLong) : NsIDOMWindow;

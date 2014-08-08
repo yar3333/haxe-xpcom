@@ -9,7 +9,7 @@ import xpcom.mozilla.objects.*;
 	function getByDomainAndName(domain:AString, name:AString, context:NsILoadContext, callback:NsIContentPrefCallback2) : Void;
 	function getBySubdomainAndName(domain:AString, name:AString, context:NsILoadContext, callback:NsIContentPrefCallback2) : Void;
 	function getCachedByDomainAndName(domain:AString, name:AString, context:NsILoadContext) : NsIContentPref;
-	function getCachedBySubdomainAndName(domain:AString, name:AString, context:NsILoadContext, len:ULong, prefs:Array<NsIContentPref>) : Void;
+	function getCachedBySubdomainAndName(domain:AString, name:AString, context:NsILoadContext, len:{value:ULong}, prefs:Array<NsIContentPref>) : Void;
 	function getCachedGlobal(name:AString, context:NsILoadContext) : NsIContentPref;
 	function getGlobal(name:AString, context:NsILoadContext, callback:NsIContentPrefCallback2) : Void;
 	function removeAllDomains(context:NsILoadContext, ?callback:NsIContentPrefCallback2) : Void;

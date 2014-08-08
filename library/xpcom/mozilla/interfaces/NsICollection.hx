@@ -10,7 +10,7 @@ import xpcom.mozilla.objects.*;
 	function Count() : PRUint32;
 	function Enumerate() : NsIEnumerator;
 	function GetElementAt(index:PRUint32) : NsISupports;
-	function QueryElementAt(index:PRUint32, uuid:NsIIDRef, result:NsQIResult) : Void;
+	function QueryElementAt(index:PRUint32, uuid:NsIIDRef, result:{value:NsQIResult}) : Void;
 	function RemoveElement(item:NsISupports) : Void;
 	function SetElementAt(index:PRUint32, item:NsISupports) : Void;
 }

@@ -10,7 +10,7 @@ import xpcom.mozilla.objects.*;
 	function compileQuery(aBuilder:NsIXULTemplateBuilder, aQuery:NsIDOMNode, aRefVariable:NsIAtom, aMemberVariable:NsIAtom) : NsISupports;
 	function done() : Void;
 	function generateResults(aDatasource:NsISupports, aRef:NsIXULTemplateResult, aQuery:NsISupports) : NsISimpleEnumerator;
-	function getDatasource(aDataSources:NsIArray, aRootNode:NsIDOMNode, aIsTrusted:Bool, aBuilder:NsIXULTemplateBuilder, aShouldDelayBuilding:Bool) : NsISupports;
+	function getDatasource(aDataSources:NsIArray, aRootNode:NsIDOMNode, aIsTrusted:Bool, aBuilder:NsIXULTemplateBuilder, aShouldDelayBuilding:{value:Bool}) : NsISupports;
 	function initializeForBuilding(aDatasource:NsISupports, aBuilder:NsIXULTemplateBuilder, aRootNode:NsIDOMNode) : Void;
 	function translateRef(aDatasource:NsISupports, aRefString:AString) : NsIXULTemplateResult;
 }

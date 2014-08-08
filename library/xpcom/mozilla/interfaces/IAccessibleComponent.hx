@@ -5,7 +5,7 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.IAccessibleComponent") extern class IAccessibleComponent extends IUnknown
 {
-	function background(background:IA2Color) : HRESULT;
-	function foreground(foreground:IA2Color) : HRESULT;
-	function locationInParent(x:Long, y:Long) : HRESULT;
+	function background(background:{value:IA2Color}) : HRESULT;
+	function foreground(foreground:{value:IA2Color}) : HRESULT;
+	function locationInParent(x:{value:Long}, y:{value:Long}) : HRESULT;
 }

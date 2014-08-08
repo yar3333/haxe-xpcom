@@ -120,8 +120,8 @@ import xpcom.mozilla.objects.*;
 	var uriIsPrefix : Bool;
 	
 	function clone() : NsINavHistoryQuery;
-	function getFolders(?count:ULong, folders:Array<LongLong>) : Void;
-	function getTransitions(?count:ULong, transitions:Array<ULong>) : Void;
+	function getFolders(?count:{value:ULong}, folders:Array<LongLong>) : Void;
+	function getTransitions(?count:{value:ULong}, transitions:Array<ULong>) : Void;
 	function setFolders(folders:Array<LongLong>, folderCount:ULong) : Void;
 	function setTransitions(transitions:Array<ULong>, count:ULong) : Void;
 }

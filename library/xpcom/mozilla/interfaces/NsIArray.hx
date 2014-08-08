@@ -12,5 +12,5 @@ import xpcom.mozilla.objects.*;
 	
 	function enumerate() : NsISimpleEnumerator;
 	function indexOf(startIndex:ULong, element:NsISupports) : ULong;
-	function queryElementAt(index:ULong, uuid:NsIIDRef, result:NsQIResult) : Void;
+	function queryElementAt(index:ULong, uuid:NsIIDRef, result:{value:NsQIResult}) : Void;
 }

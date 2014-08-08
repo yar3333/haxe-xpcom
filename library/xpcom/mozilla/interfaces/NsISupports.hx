@@ -6,6 +6,6 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsISupports") extern class NsISupports
 {
 	function AddRef() : Nsrefcnt;
-	function QueryInterface(uuid:NsIIDRef, result:NsQIResult) : Void;
+	function QueryInterface(uuid:NsIIDRef, result:{value:NsQIResult}) : Void;
 	function Release() : Nsrefcnt;
 }

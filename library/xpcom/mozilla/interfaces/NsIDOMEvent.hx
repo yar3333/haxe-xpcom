@@ -102,7 +102,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	var type : DOMString;
 	
-	function Deserialize(aMsg:ConstIPCMessagePtr, aIter:VoidPtr) : Bool;
+	function Deserialize(aMsg:ConstIPCMessagePtr, aIter:{value:VoidPtr}) : Bool;
 	function duplicatePrivateData() : Void;
 	function GetInternalNSEvent() : NsEventPtr;
 	function getPreventDefault() : Bool;

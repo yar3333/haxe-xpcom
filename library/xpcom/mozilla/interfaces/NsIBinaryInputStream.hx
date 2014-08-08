@@ -11,7 +11,7 @@ import xpcom.mozilla.objects.*;
 	function read64() : PRUint64;
 	function readBoolean() : PRBool;
 	function readByteArray(aLength:PRUint32, aBytes:Array<PRUint8>) : Void;
-	function readBytes(aLength:PRUint32, aString:String) : Void;
+	function readBytes(aLength:PRUint32, aString:{value:String}) : Void;
 	function readCString() : ACString;
 	function readDouble() : Float;
 	function readFloat() : Float;

@@ -49,9 +49,15 @@ class Method
 	
 	public static function methodParamToString(p:MethodParam) : String
 	{
-		return p != null
-			? (p.metas.isOptional ? "?" : "") 
-				+ (p.name != "var" ? p.name : "_" + p.name) + ":" + (p.metas.isArray ? "Array<" + p.type + ">" : p.type)
-			: "???";
+		if (p == null) return "???";
+		
+		var t = p.metas.isArray ? "Array<" + p.type + ">" : p.type;
+		
+		if (!p.metas.isArray && (p.metas.isOut || p.metas.isRetVal))
+		{
+			t = "{value:" + t + "}";
+		}
+		
+		return (p.metas.isOptional ? "?" : "") + (p.name != "var" ? p.name : "_" + p.name) + ":" + t;
 	}
 }

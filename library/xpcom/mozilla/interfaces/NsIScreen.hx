@@ -23,8 +23,8 @@ import xpcom.mozilla.objects.*;
 	 */
 	var rotation : ULong;
 	
-	function GetAvailRect(left:Long, top:Long, width:Long, height:Long) : Void;
-	function GetRect(left:Long, top:Long, width:Long, height:Long) : Void;
+	function GetAvailRect(left:{value:Long}, top:{value:Long}, width:{value:Long}, height:{value:Long}) : Void;
+	function GetRect(left:{value:Long}, top:{value:Long}, width:{value:Long}, height:{value:Long}) : Void;
 	function lockMinimumBrightness(brightness:ULong) : Void;
 	function unlockMinimumBrightness(brightness:ULong) : Void;
 }

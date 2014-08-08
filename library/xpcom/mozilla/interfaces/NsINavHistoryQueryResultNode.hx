@@ -14,5 +14,5 @@ import xpcom.mozilla.objects.*;
 	 */
 	var queryOptions : NsINavHistoryQueryOptions;
 	
-	function getQueries(?queryCount:ULong, queries:Array<NsINavHistoryQuery>) : Void;
+	function getQueries(?queryCount:{value:ULong}, queries:Array<NsINavHistoryQuery>) : Void;
 }

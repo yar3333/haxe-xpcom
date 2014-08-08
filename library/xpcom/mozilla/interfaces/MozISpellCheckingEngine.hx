@@ -39,7 +39,7 @@ import xpcom.mozilla.objects.*;
 	
 	function addDirectory(dir:NsIFile) : Void;
 	function check(word:Wstring) : Bool;
-	function getDictionaryList(dictionaries:Array<Wstring>, count:PRUint32) : Void;
+	function getDictionaryList(dictionaries:Array<Wstring>, count:{value:PRUint32}) : Void;
 	function removeDirectory(dir:NsIFile) : Void;
-	function suggest(word:Wstring, suggestions:Array<Wstring>, count:PRUint32) : Void;
+	function suggest(word:Wstring, suggestions:Array<Wstring>, count:{value:PRUint32}) : Void;
 }

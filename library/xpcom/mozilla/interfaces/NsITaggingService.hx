@@ -22,5 +22,5 @@ import xpcom.mozilla.objects.*;
 	function tagURI(aURI:NsIURI, aTags:NsIVariant) : Void;
 	function untagURI(aURI:NsIURI, aTags:NsIVariant) : Void;
 	function getURIsForTag(aTag:AString) : NsIVariant;
-	function getTagsForURI(aURI:NsIURI, ?length:ULong, aTags:Array<Wstring>) : NsIVariant;
+	function getTagsForURI(aURI:NsIURI, ?length:{value:ULong}, aTags:Array<Wstring>) : NsIVariant;
 }

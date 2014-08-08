@@ -14,13 +14,13 @@ import xpcom.mozilla.objects.*;
 	function autoCompleteSearch(aSearchString:AString, aPreviousResult:NsIAutoCompleteResult, aElement:NsIDOMHTMLInputElement) : NsIAutoCompleteResult;
 	function countLogins(aHostname:AString, aActionURL:AString, aHttpRealm:AString) : ULong;
 	function fillForm(aForm:NsIDOMHTMLFormElement) : Bool;
-	function findLogins(count:ULong, aHostname:AString, aActionURL:AString, aHttpRealm:AString, logins:Array<NsILoginInfo>) : Void;
-	function getAllDisabledHosts(?count:ULong, hostnames:Array<Wstring>) : Void;
-	function getAllLogins(?count:ULong, logins:Array<NsILoginInfo>) : Void;
+	function findLogins(count:{value:ULong}, aHostname:AString, aActionURL:AString, aHttpRealm:AString, logins:Array<NsILoginInfo>) : Void;
+	function getAllDisabledHosts(?count:{value:ULong}, hostnames:Array<Wstring>) : Void;
+	function getAllLogins(?count:{value:ULong}, logins:Array<NsILoginInfo>) : Void;
 	function getLoginSavingEnabled(aHost:AString) : Bool;
 	function modifyLogin(oldLogin:NsILoginInfo, newLoginData:NsISupports) : Void;
 	function removeAllLogins() : Void;
 	function removeLogin(aLogin:NsILoginInfo) : Void;
-	function searchLogins(count:ULong, matchData:NsIPropertyBag, logins:Array<NsILoginInfo>) : Void;
+	function searchLogins(count:{value:ULong}, matchData:NsIPropertyBag, logins:Array<NsILoginInfo>) : Void;
 	function setLoginSavingEnabled(aHost:AString, isEnabled:Bool) : Void;
 }

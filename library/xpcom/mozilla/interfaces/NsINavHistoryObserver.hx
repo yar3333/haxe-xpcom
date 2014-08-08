@@ -19,5 +19,5 @@ import xpcom.mozilla.objects.*;
 	function onPageChanged(aURI:NsIURI, aWhat:ULong, aValue:AString) : Void;
 	function onPageExpired(aURI:NsIURI, aVisitTime:PRTime, aWholeEntry:Bool) : Void;
 	function onTitleChanged(aURI:NsIURI, aPageTitle:AString) : Void;
-	function onVisit(aURI:NsIURI, aVisitID:LongLong, aTime:PRTime, aSessionID:LongLong, aReferringID:LongLong, aTransitionType:ULong, aGUID:ACString, aAdded:ULong) : Void;
+	function onVisit(aURI:NsIURI, aVisitID:LongLong, aTime:PRTime, aSessionID:LongLong, aReferringID:LongLong, aTransitionType:ULong, aGUID:ACString, aAdded:{value:ULong}) : Void;
 }
