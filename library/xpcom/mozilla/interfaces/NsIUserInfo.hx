@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIUserInfo") extern class NsIUserInfo extends NsISupports
 {
-	public static inline function getService() : NsIUserInfo return xpcom.Components.classes[cast "@mozilla.org/userinfo;1"].getService(xpcom.Components.interfaces.nsIUserInfo);
+	public static inline function getService() : NsIUserInfo
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/userinfo;1"].getService(NsIUserInfo);
+	}
 	
 	/**
 	 * Read only.

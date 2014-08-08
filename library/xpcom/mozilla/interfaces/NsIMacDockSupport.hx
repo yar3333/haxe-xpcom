@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIMacDockSupport") extern class NsIMacDockSupport
 {
-	public static inline function createInstance() : NsIMacDockSupport return xpcom.Components.Constructor("@mozilla.org/cookie-monster;1", xpcom.Components.interfaces.nsIMacDockSupport);
+	public static inline function createInstance() : NsIMacDockSupport
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/cookie-monster;1"].createInstance(NsIMacDockSupport);
+	}
 	
 	/**
 	 * Text to display in a badge on the application's dock icon. This can be used, for example, to display the number of unread messages in an email client.

@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIProtocolProxyService") extern class NsIProtocolProxyService extends NsISupports
 {
-	public static inline function getService() : NsIProtocolProxyService return xpcom.Components.classes[cast "@mozilla.org/network/protocol-proxy-service;1"].getService(xpcom.Components.interfaces.nsIProtocolProxyService);
+	public static inline function getService() : NsIProtocolProxyService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/network/protocol-proxy-service;1"].getService(NsIProtocolProxyService);
+	}
 	
 	/**
 	 * 

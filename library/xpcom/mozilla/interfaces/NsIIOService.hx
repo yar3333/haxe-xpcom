@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIIOService") extern class NsIIOService extends NsISupports
 {
-	public static inline function getService() : NsIIOService return xpcom.Components.classes[cast "@mozilla.org/network/io-service;1"].getService(xpcom.Components.interfaces.nsIIOService);
+	public static inline function getService() : NsIIOService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/network/io-service;1"].getService(NsIIOService);
+	}
 	
 	/**
 	 * Returns true if networking is in "offline" mode. When in offline mode, attempts to access the network will fail (although this does not necessarily correlate with whether there is actually a network available -- that's hard to detect without causing the dialer to come up). Observers will be notified of changes to this attribute.

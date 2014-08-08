@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIScriptableUnicodeConverter") extern class NsIScriptableUnicodeConverter
 {
-	public static inline function createInstance() : NsIScriptableUnicodeConverter return xpcom.Components.Constructor("@mozilla.org/intl/scriptableunicodeconverter", xpcom.Components.interfaces.nsIScriptableUnicodeConverter);
+	public static inline function createInstance() : NsIScriptableUnicodeConverter
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/intl/scriptableunicodeconverter"].createInstance(NsIScriptableUnicodeConverter);
+	}
 	
 	/**
 	 * Current character set. Throws NS_ERROR_UCONV_NOCONV if the requested charset is not supported.

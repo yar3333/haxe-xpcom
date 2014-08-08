@@ -5,7 +5,12 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsITimer") extern class NsITimer extends NsISupports
 {
-	public static inline function createInstance() : NsITimer return xpcom.Components.Constructor("@mozilla.org/timer;1", xpcom.Components.interfaces.nsITimer);
+	public static inline function createInstance(aObserver:NsIObserver, aDelay:ULong, aType:ULong) : NsITimer
+	{
+		var r = xpcom.Components.classes[cast "@mozilla.org/timer;1"].createInstance(NsITimer);
+		r.init(aObserver, aDelay, aType);
+		return r;
+	}
 	
 	/**
 	 * Type of a timer that fires once only.

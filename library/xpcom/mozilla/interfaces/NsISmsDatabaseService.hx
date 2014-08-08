@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsISmsDatabaseService") extern class NsISmsDatabaseService extends NsISupports
 {
-	public static inline function createInstance() : NsISmsDatabaseService return xpcom.Components.Constructor("@mozilla.org/sms/smsdatabaseservice;1", xpcom.Components.interfaces.nsISmsDatabaseService);
+	public static inline function createInstance() : NsISmsDatabaseService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/sms/smsdatabaseservice;1"].createInstance(NsISmsDatabaseService);
+	}
 	
 	function saveReceivedMessage(aSender:DOMString, aBody:DOMString, aDate:ULongLong) : Long;
 	function saveSentMessage(aReceiver:DOMString, aBody:DOMString, aDate:ULongLong) : Long;

@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsILoginManager") extern class NsILoginManager extends NsISupports
 {
-	public static inline function createInstance() : NsILoginManager return xpcom.Components.Constructor("@mozilla.org/login-manager;1", xpcom.Components.interfaces.nsILoginManager);
+	public static inline function createInstance() : NsILoginManager
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/login-manager;1"].createInstance(NsILoginManager);
+	}
 	
 	function addLogin(aLogin:NsILoginInfo) : Void;
 	function autoCompleteSearch(aSearchString:AString, aPreviousResult:NsIAutoCompleteResult, aElement:NsIDOMHTMLInputElement) : NsIAutoCompleteResult;

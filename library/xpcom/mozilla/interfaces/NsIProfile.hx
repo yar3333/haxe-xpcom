@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIProfile") extern class NsIProfile extends NsISupports
 {
-	public static inline function getService() : NsIProfile return xpcom.Components.classes[cast "@mozilla.org/profile/manager;1"].getService(xpcom.Components.interfaces.nsIProfile);
+	public static inline function getService() : NsIProfile
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/profile/manager;1"].getService(NsIProfile);
+	}
 	
 	/**
 	 * The name of the profile currently in use.

@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIDocumentLoader") extern class NsIDocumentLoader extends NsISupports
 {
-	public static inline function createInstance() : NsIDocumentLoader return xpcom.Components.Constructor("@mozilla.org/docloaderservice;1", xpcom.Components.interfaces.nsIDocumentLoader);
+	public static inline function createInstance() : NsIDocumentLoader
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/docloaderservice;1"].createInstance(NsIDocumentLoader);
+	}
 	
 	/**
 	 * Read only.

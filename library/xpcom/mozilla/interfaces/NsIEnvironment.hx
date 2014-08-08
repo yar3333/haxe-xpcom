@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIEnvironment") extern class NsIEnvironment extends NsISupports
 {
-	public static inline function getService() : NsIEnvironment return xpcom.Components.classes[cast "@mozilla.org/process/environment;1"].getService(xpcom.Components.interfaces.nsIEnvironment);
+	public static inline function getService() : NsIEnvironment
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/process/environment;1"].getService(NsIEnvironment);
+	}
 	
 	function set(aName:AString, aValue:AString) : Void;
 	function get(aName:AString) : AString;

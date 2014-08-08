@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIPromptService") extern class NsIPromptService extends NsISupports
 {
-	public static inline function createInstance() : NsIPromptService return xpcom.Components.Constructor("@mozilla.org/embedcomp/prompt-service;1", xpcom.Components.interfaces.nsIPromptService);
+	public static inline function createInstance() : NsIPromptService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/embedcomp/prompt-service;1"].createInstance(NsIPromptService);
+	}
 	
 	function alert(aParent:NsIDOMWindow, aDialogTitle:Wstring, aText:Wstring) : Void;
 	function alertCheck(aParent:NsIDOMWindow, aDialogTitle:Wstring, aText:Wstring, aCheckMsg:Wstring, aCheckState:Bool) : Void;

@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIDOMMozNetworkStatsManager") extern class NsIDOMMozNetworkStatsManager extends NsISupports
 {
-	public static inline function createInstance() : NsIDOMMozNetworkStatsManager return xpcom.Components.Constructor("@mozilla.org/networkStatsManager;1", xpcom.Components.interfaces.nsIDOMMozNetworkStatsManager);
+	public static inline function createInstance() : NsIDOMMozNetworkStatsManager
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/networkStatsManager;1"].createInstance(NsIDOMMozNetworkStatsManager);
+	}
 	
 	/**
 	 * Available connection types. Read only.

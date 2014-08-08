@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsISocketProvider") extern class NsISocketProvider extends NsISupports
 {
-	public static inline function createInstance() : NsISocketProvider return xpcom.Components.Constructor("@mozilla.org/network/socket;2", xpcom.Components.interfaces.nsISocketProvider);
+	public static inline function createInstance() : NsISocketProvider
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/network/socket;2"].createInstance(NsISocketProvider);
+	}
 	
 	/**
 	 * This flag is set if the proxy is to perform hostname resolution instead of the client. When set, the hostname parameter passed in this interface will be used instead of the address structure passed for a later request. 

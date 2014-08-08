@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIFileView") extern class NsIFileView extends NsISupports
 {
-	public static inline function createInstance() : NsIFileView return xpcom.Components.Constructor("@mozilla.org/filepicker/fileview;1", xpcom.Components.interfaces.nsIFileView);
+	public static inline function createInstance() : NsIFileView
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/filepicker/fileview;1"].createInstance(NsIFileView);
+	}
 	
 	/**
 	 * Sort by file name.

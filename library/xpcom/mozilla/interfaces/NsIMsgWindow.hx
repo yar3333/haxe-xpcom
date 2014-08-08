@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIMsgWindow") extern class NsIMsgWindow extends NsISupports
 {
-	public static inline function createInstance() : NsIMsgWindow return xpcom.Components.Constructor("@mozilla.org/messenger/msgwindow;1", xpcom.Components.interfaces.nsIMsgWindow);
+	public static inline function createInstance() : NsIMsgWindow
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/messenger/msgwindow;1"].createInstance(NsIMsgWindow);
+	}
 	
 	/**
 	 * This allows the backend code to send commands to the UI, such as clearMsgPane.

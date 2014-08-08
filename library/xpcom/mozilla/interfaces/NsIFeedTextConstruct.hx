@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIFeedTextConstruct") extern class NsIFeedTextConstruct extends NsISupports
 {
-	public static inline function createInstance() : NsIFeedTextConstruct return xpcom.Components.Constructor("@mozilla.org/feed-textconstruct;1", xpcom.Components.interfaces.nsIFeedTextConstruct);
+	public static inline function createInstance() : NsIFeedTextConstruct
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/feed-textconstruct;1"].createInstance(NsIFeedTextConstruct);
+	}
 	
 	/**
 	 * If the text construct contains HTML or XHTML, relative references in the content should be resolved against this base URI.

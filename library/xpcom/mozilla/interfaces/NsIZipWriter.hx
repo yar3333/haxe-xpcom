@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIZipWriter") extern class NsIZipWriter extends NsISupports
 {
-	public static inline function createInstance() : NsIZipWriter return xpcom.Components.Constructor("@mozilla.org/zipwriter;1", xpcom.Components.interfaces.nsIZipWriter);
+	public static inline function createInstance() : NsIZipWriter
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/zipwriter;1"].createInstance(NsIZipWriter);
+	}
 	
 	/**
 	 * Do not compress the file.

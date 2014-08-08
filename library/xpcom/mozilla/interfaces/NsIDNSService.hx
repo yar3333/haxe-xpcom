@@ -5,7 +5,12 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIDNSService") extern class NsIDNSService extends NsISupports
 {
-	public static inline function getService() : NsIDNSService return xpcom.Components.classes[cast "@mozilla.org/network/dns-service;1"].getService(xpcom.Components.interfaces.nsIDNSService);
+	public static inline function getService() : NsIDNSService
+	{
+		var r = xpcom.Components.classes[cast "@mozilla.org/network/dns-service;1"].getService(NsIDNSService);
+		r.init();
+		return r;
+	}
 	
 	/**
 	 * Read only.

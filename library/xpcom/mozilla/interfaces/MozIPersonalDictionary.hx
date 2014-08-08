@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.mozIPersonalDictionary") extern class MozIPersonalDictionary extends NsISupports
 {
-	public static inline function getService() : MozIPersonalDictionary return xpcom.Components.classes[cast "@mozilla.org/spellchecker/personaldictionary;1"].getService(xpcom.Components.interfaces.mozIPersonalDictionary);
+	public static inline function getService() : MozIPersonalDictionary
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/spellchecker/personaldictionary;1"].getService(MozIPersonalDictionary);
+	}
 	
 	/**
 	 * Get the (lexicographically sorted) list of words. Read only.

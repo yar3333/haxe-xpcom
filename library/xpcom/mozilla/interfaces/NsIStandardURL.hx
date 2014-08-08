@@ -5,7 +5,12 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIStandardURL") extern class NsIStandardURL extends NsIMutable
 {
-	public static inline function createInstance() : NsIStandardURL return xpcom.Components.Constructor("@mozilla.org/network/standard-url;1", xpcom.Components.interfaces.nsIStandardURL);
+	public static inline function createInstance(aUrlType:ULong, aDefaultPort:Long, aSpec:AUTF8String, aOriginCharset:String, aBaseURI:NsIURI) : NsIStandardURL
+	{
+		var r = xpcom.Components.classes[cast "@mozilla.org/network/standard-url;1"].createInstance(NsIStandardURL);
+		r.init(aUrlType, aDefaultPort, aSpec, aOriginCharset, aBaseURI);
+		return r;
+	}
 	
 	/**
 	 * Control whether or not this URL can be modified. Protocol handlers can set this flag before handing out an URL to ensure that it is not inadvertently modified. Obsolete since Gecko 1.9

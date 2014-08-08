@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsILivemarkService") extern class NsILivemarkService extends NsISupports
 {
-	public static inline function getService() : NsILivemarkService return xpcom.Components.classes[cast "@mozilla.org/browser/livemark-service;2"].getService(xpcom.Components.interfaces.nsILivemarkService);
+	public static inline function getService() : NsILivemarkService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/browser/livemark-service;2"].getService(NsILivemarkService);
+	}
 	
 	function createLivemark(folder:LongLong, name:AString, siteURI:NsIURI, feedURI:NsIURI, index:Long) : LongLong;
 	function createLivemarkFolderOnly(folder:LongLong, name:AString, siteURI:NsIURI, feedURI:NsIURI, index:Long) : LongLong;
