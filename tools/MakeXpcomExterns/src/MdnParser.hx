@@ -49,7 +49,7 @@ class MdnParser
 						if (reInterfaceUrl.match(s))
 						{
 							var type = "";
-							if (~/\bservice\b/i.match(className + " " + reInterfaceUrl.matched(0) + " " + reInterfaceUrl.matchedRight()))
+							if (~/(?:\b|_)service\b/i.match(className + " " + reInterfaceUrl.matched(0) + " " + reInterfaceUrl.matchedRight()))
 							{
 								type = "service";
 							}

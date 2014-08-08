@@ -5,9 +5,9 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIProperties") extern class NsIProperties extends NsISupports
 {
-	public static inline function createInstance() : NsIProperties
+	public static inline function getService() : NsIProperties
 	{
-		return xpcom.Components.classes[cast "@mozilla.org/file/directory_service;1"].createInstance(NsIProperties);
+		return xpcom.Components.classes[cast "@mozilla.org/file/directory_service;1"].getService(NsIProperties);
 	}
 	
 	function get(prop:String, iid:NsIIDRef, result:{value:NsQIResult}) : Void;
