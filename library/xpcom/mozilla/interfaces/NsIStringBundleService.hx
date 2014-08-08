@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIStringBundleService") extern class NsIStringBundleService extends NsISupports
 {
-	public static inline function getService() : NsIStringBundleService return xpcom.Components.classes[cast "@mozilla.org/intl/stringbundle;1"].getService(xpcom.Components.interfaces.nsIStringBundleService);
+	public static inline function getService() : NsIStringBundleService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/intl/stringbundle;1"].getService(NsIStringBundleService);
+	}
 	
 	function createBundle(aURLSpec:String) : NsIStringBundle;
 	function createExtensibleBundle(aRegistryKey:String) : NsIStringBundle;

@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIWebBrowserPersist") extern class NsIWebBrowserPersist extends NsICancelable
 {
-	public static inline function createInstance() : NsIWebBrowserPersist return xpcom.Components.Constructor("@mozilla.org/embedding/browser/nsWebBrowser;1", xpcom.Components.interfaces.nsIWebBrowserPersist);
+	public static inline function createInstance() : NsIWebBrowserPersist
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/embedding/browser/nsWebBrowser;1"].createInstance(NsIWebBrowserPersist);
+	}
 	
 	/**
 	 * No special persistence behavior.

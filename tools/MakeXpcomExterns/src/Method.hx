@@ -47,7 +47,7 @@ class Method
 		return r;
 	}
 	
-	function methodParamToString(p:MethodParam) : String
+	public static function methodParamToString(p:MethodParam) : String
 	{
 		return p != null
 			? (p.metas.isOptional ? "?" : "") 

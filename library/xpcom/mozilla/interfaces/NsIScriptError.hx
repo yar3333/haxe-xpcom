@@ -5,7 +5,12 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIScriptError") extern class NsIScriptError extends NsIConsoleMessage
 {
-	public static inline function createInstance() : NsIScriptError return xpcom.Components.Constructor("@mozilla.org/scripterror;1", xpcom.Components.interfaces.nsIScriptError);
+	public static inline function createInstance(message:Wstring, sourceName:Wstring, sourceLine:Wstring, lineNumber:PRUint32, columnNumber:PRUint32, flags:PRUint32, category:String) : NsIScriptError
+	{
+		var r = xpcom.Components.classes[cast "@mozilla.org/scripterror;1"].createInstance(NsIScriptError);
+		r.init(message, sourceName, sourceLine, lineNumber, columnNumber, flags, category);
+		return r;
+	}
 	
 	/**
 	 * A string indicating the category of error that occurred See Categories for a list. Read only.

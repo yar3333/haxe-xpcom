@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIContentPrefService") extern class NsIContentPrefService extends NsISupports
 {
-	public static inline function createInstance() : NsIContentPrefService return xpcom.Components.Constructor("@mozilla.org/content-pref/service;1", xpcom.Components.interfaces.nsIContentPrefService);
+	public static inline function createInstance() : NsIContentPrefService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/content-pref/service;1"].createInstance(NsIContentPrefService);
+	}
 	
 	/**
 	 * The database connection to the content preferences database. Useful for accessing and manipulating preferences in ways that are caller-specific or for which there is not yet a generic method, although generic functionality useful to multiple callers should generally be added to this unfrozen interface. Also useful for testing the database creation and migration code. Read only.

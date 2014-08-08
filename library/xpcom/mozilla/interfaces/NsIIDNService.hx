@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIIDNService") extern class NsIIDNService extends NsISupports
 {
-	public static inline function getService() : NsIIDNService return xpcom.Components.classes[cast "@mozilla.org/network/idn-service;1"].getService(xpcom.Components.interfaces.nsIIDNService);
+	public static inline function getService() : NsIIDNService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/network/idn-service;1"].getService(NsIIDNService);
+	}
 	
 	function convertACEtoUTF8(input:ACString) : AUTF8String;
 	function convertToDisplayIDN(input:AUTF8String, isASCII:Bool) : AUTF8String;

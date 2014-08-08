@@ -5,7 +5,12 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIMsgDBView") extern class NsIMsgDBView extends NsISupports
 {
-	public static inline function createInstance() : NsIMsgDBView return xpcom.Components.Constructor("@mozilla.org/messenger/msgdbview;1", xpcom.Components.interfaces.nsIMsgDBView);
+	public static inline function createInstance(aMessengerInstance:NsIMessenger, aMsgWindow:NsIMsgWindow, aCommandUpdater:NsIMsgDBViewCommandUpdater) : NsIMsgDBView
+	{
+		var r = xpcom.Components.classes[cast "@mozilla.org/messenger/msgdbview;1"].createInstance(NsIMsgDBView);
+		r.init(aMessengerInstance, aMsgWindow, aCommandUpdater);
+		return r;
+	}
 	
 	/**
 	 * Readonly: Type of view. Constants are defined in nsMsgViewType.

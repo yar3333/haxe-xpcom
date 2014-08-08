@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsICurrentCharsetListener") extern class NsICurrentCharsetListener extends NsISupports
 {
-	public static inline function createInstance() : NsICurrentCharsetListener return xpcom.Components.Constructor("@mozilla.org/intl/currentcharsetlistener;1", xpcom.Components.interfaces.nsICurrentCharsetListener);
+	public static inline function createInstance() : NsICurrentCharsetListener
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/intl/currentcharsetlistener;1"].createInstance(NsICurrentCharsetListener);
+	}
 	
 	function SetCurrentCharset(charset:Wstring) : Void;
 	function SetCurrentComposerCharset(charset:Wstring) : Void;

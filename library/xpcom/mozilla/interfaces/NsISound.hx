@@ -5,7 +5,12 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsISound") extern class NsISound extends NsISupports
 {
-	public static inline function createInstance() : NsISound return xpcom.Components.Constructor("@mozilla.org/sound;1", xpcom.Components.interfaces.nsISound, "init");
+	public static inline function createInstance() : NsISound
+	{
+		var r = xpcom.Components.classes[cast "@mozilla.org/sound;1"].createInstance(NsISound);
+		r.init();
+		return r;
+	}
 	
 	function beep() : Void;
 	function init() : Void;

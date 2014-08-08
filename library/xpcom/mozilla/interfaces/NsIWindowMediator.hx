@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIWindowMediator") extern class NsIWindowMediator extends NsISupports
 {
-	public static inline function getService() : NsIWindowMediator return xpcom.Components.classes[cast "@mozilla.org/appshell/window-mediator;1"].getService(xpcom.Components.interfaces.nsIWindowMediator);
+	public static inline function getService() : NsIWindowMediator
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/appshell/window-mediator;1"].getService(NsIWindowMediator);
+	}
 	
 	/**
 	 * Send window to top.

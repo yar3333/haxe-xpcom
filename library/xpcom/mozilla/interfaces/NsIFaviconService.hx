@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIFaviconService") extern class NsIFaviconService extends NsISupports
 {
-	public static inline function getService() : NsIFaviconService return xpcom.Components.classes[cast "@mozilla.org/browser/favicon-service;1"].getService(xpcom.Components.interfaces.nsIFaviconService);
+	public static inline function getService() : NsIFaviconService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/browser/favicon-service;1"].getService(NsIFaviconService);
+	}
 	
 	/**
 	 * The default favicon URI. Read only.

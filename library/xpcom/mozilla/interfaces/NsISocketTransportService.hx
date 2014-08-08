@@ -5,7 +5,12 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsISocketTransportService") extern class NsISocketTransportService extends NsISupports
 {
-	public static inline function createInstance() : NsISocketTransportService return xpcom.Components.Constructor("@mozilla.org/network/socket-transport-service;1", xpcom.Components.interfaces.nsISocketTransportService, "init");
+	public static inline function createInstance() : NsISocketTransportService
+	{
+		var r = xpcom.Components.classes[cast "@mozilla.org/network/socket-transport-service;1"].createInstance(NsISocketTransportService);
+		r.init();
+		return r;
+	}
 	
 	/**
 	 * controls whether or not the socket transport service should poke the autodialer on connection failure. Obsolete since Gecko 1.8

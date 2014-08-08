@@ -5,7 +5,7 @@ package xpcom;
 	static var utils(default, never) : Utils;
 	static var results(default, never) : Results;
 	static var interfaces(default, never) : Dynamic;
-	static var classes(default, never) : Dynamic;
+	static var classes(default, never) : Array<Dynamic>;
 	
 	static function Constructor(url:String, iterfaceName:String, ?initMethodName:String) : Dynamic;
 }

@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIPrivateBrowsingService") extern class NsIPrivateBrowsingService extends NsISupports
 {
-	public static inline function getService() : NsIPrivateBrowsingService return xpcom.Components.classes[cast "@mozilla.org/privatebrowsing;1"].getService(xpcom.Components.interfaces.nsIPrivateBrowsingService);
+	public static inline function getService() : NsIPrivateBrowsingService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/privatebrowsing;1"].getService(NsIPrivateBrowsingService);
+	}
 	
 	/**
 	 * Indicates whether or not private browsing was started automatically at application launch time.  This is only ever true if privateBrowsingEnabled is also true. Read only.

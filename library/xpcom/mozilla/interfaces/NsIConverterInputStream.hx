@@ -5,7 +5,12 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIConverterInputStream") extern class NsIConverterInputStream extends NsIUnicharInputStream
 {
-	public static inline function createInstance() : NsIConverterInputStream return xpcom.Components.Constructor("@mozilla.org/intl/converter-input-stream;1", xpcom.Components.interfaces.nsIConverterInputStream);
+	public static inline function createInstance(aStream:NsIInputStream, aCharset:String, aBufferSize:Long, aReplacementChar:PRUnichar) : NsIConverterInputStream
+	{
+		var r = xpcom.Components.classes[cast "@mozilla.org/intl/converter-input-stream;1"].createInstance(NsIConverterInputStream);
+		r.init(aStream, aCharset, aBufferSize, aReplacementChar);
+		return r;
+	}
 	
 	/**
 	 * Default replacement character value.

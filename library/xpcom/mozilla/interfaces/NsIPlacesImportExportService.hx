@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIPlacesImportExportService") extern class NsIPlacesImportExportService extends NsISupports
 {
-	public static inline function getService() : NsIPlacesImportExportService return xpcom.Components.classes[cast "@mozilla.org/import-export-service;1"].getService(xpcom.Components.interfaces.nsIPlacesImportExportService);
+	public static inline function getService() : NsIPlacesImportExportService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/import-export-service;1"].getService(NsIPlacesImportExportService);
+	}
 	
 	function backupBookmarksFile() : Void;
 	function exportHTMLToFile(aFile:NsILocalFile) : Void;

@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsITelemetry") extern class NsITelemetry extends NsISupports
 {
-	public static inline function getService() : NsITelemetry return xpcom.Components.classes[cast "@mozilla.org/base/telemetry;1"].getService(xpcom.Components.interfaces.nsITelemetry);
+	public static inline function getService() : NsITelemetry
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/base/telemetry;1"].getService(NsITelemetry);
+	}
 	
 	/**
 	 * Buckets increase exponentially.

@@ -5,6 +5,13 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIFileInputStream") extern class NsIFileInputStream extends NsIInputStream
 {
+	public static inline function createInstance(file:NsIFile, ioFlags:Long, perm:Long, behaviorFlags:Long) : NsIFileInputStream
+	{
+		var r = xpcom.Components.classes[cast "@mozilla.org/network/file-input-stream;1"].createInstance(NsIFileInputStream);
+		r.init(file, ioFlags, perm, behaviorFlags);
+		return r;
+	}
+	
 	/**
 	 * If this is set, the file will be deleted by the time the stream is closed. It may be removed before the stream is closed if it is possible to delete it and still read from it. If OPEN_ON_READ is defined, and the file was recreated after the first delete, the file will be deleted again when it is closed again.
 	 */

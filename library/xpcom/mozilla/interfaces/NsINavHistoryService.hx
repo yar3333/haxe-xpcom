@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsINavHistoryService") extern class NsINavHistoryService extends NsISupports
 {
-	public static inline function getService() : NsINavHistoryService return xpcom.Components.classes[cast "@mozilla.org/browser/nav-history-service;1"].getService(xpcom.Components.interfaces.nsINavHistoryService);
+	public static inline function getService() : NsINavHistoryService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/browser/nav-history-service;1"].getService(NsINavHistoryService);
+	}
 	
 	/**
 	 * True if there is any history. This can be used in UI to determine whether the "clear history" button should be enabled or not. This is much better than using BrowserHistory.count since that can be very slow if there is a lot of history (it must enumerate each item). This is pretty fast.

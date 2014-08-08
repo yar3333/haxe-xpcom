@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIDownloadManager") extern class NsIDownloadManager extends NsISupports
 {
-	public static inline function getService() : NsIDownloadManager return xpcom.Components.classes[cast "@mozilla.org/download-manager;1"].getService(xpcom.Components.interfaces.nsIDownloadManager);
+	public static inline function getService() : NsIDownloadManager
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/download-manager;1"].getService(NsIDownloadManager);
+	}
 	
 	/**
 	 * The download has not been started yet.

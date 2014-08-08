@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIXULAppInfo") extern class NsIXULAppInfo extends NsISupports
 {
-	public static inline function createInstance() : NsIXULAppInfo return xpcom.Components.Constructor("@mozilla.org/xre/app-info;1", xpcom.Components.interfaces.nsIXULAppInfo);
+	public static inline function createInstance() : NsIXULAppInfo
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/xre/app-info;1"].createInstance(NsIXULAppInfo);
+	}
 	
 	/**
 	 * The application's build ID/date, for example "2004051604". For XULRunner applications, this will be different than the build ID of the platform. Be careful about which one you want. Read only.

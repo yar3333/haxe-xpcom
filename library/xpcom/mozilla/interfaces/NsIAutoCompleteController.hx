@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIAutoCompleteController") extern class NsIAutoCompleteController extends NsISupports
 {
-	public static inline function getService() : NsIAutoCompleteController return xpcom.Components.classes[cast "@mozilla.org/autocomplete/controller;1"].getService(xpcom.Components.interfaces.nsIAutoCompleteController);
+	public static inline function getService() : NsIAutoCompleteController
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/autocomplete/controller;1"].getService(NsIAutoCompleteController);
+	}
 	
 	/**
 	 * Either the XUL autocomplete textbox that is currently being controlled, or a form fill controller that handles website form history.

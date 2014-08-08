@@ -5,7 +5,12 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIBrowserSearchService") extern class NsIBrowserSearchService extends NsISupports
 {
-	public static inline function getService() : NsIBrowserSearchService return xpcom.Components.classes[cast "@mozilla.org/browser/search-service;1"].getService(xpcom.Components.interfaces.nsIBrowserSearchService);
+	public static inline function getService(?observer:NsIBrowserSearchInitObserver) : NsIBrowserSearchService
+	{
+		var r = xpcom.Components.classes[cast "@mozilla.org/browser/search-service;1"].getService(NsIBrowserSearchService);
+		r.init(observer);
+		return r;
+	}
 	
 	/**
 	 * The currently active search engine. May be null if there are no visible search engines.

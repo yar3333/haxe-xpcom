@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIXSLTProcessor") extern class NsIXSLTProcessor extends NsISupports
 {
-	public static inline function createInstance() : NsIXSLTProcessor return xpcom.Components.Constructor("@mozilla.org/document-transformer;1", xpcom.Components.interfaces.nsIXSLTProcessor);
+	public static inline function createInstance() : NsIXSLTProcessor
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/document-transformer;1"].createInstance(NsIXSLTProcessor);
+	}
 	
 	function clearParameters() : Void;
 	function getParameter(namespaceURI:DOMString, localName:DOMString) : NsIVariant;

@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIErrorService") extern class NsIErrorService extends NsISupports
 {
-	public static inline function getService() : NsIErrorService return xpcom.Components.classes[cast "@mozilla.org/xpcom/error-service;1"].getService(xpcom.Components.interfaces.nsIErrorService);
+	public static inline function getService() : NsIErrorService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/xpcom/error-service;1"].getService(NsIErrorService);
+	}
 	
 	function getErrorStringBundle(errorModule:Short) : String;
 	function getErrorStringBundleKey(error:Nsresult) : String;

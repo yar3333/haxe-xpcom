@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIScreenManager") extern class NsIScreenManager extends NsISupports
 {
-	public static inline function getService() : NsIScreenManager return xpcom.Components.classes[cast "@mozilla.org/gfx/screenmanager;1"].getService(xpcom.Components.interfaces.nsIScreenManager);
+	public static inline function getService() : NsIScreenManager
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/gfx/screenmanager;1"].getService(NsIScreenManager);
+	}
 	
 	/**
 	 * The number of screens on the user's computer. Read only.

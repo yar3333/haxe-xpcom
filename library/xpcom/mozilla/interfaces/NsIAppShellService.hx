@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIAppShellService") extern class NsIAppShellService extends NsISupports
 {
-	public static inline function getService() : NsIAppShellService return xpcom.Components.classes[cast "@mozilla.org/appshell/appShellService;1"].getService(xpcom.Components.interfaces.nsIAppShellService);
+	public static inline function getService() : NsIAppShellService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/appshell/appShellService;1"].getService(NsIAppShellService);
+	}
 	
 	/**
 	 * Create a window, which will be initially invisible.

@@ -36,22 +36,26 @@ class Klass
 		
 		r += "@:native(\"" + (nativePack != "" ? nativePack + "." : "") + name + "\") extern class " + name.capitalize() + (inheritsFrom != null ? " extends " + inheritsFrom.capitalize() : "") + "\n{\n";
 		
+		fixImplements();
 		for (implement in implementedBy)
 		{
-			if (implement.type == "instance")
+			var constructorName = implement.type == "instance" ? "createInstance" : "getService";
+			if (methods.count(function(m) return m.name == "init") != 1)
 			{
-				r += "\tpublic static inline function createInstance() : " + name.capitalize() 
-					+ " return xpcom.Components.Constructor("
-						+ "\"" + implement.res + "\""
-						+ ", xpcom.Components.interfaces." + name
-						+ (methods.exists(function(e) return e.name=="init" && e.params.length==0) ? ", \"init\"" : "")
-					+ ");\n";
+				r += "\tpublic static inline function " + constructorName + "() : " + name.capitalize() + "\n";
+				r += "\t{\n";
+				r += "\t\treturn xpcom.Components.classes[cast \"" + implement.res + "\"]." + constructorName + "(" + name.capitalize() + ");\n";
+				r += "\t}\n";
 			}
 			else
 			{
-				r += "\tpublic static inline function getService() : " + name.capitalize()
-					+ " return xpcom.Components.classes[cast \"" + implement.res + "\"]"
-					+ ".getService(xpcom.Components.interfaces." + name + ");\n";
+				var init = methods.filter(function(m) return m.name == "init")[0];
+				r += "\tpublic static inline function " + constructorName + "(" + init.params.map(Method.methodParamToString).join(", ") + ") : " + name.capitalize() + "\n";
+				r += "\t{\n";
+				r += "\t\tvar r = xpcom.Components.classes[cast \"" + implement.res + "\"]." + constructorName + "(" + name.capitalize() + ");\n";
+				r += "\t\tr.init(" + init.params.map(function(p) return p.name).join(", ") + ");\n";
+				r += "\t\treturn r;\n";
+				r += "\t}\n";
 			}
 		}
 		
@@ -79,5 +83,14 @@ class Klass
 		r += "}\n";
 		
 		return r;
+	}
+	
+	function fixImplements()
+	{
+		implementedBy = implementedBy.concat(switch (name)
+		{
+			case "nsIFileInputStream": [ { res:"@mozilla.org/network/file-input-stream;1", type:"instance"} ];
+			case _: [];
+		});
 	}
 }

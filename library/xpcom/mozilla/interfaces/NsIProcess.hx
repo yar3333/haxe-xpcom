@@ -5,7 +5,12 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIProcess") extern class NsIProcess extends NsISupports
 {
-	public static inline function createInstance() : NsIProcess return xpcom.Components.Constructor("@mozilla.org/process/util;1", xpcom.Components.interfaces.nsIProcess);
+	public static inline function createInstance(executable:NsIFile) : NsIProcess
+	{
+		var r = xpcom.Components.classes[cast "@mozilla.org/process/util;1"].createInstance(NsIProcess);
+		r.init(executable);
+		return r;
+	}
 	
 	/**
 	 * The value returned by the process upon exit. This is only valid after the process has exited. Read only.

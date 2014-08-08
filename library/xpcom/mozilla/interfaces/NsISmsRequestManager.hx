@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsISmsRequestManager") extern class NsISmsRequestManager extends NsISupports
 {
-	public static inline function createInstance() : NsISmsRequestManager return xpcom.Components.Constructor("@mozilla.org/sms/smsrequestmanager;1", xpcom.Components.interfaces.nsISmsRequestManager);
+	public static inline function createInstance() : NsISmsRequestManager
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/sms/smsrequestmanager;1"].createInstance(NsISmsRequestManager);
+	}
 	
 	function addRequest(aRequest:NsIDOMMozSmsRequest) : Long;
 	function createRequest(aManager:NsIDOMMozSmsManager, aRequest:NsIDOMMozSmsRequest) : Long;

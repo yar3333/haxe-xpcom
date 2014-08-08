@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsILocalFile") extern class NsILocalFile extends NsIFile
 {
-	public static inline function createInstance() : NsILocalFile return xpcom.Components.Constructor("@mozilla.org/file/local;1", xpcom.Components.interfaces.nsILocalFile);
+	public static inline function createInstance() : NsILocalFile
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/file/local;1"].createInstance(NsILocalFile);
+	}
 	
 	/**
 	 * Optional parameter used by <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsILocalFile#openNSPRFileDesc()">openNSPRFileDesc()</a></code>. 

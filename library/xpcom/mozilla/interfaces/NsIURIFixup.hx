@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIURIFixup") extern class NsIURIFixup extends NsISupports
 {
-	public static inline function getService() : NsIURIFixup return xpcom.Components.classes[cast "@mozilla.org/docshell/urifixup;1"].getService(xpcom.Components.interfaces.nsIURIFixup);
+	public static inline function getService() : NsIURIFixup
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/docshell/urifixup;1"].getService(NsIURIFixup);
+	}
 	
 	/**
 	 * No fixup flags.

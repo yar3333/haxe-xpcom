@@ -5,7 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIMicrosummaryService") extern class NsIMicrosummaryService extends NsISupports
 {
-	public static inline function getService() : NsIMicrosummaryService return xpcom.Components.classes[cast "@mozilla.org/microsummary/service;1"].getService(xpcom.Components.interfaces.nsIMicrosummaryService);
+	public static inline function getService() : NsIMicrosummaryService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/microsummary/service;1"].getService(NsIMicrosummaryService);
+	}
 	
 	function addGenerator(generatorURI:NsIURI) : Void;
 	function createMicrosummary(pageURI:NsIURI, generatorURI:NsIURI) : NsIMicrosummary;
