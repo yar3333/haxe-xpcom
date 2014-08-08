@@ -5,9 +5,9 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsISocketTransportService") extern class NsISocketTransportService extends NsISupports
 {
-	public static inline function createInstance() : NsISocketTransportService
+	public static inline function getService() : NsISocketTransportService
 	{
-		var r : NsISocketTransportService = xpcom.Components.classes[cast "@mozilla.org/network/socket-transport-service;1"].createInstance(NsISocketTransportService);
+		var r : NsISocketTransportService = xpcom.Components.classes[cast "@mozilla.org/network/socket-transport-service;1"].getService(NsISocketTransportService);
 		r.init();
 		return r;
 	}

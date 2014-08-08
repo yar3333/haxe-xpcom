@@ -5,9 +5,9 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIPromptService") extern class NsIPromptService extends NsISupports
 {
-	public static inline function createInstance() : NsIPromptService
+	public static inline function getService() : NsIPromptService
 	{
-		return xpcom.Components.classes[cast "@mozilla.org/embedcomp/prompt-service;1"].createInstance(NsIPromptService);
+		return xpcom.Components.classes[cast "@mozilla.org/embedcomp/prompt-service;1"].getService(NsIPromptService);
 	}
 	
 	function alert(aParent:NsIDOMWindow, aDialogTitle:Wstring, aText:Wstring) : Void;

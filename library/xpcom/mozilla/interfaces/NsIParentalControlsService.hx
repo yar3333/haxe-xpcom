@@ -5,9 +5,9 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIParentalControlsService") extern class NsIParentalControlsService extends NsISupports
 {
-	public static inline function createInstance() : NsIParentalControlsService
+	public static inline function getService() : NsIParentalControlsService
 	{
-		return xpcom.Components.classes[cast "@mozilla.org/parental-controls-service;1"].createInstance(NsIParentalControlsService);
+		return xpcom.Components.classes[cast "@mozilla.org/parental-controls-service;1"].getService(NsIParentalControlsService);
 	}
 	
 	/**

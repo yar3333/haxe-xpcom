@@ -91,7 +91,6 @@ class Klass
 		{
 			case "nsIFileInputStream": [ { res:"@mozilla.org/network/file-input-stream;1", type:"instance" } ];
 			case "nsIFileOutputStream": [ { res:"@mozilla.org/network/file-output-stream;1", type:"instance" } ];
-			case "nsIDirectoryService": [ { res:"@mozilla.org/file/directory_service;1", type:"service" } ];
 			case _: [];
 		});
 	}
