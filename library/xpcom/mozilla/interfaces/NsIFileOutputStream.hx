@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function createInstance(file:NsIFile, ioFlags:Long, perm:Long, behaviorFlags:Long) : NsIFileOutputStream
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/network/file-output-stream;1"].createInstance(NsIFileOutputStream);
+		var r : NsIFileOutputStream = xpcom.Components.classes[cast "@mozilla.org/network/file-output-stream;1"].createInstance(NsIFileOutputStream);
 		r.init(file, ioFlags, perm, behaviorFlags);
 		return r;
 	}

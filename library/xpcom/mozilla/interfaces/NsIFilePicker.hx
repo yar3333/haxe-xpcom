@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function createInstance(parent:NsIDOMWindow, title:AString, mode:Short) : NsIFilePicker
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/filepicker;1"].createInstance(NsIFilePicker);
+		var r : NsIFilePicker = xpcom.Components.classes[cast "@mozilla.org/filepicker;1"].createInstance(NsIFilePicker);
 		r.init(parent, title, mode);
 		return r;
 	}

@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function createInstance(aObserver:NsIObserver, aDelay:ULong, aType:ULong) : NsITimer
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/timer;1"].createInstance(NsITimer);
+		var r : NsITimer = xpcom.Components.classes[cast "@mozilla.org/timer;1"].createInstance(NsITimer);
 		r.init(aObserver, aDelay, aType);
 		return r;
 	}

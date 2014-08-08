@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function createInstance() : NsISound
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/sound;1"].createInstance(NsISound);
+		var r : NsISound = xpcom.Components.classes[cast "@mozilla.org/sound;1"].createInstance(NsISound);
 		r.init();
 		return r;
 	}

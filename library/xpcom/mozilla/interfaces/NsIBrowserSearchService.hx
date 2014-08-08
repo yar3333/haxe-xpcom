@@ -7,7 +7,7 @@ import xpcom.mozilla.objects.*;
 {
 	public static inline function getService(?observer:NsIBrowserSearchInitObserver) : NsIBrowserSearchService
 	{
-		var r = xpcom.Components.classes[cast "@mozilla.org/browser/search-service;1"].getService(NsIBrowserSearchService);
+		var r : NsIBrowserSearchService = xpcom.Components.classes[cast "@mozilla.org/browser/search-service;1"].getService(NsIBrowserSearchService);
 		r.init(observer);
 		return r;
 	}
