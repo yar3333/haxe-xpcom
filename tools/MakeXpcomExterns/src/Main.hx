@@ -63,7 +63,25 @@ class Main
 		FileSystem.createDirectory(outDir);
 		for (klass in klasses)
 		{
-			File.saveContent(outDir + "/" + klass.name.capitalize() + ".hx", klass.toString("xpcom.mozilla", [ "xpcom.types.*" ]));
+			var isInterface = [ "nsI", "imgI", "inI", "jsdI", "mozI", "I", "amI", "nsPI" ].exists(function(prefix) return klass.name.startsWith(prefix) && ~/[A-Z]/.match(klass.name.charAt(prefix.length)));
+			
+			if (isInterface)
+			{
+				File.saveContent(outDir + "/interfaces/" + klass.name.capitalize() + ".hx", klass.toString
+				(
+					"xpcom.mozilla.interfaces",
+					[ "xpcom.types.*", "xpcom.mozilla.objects.*" ],
+					"Components.interfaces"
+				));
+			}
+			else
+			{
+				File.saveContent(outDir + "/objects/" + klass.name.capitalize() + ".hx", klass.toString
+				(
+					"xpcom.mozilla.objects",
+					[ "xpcom.types.*" ]
+				));
+			}
 		}
 	}
 	

@@ -24,37 +24,34 @@ class Klass
 		this.implementedBy = implementedBy;
 	}
 	
-	public function toString(pack:String, imports:Array<String>) : String
+	public function toString(pack:String, imports:Array<String>, nativePack="") : String
 	{
 		var r = "";
 		
 		r += "package " + pack + ";\n\n";
 		
-		var resImports = imports.copy();
-		if (implementedBy.length > 0) resImports.push("xpcom.Components");
-		resImports.sort(Reflect.compare);
-		r += resImports.map(function(s) return "import " + s + ";\n").join("");
+		r += imports.map(function(s) return "import " + s + ";\n").join("");
 		
-		if (resImports.length > 0) r += "\n";
+		if (imports.length > 0) r += "\n";
 		
-		r += "@:native(\"" + name+"\") extern class " + name.capitalize() + (inheritsFrom != null ? " extends " + inheritsFrom.capitalize() : "") + "\n{\n";
+		r += "@:native(\"" + (nativePack != "" ? nativePack + "." : "") + name + "\") extern class " + name.capitalize() + (inheritsFrom != null ? " extends " + inheritsFrom.capitalize() : "") + "\n{\n";
 		
 		for (implement in implementedBy)
 		{
 			if (implement.type == "instance")
 			{
 				r += "\tpublic static inline function createInstance() : " + name.capitalize() 
-					+ " return Components.Constructor("
+					+ " return xpcom.Components.Constructor("
 						+ "\"" + implement.res + "\""
-						+ ", Components.interfaces." + name
+						+ ", xpcom.Components.interfaces." + name
 						+ (methods.exists(function(e) return e.name=="init" && e.params.length==0) ? ", \"init\"" : "")
 					+ ");\n";
 			}
 			else
 			{
 				r += "\tpublic static inline function getService() : " + name.capitalize()
-					+ " return Components.classes[cast \"" + implement.res + "\"]"
-					+ ".getService(Components.interfaces." + name + ");\n";
+					+ " return xpcom.Components.classes[cast \"" + implement.res + "\"]"
+					+ ".getService(xpcom.Components.interfaces." + name + ");\n";
 			}
 		}
 		
