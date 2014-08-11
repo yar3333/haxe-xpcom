@@ -22,6 +22,22 @@ import xpcom.mozilla.objects.*;
 	 * The number of different brightness levels.
 	 */
 	static inline var BRIGHTNESS_LEVELS = 2;
+	/**
+	 * 0° of rotation (that is, no rotation, or default orientation).
+	 */
+	static inline var ROTATION_0_DEG = 0;
+	/**
+	 * 90° of rotation.
+	 */
+	static inline var ROTATION_90_DEG = 1;
+	/**
+	 * 180° of rotation.
+	 */
+	static inline var ROTATION_180_DEG = 2;
+	/**
+	 * 270° of rotation.
+	 */
+	static inline var ROTATION_270_DEG = 3;
 	
 	/**
 	 * The screen's color depth; this is the number of bits used to represent a color. Read only.

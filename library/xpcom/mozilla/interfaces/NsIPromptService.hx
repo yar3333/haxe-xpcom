@@ -22,6 +22,34 @@ import xpcom.mozilla.objects.*;
 	 * This button can be used to give the user a choice of options, but still allowing the user to cancel the prompt. For instance, it might have the label "Don't Save".
 	 */
 	static inline var BUTTON_POS_2 = 65536;
+	/**
+	 * These flags are used to select standard labels from the user's current locale.
+	 */
+	static inline var BUTTON_TITLE_OK = 1;
+	static inline var BUTTON_TITLE_CANCEL = 2;
+	static inline var BUTTON_TITLE_YES = 3;
+	static inline var BUTTON_TITLE_NO = 4;
+	static inline var BUTTON_TITLE_SAVE = 5;
+	static inline var BUTTON_TITLE_DONT_SAVE = 6;
+	static inline var BUTTON_TITLE_REVERT = 7;
+	/**
+	 * This flag indicates that the label is passed as a separate string. Use this for labels that don't match one of the constants above.
+	 */
+	static inline var BUTTON_TITLE_IS_STRING = 127;
+	static inline var BUTTON_POS_0_DEFAULT = 0;
+	static inline var BUTTON_POS_1_DEFAULT = 16777216;
+	static inline var BUTTON_POS_2_DEFAULT = 33554432;
+	static inline var BUTTON_DELAY_ENABLE = 67108864;
+	/**
+	 * <p>selects the standard set of OK/Cancel buttons.</p>
+	 * (BUTTON_TITLE_OK *BUTTON_POS_0) +(BUTTON_TITLE_CANCEL * BUTTON_POS_1)
+	 */
+	static inline var STD_OK_CANCEL_BUTTONS = 513;
+	/**
+	 * <p>selects the standard set of Yes/No buttons.</p>
+	 * (BUTTON_TITLE_YES *BUTTON_POS_0) +(BUTTON_TITLE_NO * BUTTON_POS_1)
+	 */
+	static inline var STD_YES_NO_BUTTONS = 1027;
 	
 	function alert(aParent:NsIDOMWindow, aDialogTitle:Wstring, aText:Wstring) : Void;
 	function alertCheck(aParent:NsIDOMWindow, aDialogTitle:Wstring, aText:Wstring, aCheckMsg:Wstring, aCheckState:{value:Bool}) : Void;

@@ -90,6 +90,57 @@ import xpcom.mozilla.objects.*;
 	 * Returned by the loadType attribute when the page has used history.pushState()
 	 */
 	static inline var LOAD_CMD_PUSHSTATE = 0x8;
+	static inline var kCharsetFromWeakDocTypeDefault = 1;
+	/**
+	 * The user's default character set is being used.
+	 */
+	static inline var kCharsetFromUserDefault = 2;
+	/**
+	 * The character set has been inferred from the doctype. All values from here upward are confident enough to be used for <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" title="XMLHttpRequest is a JavaScript object that was designed by Microsoft and adopted by Mozilla, Apple, and Google. It's now being standardized in the W3C. It provides an easy way to retrieve data from a URL without having to do a full page refresh. A Web page can update just a part of the page without disrupting what the user is doing.  XMLHttpRequest is used heavily in AJAX programming.">XMLHttpRequest</a>.
+	 */
+	static inline var kCharsetFromDocTypeDefault = 3;
+	/**
+	 * The character set has been retrieved from the cache.
+	 */
+	static inline var kCharsetFromCache = 4;
+	/**
+	 * The parent frame's character set is being used.
+	 */
+	static inline var kCharsetFromParentFrame = 5;
+	/**
+	 * The character set was automatically detected.
+	 */
+	static inline var kCharsetFromAutoDetection = 6;
+	/**
+	 * The character set was hinted by the previous document.
+	 */
+	static inline var kCharsetFromHintPrevDoc = 7;
+	/**
+	 * Values from this one downward are HTML5 tentative.
+	 */
+	static inline var kCharsetFromMetaPrescan = 8;
+	/**
+	 * Values from this one upward are HTML5 confident.
+	 */
+	static inline var kCharsetFromMetaTag = 9;
+	static inline var kCharsetFromIrreversibleAutoDetection = 10;
+	/**
+	 * The character set was determined from a byte order mark in the content.
+	 */
+	static inline var kCharsetFromByteOrderMark = 11;
+	/**
+	 * The <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIChannel" title="">nsIChannel</a></code> specified the character set.
+	 */
+	static inline var kCharsetFromChannel = 12;
+	static inline var kCharsetFromOtherComponent = 13;
+	/**
+	 * The parent's character set was forced onto this content; all descendents will have this character set forced onto it.
+	 */
+	static inline var kCharsetFromParentForced = 14;
+	/**
+	 * The user specified a character set to force onto this content; all descendents will have this character set forced onto it.
+	 */
+	static inline var kCharsetFromUserForced = 15;
 	
 	/**
 	 * Certain dochshells (like the message pane) should not throw up auth dialogs because it can act as a password trojan.

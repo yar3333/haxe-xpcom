@@ -21,6 +21,24 @@ import xpcom.mozilla.objects.*;
 	 * An allocation that does not fit into another KIND category.
 	 */
 	static inline var KIND_OTHER = 2;
+	/**
+	 * The amount is specified as a number of bytes.
+	 */
+	static inline var UNITS_BYTES = 0;
+	/**
+	 * The amount is an instantaneous count of things currently in existence. For example, the number of tabs currently open.
+	 */
+	static inline var UNITS_COUNT = 1;
+	/**
+	 * The amount contains the number of times some event has occurred since the application started up. For example, the number of times the user has opened a new tab. The amount returned must never decrease over the lifetime of the application.
+	 */
+	static inline var UNITS_COUNT_CUMULATIVE = 2;
+	/**
+	 * The amount contains a fraction that should be expressed as a percentage.
+	 * <div class="note">
+	 * <strong>Note:</strong> The amount field should be given a value 100 times the actual percentage; this number will be divided by 100 when shown. This allows a fractional percentage to be shown even though amount is an integer. For example if the actual percentage is 12.34%, amount should be 1234.</div>
+	 */
+	static inline var UNITS_PERCENTAGE = 3;
 	
 	/**
 	 * The numeric value reported by the memory reporter, specified in the units indicated by the units attribute. Read only.

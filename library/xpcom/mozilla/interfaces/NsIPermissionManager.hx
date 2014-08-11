@@ -17,6 +17,18 @@ import xpcom.mozilla.objects.*;
 	 * Permission is denied
 	 */
 	static inline var DENY_ACTION = 2;
+	/**
+	 * Permission never expires.
+	 */
+	static inline var EXPIRE_NEVER = 0;
+	/**
+	 * Permission expires at end of session.
+	 */
+	static inline var EXPIRE_SESSION = 1;
+	/**
+	 * Permission expires at a specified time.
+	 */
+	static inline var EXPIRE_TIME = 2;
 	
 	/**
 	 * Enumerates all stored permissions. Allows access to nsIPermission objects. Read only.

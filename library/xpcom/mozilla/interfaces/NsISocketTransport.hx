@@ -13,6 +13,31 @@ import xpcom.mozilla.objects.*;
 	 * Read and write timeouts.
 	 */
 	static inline var TIMEOUT_READ_WRITE = 1;
+	/**
+	 * Transport is resolving the host. Usually a DNS lookup.
+	 */
+	static inline var STATUS_RESOLVING = 0x804b0003;
+	/**
+	 * Transport has resolved the host.
+	 */
+	static inline var STATUS_RESOLVED = 0x804b000b;
+	static inline var STATUS_CONNECTING_TO = 0x804b0007;
+	static inline var STATUS_CONNECTED_TO = 0x804b0004;
+	static inline var STATUS_SENDING_TO = 0x804b0005;
+	static inline var STATUS_WAITING_FOR = 0x804b000a;
+	static inline var STATUS_RECEIVING_FROM = 0x804b0006;
+	/**
+	 * When making a new connection BYPASS_CACHE will force the Necko DNS cache entry to be refreshed with a new call to NSPR if it is set before opening the new stream.
+	 */
+	static inline var BYPASS_CACHE = 0;
+	/**
+	 * When this flag is set, the socket will not apply any credentials when establishing a connection. For example, an SSL connection would not send any client-certificates if this flag is set.
+	 */
+	static inline var ANONYMOUS_CONNECT = 1;
+	/**
+	 * When this flag is set, the socket will ignore any IPv6 addresses the host may offer and will only attempt to connect to IPv4 addresses.
+	 */
+	static inline var DISABLE_IPV6 = 2;
 	
 	/**
 	 * A bitmask that can be used to modify underlying behavior of the socket connection. See Connection Flag Constants for more details.

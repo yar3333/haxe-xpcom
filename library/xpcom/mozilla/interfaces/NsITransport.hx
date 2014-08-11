@@ -10,6 +10,8 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var OPEN_BLOCKING = 1<<0;
 	static inline var OPEN_UNBUFFERED = 1<<1;
+	static inline var STATUS_READING = 0x804b0008;
+	static inline var STATUS_WRITING = 0x804b0009;
 	
 	function close(aReason:Nsresult) : Void;
 	function openInputStream(aFlags:ULong, aSegmentSize:ULong, aSegmentCount:ULong) : NsIInputStream;

@@ -28,6 +28,58 @@ import xpcom.mozilla.objects.*;
 	 * Load multiple files.
 	 */
 	static inline var modeOpenMultiple = 3;
+	/**
+	 * The file picker dialog was closed by the user hitting 'Ok'
+	 */
+	static inline var returnOK = 0;
+	/**
+	 * The file picker dialog was closed by the user hitting 'Cancel'
+	 */
+	static inline var returnCancel = 1;
+	/**
+	 * The user chose an existing file and acknowledged that they want to overwrite the file
+	 */
+	static inline var returnReplace = 2;
+	/**
+	 * Corresponds to the *.* filter for file extensions. All files will pass through the filter.
+	 */
+	static inline var filterAll = 0x001;
+	/**
+	 * Corresponds to the *.html, *.htm, *.shtml and *.xhtml filters for file extensions.
+	 */
+	static inline var filterHTML = 0x002;
+	/**
+	 * Corresponds to the *.txt and *.text filter for file extensions.
+	 */
+	static inline var filterText = 0x004;
+	/**
+	 * Corresponds to the *.jpe, *.jpg, *.jpeg, *.gif, *.png, *.bmp, *.ico, *.svg, *.svgz, *.tif, *.tiff, *.ai, *.drw, *.pct, *.psp, *.xcf, *.psd and *.raw filters for file extensions.
+	 */
+	static inline var filterImages = 0x008;
+	/**
+	 * Corresponds to the *.xml filter for file extensions.
+	 */
+	static inline var filterXML = 0x010;
+	/**
+	 * Corresponds to the *.xul filter for file extensions.
+	 */
+	static inline var filterXUL = 0x020;
+	/**
+	 * Corresponds to the platform specific application filter for file extensions. Application files for the user's platform will pass through the filter.
+	 */
+	static inline var filterApps = 0x040;
+	/**
+	 * Allow URLs.
+	 */
+	static inline var filterAllowURLs = 0x80;
+	/**
+	 * Corresponds to the *.aac, *.aif, *.flac, *.iff, *.m4a, *.m4b, *.mid, *.midi, *.mp3, *.mpa, *.mpc, *.oga, *.ogg, *.ra, *.ram, *.snd, *.wav and *.wma filters for file extensions.
+	 */
+	static inline var filterAudio = 0x100;
+	/**
+	 * Corresponds to the *.avi, *.divx, *.flv, *.m4v, *.mkv, *.mov, *.mp4, *.mpeg, *.mpg, *.ogm, *.ogv, *.ogx, *.rm, *.rmvb, *.smil, *.webm, *.wmv and *.xvid filters for file extensions.
+	 */
+	static inline var filterVideo = 0x200;
 	
 	/**
 	 * If true, the file is added to the operating system's "recent documents" list (if the operating system has one; nothing happens if there is no such concept on the user's platform). This attribute has no effect if private browsing mode is in effect.

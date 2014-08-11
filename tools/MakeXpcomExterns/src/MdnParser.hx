@@ -93,25 +93,41 @@ class MdnParser
 		var constantsH2 = doc.findOne("h2#Constants");
 		if (constantsH2 != null)
 		{
-			var table = constantsH2; do table = table.getNextSiblingElement() while (table != null && table.name != "table");
-			if (table != null)
+			var table = constantsH2.getNextSiblingElement(); 
+			while (table != null && table.name != "h2")
 			{
-				var rows = table.find(">tbody>tr").slice(1);
-				for (row in rows)
+				if (table.name == "table")
 				{
-					var td = row.find(">td");
-					
-					if (td.length == 0 || Std.string(td[0].getAttr("class", "")).indexOf("header") >= 0) continue;
-					
-					var name = td[0].innerHTML.stripTags().htmlUnescape();
-					var value = (td[td.length - 2].findOne(">code") != null ? td[td.length - 2].findOne(">code").innerHTML : td[td.length - 2].innerHTML).stripTags().htmlUnescape().trim();
-					var desc = td[td.length - 1].innerHTML.htmlUnescape();
-					
-					if (value != "" && Std.parseInt(value) != null)
+					var rows = table.find(">tbody>tr").slice(1);
+					var valueFirst = false;
+					for (row in rows)
 					{
-						r.push(new Constant(name, value, desc));
+						var td = row.find(">td");
+						
+						if (td.length == 0 || Std.string(td[0].getAttr("class", "")).indexOf("header") >= 0)
+						{
+							valueFirst = td.length == 2 && td[0].innerHTML.trim().toLowerCase() == "value";
+							continue;
+						}
+						
+						var hasDesc = td.length > 2;
+						
+						var nameTD = td[valueFirst ? 1 : 0];
+						var valueTD = td[valueFirst ? 0 : td.length - 1 - (hasDesc ? 1 : 0)];
+						var descTD = hasDesc ? td[td.length - 1] : null;
+						
+						var name = nameTD.innerHTML.stripTags().htmlUnescape();
+						var value = (valueTD.findOne(">code") != null ? valueTD.findOne(">code").innerHTML : valueTD.innerHTML).stripTags().htmlUnescape().trim();
+						var desc = descTD != null ? descTD.innerHTML.htmlUnescape().trim() : "";
+						
+						if (value != "" && Std.parseInt(value) != null)
+						{
+							if (name.startsWith(":")) name = name.replace(":", "").replace("-", "_");
+							r.push(new Constant(name, value, desc));
+						}
 					}
 				}
+				table = table.getNextSiblingElement();
 			}
 		}
 		

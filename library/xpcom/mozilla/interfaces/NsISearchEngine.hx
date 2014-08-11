@@ -8,6 +8,14 @@ import xpcom.mozilla.objects.*;
 	static inline var TYPE_MOZSEARCH = 1;
 	static inline var TYPE_SHERLOCK = 2;
 	static inline var TYPE_OPENSEARCH = 3;
+	/**
+	 * Data type is XML
+	 */
+	static inline var DATA_XML = 1;
+	/**
+	 * Data type is Text.
+	 */
+	static inline var DATA_TEXT = 2;
 	
 	/**
 	 * An optional shortcut alias for the engine. When non-null, this is a unique identifier.

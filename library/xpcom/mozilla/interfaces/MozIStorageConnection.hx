@@ -17,6 +17,10 @@ import xpcom.mozilla.objects.*;
 	 * An <a class="external" href="http://sqlite.org/lockingv3.html#exclusive_lock" title="http://sqlite.org/lockingv3.html#exclusive_lock">exclusive lock</a> is obtained on the database.
 	 */
 	static inline var TRANSACTION_EXCLUSIVE = 2;
+	/**
+	 * The default size for SQLite database pages. This is used by the Storage API when creating new databases, and must match the SQLITE_DEFAULT_PAGE_SIZE configured in <code><a class="external" href="http://mxr.mozilla.org/mozilla-central/source/db/sqlite3/src/Makefile.in" rel="custom">db/sqlite3/src/Makefile.in</a></code>.
+	 */
+	static inline var DEFAULT_PAGE_SIZE = 32768;
 	
 	/**
 	 * Indicates if the connection is open and ready to use. This will be false if the connection failed to open, or it has been closed. Read only.

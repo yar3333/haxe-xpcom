@@ -8,6 +8,34 @@ import xpcom.mozilla.objects.*;
 	static inline var ROOT_KEY_CLASSES_ROOT = 0x80000000;
 	static inline var ROOT_KEY_CURRENT_USER = 0x80000001;
 	static inline var ROOT_KEY_LOCAL_MACHINE = 0x80000002;
+	static inline var ACCESS_BASIC = 0x00020000;
+	static inline var ACCESS_QUERY_VALUE = 0x00000001;
+	static inline var ACCESS_SET_VALUE = 0x00000002;
+	static inline var ACCESS_CREATE_SUB_KEY = 0x00000004;
+	static inline var ACCESS_ENUMERATE_SUB_KEYS = 0x00000008;
+	static inline var ACCESS_NOTIFY = 0x00000010;
+	static inline var WOW64_32 = 0x00000200;
+	static inline var WOW64_64 = 0x00000100;
+	/**
+	 * REG_NONE
+	 */
+	static inline var TYPE_NONE = 0;
+	/**
+	 * REG_SZ
+	 */
+	static inline var TYPE_STRING = 1;
+	/**
+	 * REG_BINARY
+	 */
+	static inline var TYPE_BINARY = 3;
+	/**
+	 * REG_DWORD
+	 */
+	static inline var TYPE_INT = 4;
+	/**
+	 * REG_QWORD
+	 */
+	static inline var TYPE_INT64 = 11;
 	
 	/**
 	 * This attribute returns the number of child keys. Read only.

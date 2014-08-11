@@ -30,6 +30,18 @@ import xpcom.mozilla.objects.*;
 	static inline var SELECTION_ON = 2;
 	static inline var SELECTION_DISABLED = 3;
 	static inline var SELECTION_ATTENTION = 4;
+	/**
+	 * If set scrolls the selection into view before returning. If not set, posts a request which is processed at some point after the method returns.
+	 */
+	static inline var SCROLL_SYNCHRONOUS = 1<<1;
+	/**
+	 * If set, only the first ancestor will be scrolled into view.
+	 */
+	static inline var SCROLL_FIRST_ANCESTOR_ONLY = 1<<2;
+	/**
+	 * If set, the specified location will be scrolled to the center of the view.
+	 */
+	static inline var SCROLL_CENTER_VERTICALLY = 1<<4;
 	
 	/**
 	 * This is true if the caret is enabled, visible, and currently blinking. This is still true when the caret is enabled, visible, but in its "off" blink cycle. Read only.
