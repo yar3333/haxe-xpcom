@@ -5,6 +5,11 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIFile") extern class NsIFile extends NsISupports
 {
+	public static inline function createInstance() : NsIFile
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/file/local;1"].createInstance(NsIFile);
+	}
+	
 	/**
 	 * A normal file.
 	 */
