@@ -5,9 +5,6 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIXULWindow") extern class NsIXULWindow extends NsISupports
 {
-	/**
-	 *  
-	 */
 	static inline var lowestZ = 0;
 	/**
 	 * The Z level of an independent window opened with the "alwaysLowered" chrome flag.
@@ -21,9 +18,6 @@ import xpcom.mozilla.objects.*;
 	 * The Z level of an independent window opened with the "alwaysRaised" chrome flag.
 	 */
 	static inline var raisedZ = 6;
-	/**
-	 *  
-	 */
 	static inline var highestZ = 9;
 	
 	/**

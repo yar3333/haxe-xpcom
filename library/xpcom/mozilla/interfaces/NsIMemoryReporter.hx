@@ -6,6 +6,23 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsIMemoryReporter") extern class NsIMemoryReporter extends NsISupports
 {
 	/**
+	 * This is deprecated synonym for KIND_NONHEAP.  <span class="inlineIndicator deprecated deprecatedInline" title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)">Deprecated since Gecko 8.0</span>
+	 */
+	static inline var KIND_MAPPED = 0;
+	/**
+	 * Allocated directly by OS calls e.g. mmap, VirtualAlloc, vm_allocate etc.
+	 */
+	static inline var KIND_NONHEAP = 0;
+	/**
+	 * Allocated by the heap allocator, e.g. malloc, new etc.
+	 */
+	static inline var KIND_HEAP = 1;
+	/**
+	 * An allocation that does not fit into another KIND category.
+	 */
+	static inline var KIND_OTHER = 2;
+	
+	/**
 	 * The numeric value reported by the memory reporter, specified in the units indicated by the units attribute. Read only.
 	 * Note: This attribute was called memoryUsed prior to Gecko 7.0 (Firefox 7.0 / Thunderbird 7.0 / SeaMonkey 2.4), and its type was long long.
 	 */

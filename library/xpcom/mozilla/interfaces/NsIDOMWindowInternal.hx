@@ -142,8 +142,31 @@ import xpcom.mozilla.objects.*;
 	 */
 	var frameElement : NsIDOMElement;
 	/**
-	 * Readonly:  A DOM URL object, which provides the window.URL.createObjectURL() and window.URL.revokeObjectURL() methods. 
+	 * Readonly:  A DOM URL object, which provides the window.URL.createObjectURL() and window.URL.revokeObjectURL() methods.
 	 * Note: Prior to Gecko 7.0 (Firefox 7.0 / Thunderbird 7.0 / SeaMonkey 2.4), this attribute was part of nsIDOMWindow_2_0_BRANCH.
 	 */
 	var URL : NsIDOMMozURLProperty;
+	
+	function alert(text:DOMString) : Void;
+	function confirm(text:DOMString) : Bool;
+	function prompt(?aMessage:DOMString, ?aInitial:DOMString, ?aTitle:DOMString, ?aSavePassword:ULong) : DOMString;
+	function focus() : Void;
+	function blur() : Void;
+	function back() : Void;
+	function forward() : Void;
+	function home() : Void;
+	function stop() : Void;
+	function print() : Void;
+	function moveTo(xPos:Long, yPos:Long) : Void;
+	function moveBy(xDif:Long, yDif:Long) : Void;
+	function resizeTo(width:Long, height:Long) : Void;
+	function resizeBy(widthDif:Long, heightDif:Long) : Void;
+	function scroll(xScroll:Long, yScroll:Long) : Void;
+	function open(url:DOMString, name:DOMString, options:DOMString) : NsIDOMWindow;
+	function close() : Void;
+	function updateCommands(action:DOMString) : Void;
+	function find(?str:DOMString, ?caseSensitive:Bool, ?backwards:Bool, ?wrapAround:Bool, ?wholeWord:Bool, ?searchInFrames:Bool, ?showDialog:Bool) : Bool;
+	function atob(aAsciiString:DOMString) : DOMString;
+	function btoa(aBase64Data:DOMString) : DOMString;
+	function postMessage(message:DOMString, targetOrigin:DOMString) : Void;
 }

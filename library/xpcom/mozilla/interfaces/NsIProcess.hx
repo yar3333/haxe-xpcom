@@ -22,7 +22,7 @@ import xpcom.mozilla.objects.*;
 	var isRunning : Bool;
 	/**
 	 * The location of the executable file on disk. Read only.
-	 * Gecko 1.9.1 note 
+	 * Gecko 1.9.1 note
 	 * This attribute is no longer implemented as of Gecko 1.9.1, and is removed entirely in Gecko 1.9.2.
 	 */
 	var location : NsIFile;
@@ -32,13 +32,13 @@ import xpcom.mozilla.objects.*;
 	var pid : ULong;
 	/**
 	 * The name of the process. Read only.
-	 * Gecko 1.9.1 note 
+	 * Gecko 1.9.1 note
 	 * This attribute is no longer implemented as of Gecko 1.9.1, and is removed entirely in Gecko 1.9.2.
 	 */
 	var processName : String;
 	/**
 	 * The process signature. Read only.
-	 * Gecko 1.9.1 note 
+	 * Gecko 1.9.1 note
 	 * This attribute is no longer implemented as of Gecko 1.9.1, and is removed entirely in Gecko 1.9.2.
 	 */
 	var processSignature : ULong;

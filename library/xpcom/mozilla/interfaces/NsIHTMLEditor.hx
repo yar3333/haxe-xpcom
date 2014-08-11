@@ -5,21 +5,9 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIHTMLEditor") extern class NsIHTMLEditor extends NsISupports
 {
-	/**
-	 *  
-	 */
 	static inline var eLeft = 0;
-	/**
-	 *  
-	 */
 	static inline var eCenter = 1;
-	/**
-	 *  
-	 */
 	static inline var eRight = 2;
-	/**
-	 *  
-	 */
 	static inline var eJustify = 3;
 	
 	/**

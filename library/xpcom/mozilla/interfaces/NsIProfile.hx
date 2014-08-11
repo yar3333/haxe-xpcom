@@ -11,6 +11,15 @@ import xpcom.mozilla.objects.*;
 	}
 	
 	/**
+	 * When shutting down the profile, save all changes.
+	 */
+	static inline var SHUTDOWN_PERSIST = 0x00000001;
+	/**
+	 * When shutting down the profile, discard changes. <span class="inlineIndicator unimplemented unimplementedInline">Unimplemented</span>
+	 */
+	static inline var SHUTDOWN_CLEANSE = 0x00000002;
+	
+	/**
 	 * The name of the profile currently in use.
 	 */
 	var currentProfile : Wstring;

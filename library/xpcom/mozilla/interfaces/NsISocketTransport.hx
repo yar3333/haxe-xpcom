@@ -6,6 +6,15 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsISocketTransport") extern class NsISocketTransport extends NsITransport
 {
 	/**
+	 * Connecting timeout.
+	 */
+	static inline var TIMEOUT_CONNECT = 0;
+	/**
+	 * Read and write timeouts.
+	 */
+	static inline var TIMEOUT_READ_WRITE = 1;
+	
+	/**
 	 * A bitmask that can be used to modify underlying behavior of the socket connection. See Connection Flag Constants for more details.
 	 */
 	var connectionFlags : ULong;

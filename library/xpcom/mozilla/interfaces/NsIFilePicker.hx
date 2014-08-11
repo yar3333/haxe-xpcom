@@ -13,6 +13,23 @@ import xpcom.mozilla.objects.*;
 	}
 	
 	/**
+	 * Load a file or directory.
+	 */
+	static inline var modeOpen = 0;
+	/**
+	 * Save a file or directory.
+	 */
+	static inline var modeSave = 1;
+	/**
+	 * Select a folder/directory.
+	 */
+	static inline var modeGetFolder = 2;
+	/**
+	 * Load multiple files.
+	 */
+	static inline var modeOpenMultiple = 3;
+	
+	/**
 	 * If true, the file is added to the operating system's "recent documents" list (if the operating system has one; nothing happens if there is no such concept on the user's platform). This attribute has no effect if private browsing mode is in effect.
 	 */
 	var addToRecentDocs : Bool;

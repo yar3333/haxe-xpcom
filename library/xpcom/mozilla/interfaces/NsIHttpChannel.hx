@@ -33,7 +33,7 @@ import xpcom.mozilla.objects.*;
 	/**
 	 * Set or get the HTTP request method (default is "GET"). Setter is case insensitive; getter returns an uppercase string.
 	 * This attribute may only be set before the channel is opened.
-	 * Note:  The data for a "POST" or "PUT" request can be configured via nsIUploadChannel. However, after setting the upload data, it may be necessary to set the request method explicitly. The documentation for nsIUploadChannel has further details. 
+	 * Note:  The data for a "POST" or "PUT" request can be configured via nsIUploadChannel. However, after setting the upload data, it may be necessary to set the request method explicitly. The documentation for nsIUploadChannel has further details.
 	 * Exceptions thrown
 	 * 
 	 * NS_ERROR_IN_PROGRESS

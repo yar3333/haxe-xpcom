@@ -5,6 +5,11 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIPrincipal") extern class NsIPrincipal extends NsISerializable
 {
+	static inline var ENABLE_DENIED = 1;
+	static inline var ENABLE_UNKNOWN = 2;
+	static inline var ENABLE_WITH_USER_PERMISSION = 3;
+	static inline var ENABLE_GRANTED = 4;
+	
 	/**
 	 * The certificate associated with this principal, if any. If there isn't one, this will return null. Getting this attribute never throws. Read only.
 	 */

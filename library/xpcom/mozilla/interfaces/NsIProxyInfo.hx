@@ -6,6 +6,11 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsIProxyInfo") extern class NsIProxyInfo extends NsISupports
 {
 	/**
+	 * This flag is set if the proxy is to perform name resolution itself. If this is the case, the hostname is used in some fashion, and we shouldn't do any form of DNS lookup ourselves.
+	 */
+	static inline var TRANSPARENT_PROXY_RESOLVES_HOST = 1 << 0;
+	
+	/**
 	 * This attribute specifies the proxy to failover to when this proxy fails.
 	 */
 	var failoverProxy : NsIProxyInfo;
@@ -18,7 +23,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	var flags : ULong;
 	/**
-	 * This attribute specifies the hostname of the proxy server. Read only. 
+	 * This attribute specifies the hostname of the proxy server. Read only.
 	 * Note:  Prior to Gecko 1.8 host was available by the host method.
 	 */
 	var host : AUTF8String;
@@ -27,7 +32,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	var next : NsIProxyInfo;
 	/**
-	 * This attribute specifies the port number of the proxy server. Read only. 
+	 * This attribute specifies the port number of the proxy server. Read only.
 	 * Note:  Prior to Gecko 1.8 port was available by the port method.
 	 */
 	var port : Long;
@@ -39,7 +44,7 @@ import xpcom.mozilla.objects.*;
 	 * "socks4" - SOCKS v4 proxy
 	 * "direct" - no proxy
 	 * "unknown" - unknown proxy (see nsIProtocolProxyService.resolve())
-	 * A future version of this interface may define additional types. Read only. 
+	 * A future version of this interface may define additional types. Read only.
 	 * Note: Prior to Gecko 1.8 type was available by the type method.
 	 */
 	var type : ACString;

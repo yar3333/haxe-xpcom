@@ -6,6 +6,15 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsIAccessibleText") extern class NsIAccessibleText extends NsISupports
 {
 	/**
+	 * Will be treated as the equal to the end of the text.
+	 */
+	static inline var TEXT_OFFSET_END_OF_TEXT = -1;
+	/**
+	 * Will be treated as the caret position.
+	 */
+	static inline var TEXT_OFFSET_CARET = -2;
+	
+	/**
 	 * The current current caret offset. If set < 0 then caret will be placed at the end of the text.
 	 */
 	var caretOffset : Long;

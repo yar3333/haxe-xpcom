@@ -1,5 +1,7 @@
 package ;
 
+using StringTools;
+
 class Attribute
 {
 	public var type : String;
@@ -11,7 +13,7 @@ class Attribute
 	{
 		this.type = type;
 		this.name = name;
-		this.desc = desc;
+		this.desc = desc.trim().split("\n").map(function(s) return s.trim()).join("\n");
 		this.metas = metas;
 	}
 	

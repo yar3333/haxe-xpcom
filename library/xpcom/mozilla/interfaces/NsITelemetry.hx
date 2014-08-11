@@ -19,11 +19,11 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var HISTOGRAM_LINEAR = 1;
 	/**
-	 * For storing 0/1 values. 
+	 * For storing 0/1 values.
 	 */
 	static inline var HISTOGRAM_BOOLEAN = 2;
 	/**
-	 * For storing a single value; its count is always == 1. 
+	 * For storing a single value; its count is always == 1.
 	 */
 	static inline var HISTOGRAM_FLAG = 3;
 	

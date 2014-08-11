@@ -10,17 +10,8 @@ import xpcom.mozilla.objects.*;
 		return xpcom.Components.classes[cast "@mozilla.org/chrome/chrome-registry;1"].getService(NsIChromeRegistry);
 	}
 	
-	/**
-	 *  
-	 */
 	static inline var NONE = 0;
-	/**
-	 *  
-	 */
 	static inline var PARTIAL = 1;
-	/**
-	 *  
-	 */
 	static inline var FULL = 2;
 	
 	function canonify(aChromeURL:NsIURI) : Void;

@@ -18,7 +18,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var STATE_NORMAL = 3;
 	/**
-	 * The window is in full screen mode. 
+	 * The window is in full screen mode.
 	 */
 	static inline var STATE_FULLSCREEN = 4;
 	

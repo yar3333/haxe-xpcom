@@ -17,17 +17,8 @@ import xpcom.mozilla.objects.*;
 	 * We dunno whether there is new mail.
 	 */
 	static inline var nsMsgBiffState_Unknown = 2;
-	/**
-	 *  
-	 */
 	static inline var nsMsgDispositionState_None = -1;
-	/**
-	 *  
-	 */
 	static inline var nsMsgDispositionState_Replied = 0;
-	/**
-	 *  
-	 */
 	static inline var nsMsgDispositionState_Forwarded = 1;
 	/**
 	 * Turn notifications on/off for various notification types. Currently only supporting allMessageCountNotifications which refers to both total and unread message counts.

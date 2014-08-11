@@ -5,13 +5,7 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsICRLManager") extern class NsICRLManager extends NsISupports
 {
-	/**
-	 *  
-	 */
 	static inline var TYPE_AUTOUPDATE_TIME_BASED = 1;
-	/**
-	 *  
-	 */
 	static inline var TYPE_AUTOUPDATE_FREQ_BASED = 2;
 	
 	function computeNextAutoUpdateTime(info:NsICRLInfo, autoUpdateType:ULong, noOfDays:Float) : Wstring;

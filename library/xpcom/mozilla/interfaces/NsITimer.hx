@@ -17,9 +17,8 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var TYPE_ONE_SHOT = 0;
 	/**
-	 * 
-	 *     <p>After firing, the timer is stopped and not restarted until its callback completes. The timer period will ideally be at least the time between when processing for last firing the callback completes and when the next firing occurs, but note that this is not guaranteed: the timer can fire at any time.</p>
-	 *     This is the preferable repeating type for most situations.
+	 * <p>After firing, the timer is stopped and not restarted until its callback completes. The timer period will ideally be at least the time between when processing for last firing the callback completes and when the next firing occurs, but note that this is not guaranteed: the timer can fire at any time.</p>
+	 * This is the preferable repeating type for most situations.
 	 */
 	static inline var TYPE_REPEATING_SLACK = 1;
 	/**

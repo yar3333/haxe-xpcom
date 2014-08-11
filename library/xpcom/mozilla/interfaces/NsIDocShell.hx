@@ -23,19 +23,19 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var INTERNAL_LOAD_FLAGS_DONT_SEND_REFERRER = 0x2;
 	/**
-	 *  Used to indicate that LOAD_FLAGS_ALLOW_THIRD_PARTY_FIXUP was passed as one of the flags to <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDocShell#loadURI()">loadURI()</a></code>.
+	 * Used to indicate that LOAD_FLAGS_ALLOW_THIRD_PARTY_FIXUP was passed as one of the flags to <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDocShell#loadURI()">loadURI()</a></code>.
 	 */
 	static inline var INTERNAL_LOAD_FLAGS_ALLOW_THIRD_PARTY_FIXUP = 0x4;
 	/**
-	 * This flag marks the first load in this object. See <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIWebNavigation" title="">nsIWebNavigation</a>.LOAD_FLAGS_FIRST_LOAD</code>. 
+	 * This flag marks the first load in this object. See <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIWebNavigation" title="">nsIWebNavigation</a>.LOAD_FLAGS_FIRST_LOAD</code>.
 	 */
 	static inline var INTERNAL_LOAD_FLAGS_FIRST_LOAD = 0x8;
 	/**
-	 *  Used to indicate that LOAD_FLAGS_BYPASS_CLASSIFIER was passed as one of the flags to <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDocShell#loadURI()">loadURI()</a></code>.
+	 * Used to indicate that LOAD_FLAGS_BYPASS_CLASSIFIER was passed as one of the flags to <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDocShell#loadURI()">loadURI()</a></code>.
 	 */
 	static inline var INTERNAL_LOAD_FLAGS_BYPASS_CLASSIFIER = 0x10;
 	/**
-	 *  Used to indicate that LOAD_FLAGS_FORCE_ALLOW_COOKIES was passed as one of the flags to <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDocShell#loadURI()">loadURI()</a></code>.
+	 * Used to indicate that LOAD_FLAGS_FORCE_ALLOW_COOKIES was passed as one of the flags to <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDocShell#loadURI()">loadURI()</a></code>.
 	 */
 	static inline var INTERNAL_LOAD_FLAGS_FORCE_ALLOW_COOKIES = 0x20;
 	/**
@@ -87,7 +87,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var LOAD_CMD_HISTORY = 0x4;
 	/**
-	 * Returned by the loadType attribute when the page has used history.pushState() 
+	 * Returned by the loadType attribute when the page has used history.pushState()
 	 */
 	static inline var LOAD_CMD_PUSHSTATE = 0x8;
 	
@@ -175,7 +175,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	var eldestPresShell : NsIPresShell;
 	/**
-	 * A character set to override the page's default character set while processing; this is tried before using any other character set during page loads. 
+	 * A character set to override the page's default character set while processing; this is tried before using any other character set during page loads.
 	 * Note: Prior to Gecko 12.0, this attribute was part of a separate nsIDocCharsetInfo interface.
 	 */
 	var forcedCharset : NsIAtom;
@@ -188,7 +188,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	var historyID : ULongLong;
 	/**
-	 * Indicates whether or not the DocShell is currently active. An active DocShell is one that is currently visible, which means it's not a good candidate for optimizations such as image frame discarding. DocShells are active if this is true, which is the default state. 
+	 * Indicates whether or not the DocShell is currently active. An active DocShell is one that is currently visible, which means it's not a good candidate for optimizations such as image frame discarding. DocShells are active if this is true, which is the default state.
 	 * Note: Starting in Gecko 8.0, isActive is false for documents in minimized windows.
 	 */
 	var isActive : Bool;
@@ -231,7 +231,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	var parentCharset : NsIAtom;
 	/**
-	 * Indicates the source from which the character set being used was obtained. Higher numbers override lower ones. See Character set source constants for defined values. 
+	 * Indicates the source from which the character set being used was obtained. Higher numbers override lower ones. See Character set source constants for defined values.
 	 * Note: Prior to Gecko 12.0, this attribute was part of a separate nsIDocCharsetInfo interface.
 	 */
 	var parentCharsetSource : PRInt32;

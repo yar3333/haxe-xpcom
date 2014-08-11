@@ -10,35 +10,35 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var ACCESS_NONE = 0;
 	/**
-	 * ACCESS REQUESTED - I only want to READ, if there isn't an entry just fail. <p>ACCESS GRANTED - You can READ from this descriptor.</p> 
+	 * ACCESS REQUESTED - I only want to READ, if there isn't an entry just fail. <p>ACCESS GRANTED - You can READ from this descriptor.</p>
 	 */
 	static inline var ACCESS_READ = 1;
 	/**
-	 * ACCESS REQUESTED - I have something new I want to WRITE into the cache, make me a new entry and doom the old one, if any. <p>ACCESS GRANTED - You must WRITE to this descriptor because the cache entry was just created for you.</p> 
+	 * ACCESS REQUESTED - I have something new I want to WRITE into the cache, make me a new entry and doom the old one, if any. <p>ACCESS GRANTED - You must WRITE to this descriptor because the cache entry was just created for you.</p>
 	 */
 	static inline var ACCESS_WRITE = 2;
 	/**
-	 * ACCESS REQUESTED - I want to READ, but I'm willing to update an existing entry if necessary, or create a new one if none exists. <p>ACCESS GRANTED - You can READ the descriptor to determine if it's valid, you may WRITE if it needs updating.</p> 
+	 * ACCESS REQUESTED - I want to READ, but I'm willing to update an existing entry if necessary, or create a new one if none exists. <p>ACCESS GRANTED - You can READ the descriptor to determine if it's valid, you may WRITE if it needs updating.</p>
 	 */
 	static inline var ACCESS_READ_WRITE = 3;
 	/**
-	 * The storage policy of a cache entry determines the device(s) to which it belongs. See <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheSession" title="">nsICacheSession</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheEntryDescriptor" title="">nsICacheEntryDescriptor</a></code> for more details. <p>Allows the cache entry to be stored in any device. The cache service decides which cache device to use based on "some resource management calculation."</p> 
+	 * The storage policy of a cache entry determines the device(s) to which it belongs. See <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheSession" title="">nsICacheSession</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheEntryDescriptor" title="">nsICacheEntryDescriptor</a></code> for more details. <p>Allows the cache entry to be stored in any device. The cache service decides which cache device to use based on "some resource management calculation."</p>
 	 */
 	static inline var STORE_ANYWHERE = 0;
 	/**
-	 * The storage policy of a cache entry determines the device(s) to which it belongs. See <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheSession" title="">nsICacheSession</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheEntryDescriptor" title="">nsICacheEntryDescriptor</a></code> for more details. <p>Requires the cache entry to reside in non-persistent storage. That is typically in system RAM.</p> 
+	 * The storage policy of a cache entry determines the device(s) to which it belongs. See <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheSession" title="">nsICacheSession</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheEntryDescriptor" title="">nsICacheEntryDescriptor</a></code> for more details. <p>Requires the cache entry to reside in non-persistent storage. That is typically in system RAM.</p>
 	 */
 	static inline var STORE_IN_MEMORY = 1;
 	/**
-	 * The storage policy of a cache entry determines the device(s) to which it belongs. See <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheSession" title="">nsICacheSession</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheEntryDescriptor" title="">nsICacheEntryDescriptor</a></code> for more details. <p>Requires the cache entry to reside in persistent storage. That is typically on a system's hard disk.</p> 
+	 * The storage policy of a cache entry determines the device(s) to which it belongs. See <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheSession" title="">nsICacheSession</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheEntryDescriptor" title="">nsICacheEntryDescriptor</a></code> for more details. <p>Requires the cache entry to reside in persistent storage. That is typically on a system's hard disk.</p>
 	 */
 	static inline var STORE_ON_DISK = 2;
 	/**
-	 * The storage policy of a cache entry determines the device(s) to which it belongs. See <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheSession" title="">nsICacheSession</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheEntryDescriptor" title="">nsICacheEntryDescriptor</a></code> for more details. <p>Requires the cache entry to reside in persistent storage, and in a separate file.</p> 
+	 * The storage policy of a cache entry determines the device(s) to which it belongs. See <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheSession" title="">nsICacheSession</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheEntryDescriptor" title="">nsICacheEntryDescriptor</a></code> for more details. <p>Requires the cache entry to reside in persistent storage, and in a separate file.</p>
 	 */
 	static inline var STORE_ON_DISK_AS_FILE = 3;
 	/**
-	 * The storage policy of a cache entry determines the device(s) to which it belongs. See <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheSession" title="">nsICacheSession</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheEntryDescriptor" title="">nsICacheEntryDescriptor</a></code> for more details. <p>Requires the cache entry to reside in persistent, reliable storage for offline use.</p> 
+	 * The storage policy of a cache entry determines the device(s) to which it belongs. See <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheSession" title="">nsICacheSession</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsICacheEntryDescriptor" title="">nsICacheEntryDescriptor</a></code> for more details. <p>Requires the cache entry to reside in persistent, reliable storage for offline use.</p>
 	 */
 	static inline var STORE_OFFLINE = 4;
 	/**

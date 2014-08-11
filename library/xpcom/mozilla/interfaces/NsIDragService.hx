@@ -22,7 +22,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var DRAGDROP_ACTION_LINK = 4;
 	/**
-	 * The action is not initialized. 
+	 * The action is not initialized.
 	 */
 	static inline var DRAGDROP_ACTION_UNINITIALIZED = 64;
 	

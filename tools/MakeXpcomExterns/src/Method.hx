@@ -1,5 +1,6 @@
 package ;
 
+using StringTools;
 using Lambda;
 
 class Method

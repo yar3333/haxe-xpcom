@@ -11,6 +11,23 @@ import xpcom.mozilla.objects.*;
 	}
 	
 	/**
+	 * Attempt to quit if all windows are closed.
+	 */
+	static inline var eConsiderQuit = 0x01;
+	/**
+	 * Try to close all windows, then quit if successful.
+	 */
+	static inline var eAttemptQuit = 0x02;
+	/**
+	 * Force all windows to close, then quit.
+	 */
+	static inline var eForceQuit = 0x03;
+	/**
+	 * Restart the application after quitting. The application will be restarted with the same profile and an empty command line.
+	 */
+	static inline var eRestart = 0x10;
+	
+	/**
 	 * true if the startup process was interrupted by an interactive prompt. This can be used, for example, when doing performance testing of the startup process to discount numbers for tests that were interrupted by a user prompt.
 	 */
 	var interrupted : Bool;

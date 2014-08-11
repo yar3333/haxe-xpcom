@@ -5,37 +5,13 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsISelectionPrivate") extern class NsISelectionPrivate extends NsISupports
 {
-	/**
-	 *  
-	 */
 	static inline var ENDOFPRECEDINGLINE = 0;
-	/**
-	 *  
-	 */
 	static inline var STARTOFNEXTLINE = 1;
-	/**
-	 *  
-	 */
 	static inline var TABLESELECTION_NONE = 0;
-	/**
-	 *  
-	 */
 	static inline var TABLESELECTION_CELL = 1;
-	/**
-	 *  
-	 */
 	static inline var TABLESELECTION_ROW = 2;
-	/**
-	 *  
-	 */
 	static inline var TABLESELECTION_COLUMN = 3;
-	/**
-	 *  
-	 */
 	static inline var TABLESELECTION_TABLE = 4;
-	/**
-	 *  
-	 */
 	static inline var TABLESELECTION_ALLCELLS = 5;
 	
 	/**

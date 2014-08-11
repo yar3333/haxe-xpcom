@@ -5,6 +5,19 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIClipboard") extern class NsIClipboard extends NsISupports
 {
+	/**
+	 * Clipboard for selection.
+	 */
+	static inline var kSelectionClipboard = 0;
+	/**
+	 * Clipboard for global use.
+	 */
+	static inline var kGlobalClipboard = 1;
+	/**
+	 * Clipboard for find strings.
+	 */
+	static inline var kFindClipboard = 2;
+	
 	function emptyClipboard(aWhichClipboard:Long) : Void;
 	function forceDataToClipboard(aWhichClipboard:Long) : Void;
 	function getData(aTransferable:NsITransferable, aWhichClipboard:Long) : Void;

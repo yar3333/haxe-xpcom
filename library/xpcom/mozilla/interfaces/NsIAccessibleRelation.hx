@@ -5,9 +5,6 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIAccessibleRelation") extern class NsIAccessibleRelation extends NsISupports
 {
-	/**
-	 *  
-	 */
 	static inline var RELATION_NUL = 0x00;
 	/**
 	 * Some attribute of this object is affected by a target object.
@@ -22,11 +19,9 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var RELATION_LABEL_FOR = 0x03;
 	/**
-	 * 
-	 *         <p>This object is labelled by a target object. If the accessible has an <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAccessible#name()">nsIAccessible.name()</a></code> , you can get the <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAccessible" title="">nsIAccessible</a></code> that it was labelled by in order to get more formatting information.</p>
-	 *         <div>
-	 *           <div class="note"><strong>Note:</strong> The label and description (see RELATION_DESCRIBED_BY) relations may be used to prevent redundant information from being presented by the screen reader, since the label and description can occur both on their own, and in the name or description fields of an <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAccessible" title="">nsIAccessible</a></code>.</div></div>
-	 *       
+	 * <p>This object is labelled by a target object. If the accessible has an <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAccessible#name()">nsIAccessible.name()</a></code> , you can get the <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAccessible" title="">nsIAccessible</a></code> that it was labelled by in order to get more formatting information.</p>
+	 * <div>
+	 * <div class="note"><strong>Note:</strong> The label and description (see RELATION_DESCRIBED_BY) relations may be used to prevent redundant information from being presented by the screen reader, since the label and description can occur both on their own, and in the name or description fields of an <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAccessible" title="">nsIAccessible</a></code>.</div></div>
 	 */
 	static inline var RELATION_LABELLED_BY = 0x04;
 	/**
@@ -66,9 +61,8 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var RELATION_PARENT_WINDOW_OF = 0x0d;
 	/**
-	 * 
-	 *         <p>This object is described by the target object. If the accessible has an <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAccessible#description()">nsIAccessible.description()</a></code> , you can get the <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAccessible" title="">nsIAccessible</a></code> that it was described by in order to get more formatting information.</p>
-	 *         <div class="note"><strong>Note:</strong> The label (see RELATION_LABELLED_BY) and description relations may be used to prevent redundant information from being presented by the screen reader, since the label and description can occur both on their own, and in the name or description fields of an <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAccessible" title="">nsIAccessible</a></code>.</div>
+	 * <p>This object is described by the target object. If the accessible has an <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAccessible#description()">nsIAccessible.description()</a></code> , you can get the <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAccessible" title="">nsIAccessible</a></code> that it was described by in order to get more formatting information.</p>
+	 * <div class="note"><strong>Note:</strong> The label (see RELATION_LABELLED_BY) and description relations may be used to prevent redundant information from being presented by the screen reader, since the label and description can occur both on their own, and in the name or description fields of an <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAccessible" title="">nsIAccessible</a></code>.</div>
 	 */
 	static inline var RELATION_DESCRIBED_BY = 0x0e;
 	/**

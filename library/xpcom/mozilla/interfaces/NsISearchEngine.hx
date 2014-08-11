@@ -5,6 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsISearchEngine") extern class NsISearchEngine extends NsISupports
 {
+	static inline var TYPE_MOZSEARCH = 1;
+	static inline var TYPE_SHERLOCK = 2;
+	static inline var TYPE_OPENSEARCH = 3;
+	
 	/**
 	 * An optional shortcut alias for the engine. When non-null, this is a unique identifier.
 	 */

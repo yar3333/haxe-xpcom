@@ -1,5 +1,7 @@
 package ;
 
+using StringTools;
+
 class Constant
 {
 	public var name : String;
@@ -10,7 +12,7 @@ class Constant
 	{
 		this.name = name;
 		this.value = value;
-		this.desc = desc;
+		this.desc = desc.trim().split("\n").map(function(s) return s.trim()).join("\n");
 	}
 	
 	public function toString() : String
