@@ -57,7 +57,7 @@ import xpcom.types.*;
 	 */
 	static function setDates(path:String, accessDate:Date, modificationDate:Date) : Promise<Void>;
 	static function stat(path:String, ?options:Dynamic) : Promise<Info>;
-	static function writeAtomic(path:String, data:js.html.ArrayBufferView, options:Dynamic) : Promise<Void>;
+	static function writeAtomic(path:String, data:ArrayBufferView, options:Dynamic) : Promise<Void>;
 	
 	
 	function close() : Promise<Void>;
@@ -67,12 +67,12 @@ import xpcom.types.*;
 	function flush() : Promise<Void>;
 	function getPosition() : Promise<Int>;
 	inline function read_(bytes:Int) : Promise<Int> untyped return this["read"](bytes);
-	function readTo(dest:js.html.ArrayBufferView, ?options:Dynamic) : Promise<Int>;
+	function readTo(dest:ArrayBufferView, ?options:Dynamic) : Promise<Int>;
 	/**
 	 * Requires Gecko 28.0
 	 */ 
 	function setDates_(accessDate:Date, modificationDate:Date) : Promise<Void> untyped return this["setDates"](accessDate, modificationDate);
 	function setPosition(bytes:Int) : Promise<Void>;
 	function stat_() : Promise<Info> untyped return this["stat"]();
-	function write(source:js.html.ArrayBufferView, ?options:Dynamic) : Promise<Int>;
+	function write(source:ArrayBufferView, ?options:Dynamic) : Promise<Int>;
 }

@@ -20,7 +20,7 @@ import xpcom.mozilla.objects.*;
 	/**
 	 * Read only. The DOM Document this editor is associated with.
 	 */
-	var document : And <table>) and provides functionality global to the document (such as obtaining the page's URL and creating new elements in the document).">Document;
+	var document : Document;
 	/**
 	 * Sets the current 'Save' document character set.
 	 */
