@@ -1,11 +1,11 @@
 package xpcom.mozilla.modules;
 
-import xpcom.mozilla.NsICategoryManager;
-import xpcom.mozilla.NsIModule;
+import xpcom.mozilla.interfaces.NsICategoryManager;
+import xpcom.mozilla.interfaces.NsIModule;
 
 @:native("XPCOMUtils") extern class XPCOMUtils
 {
-	static function __init__()
+	static function __init__() : Void
 	{
 		Components.utils.import_("resource://gre/modules/XPCOMUtils.jsm");
 	}
@@ -34,5 +34,5 @@ import xpcom.mozilla.NsIModule;
 	
 	static function generateCI(classInfo:Dynamic) : Void;
 	static function generateQI(interfaces:Array<Dynamic>) : Void;
-	static importRelative(that:Dynamic, path:String, scope:String) : Void;
+	static function importRelative(that:Dynamic, path:String, scope:String) : Void;
 }
