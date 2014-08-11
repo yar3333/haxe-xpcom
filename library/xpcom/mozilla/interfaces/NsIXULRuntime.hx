@@ -11,6 +11,23 @@ import xpcom.mozilla.objects.*;
 	}
 	
 	/**
+	 * The default (chrome) process.
+	 */
+	static inline var PROCESS_TYPE_DEFAULT = 0;
+	/**
+	 * A plugin subprocess.
+	 */
+	static inline var PROCESS_TYPE_PLUGIN = 1;
+	/**
+	 * A content subprocess.
+	 */
+	static inline var PROCESS_TYPE_CONTENT = 2;
+	/**
+	 * IPDL unit testing subprocess.
+	 */
+	static inline var PROCESS_TYPE_IPDLUNITTEST = 3;
+	
+	/**
 	 * Whether the application was launched in safe mode. Read only.
 	 */
 	var inSafeMode : Bool;

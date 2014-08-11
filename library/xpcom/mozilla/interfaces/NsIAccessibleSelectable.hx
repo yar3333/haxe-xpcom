@@ -5,6 +5,10 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIAccessibleSelectable") extern class NsIAccessibleSelectable extends NsISupports
 {
+	static inline var eSelection_Add = 0;
+	static inline var eSelection_Remove = 1;
+	static inline var eSelection_GetState = 2;
+	
 	/**
 	 * The number of accessible children currently selected. Read only.
 	 */

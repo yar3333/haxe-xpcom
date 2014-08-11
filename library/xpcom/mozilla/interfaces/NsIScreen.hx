@@ -11,6 +11,19 @@ import xpcom.mozilla.objects.*;
 	}
 	
 	/**
+	 * The screen is fully dimmed (that is, off).
+	 */
+	static inline var BRIGHTNESS_DIM = 0;
+	/**
+	 * The screen is at full brightness.
+	 */
+	static inline var BRIGHTNESS_FULL = 1;
+	/**
+	 * The number of different brightness levels.
+	 */
+	static inline var BRIGHTNESS_LEVELS = 2;
+	
+	/**
 	 * The screen's color depth; this is the number of bits used to represent a color. Read only.
 	 */
 	var colorDepth : Long;

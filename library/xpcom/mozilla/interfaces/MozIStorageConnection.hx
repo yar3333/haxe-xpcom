@@ -6,6 +6,19 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.mozIStorageConnection") extern class MozIStorageConnection extends NsISupports
 {
 	/**
+	 * No database lock is obtained until the first statement is run.
+	 */
+	static inline var TRANSACTION_DEFERRED = 0;
+	/**
+	 * A <a class="external" href="http://sqlite.org/lockingv3.html#reserved_lock" title="http://sqlite.org/lockingv3.html#reserved_lock">reserved lock</a> is obtained on the database.
+	 */
+	static inline var TRANSACTION_IMMEDIATE = 1;
+	/**
+	 * An <a class="external" href="http://sqlite.org/lockingv3.html#exclusive_lock" title="http://sqlite.org/lockingv3.html#exclusive_lock">exclusive lock</a> is obtained on the database.
+	 */
+	static inline var TRANSACTION_EXCLUSIVE = 2;
+	
+	/**
 	 * Indicates if the connection is open and ready to use. This will be false if the connection failed to open, or it has been closed. Read only.
 	 */
 	var connectionReady : Bool;

@@ -6,6 +6,31 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsIDOMOfflineResourceList") extern class NsIDOMOfflineResourceList extends NsISupports
 {
 	/**
+	 * The object isn't associated with an application cache.
+	 */
+	static inline var UNCACHED = 0;
+	/**
+	 * The application cache is not in the process of being updated.
+	 */
+	static inline var IDLE = 1;
+	/**
+	 * The application cache manifest is being fetched and checked for updates.
+	 */
+	static inline var CHECKING = 2;
+	/**
+	 * Resources are being downloaded to be added to the cache.
+	 */
+	static inline var DOWNLOADING = 3;
+	/**
+	 * There is a new version of the application cache available.
+	 */
+	static inline var UPDATEREADY = 4;
+	/**
+	 * The application cache group is now obsolete.
+	 */
+	static inline var OBSOLETE = 5;
+	
+	/**
 	 * The list of dynamically-managed entries in the offline resource list. Read only.
 	 */
 	var mozItems : NsIDOMOfflineResourceList;

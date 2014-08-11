@@ -18,11 +18,11 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var NEED_DOMAIN = 4;
 	/**
-	 *  <p>This dialog only asks for password information. Authentication prompts SHOULD NOT show a username field. Attempts to change the username field will have no effect. <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAuthPrompt2" title="">nsIAuthPrompt2</a></code> implementations should, however, show its initial value to the user in some form. For example, a paragraph in the dialog might say "Please enter your password for user jsmith at server intranet".</p> This flag is mutually exclusive with #NEED_DOMAIN.
+	 * <p>This dialog only asks for password information. Authentication prompts SHOULD NOT show a username field. Attempts to change the username field will have no effect. <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAuthPrompt2" title="">nsIAuthPrompt2</a></code> implementations should, however, show its initial value to the user in some form. For example, a paragraph in the dialog might say "Please enter your password for user jsmith at server intranet".</p> This flag is mutually exclusive with #NEED_DOMAIN.
 	 */
 	static inline var ONLY_PASSWORD = 8;
 	/**
-	 * We have already tried to log in for this channel (with auth values from a previous promptAuth call), but it failed, so we now ask the user to provide a new, correct login. 
+	 * We have already tried to log in for this channel (with auth values from a previous promptAuth call), but it failed, so we now ask the user to provide a new, correct login.
 	 */
 	static inline var PREVIOUS_FAILED = 16;
 	

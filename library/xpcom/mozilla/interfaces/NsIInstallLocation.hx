@@ -5,6 +5,12 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIInstallLocation") extern class NsIInstallLocation extends NsISupports
 {
+	static inline var PRIORITY_APP_PROFILE = 0;
+	static inline var PRIORITY_APP_SYSTEM_USER = 10;
+	static inline var PRIORITY_XRE_SYSTEM_USER = 100;
+	static inline var PRIORITY_APP_SYSTEM_GLOBAL = 1000;
+	static inline var PRIORITY_XRE_SYSTEM_GLOBAL = 10000;
+	
 	/**
 	 * Whether or not the user can write to the Install Location with the current access privileges. This is different from restricted because it's not whether or not the location *might* be restricted, it's whether or not it actually *is* restricted right now. Read only.
 	 */

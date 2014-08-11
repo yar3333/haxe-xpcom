@@ -50,7 +50,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var BEHAVIOR_JAVASCRIPT = 1 << 6;
 	/**
-	 * Search for pages that have been marked as being opened, such as a tab in a tabbrowser. 
+	 * Search for pages that have been marked as being opened, such as a tab in a tabbrowser.
 	 */
 	static inline var BEHAVIOR_OPENPAGE = 1 << 7;
 	

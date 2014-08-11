@@ -6,7 +6,7 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.imgIRequest") extern class ImgIRequest extends NsIRequest
 {
 	/**
-	 *  <p>Nothing to report.</p> 
+	 * <p>Nothing to report.</p>
 	 */
 	static inline var STATUS_NONE = 0x0;
 	/**
@@ -30,11 +30,11 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var STATUS_FRAME_COMPLETE = 0x10;
 	/**
-	 * The whole image has been decoded. 
+	 * The whole image has been decoded.
 	 */
 	static inline var STATUS_DECODE_COMPLETE = 0x20;
 	/**
-	 *  <p>CORS modes images can be loaded with.</p> <p>By default, all images are loaded with CORS_NONE and cannot be used cross-origin in context like WebGL.</p> If an HTML img element has the crossorigin attribute set, the imgIRequest will be validated for cross-origin usage with CORS, and, if successful, will have its CORS mode set to the relevant type. 
+	 * <p>CORS modes images can be loaded with.</p> <p>By default, all images are loaded with CORS_NONE and cannot be used cross-origin in context like WebGL.</p> If an HTML img element has the crossorigin attribute set, the imgIRequest will be validated for cross-origin usage with CORS, and, if successful, will have its CORS mode set to the relevant type.
 	 */
 	static inline var CORS_NONE = 1;
 	static inline var CORS_ANONYMOUS = 2;

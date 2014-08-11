@@ -6,7 +6,7 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsIDOMEvent") extern class NsIDOMEvent extends NsISupports
 {
 	/**
-	 * The event is not being dispatched. 
+	 * The event is not being dispatched.
 	 */
 	static inline var NONE = 0;
 	/**

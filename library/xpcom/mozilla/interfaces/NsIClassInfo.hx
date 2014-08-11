@@ -6,6 +6,39 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsIClassInfo") extern class NsIClassInfo extends NsISupports
 {
 	/**
+	 * The class is a singleton that must be accessed via <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIServiceManager" title="">nsIServiceManager</a></code>.
+	 */
+	static inline var SINGLETON = 1 << 0;
+	/**
+	 * The class may be accessed by any thread.
+	 */
+	static inline var THREADSAFE = 1 << 1;
+	/**
+	 * The class may only be accessed by the main application thread.
+	 */
+	static inline var MAIN_THREAD_ONLY = 1 << 2;
+	/**
+	 * The class is a DOM object.
+	 */
+	static inline var DOM_OBJECT = 1 << 3;
+	/**
+	 * The class is a plugin object.
+	 */
+	static inline var PLUGIN_OBJECT = 1 << 4;
+	/**
+	 * <p>Specifies that this class implements <code><a class="new" href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIContent" title="">nsIContent</a></code>.</p> <div class="note"><strong>Note:</strong> This flag is private and is for use by the Mozilla codebase only.</div>
+	 */
+	static inline var CONTENT_NODE = 1 << 6;
+	/**
+	 * The high order bit is RESERVED for consumers of these flags. No implementor of this interface should ever return flags with this bit set.
+	 */
+	static inline var RESERVED = 1 << 31;
+	/**
+	 * This flag is designed for use with <code><a href="https://developer.mozilla.org/nsGenericFactory" title="nsGenericFactory">nsGenericFactory</a></code> and can be set in <code><a href="https://developer.mozilla.org/en/NsModuleComponentInfo/mFlags" title="en/NsModuleComponentInfo/mFlags">nsModuleComponentInfo::mFlags</a></code>. It has no meaning when returned from the flags attribute of a nsIClassInfo implementation. <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)">Obsolete since Gecko 2.0</span>
+	 */
+	static inline var EAGER_CLASSINFO = 1 << 5;
+	
+	/**
 	 * A human readable string naming the class, or null. Read only.
 	 */
 	var classDescription : String;

@@ -71,15 +71,15 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var PERSIST_FLAGS_CLEANUP_ON_FAILURE = 8192;
 	/**
-	 * Let the WebBrowserPersist decide whether the incoming data is encoded and whether it needs to go through a content converter, for example to decompress it. 
+	 * Let the WebBrowserPersist decide whether the incoming data is encoded and whether it needs to go through a content converter, for example to decompress it.
 	 */
 	static inline var PERSIST_FLAGS_AUTODETECT_APPLY_CONVERSION = 16384;
 	/**
-	 * Append the downloaded data to the target file. This can only be used when persisting to a local file. 
+	 * Append the downloaded data to the target file. This can only be used when persisting to a local file.
 	 */
 	static inline var PERSIST_FLAGS_APPEND_TO_FILE = 32768;
 	/**
-	 * Force relevant cookies to be sent with this load even if normally they wouldn't be. 
+	 * Force relevant cookies to be sent with this load even if normally they wouldn't be.
 	 */
 	static inline var PERSIST_FLAGS_FORCE_ALLOW_COOKIES = 65536;
 	/**

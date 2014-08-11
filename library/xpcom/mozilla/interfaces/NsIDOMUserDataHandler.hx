@@ -22,7 +22,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var NODE_RENAMED = 4;
 	/**
-	 *  The node was adopted into a new document.
+	 * The node was adopted into a new document.
 	 */
 	static inline var NODE_ADOPTED = 5;
 	

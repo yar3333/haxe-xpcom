@@ -6,6 +6,19 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsICommandLine") extern class NsICommandLine extends NsISupports
 {
 	/**
+	 * The first launch of the application instance.
+	 */
+	static inline var STATE_INITIAL_LAUNCH = 0;
+	/**
+	 * A remote command line automatically redirected to this instance.
+	 */
+	static inline var STATE_REMOTE_AUTO = 1;
+	/**
+	 * A remote command line explicitly redirected to this instance using xremote/windde/appleevents.
+	 */
+	static inline var STATE_REMOTE_EXPLICIT = 2;
+	
+	/**
 	 * Number of arguments in the command line. The application name is not part of the command line. Read only.
 	 */
 	var length : Long;

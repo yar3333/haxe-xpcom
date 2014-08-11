@@ -5,13 +5,7 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIMsgSearchSession") extern class NsIMsgSearchSession extends NsISupports
 {
-	/**
-	 *  
-	 */
 	static inline var BooleanOR = 0;
-	/**
-	 *  
-	 */
 	static inline var BooleanAND = 1;
 	
 	/**

@@ -35,23 +35,23 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var DOWNLOAD_PAUSED = 4;
 	/**
-	 * The download is in the queue but is not presently downloading. 
+	 * The download is in the queue but is not presently downloading.
 	 */
 	static inline var DOWNLOAD_QUEUED = 5;
 	/**
-	 * The download has been blocked, either by parental controls or the virus scanner determining that a file is infected and cannot be cleaned. 
+	 * The download has been blocked, either by parental controls or the virus scanner determining that a file is infected and cannot be cleaned.
 	 */
 	static inline var DOWNLOAD_BLOCKED_PARENTAL = 6;
 	/**
-	 * The download is being scanned by a virus checking utility. 
+	 * The download is being scanned by a virus checking utility.
 	 */
 	static inline var DOWNLOAD_SCANNING = 7;
 	/**
-	 * A virus was detected in the download. The target will most likely no longer exist. 
+	 * A virus was detected in the download. The target will most likely no longer exist.
 	 */
 	static inline var DOWNLOAD_DIRTY = 8;
 	/**
-	 * Windows specific: Request was blocked by zone policy settings. (see <a class="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=416683" title='FIXED: binary downloads are deleted on completion when "Launch applications and unsafe files" is disabled'>bug 416683</a>) 
+	 * Windows specific: Request was blocked by zone policy settings. (see <a class="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=416683" title='FIXED: binary downloads are deleted on completion when "Launch applications and unsafe files" is disabled'>bug 416683</a>)
 	 */
 	static inline var DOWNLOAD_BLOCKED_POLICY = 9;
 	/**
@@ -88,7 +88,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	var listener : NsIDownloadProgressListener;
 	/**
-	 * Returns the user configured downloads directory. 
+	 * Returns the user configured downloads directory.
 	 * The path is dependent on two user configurable prefs set in preferences:
 	 * browser.download.folderList defines the default download location for files:
 	 * 0: Files are downloaded to the desktop by default.

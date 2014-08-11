@@ -10,6 +10,12 @@ import xpcom.mozilla.objects.*;
 		return xpcom.Components.classes[cast "@mozilla.org/sms/smsrequestmanager;1"].createInstance(NsISmsRequestManager);
 	}
 	
+	static inline var SUCCESS_NO_ERROR = 0;
+	static inline var NO_SIGNAL_ERROR = 1;
+	static inline var NOT_FOUND_ERROR = 2;
+	static inline var UNKNOWN_ERROR = 3;
+	static inline var INTERNAL_ERROR = 4;
+	
 	function addRequest(aRequest:NsIDOMMozSmsRequest) : Long;
 	function createRequest(aManager:NsIDOMMozSmsManager, aRequest:{value:NsIDOMMozSmsRequest}) : Long;
 	function notifyCreateMessageList(aRequestId:Long, aListId:Long, aMessage:NsIDOMMozSmsMessage) : Void;

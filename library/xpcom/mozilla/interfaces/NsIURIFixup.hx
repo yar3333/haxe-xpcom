@@ -23,7 +23,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var FIXUP_FLAGS_MAKE_ALTERNATE_URI = 2;
 	/**
-	 * Use UTF-8 to encode the URI instead of the platform character set. 
+	 * Use UTF-8 to encode the URI instead of the platform character set.
 	 */
 	static inline var FIXUP_FLAG_USE_UTF8 = 4;
 	

@@ -6,6 +6,91 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsINavHistoryQueryOptions") extern class NsINavHistoryQueryOptions extends NsISupports
 {
 	/**
+	 * For bookmark items, this constant means sort by the natural bookmark order.
+	 */
+	static inline var SORT_BY_NONE = 0;
+	/**
+	 * Sort by the ascending title order.
+	 */
+	static inline var SORT_BY_TITLE_ASCENDING = 1;
+	/**
+	 * Sort by the descending title order.
+	 */
+	static inline var SORT_BY_TITLE_DESCENDING = 2;
+	/**
+	 * Sort by the ascending date order.
+	 */
+	static inline var SORT_BY_DATE_ASCENDING = 3;
+	/**
+	 * Sort by the descending date order.
+	 */
+	static inline var SORT_BY_DATE_DESCENDING = 4;
+	/**
+	 * Sort by the ascending URI order.
+	 */
+	static inline var SORT_BY_URI_ASCENDING = 5;
+	/**
+	 * Sort by the descending URI order.
+	 */
+	static inline var SORT_BY_URI_DESCENDING = 6;
+	/**
+	 * Sort by the ascending visit count order.
+	 */
+	static inline var SORT_BY_VISITCOUNT_ASCENDING = 7;
+	/**
+	 * Sort by the descending visit count order.
+	 */
+	static inline var SORT_BY_VISITCOUNT_DESCENDING = 8;
+	/**
+	 * Sort by the ascending keyword order.
+	 */
+	static inline var SORT_BY_KEYWORD_ASCENDING = 9;
+	/**
+	 * Sort by the descending keyword order.
+	 */
+	static inline var SORT_BY_KEYWORD_DESCENDING = 10;
+	/**
+	 * Sort by the ascending added date order.
+	 */
+	static inline var SORT_BY_DATEADDED_ASCENDING = 11;
+	/**
+	 * Sort by the descending added date order.
+	 */
+	static inline var SORT_BY_DATEADDED_DESCENDING = 12;
+	/**
+	 * Sort by the ascending last modified order.
+	 */
+	static inline var SORT_BY_LASTMODIFIED_ASCENDING = 13;
+	/**
+	 * Sort by the descending last modified order.
+	 */
+	static inline var SORT_BY_LASTMODIFIED_DESCENDING = 14;
+	/**
+	 * Sort by the ascending tags order.
+	 */
+	static inline var SORT_BY_TAGS_ASCENDING = 17;
+	/**
+	 * Sort by the descending tags order.
+	 */
+	static inline var SORT_BY_TAGS_DESCENDING = 18;
+	/**
+	 * Sort by the ascending annotation order.
+	 */
+	static inline var SORT_BY_ANNOTATION_ASCENDING = 19;
+	/**
+	 * Sort by the descending annotation order.
+	 */
+	static inline var SORT_BY_ANNOTATION_DESCENDING = 20;
+	/**
+	 * Sort by ascending frecency order.
+	 */
+	static inline var SORT_BY_FRECENCY_ASCENDING  = 21;
+	/**
+	 * Sort by descending frecency order.
+	 */
+	static inline var SORT_BY_FRECENCY_DESCENDING  = 22;
+	
+	/**
 	 * If true, the query options are only applied to the containers.
 	 */
 	var applyOptionsToContainers : Bool;

@@ -6,6 +6,42 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsIChannel") extern class NsIChannel extends NsIRequest
 {
 	/**
+	 * Set (for example by the docshell) to indicate whether or not the channel corresponds to a document URI.
+	 */
+	static inline var LOAD_DOCUMENT_URI = 16;
+	/**
+	 * If the end consumer for this load has been retargeted after discovering its content, this flag will be set:
+	 */
+	static inline var LOAD_RETARGETED_DOCUMENT_URI = 17;
+	/**
+	 * <p>This flag is set to indicate that this channel is replacing another channel. This means that:</p>
+	 * <ol>
+	 * <li>The stream listener this channel will be notifying was initially passed to the <code><a href="nsIChannel.html#asyncOpen()">asyncOpen()</a></code> method of some other channel</li>
+	 * <li>This channel's URI is a better identifier of the resource being accessed than this channel's originalURI.</li>
+	 * </ol>
+	 * This flag can be set, for example, for redirects or for cases when a single channel has multiple parts to it (and thus can follow onStopRequest with another onStartRequest/onStopRequest pair, each pair for a different request).
+	 */
+	static inline var LOAD_REPLACE = 18;
+	/**
+	 * Set (for example by the docshell) to indicate whether or not the channel corresponds to an initial document URI load (for example link click).
+	 */
+	static inline var LOAD_INITIAL_DOCUMENT_URI = 19;
+	/**
+	 * Set (For example by the URILoader) to indicate whether or not the end consumer for this load has been determined.
+	 */
+	static inline var LOAD_TARGETED = 20;
+	/**
+	 * <p>If this flag is set, the channel should call the content sniffers as described in <code><a class="external" href="http://mxr.mozilla.org/mozilla-central/source/netwerk/build/nsNetCID.h" rel="custom">netwerk/build/nsNetCID.h</a></code> about NS_CONTENT_SNIFFER_CATEGORY.</p>
+	 * <p>See <a href="nsIContentSniffer.html">nsIContentSniffer [en-US]</a></p>
+	 * <div class="note"><strong>Note:</strong> Channels may ignore this flag; however, new channel implementations should only do so with good reason.</div>
+	 */
+	static inline var LOAD_CALL_CONTENT_SNIFFERS = 21;
+	/**
+	 * This flag tells the channel to use URI classifier service to check the URI when opening the channel.
+	 */
+	static inline var LOAD_CLASSIFY_URI = 22;
+	
+	/**
 	 * The character set of the channel's content if available and if applicable. This attribute only applies to textual data.
 	 * Setting contentCharset before the channel has been opened provides a hint to the channel on what the charset should be. The behavior is similar to contentType.
 	 * The value of the contentCharset attribute is a mixed case string.

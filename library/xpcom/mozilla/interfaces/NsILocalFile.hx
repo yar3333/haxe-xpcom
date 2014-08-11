@@ -11,7 +11,7 @@ import xpcom.mozilla.objects.*;
 	}
 	
 	/**
-	 * Optional parameter used by <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsILocalFile#openNSPRFileDesc()">openNSPRFileDesc()</a></code>. 
+	 * Optional parameter used by <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsILocalFile#openNSPRFileDesc()">openNSPRFileDesc()</a></code>.
 	 */
 	static inline var DELETE_ON_CLOSE = 0x80000000;
 }

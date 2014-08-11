@@ -20,12 +20,12 @@ import xpcom.mozilla.objects.*;
 	 */
 	var isTabModalPromptAllowed : Bool;
 	/**
-	 * Read only. Native code only! 
+	 * Read only. Native code only!
 	 * Note: Prior to Gecko 10.0 (Firefox 10.0 / Thunderbird 10.0 / SeaMonkey 2.7), this attribute was part of nsIDocumentViewer.
 	 */
 	var presContext : NsPresContextPtr;
 	/**
-	 * Read only. Native code only! 
+	 * Read only. Native code only!
 	 * Note: Prior to Gecko 10.0 (Firefox 10.0 / Thunderbird 10.0 / SeaMonkey 2.7), this attribute was part of nsIDocumentViewer.
 	 */
 	var presShell : NsIPresShellPtr;

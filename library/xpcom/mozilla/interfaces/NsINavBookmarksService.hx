@@ -11,6 +11,27 @@ import xpcom.mozilla.objects.*;
 	}
 	
 	/**
+	 * This is the default index; this value should be used for APIs that allow passing in an index where the index is not known or is not required to be specified, such as when appending an item to a folder.
+	 */
+	static inline var DEFAULT_INDEX = -1;
+	/**
+	 * This is an index for type "Bookmark".
+	 */
+	static inline var TYPE_BOOKMARK = 1;
+	/**
+	 * This is an index for type "Folder".
+	 */
+	static inline var TYPE_FOLDER = 2;
+	/**
+	 * This is an index for type "Separator".
+	 */
+	static inline var TYPE_SEPARATOR = 3;
+	/**
+	 * This is an index for type "Dynamic Container". Dynamic containers were removed in Gecko 11, but the type index remains to prevent reuse.
+	 */
+	static inline var TYPE_DYNAMIC_CONTAINER = 4;
+	
+	/**
 	 * The item ID of the Bookmarks Menu folder. Read only. Renamed from bookmarksRoot in Gecko 1.9
 	 */
 	var bookmarksMenuFolder : LongLong;

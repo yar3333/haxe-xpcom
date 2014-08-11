@@ -10,17 +10,8 @@ import xpcom.mozilla.objects.*;
 		return xpcom.Components.classes[cast "@mozilla.org/content/style-sheet-service;1"].getService(NsIStyleSheetService);
 	}
 	
-	/**
-	 *  
-	 */
 	static inline var AGENT_SHEET = 0;
-	/**
-	 *  
-	 */
 	static inline var USER_SHEET = 1;
-	/**
-	 *  
-	 */
 	static inline var AUTHOR_SHEET = 2;
 	
 	function loadAndRegisterSheet(sheetURI:NsIURI, type:ULong) : Void;

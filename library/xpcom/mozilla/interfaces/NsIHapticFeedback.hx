@@ -10,5 +10,14 @@ import xpcom.mozilla.objects.*;
 		return xpcom.Components.classes[cast "@mozilla.org/widget/hapticfeedback;1"].getService(NsIHapticFeedback);
 	}
 	
+	/**
+	 * Specify as the action type to perform a short vibration.
+	 */
+	static inline var ShortPress = 0;
+	/**
+	 * Specify as the action type to perform a long vibration.
+	 */
+	static inline var LongPress = 1;
+	
 	function performSimpleAction(isLongPress:Long) : Void;
 }

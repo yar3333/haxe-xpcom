@@ -5,6 +5,13 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIUpdateItem") extern class NsIUpdateItem extends NsISupports
 {
+	static inline var TYPE_APP = 0x01;
+	static inline var TYPE_EXTENSION = 0x02;
+	static inline var TYPE_THEME = 0x04;
+	static inline var TYPE_LOCALE = 0x08;
+	static inline var TYPE_MULTI_XPI = 0x20;
+	static inline var TYPE_ANY = 0xff;
+	
 	/**
 	 * The URL of the icon that can be shown for this item. Read only.
 	 */

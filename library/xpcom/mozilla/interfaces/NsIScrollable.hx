@@ -5,6 +5,15 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIScrollable") extern class NsIScrollable
 {
+	/**
+	 * Horizontal scrolling. When passing this in to a method you are requesting or setting data for the horizontal scrollbar.
+	 */
+	static inline var ScrollOrientation_X = 1;
+	/**
+	 * Vertical scrolling. When passing this in to a method you are requesting or setting data for the vertical scrollbar.
+	 */
+	static inline var ScrollOrientation_Y = 2;
+	
 	function getCurScrollPos(scrollOrientation:Long) : Long;
 	function getDefaultScrollbarPreferences(scrollOrientation:Long) : Long;
 	function getScrollbarVisibility(verticalVisible:{value:Bool}, horizontalVisible:{value:Bool}) : Void;

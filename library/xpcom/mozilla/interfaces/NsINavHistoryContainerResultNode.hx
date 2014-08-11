@@ -6,6 +6,19 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsINavHistoryContainerResultNode") extern class NsINavHistoryContainerResultNode extends NsINavHistoryResultNode
 {
 	/**
+	 * The container is closed.
+	 */
+	static inline var STATE_CLOSED   = 0;
+	/**
+	 * The container has been opened asynchronously, but is still loading and is not all the way opened yet.
+	 */
+	static inline var STATE_LOADING   = 1;
+	/**
+	 * The container is open.
+	 */
+	static inline var STATE_OPENED   = 2;
+	
+	/**
 	 * The number of child nodes; accessing this throws an NS_ERROR_NOT_AVAILABLE exception of containerOpen is false. Read only.
 	 */
 	var childCount : ULong;

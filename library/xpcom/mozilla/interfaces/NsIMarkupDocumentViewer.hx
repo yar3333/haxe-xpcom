@@ -52,7 +52,7 @@ import xpcom.mozilla.objects.*;
 	var hintCharacterSet : ACString;
 	var hintCharacterSetSource : PRInt32;
 	/**
-	 * The minimum font size to allow. 
+	 * The minimum font size to allow.
 	 * Note: This attribute was added late in the Gecko 2.0 development cycle and was implemented by the nsIMarkupDocumentViewer_MOZILLA_2_0_BRANCH interface; it was merged into this interface in Gecko 7.0.
 	 */
 	var minFontSize : Long;

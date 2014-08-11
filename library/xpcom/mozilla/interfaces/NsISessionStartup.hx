@@ -11,6 +11,23 @@ import xpcom.mozilla.objects.*;
 	}
 	
 	/**
+	 * There's no data available from the previous session.
+	 */
+	static inline var NO_SESSION = 0;
+	/**
+	 * The last session crashed. It will either be restored or about:sessionrestore will be displayed.
+	 */
+	static inline var RECOVER_SESSION = 1;
+	/**
+	 * The previous session should be restored at startup.
+	 */
+	static inline var RESUME_SESSION = 2;
+	/**
+	 * The previous session is viable but shouldn't be restored without explicit action (with the exception of app tabs, which are always restored in this case).
+	 */
+	static inline var DEFER_SESSION = 3;
+	
+	/**
 	 * The type of session being restored; this will be one of the Session type constants. Read only.
 	 */
 	var sessionType : ULong;

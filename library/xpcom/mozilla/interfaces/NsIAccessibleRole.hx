@@ -449,9 +449,6 @@ import xpcom.mozilla.objects.*;
 	 * An object which is used to allow input of characters not found on a keyboard, such as the input of Chinese characters on a Western keyboard.
 	 */
 	static inline var ROLE_IME = 110;
-	/**
-	 *  
-	 */
 	static inline var ROLE_APP_ROOT = 111;
 	/**
 	 * Represents a menu item, which is an entry in a menu that a user can choose to display another menu.
@@ -490,11 +487,11 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var ROLE_FLAT_EQUATION = 120;
 	/**
-	 * Represents a cell within a grid. It is used for role="gridcell". Unlike ROLE_CELL, it allows the calculation of the accessible name from subtree. Also, see ROLE_TABLE. 
+	 * Represents a cell within a grid. It is used for role="gridcell". Unlike ROLE_CELL, it allows the calculation of the accessible name from subtree. Also, see ROLE_TABLE.
 	 */
 	static inline var ROLE_GRID_CELL = 121;
 	/**
-	 * Represents an embedded object. It is used for html:object or html:embed. 
+	 * Represents an embedded object. It is used for html:object or html:embed.
 	 */
 	static inline var ROLE_EMBEDDED_OBJECT = 122;
 }

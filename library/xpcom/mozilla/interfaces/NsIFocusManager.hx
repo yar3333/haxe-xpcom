@@ -10,9 +10,6 @@ import xpcom.mozilla.objects.*;
 		return xpcom.Components.classes[cast "@mozilla.org/focus-manager;1"].getService(NsIFocusManager);
 	}
 	
-	/**
-	 *  
-	 */
 	static inline var FLAG_RAISE = 1;
 	/**
 	 * Do not scroll the element to focus into view.
@@ -35,7 +32,7 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var FLAG_BYMOVEFOCUS = 0x4000;
 	/**
-	 * Always show the focus ring or other indicator of focus, regardless of other state. 
+	 * Always show the focus ring or other indicator of focus, regardless of other state.
 	 */
 	static inline var FLAG_SHOWRING = 0x100000;
 	/**

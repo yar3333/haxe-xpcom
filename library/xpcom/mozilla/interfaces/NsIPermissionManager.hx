@@ -6,6 +6,19 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsIPermissionManager") extern class NsIPermissionManager extends NsISupports
 {
 	/**
+	 * Default permission when no entry is found for a host. It should not be used by consumers.
+	 */
+	static inline var UNKNOWN_ACTION = 0;
+	/**
+	 * Permission is allowed.
+	 */
+	static inline var ALLOW_ACTION = 1;
+	/**
+	 * Permission is denied
+	 */
+	static inline var DENY_ACTION = 2;
+	
+	/**
 	 * Enumerates all stored permissions. Allows access to nsIPermission objects. Read only.
 	 */
 	var enumerator : NsISimpleEnumerator;

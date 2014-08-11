@@ -19,4 +19,9 @@ import xpcom.mozilla.objects.*;
 	var selectedProfile : NsIToolkitProfile;
 	var startOffline : Bool;
 	var startWithLastProfile : Bool;
+	
+	function createProfile(aRootDir:NsILocalFile, aName:AUTF8String) : NsIToolkitProfile;
+	function flush() : Void;
+	function getProfileByName(aName:AUTF8String) : NsIToolkitProfile;
+	function lockProfilePath(aDirectory:NsILocalFile, aTempDirectory:NsILocalFile) : NsIProfileLock;
 }

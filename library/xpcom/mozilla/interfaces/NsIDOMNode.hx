@@ -5,53 +5,17 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIDOMNode") extern class NsIDOMNode extends NsISupports
 {
-	/**
-	 *  
-	 */
 	static inline var ELEMENT_NODE = 1;
-	/**
-	 *  
-	 */
 	static inline var ATTRIBUTE_NODE = 2;
-	/**
-	 *  
-	 */
 	static inline var TEXT_NODE = 3;
-	/**
-	 *  
-	 */
 	static inline var CDATA_SECTION_NODE = 4;
-	/**
-	 *  
-	 */
 	static inline var ENTITY_REFERENCE_NODE = 5;
-	/**
-	 *  
-	 */
 	static inline var ENTITY_NODE = 6;
-	/**
-	 *  
-	 */
 	static inline var PROCESSING_INSTRUCTION_NODE = 7;
-	/**
-	 *  
-	 */
 	static inline var COMMENT_NODE = 8;
-	/**
-	 *  
-	 */
 	static inline var DOCUMENT_NODE = 9;
-	/**
-	 *  
-	 */
 	static inline var DOCUMENT_TYPE_NODE = 10;
-	/**
-	 *  
-	 */
 	static inline var DOCUMENT_FRAGMENT_NODE = 11;
-	/**
-	 *  
-	 */
 	static inline var NOTATION_NODE = 12;
 	
 	/**

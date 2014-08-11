@@ -177,13 +177,7 @@ import xpcom.mozilla.objects.*;
 	 * The contents of the document have changed.
 	 */
 	static inline var EVENT_DOCUMENT_CONTENT_CHANGED = 0x002B;
-	/**
-	 *  
-	 */
 	static inline var EVENT_PROPERTY_CHANGED = 0x002C;
-	/**
-	 *  
-	 */
 	static inline var EVENT_SELECTION_CHANGED = 0x002D;
 	/**
 	 * A text object's attributes changed. Also see EVENT_OBJECT_ATTRIBUTE_CHANGED.
@@ -245,17 +239,8 @@ import xpcom.mozilla.objects.*;
 	 * A table's row header changed.
 	 */
 	static inline var EVENT_TABLE_ROW_HEADER_CHANGED = 0x003C;
-	/**
-	 *  
-	 */
 	static inline var EVENT_TABLE_ROW_INSERT = 0x003D;
-	/**
-	 *  
-	 */
 	static inline var EVENT_TABLE_ROW_DELETE = 0x003E;
-	/**
-	 *  
-	 */
 	static inline var EVENT_TABLE_ROW_REORDER = 0x003F;
 	/**
 	 * A table's column description changed.
@@ -265,49 +250,16 @@ import xpcom.mozilla.objects.*;
 	 * A table's column header changed.
 	 */
 	static inline var EVENT_TABLE_COLUMN_HEADER_CHANGED = 0x0041;
-	/**
-	 *  
-	 */
 	static inline var EVENT_TABLE_COLUMN_INSERT = 0x0042;
-	/**
-	 *  
-	 */
 	static inline var EVENT_TABLE_COLUMN_DELETE = 0x0043;
-	/**
-	 *  
-	 */
 	static inline var EVENT_TABLE_COLUMN_REORDER = 0x0044;
-	/**
-	 *  
-	 */
 	static inline var EVENT_WINDOW_ACTIVATE = 0x0045;
-	/**
-	 *  
-	 */
 	static inline var EVENT_WINDOW_CREATE = 0x0046;
-	/**
-	 *  
-	 */
 	static inline var EVENT_WINDOW_DEACTIVATE = 0x0047;
-	/**
-	 *  
-	 */
 	static inline var EVENT_WINDOW_DESTROY = 0x0048;
-	/**
-	 *  
-	 */
 	static inline var EVENT_WINDOW_MAXIMIZE = 0x0049;
-	/**
-	 *  
-	 */
 	static inline var EVENT_WINDOW_MINIMIZE = 0x004A;
-	/**
-	 *  
-	 */
 	static inline var EVENT_WINDOW_RESIZE = 0x004B;
-	/**
-	 *  
-	 */
 	static inline var EVENT_WINDOW_RESTORE = 0x004C;
 	/**
 	 * The ending index of this link within the containing string has changed.
@@ -342,9 +294,9 @@ import xpcom.mozilla.objects.*;
 	 */
 	static inline var EVENT_HYPERTEXT_NLINKS_CHANGED = 0x0054;
 	/**
-	 *  <p>An object's attributes changed. Also see EVENT_TEXT_ATTRIBUTE_CHANGED.</p> <div class="blockIndicator geckoMinVer standardNote standardNoteBlock"> 
-	 *   <div style="text-align: center; font-weight: bold; padding-bottom: 0.5em;">Gecko 1.9.2 note</div> 
-	 *   <div>This event is never sent in versions of Gecko prior to 1.9.2, even though the constant existed.</div> 
+	 * <p>An object's attributes changed. Also see EVENT_TEXT_ATTRIBUTE_CHANGED.</p> <div class="blockIndicator geckoMinVer standardNote standardNoteBlock">
+	 * <div style="text-align: center; font-weight: bold; padding-bottom: 0.5em;">Gecko 1.9.2 note</div>
+	 * <div>This event is never sent in versions of Gecko prior to 1.9.2, even though the constant existed.</div>
 	 * </div>
 	 */
 	static inline var EVENT_OBJECT_ATTRIBUTE_CHANGED = 0x0055;
