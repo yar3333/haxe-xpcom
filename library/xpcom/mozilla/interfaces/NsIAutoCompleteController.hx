@@ -26,6 +26,14 @@ import xpcom.mozilla.objects.*;
 	 * Search completed and found matches.
 	 */
 	static inline var STATUS_COMPLETE_MATCH = 4;
+	static inline var KEY_UP = 1;
+	static inline var KEY_DOWN = 2;
+	static inline var KEY_LEFT = 3;
+	static inline var KEY_RIGHT = 4;
+	static inline var KEY_PAGE_UP = 5;
+	static inline var KEY_PAGE_DOWN = 6;
+	static inline var KEY_HOME = 7;
+	static inline var KEY_END = 8;
 	
 	/**
 	 * Either the XUL autocomplete textbox that is currently being controlled, or a form fill controller that handles website form history.

@@ -89,6 +89,74 @@ import xpcom.mozilla.objects.*;
 	 * Sort by descending frecency order.
 	 */
 	static inline var SORT_BY_FRECENCY_DESCENDING  = 22;
+	/**
+	 * "URI" results, one for each URI visited in the range. Individual result nodes will be of type "URI".
+	 */
+	static inline var RESULTS_AS_URI = 0;
+	/**
+	 * "Visit" results, with one for each time a page was visited (this will often give you multiple results for one URI). Individual result nodes will have type "Visit".
+	 */
+	static inline var RESULTS_AS_VISIT = 1;
+	/**
+	 * <p>This is identical to RESULT_TYPE_VISIT except that individual result nodes will have type "FullVisit". This is used for the attributes that are not commonly accessed to save space in the common case (the lists can be very long).</p>
+	 * <div class="note">
+	 * <strong>Note:</strong> Supported only for QUERY_TYPE_HISTORY.</div>
+	 */
+	static inline var RESULTS_AS_FULL_VISIT = 2;
+	/**
+	 * <p>Returns <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsINavHistoryQueryResultNode" title="">nsINavHistoryQueryResultNode</a></code> nodes for each predefined date range where we had visits.</p>
+	 * <div class="note">
+	 * <strong>Note:</strong> Supported only for QUERY_TYPE_HISTORY.</div>
+	 */
+	static inline var RESULTS_AS_DATE_QUERY = 3;
+	/**
+	 * <p>Returns <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsINavHistoryQueryResultNode" title="">nsINavHistoryQueryResultNode</a></code> nodes for each site where we have visits.</p>
+	 * <div class="note">
+	 * <strong>Note:</strong> Supported only for QUERY_TYPE_HISTORY.</div>
+	 */
+	static inline var RESULTS_AS_SITE_QUERY = 4;
+	/**
+	 * <p>Returns <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsINavHistoryQueryResultNode" title="">nsINavHistoryQueryResultNode</a></code> nodes for each site where we have visits, grouped by date.</p>
+	 * <div class="note">
+	 * <strong>Note:</strong> Supported only for QUERY_TYPE_HISTORY.</div>
+	 */
+	static inline var RESULTS_AS_DATE_SITE_QUERY = 5;
+	/**
+	 * <p>Returns <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsINavHistoryQueryResultNode" title="">nsINavHistoryQueryResultNode</a></code> nodes for each tag. Each tag node is a RESULTS_AS_TAG_CONTENTS container defined as place:querytype=1&resultType=7&folder=tag_folder_id.</p>
+	 * <div class="note">
+	 * <strong>Note:</strong> Using this result type forces the query type to be QUERY_TYPE_BOOKMARKS.</div>
+	 */
+	static inline var RESULTS_AS_TAG_QUERY = 6;
+	/**
+	 * <p>Returns <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsINavHistoryResultNode" title="">nsINavHistoryResultNode</a></code> nodes for each bookmark contained into the defined tag. To specify the tag you need to add a folder=tag_folder_id to the query, and only one folder is allowed.</p>
+	 * <div class="note">
+	 * <strong>Note:</strong> Using this result type forces the query type to be QUERY_TYPE_BOOKMARKS. At this time, sorting methods are not supported; results will always be returned in reverse order of insertion.</div>
+	 */
+	static inline var RESULTS_AS_TAG_CONTENTS = 7;
+	/**
+	 * Query's type is history.
+	 */
+	static inline var QUERY_TYPE_HISTORY = 0;
+	/**
+	 * Query's type is bookmarks.
+	 */
+	static inline var QUERY_TYPE_BOOKMARKS = 1;
+	/**
+	 * Query's type is unified.
+	 */
+	static inline var QUERY_TYPE_UNIFIED = 2;
+	/**
+	 * Include both redirected-from and redirected-to pages in the results.
+	 */
+	static inline var REDIRECTS_MODE_ALL = 0;
+	/**
+	 * Include redirected-from pages but not redirected-to pages in the results.
+	 */
+	static inline var REDIRECTS_MODE_SOURCE = 1;
+	/**
+	 * Include redirected-to pages but not redirected-from pages in the results.
+	 */
+	static inline var REDIRECTS_MODE_TARGET = 2;
 	
 	/**
 	 * If true, the query options are only applied to the containers.

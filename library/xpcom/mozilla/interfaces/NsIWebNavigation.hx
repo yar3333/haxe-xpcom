@@ -61,6 +61,18 @@ import xpcom.mozilla.objects.*;
 	 * This flag specifies that the load should not be subject to popup blocking checks.
 	 */
 	static inline var LOAD_FLAGS_ALLOW_POPUPS = 32768;
+	/**
+	 * This flag specifies that all network activity should be stopped. This includes both active network loads and pending META-refreshes.
+	 */
+	static inline var STOP_NETWORK = 1;
+	/**
+	 * This flag specifies that all content activity should be stopped. This includes animated images, plugins and pending Javascript timeouts.
+	 */
+	static inline var STOP_CONTENT = 2;
+	/**
+	 * This flag specifies that all activity should be stopped.
+	 */
+	static inline var STOP_ALL = 3;
 	
 	/**
 	 * Indicates if the object can go back. If true this indicates that there is back session history available for navigation. Read only.

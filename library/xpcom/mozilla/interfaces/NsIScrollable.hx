@@ -13,6 +13,18 @@ import xpcom.mozilla.objects.*;
 	 * Vertical scrolling. When passing this in to a method you are requesting or setting data for the vertical scrollbar.
 	 */
 	static inline var ScrollOrientation_Y = 2;
+	/**
+	 * Scrollbars visible only when needed.
+	 */
+	static inline var Scrollbar_Auto = 1;
+	/**
+	 * Scrollbars never visible, even when scrolling is still possible.
+	 */
+	static inline var Scrollbar_Never = 2;
+	/**
+	 * Scrollbars always visible, even when scrolling is not possible.
+	 */
+	static inline var Scrollbar_Always = 3;
 	
 	function getCurScrollPos(scrollOrientation:Long) : Long;
 	function getDefaultScrollbarPreferences(scrollOrientation:Long) : Long;

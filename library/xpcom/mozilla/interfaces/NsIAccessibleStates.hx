@@ -129,4 +129,65 @@ import xpcom.mozilla.objects.*;
 	 * New in MSAA 2.0.
 	 */
 	static inline var STATE_HASPOPUP = 0x40000000;
+	/**
+	 * For editable areas that have any kind of auto completion.
+	 */
+	static inline var EXT_STATE_SUPPORTS_AUTOCOMPLETION = 0x00000001;
+	/**
+	 * Object no longer exists.
+	 */
+	static inline var EXT_STATE_DEFUNCT = 0x00000002;
+	/**
+	 * For text which is selectable, object must implement <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAccessibleText" title="">nsIAccessibleText</a></code>.
+	 */
+	static inline var EXT_STATE_SELECTABLE_TEXT = 0x00000004;
+	/**
+	 * Implements <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIAccessibleEditableText" title="">nsIAccessibleEditableText</a></code>.
+	 */
+	static inline var EXT_STATE_EDITABLE = 0x00000008;
+	/**
+	 * This window is currently the active window.
+	 */
+	static inline var EXT_STATE_ACTIVE = 0x00000010;
+	/**
+	 * Must do something with control before leaving it.
+	 */
+	static inline var EXT_STATE_MODAL = 0x00000020;
+	/**
+	 * Edit control that can take multiple lines.
+	 */
+	static inline var EXT_STATE_MULTI_LINE = 0x00000040;
+	/**
+	 * Uses horizontal layout.
+	 */
+	static inline var EXT_STATE_HORIZONTAL = 0x00000080;
+	/**
+	 * Indicates this object paints every pixel within its rectangular region.
+	 */
+	static inline var EXT_STATE_OPAQUE = 0x00000100;
+	/**
+	 * This text object can only contain 1 line of text.
+	 */
+	static inline var EXT_STATE_SINGLE_LINE = 0x00000200;
+	static inline var EXT_STATE_TRANSIENT = 0x00000400;
+	/**
+	 * Especially used for sliders and scrollbars.
+	 */
+	static inline var EXT_STATE_VERTICAL = 0x00000800;
+	/**
+	 * Object not dead, but not up-to-date either.
+	 */
+	static inline var EXT_STATE_STALE = 0x00001000;
+	/**
+	 * A widget that is not unavailable.
+	 */
+	static inline var EXT_STATE_ENABLED = 0x00002000;
+	/**
+	 * Same as EXT_STATE_ENABLED for now.
+	 */
+	static inline var EXT_STATE_SENSITIVE = 0x00004000;
+	/**
+	 * If COLLAPSED or EXPANDED.
+	 */
+	static inline var EXT_STATE_EXPANDABLE = 0x00008000;
 }

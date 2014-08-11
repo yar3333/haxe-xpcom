@@ -13,6 +13,22 @@ import xpcom.mozilla.objects.*;
 	 * Will be treated as the caret position.
 	 */
 	static inline var TEXT_OFFSET_CARET = -2;
+	static inline var BOUNDARY_CHAR = 0;
+	static inline var BOUNDARY_WORD_START = 1;
+	static inline var BOUNDARY_WORD_END = 2;
+	/**
+	 * Do not use in new code. <span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span>
+	 */
+	static inline var BOUNDARY_SENTENCE_START = 3;
+	/**
+	 * Do not use in new code. <span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span>
+	 */
+	static inline var BOUNDARY_SENTENCE_END = 4;
+	static inline var BOUNDARY_LINE_START = 5;
+	static inline var BOUNDARY_LINE_END = 6;
+	static inline var BOUNDARY_ATTRIBUTE_RANGE = 7;
+	static inline var COORD_TYPE_SCREEN = 0;
+	static inline var COORD_TYPE_WINDOW = 1;
 	
 	/**
 	 * The current current caret offset. If set < 0 then caret will be placed at the end of the text.
