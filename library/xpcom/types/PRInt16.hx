@@ -1,6 +1,3 @@
 package xpcom.types;
 
-typedef PRInt16 =
-{
-	var _pRInt16 : Int;
-}
+typedef PRInt16 = Int;
