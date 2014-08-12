@@ -1,6 +1,3 @@
 package xpcom.types;
 
-typedef PRInt64 =
-{
-	var _pRInt64 : Int;
-}
+typedef PRInt64 = Int;

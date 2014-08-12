@@ -1,3 +1,3 @@
 package xpcom.types;
 
-typedef PRInt64Array = Dynamic;
+typedef PRInt64Array = Array<Int>;

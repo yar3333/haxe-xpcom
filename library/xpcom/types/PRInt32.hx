@@ -1,6 +1,3 @@
 package xpcom.types;
 
-typedef PRInt32 =
-{
-	var _pRInt32 : Int;
-}
+typedef PRInt32 = Int;

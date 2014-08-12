@@ -1,6 +1,3 @@
 package xpcom.types;
 
-typedef PRUint64 =
-{
-	var _pRUint64 : Int;
-}
+typedef PRUint64 = Int;
