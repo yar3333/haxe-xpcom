@@ -1,11 +1,11 @@
 {
   "name": "xpcom",
   "license": "LGPL",
-  "tags": ["mozilla","xul"],
-  "description": "Haxe wrapper for Mozilla XPCOM classes and interfaces (mainly for js-target).",
+  "tags": ["mozilla","xul","js"],
+  "description": "Haxe wrapper for Mozilla XPCOM classes (for use in xul applications) and interfaces (javascript).",
   "contributors": ["yar3333"],
   "releasenote": "Init.",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "url": "https://bitbucket.org/yar3333/haxe-xpcom",
   "dependencies": {}
 }
