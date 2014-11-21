@@ -1,5 +1,3 @@
-package ;
-
 typedef AttributeMetas =
 {
 	var isReadOnly : Bool;

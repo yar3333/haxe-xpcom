@@ -1,7 +1,5 @@
-package ;
-
 using StringTools;
-using ParserStringTools;
+using StringParserTools;
 
 class Types
 {

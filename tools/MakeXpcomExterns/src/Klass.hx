@@ -1,7 +1,5 @@
-package ;
-
 using Lambda;
-using ParserStringTools;
+using StringParserTools;
 
 class Klass
 {
@@ -92,6 +90,7 @@ class Klass
 			case "nsIFileInputStream": [ { res:"@mozilla.org/network/file-input-stream;1", type:"instance" } ];
 			case "nsIFileOutputStream": [ { res:"@mozilla.org/network/file-output-stream;1", type:"instance" } ];
 			case "nsIFile": [ { res:"@mozilla.org/file/local;1", type:"instance" } ];
+			case "nsIClipboardHelper": [ { res:"@mozilla.org/widget/clipboardhelper;1", type:"service" } ];
 			case _: [];
 		});
 	}

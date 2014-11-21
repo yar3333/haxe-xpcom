@@ -1,5 +1,3 @@
-package ;
-
 typedef MethodParamMetas =
 {
 	var isOptional : Bool;

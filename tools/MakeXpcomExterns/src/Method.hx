@@ -1,5 +1,3 @@
-package ;
-
 using StringTools;
 using Lambda;
 

@@ -1,5 +1,3 @@
-package ;
-
 typedef Implement =
 {
 	var res : String;

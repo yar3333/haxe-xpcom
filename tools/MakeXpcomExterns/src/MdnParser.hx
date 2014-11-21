@@ -1,13 +1,9 @@
-package ;
-
 import htmlparser.HtmlDocument;
-import htmlparser.HtmlNodeElement;
-import htmlparser.HtmlNodeText;
 import neko.Lib;
-using xmltools.HtmlParserTools;
+using HtmlParserTools;
 using Lambda;
 using stdlib.StringTools;
-using ParserStringTools;
+using StringParserTools;
 
 class MdnParser
 {

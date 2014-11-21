@@ -1,14 +1,10 @@
-package ;
-
-import haxe.Utf8;
 import htmlparser.HtmlDocument;
 import htmlparser.HtmlNodeElement;
-import htmlparser.HtmlNodeText;
 import neko.Lib;
 import sys.FileSystem;
 import sys.io.File;
-using ParserStringTools;
-using xmltools.HtmlParserTools;
+using StringParserTools;
+using HtmlParserTools;
 using stdlib.StringTools;
 using Lambda;
 
