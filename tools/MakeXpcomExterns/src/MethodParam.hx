@@ -1,5 +1,3 @@
-package ;
-
 typedef MethodParam =
 {
 	var name : String;

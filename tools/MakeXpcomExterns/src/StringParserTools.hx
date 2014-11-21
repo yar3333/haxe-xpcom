@@ -1,8 +1,6 @@
-package ;
-
 using StringTools;
 
-class ParserStringTools
+class StringParserTools
 {
 	public static function capitalize(s:String) : String
 	{

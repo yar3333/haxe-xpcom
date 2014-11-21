@@ -1,6 +1,3 @@
-package ;
-
-
 typedef MethodMetas =
 {
 	var isPropGet : Bool;
