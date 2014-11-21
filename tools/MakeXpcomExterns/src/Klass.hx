@@ -34,7 +34,8 @@ class Klass
 		
 		r += "@:native(\"" + (nativePack != "" ? nativePack + "." : "") + name + "\") extern class " + name.capitalize() + (inheritsFrom != null ? " extends " + inheritsFrom.capitalize() : "") + "\n{\n";
 		
-		fixImplements();
+		if (Implements.services.exists(name)) implementedBy.push({ res:Implements.services.get(name), type:"service" });
+		if (Implements.instances.exists(name)) implementedBy.push({ res:Implements.instances.get(name), type:"instance" });
 		for (implement in implementedBy)
 		{
 			var constructorName = implement.type == "instance" ? "createInstance" : "getService";
@@ -81,17 +82,5 @@ class Klass
 		r += "}\n";
 		
 		return r;
-	}
-	
-	function fixImplements()
-	{
-		implementedBy = implementedBy.concat(switch (name)
-		{
-			case "nsIFileInputStream": [ { res:"@mozilla.org/network/file-input-stream;1", type:"instance" } ];
-			case "nsIFileOutputStream": [ { res:"@mozilla.org/network/file-output-stream;1", type:"instance" } ];
-			case "nsIFile": [ { res:"@mozilla.org/file/local;1", type:"instance" } ];
-			case "nsIClipboardHelper": [ { res:"@mozilla.org/widget/clipboardhelper;1", type:"service" } ];
-			case _: [];
-		});
 	}
 }
