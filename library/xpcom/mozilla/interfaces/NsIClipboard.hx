@@ -5,6 +5,11 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIClipboard") extern class NsIClipboard extends NsISupports
 {
+	public static inline function getService() : NsIClipboard
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/widget/clipboard;1"].getService(NsIClipboard);
+	}
+	
 	/**
 	 * Clipboard for selection.
 	 */
