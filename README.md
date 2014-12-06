@@ -34,8 +34,6 @@ import xpcom.mozilla.modules.FileUtils.File;
 ...
 function getContent(filePath:String) : String 
 {
-	filePath = nativePath(filePath);
-	
 	var r = "";
 	
 	var fstream = NsIFileInputStream.createInstance(new File(filePath), -1, 0, 0);
