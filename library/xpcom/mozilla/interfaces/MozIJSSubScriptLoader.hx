@@ -11,4 +11,5 @@ import xpcom.mozilla.objects.*;
 	}
 	
 	function loadSubScript(url:Wstring, ?targetObj:Dynamic, ?charset:String) : Void;
+	function loadSubScriptWithOptions(url:String, options:{ ?target:Dynamic, ?charset:String, ?ignoreCache:Bool }) : Void;
 }
