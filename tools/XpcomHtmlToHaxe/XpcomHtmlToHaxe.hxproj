@@ -4,7 +4,7 @@
   <output>
     <movie outputType="Application" />
     <movie input="" />
-    <movie path="bin\MakeXpcomExterns.n" />
+    <movie path="bin\XpcomHtmlToHaxe.n" />
     <movie fps="0" />
     <movie width="0" />
     <movie height="0" />
@@ -42,7 +42,7 @@
   <!-- Executed before build -->
   <preBuildCommand />
   <!-- Executed after build -->
-  <postBuildCommand alwaysRun="False">cmd.exe /C echo. &amp; neko bin\MakeXpcomExterns.n &amp; echo.</postBuildCommand>
+  <postBuildCommand alwaysRun="False">cmd.exe /C echo. &amp; neko bin\XpcomHtmlToHaxe.n &amp; echo.</postBuildCommand>
   <!-- Other project options -->
   <options>
     <option showHiddenPaths="False" />
