@@ -1,0 +1,83 @@
+ID = \b[_a-zA-Z][_a-zA-Z0-9]*\b
+LONGID = ID(?:[.]ID)*
+INT = [0-9]+(?:e[-+][0-9]+)?
+FLOAT = [0-9]+(?:[.][0-9]+)?(?:e[-+][0-9]+)?
+NUMBER = (?:INT|FLOAT)
+VALUE = (?:LONGID|NUMBER)
+SPACE = [ \t]+
+OPTSPACE = (?:SPACE)?
+
+KEYWORDS = \b(?:new|return|var|class|enum|struct|namespace|if|else|using|foreach|for)\b
+
+TYPE = LONGID(?:[<]\s*LONGID(?:\s*,\s*LONGID)*\s*[>])?
+
+// ============================================================
+
+/\bin\s+//
+/\bout\s*//
+/\breadonly\s*attribute\s*//
+
+// ============================================================
+
+/\bunsigned short\b/Int/
+/\bunsigned long\b/Int/
+/\bunsigned int\b/Int/
+/\bunsigned\b/Int/
+/\bsigned short\b/Int/
+/\bsigned long\b/Int/
+/\bsigned int\b/Int/
+/\bsigned\b/Int/
+/\bshort int\b/Int/
+/\bshort\b/Int/
+/\blong\b/Int/
+/\bint\b/Int/
+/\bvoid\b/Void/
+/\bboolean\b/Bool/
+/\bstring\b/String/
+
+// ============================================================
+
+// change "T[]" => "Array<T>"
+/(TYPE)\s*\[\s*\]/Array<$1>
+
+// fix: "(var v:T" => "(v:T" and ",var v:T" => ",v:T"
+/([(,]\s*)var (ID)[:](TYPE)/$1$2:$3//
+
+/\breadonly var\b/inline var
+
+// dtStart:DateTime
+/(ID):(BASETYPE)/?$1:$2
+
+// "):T" => ") : T"
+/[)]:(TYPE)/) : $1
+
+/(TYPE)\s+(ID\s*\([^)]*\))\s*;/function $2 : $1;/
+/(TYPE)\s+(ID)\s*;/var $2 : $1;/
+/([(,]\s*)(TYPE)\s+(ID)(\s*[),])/$1$3:$2$4/sr
+
+/\binterface\s+(ID)\s*:\s*(ID)/@:native("Components.interfaces.$1") extern class $1 extends $2/
+
+/\};/}/
+
+/\[scriptable[^\]]*\]\n//
+/#include.+?\n//s
+/var\s+ID\s*:\s*interface\s*;//
+
+!/[*] This Source Code.+?[*]/!!s
+
+// ============================================================
+
+// trim end spaces =======================
+//SPACE\n/\n/
+//\n([ \t]+)([^\n]+)\n\n/\n$1$2\n$1\n/m
+
+// add space prefixes ====================
+//\n\n((?:[ ]|\t)+)/\n$1\n$1/
+
+// remove spaces before ")" ==============
+/[ ]+[)]/)
+
+// ============================================================
+
+/\bnsI/NsI/
+/\bComponents\.interfaces\.NsI/Components.interfaces.nsI/
