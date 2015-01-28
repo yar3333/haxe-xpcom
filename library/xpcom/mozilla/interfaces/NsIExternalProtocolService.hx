@@ -5,6 +5,11 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIExternalProtocolService") extern class NsIExternalProtocolService extends NsISupports
 {
+	public static inline function getService() : NsIExternalProtocolService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/uriloader/external-protocol-service;1"].getService(NsIExternalProtocolService);
+	}
+	
 	function externalProtocolHandlerExists(aProtocolScheme:String) : Bool;
 	function getApplicationDescription(aScheme:AUTF8String) : AString;
 	function getProtocolHandlerInfo(aProtocolScheme:ACString) : NsIHandlerInfo;
