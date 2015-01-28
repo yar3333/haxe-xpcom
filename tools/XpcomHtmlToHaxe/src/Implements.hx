@@ -3,7 +3,8 @@ class Implements
 	public static var services =
 	[
 		"nsIClipboardHelper" => "@mozilla.org/widget/clipboardhelper;1",
-		"nsIClipboard" => "@mozilla.org/widget/clipboard;1"
+		"nsIClipboard" => "@mozilla.org/widget/clipboard;1",
+		"nsIExternalProtocolService" => "@mozilla.org/uriloader/external-protocol-service;1"
 	];
 	
 	public static var instances =
