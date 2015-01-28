@@ -60,11 +60,10 @@ import xpcom.mozilla.interfaces.*;
 	static var obs : NsIObserverService;
 	static var perms : NsIPermissionManager;
 	/**
-	 * nsIPrefBranch2
 	 * nsIPrefService 
 	 * Preferences service
 	 */
-	static var prefs : NsIPrefBranch ;
+	static var prefs : NsIPrefBranch;
 	static var prompt : NsIPromptService;
 	/**
 	 * JavaScript subscript loader service
