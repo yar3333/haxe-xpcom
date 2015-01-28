@@ -1,0 +1,4 @@
+/\n\s*\n\s*\n/\n\n/r
+/^\s+//s
+/\s+$//s
+/^(.+)$/package xpcom.mozilla.interfaces;\n\nimport xpcom.types.*;\nimport xpcom.mozilla.objects.*;\n\n$1/s
