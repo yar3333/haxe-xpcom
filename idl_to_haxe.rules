@@ -34,6 +34,8 @@ TYPE = LONGID(?:[<]\s*LONGID(?:\s*,\s*LONGID)*\s*[>])?
 /\bvoid\b/Void/
 /\bboolean\b/Bool/
 /\bstring\b/String/
+/\bwstring\b/String/
+/\buint32_t\b/Int/
 
 // ============================================================
 
