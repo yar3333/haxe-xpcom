@@ -12,6 +12,13 @@ import xpcom.mozilla.objects.*;
 		return r;
 	}
 	
+	public static inline function createInstanceSafe(file:NsIFile, ioFlags:Long, perm:Long, behaviorFlags:Long) : NsIFileOutputStream
+	{
+		var r : NsIFileOutputStream = xpcom.Components.classes[cast "@mozilla.org/network/safe-file-output-stream;1"].createInstance(NsIFileOutputStream);
+		r.init(file, ioFlags, perm, behaviorFlags);
+		return r;
+	}
+	
 	/**
 	 * See the same constant in <code><a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIFileInputStream" title="">nsIFileInputStream</a></code>. The deferred open will be performed when one of the following is called:
 	 * <ul>
