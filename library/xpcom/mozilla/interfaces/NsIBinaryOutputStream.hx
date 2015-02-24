@@ -5,6 +5,11 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIBinaryOutputStream") extern class NsIBinaryOutputStream extends NsIOutputStream
 {
+	public static inline function createInstance() : NsIBinaryOutputStream
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/binaryoutputstream;1"].createInstance(NsIBinaryOutputStream);
+	}
+	
 	function setOutputStream(aOutputStream:NsIOutputStream) : Void;
 	function write8(aByte:PRUint8) : Void;
 	function write16(a16:PRUint16) : Void;
