@@ -36,4 +36,5 @@ private extern class Results
 private extern class Utils
 {
 	inline function import_(url:String) : Void untyped this["import"](url);
+	function reportError(e:Dynamic) : Void;
 }
