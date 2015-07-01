@@ -7,7 +7,7 @@ import xpcom.mozilla.interfaces.NsIModule;
 {
 	static function __init__() : Void
 	{
-		Components.utils.import_("resource://gre/modules/XPCOMUtils.jsm");
+		Components.utils.importGlobally("resource://gre/modules/XPCOMUtils.jsm");
 	}
 	
 	static var categoryManager : NsICategoryManager;

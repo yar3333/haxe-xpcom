@@ -16,7 +16,7 @@ import xpcom.mozilla.interfaces.*;
 {
 	private static function __init__() : Void
 	{
-		Components.utils.import_("resource://gre/modules/FileUtils.jsm");
+		Components.utils.importGlobally("resource://gre/modules/FileUtils.jsm");
 	}
 	
 	/**

@@ -31,7 +31,7 @@ import xpcom.types.*;
 {
 	static function __init__() : Void
 	{
-		Components.utils.import_("resource://gre/modules/osfile.jsm");
+		Components.utils.importGlobally("resource://gre/modules/osfile.jsm");
 	}
 	
 	static function open(path:String, ?mode:Dynamic, ?options:Dynamic) : Promise<File>;

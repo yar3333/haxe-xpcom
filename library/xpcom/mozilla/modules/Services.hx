@@ -9,7 +9,7 @@ import xpcom.mozilla.interfaces.*;
 {
 	private static function __init__() : Void
 	{
-		Components.utils.import_("resource://gre/modules/Services.jsm");
+		Components.utils.importGlobally("resource://gre/modules/Services.jsm");
 	}
 	
 	static var androidBridge : Dynamic; // NsIAndroidBridge;

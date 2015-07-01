@@ -35,6 +35,15 @@ private extern class Results
 
 private extern class Utils
 {
-	inline function import_(url:String) : Void untyped this["import"](url);
+	inline function importGlobally(url:String) : Dynamic
+	{
+		return untyped this["import"](url);
+	}
+	
+	inline function importToNamespace(url:String, namespace:Dynamic) : Dynamic
+	{
+		return untyped this["import"](url, namespace);
+	}
+	
 	function reportError(e:Dynamic) : Void;
 }
