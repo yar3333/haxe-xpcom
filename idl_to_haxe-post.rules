@@ -2,3 +2,5 @@
 /^\s+//s
 /\s+$//s
 /^(.+)$/package xpcom.mozilla.interfaces;\n\nimport xpcom.types.*;\nimport xpcom.mozilla.objects.*;\n\n$1/s
+/\/[*] -[*]- Mode[:].+?[*]\/\s*//s
+/\/[*] This Source Code Form is subject to the terms.+?[*]\/\s*//s
