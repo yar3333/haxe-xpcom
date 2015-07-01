@@ -27,7 +27,7 @@ import xpcom.mozilla.interfaces.*;
 	/**
 	 * Cache storage service
 	 */
-	static var cache2 : Dynamic; // NsICacheStorageService
+	static var cache2 : NsICacheStorageService;
 	static var clipboard : NsIClipboard;
 	/**
 	 * Error console service
