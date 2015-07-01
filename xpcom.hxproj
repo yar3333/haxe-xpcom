@@ -4,7 +4,7 @@
   <output>
     <movie outputType="Application" />
     <movie input="" />
-    <movie path="..\..\yuidoc2haxe.n" />
+    <movie path="tests\bin\tests.n" />
     <movie fps="0" />
     <movie width="0" />
     <movie height="0" />
@@ -16,6 +16,7 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="library" />
+    <class path="tests\src" />
   </classpaths>
   <!-- Build options -->
   <build>
@@ -24,7 +25,7 @@
     <option noInlineOnDebug="False" />
     <option mainClass="Main" />
     <option enabledebug="False" />
-    <option additional="" />
+    <option additional="--macro include('xpcom.mozilla', true)" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>
@@ -46,7 +47,7 @@
   <options>
     <option showHiddenPaths="False" />
     <option testMovie="Custom" />
-    <option testMovieCommand="neko ../../yuidoc2haxe.n ../../out/data.json ../../library" />
+    <option testMovieCommand="" />
   </options>
   <!-- Plugin storage -->
   <storage />
