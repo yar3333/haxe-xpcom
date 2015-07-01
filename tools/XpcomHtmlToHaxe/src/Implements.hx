@@ -4,7 +4,8 @@ class Implements
 	[
 		"nsIClipboardHelper" => "@mozilla.org/widget/clipboardhelper;1",
 		"nsIClipboard" => "@mozilla.org/widget/clipboard;1",
-		"nsIExternalProtocolService" => "@mozilla.org/uriloader/external-protocol-service;1"
+		"nsIExternalProtocolService" => "@mozilla.org/uriloader/external-protocol-service;1",
+		"nsICacheService" => "@mozilla.org/network/cache-service;1"
 	];
 	
 	public static var instances =
