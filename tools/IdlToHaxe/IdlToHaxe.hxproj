@@ -15,8 +15,6 @@
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
-    <class path="..\..\native-idl.unused" />
-    <class path="..\..\native-idl" />
     <class path="..\..\library" />
     <class path="src" />
   </classpaths>

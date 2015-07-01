@@ -12,7 +12,7 @@ class Main
 {
 	static public function main()
 	{
-		var nativeDir = "../../native-html";
+		var nativeDir = "native";
 		var outDir = "../../library/xpcom/mozilla";
 		
 		var klasses = [];
