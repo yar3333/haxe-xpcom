@@ -44,15 +44,15 @@ import xpcom.mozilla.objects.*;
 	/**
 	 * Purge only data of disk backed entries.  Metadata are left for performance purposes.
 	 */
-	static var PURGE_DISK_DATA_ONLY : Int;
+	static var PURGE_DISK_DATA_ONLY : Int; // 1
 	/**
 	 * Purge whole disk backed entries from memory.  Disk files will be left unattended.
 	 */
-	static var PURGE_DISK_ALL : Int;
+	static var PURGE_DISK_ALL : Int; // 2
 	/**
 	 * Purge all entries we keep in memory, including memory-storage entries. This may be dangerous to use.
 	 */
-	static var PURGE_EVERYTHING : Int;
+	static var PURGE_EVERYTHING : Int; // 3
 	/**
 	 * Purges data we keep warmed in memory.  Use for tests and for saving memory.
 	 */

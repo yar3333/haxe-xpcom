@@ -21,10 +21,10 @@ import xpcom.mozilla.objects.*;
 	 *    this check has been made for.
 	 * ENTRY_NOT_WANTED - the consumer is not interested in the entry, we will not pass it.
 	 */
-	static var ENTRY_WANTED : Int;
-	static var RECHECK_AFTER_WRITE_FINISHED : Int;
-	static var ENTRY_NEEDS_REVALIDATION : Int;
-	static var ENTRY_NOT_WANTED : Int;
+	static var ENTRY_WANTED : Int; // 0
+	static var RECHECK_AFTER_WRITE_FINISHED : Int; // 1
+	static var ENTRY_NEEDS_REVALIDATION : Int; // 2
+	static var ENTRY_NOT_WANTED : Int; // 3
 
 	/**
 	 * Callback to perform any validity checks before the entry should be used.

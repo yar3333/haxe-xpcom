@@ -12,16 +12,15 @@ import xpcom.mozilla.objects.*;
 @:native("Components.interfaces.nsILoadContextInfo") extern class NsILoadContextInfo extends NsISupports
 {
 	/**
-	 * Whether the context belongs under an App
-	 */
-	static var NO_APP_ID : Int;
-	static var UNKNOWN_APP_ID : Int;
-	
-	/**
 	 * Whether the context is in a Private Browsing mode
 	 */
 	var isPrivate : Bool;
 	
+	/**
+	 * Whether the context belongs under an App
+	 */
+	static var NO_APP_ID : Int; // 0
+	static var UNKNOWN_APP_ID : Int; // 4294967295 // UINT32_MAX
 	var appId : Int;
 	
 	/**
