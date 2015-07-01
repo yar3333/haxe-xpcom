@@ -99,13 +99,15 @@ import xpcom.mozilla.objects.*;
 	/**
 	 * Asynchronously removes an entry belonging to the URI from the cache.
 	 */
-	function asyncDoomURI(aURI:NsIURI, aIdExtension:ACString, aCallback:NsICacheEntryDoomCallback) : Void;
+	//function asyncDoomURI(aURI:NsIURI, aIdExtension:ACString, aCallback:NsICacheEntryDoomCallback) : Void;
+	function asyncDoomURI(aURI:NsIURI, aIdExtension:ACString, aCallback:Dynamic) : Void;
 	
 	/**
 	 * Asynchronously removes all cached entries under this storage.
 	 * NOTE: Disk storage also evicts memory storage.
 	 */
-	function asyncEvictStorage(aCallback:NsICacheEntryDoomCallback) : Void;
+	//function asyncEvictStorage(aCallback:NsICacheEntryDoomCallback) : Void;
+	function asyncEvictStorage(aCallback:Dynamic) : Void;
 	
 	/**
 	 * Visits the storage and its entries.
