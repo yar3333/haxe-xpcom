@@ -25,7 +25,7 @@ import xpcom.mozilla.objects.*;
 	 *
 	 * @param aLookupAppCache When set true (for top level document loading channels) app cache will be first to check on to find entries in.
 	 */
-	function diskCacheStorage(aLoadContextInfo:NsILoadContextInfo, aLookupAppCache:bool) : NsICacheStorage;
+	function diskCacheStorage(aLoadContextInfo:NsILoadContextInfo, aLookupAppCache:Bool) : NsICacheStorage;
 
 	/**
 	 * Get storage for a specified application cache obtained using some different
