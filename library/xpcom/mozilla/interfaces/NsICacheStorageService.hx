@@ -8,6 +8,11 @@ import xpcom.mozilla.objects.*;
  */
 @:native("Components.interfaces.nsICacheStorageService") extern class NsICacheStorageService extends NsISupports
 {
+	public static inline function getService() : NsICacheStorageService
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/network/cache-storage-service;1"].getService(NsICacheStorageService);
+	}
+	
 	/**
 	 * Get storage where entries will only remain in memory, never written to the disk.
 	 *

@@ -1,12 +1,4 @@
-package xpcom.mozilla.modules.devtools;
-
-private extern class SourceMap
-{
-	private static function __init__() : Void
-	{
-		Components.utils.import_("resource://gre/modules/devtools/SourceMap.jsm");
-	}
-}
+package xpcom.mozilla.modules;
 
 /**
    * A SourceMapConsumer instance represents a parsed source map which we can
@@ -38,8 +30,13 @@ private extern class SourceMap
    *
    * [0]: https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit?pli=1#
    */
-@:native("SourceMapConsumer") extern class Consumer
+@:native("SourceMapConsumer") extern class SourceMapConsumer
 {
+	private static function __init__() : Void
+	{
+		Components.utils.importGlobally("resource://gre/modules/devtools/SourceMap.jsm");
+	}
+	
 	@:overload(function(json:String):Void{})
 	function new(params:{ version:Int, sources:Array<String>, names:Array<String>, ?sourceRoot:String, ?sourcesContent:Array<String>, mappings:String, ?file:String }) : Void;
 	function originalPositionFor(pos:{ line:Int, column:Int }) : { source:String, line:Int, column:Int, name:String };
