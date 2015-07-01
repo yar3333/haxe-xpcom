@@ -13,27 +13,27 @@ import xpcom.mozilla.objects.*;
 	/**
 	 * Placeholder for specifying "no special flags" during open.
 	 */
-	static var OPEN_NORMALLY : Int;
+	static var OPEN_NORMALLY : Int; // 0
 	
 	/**
 	 * Rewrite any existing data when opening a URL.
 	 */
-	static var OPEN_TRUNCATE : Int;
+	static var OPEN_TRUNCATE : Int; // 1 << 0
 	
 	/**
 	 * Only open an existing entry.  Don't create a new one.
 	 */
-	static var OPEN_READONLY : Int;
+	static var OPEN_READONLY : Int; // 1 << 1
 	
 	/**
 	 * Use for first-paint blocking loads.
 	 */
-	static var OPEN_PRIORITY : Int;
+	static var OPEN_PRIORITY : Int; // 1 << 2
 	
 	/**
 	 * Bypass the cache load when write is still in progress.
 	 */
-	static var OPEN_BYPASS_IF_BUSY : Int;
+	static var OPEN_BYPASS_IF_BUSY : Int; // 1 << 3
 	
 	/**
 	 * Perform the cache entry check (onCacheEntryCheck invocation) on any thread 
@@ -41,12 +41,12 @@ import xpcom.mozilla.objects.*;
 	 * ensured that onCacheEntryCheck is called on the same thread as respective 
 	 * asyncOpen has been called.
 	 */
-	static var CHECK_MULTITHREADED : Int;
+	static var CHECK_MULTITHREADED : Int; // 1 << 4
 	
 	/**
 	 * Don't automatically update any 'last used' metadata of the entry.
 	 */
-	static var OPEN_SECRETLY : Int;
+	static var OPEN_SECRETLY : Int; // 1 << 5
 	
 	/**
 	 * Asynchronously opens a cache entry for the specified URI.
