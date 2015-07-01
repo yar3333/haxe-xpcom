@@ -11,7 +11,7 @@ import xpcom.mozilla.objects.*;
 	}
 	
 	function get(prop:String, iid:NsIIDRef, result:{value:NsQIResult}) : Void;
-	function getKeys(count:{value:PRUint32}, keys:Array<String>) : Void;
+	function getKeys(count:{ value:Int }) : Array<String>;
 	function has(prop:String) : Bool;
 	function set(prop:String, value:NsISupports) : Void;
 	function undefine(prop:String) : Void;
