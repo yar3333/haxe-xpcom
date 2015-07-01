@@ -85,3 +85,6 @@ TYPE = LONGID(?:[<]\s*LONGID(?:\s*,\s*LONGID)*\s*[>])?
 
 /\bnsI/NsI/
 /\bComponents\.interfaces\.NsI/Components.interfaces.nsI/
+
+/extern class ([a-z])/extern class $^1/
+/const Int (ID) = (\d+(?:\s*(?:<<|>>|&|[|])\s*\d+)*);/static var $1 : Int; \/\/ $2
