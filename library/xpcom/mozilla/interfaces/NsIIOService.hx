@@ -22,5 +22,5 @@ import xpcom.mozilla.objects.*;
 	function newChannel(aSpec:AUTF8String, aOriginCharset:String, aBaseURI:NsIURI) : NsIChannel;
 	function newChannelFromURI(aURI:NsIURI) : NsIChannel;
 	function newFileURI(aFile:NsIFile) : NsIURI;
-	function newURI(aSpec:AUTF8String, ?aOriginCharset:String, ?aBaseURI:NsIURI) : NsIURI;
+	function newURI(aSpec:AUTF8String, aOriginCharset:String, aBaseURI:NsIURI) : NsIURI;
 }
