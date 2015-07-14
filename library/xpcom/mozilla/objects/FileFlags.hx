@@ -45,49 +45,49 @@ extern class FileFlags
 	/**
 	 * read, write, execute/search by owner.
 	 */
-	public static inline var PR_IRWXU 	= 0700; 	
+	public static inline var PR_IRWXU 	= Macro.octal( 700);
 	/**
 	 * read permission, owner.
 	 */
-	public static inline var PR_IRUSR 	= 0400; 	
+	public static inline var PR_IRUSR 	= Macro.octal( 400);
 	/**
 	 * write permission, owner.
 	 */
-	public static inline var PR_IWUSR 	= 0200; 	
+	public static inline var PR_IWUSR 	= Macro.octal( 200);
 	/**
 	 * execute/search permission, owner.
 	 */
-	public static inline var PR_IXUSR 	= 0100; 	
+	public static inline var PR_IXUSR 	= Macro.octal( 100);
 	/**
 	 * read, write, execute/search by group
 	 */
-	public static inline var PR_IRWXG 	= 0070; 	
+	public static inline var PR_IRWXG 	= Macro.octal(  70);
 	/**
 	 * read permission, group
 	 */
-	public static inline var PR_IRGRP 	= 0040; 	
+	public static inline var PR_IRGRP 	= Macro.octal(  40);
 	/**
 	 * write permission, group
 	 */
-	public static inline var PR_IWGRP 	= 0020; 	
+	public static inline var PR_IWGRP 	= Macro.octal(  20);
 	/**
 	 * execute/search permission, group
 	 */
-	public static inline var PR_IXGRP 	= 0010; 	
+	public static inline var PR_IXGRP 	= Macro.octal(  10);
 	/**
 	 * read, write, execute/search by others
 	 */
-	public static inline var PR_IRWXO 	= 0007; 	
+	public static inline var PR_IRWXO 	= Macro.octal(   7);
 	/**
 	 * read permission, others
 	 */
-	public static inline var PR_IROTH 	= 0004; 	
+	public static inline var PR_IROTH 	= Macro.octal(   4);
 	/**
 	 * write permission, others
 	 */
-	public static inline var PR_IWOTH 	= 0002; 	
+	public static inline var PR_IWOTH 	= Macro.octal(   2);
 	/**
 	 * execute/search permission, others
 	 */
-	public static inline var PR_IXOTH 	= 0001; 	
+	public static inline var PR_IXOTH 	= Macro.octal(   1);
 }
