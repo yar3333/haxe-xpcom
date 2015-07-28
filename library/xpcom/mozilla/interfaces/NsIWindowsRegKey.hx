@@ -5,6 +5,11 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIWindowsRegKey") extern class NsIWindowsRegKey extends NsISupports
 {
+	public static inline function createInstance() : NsIWindowsRegKey
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/windows-registry-key;1"].createInstance(NsIWindowsRegKey);
+	}
+	
 	static inline var ROOT_KEY_CLASSES_ROOT = 0x80000000;
 	static inline var ROOT_KEY_CURRENT_USER = 0x80000001;
 	static inline var ROOT_KEY_LOCAL_MACHINE = 0x80000002;
