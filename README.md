@@ -11,8 +11,7 @@ In the first case use static createInstance() interface's method. In the second 
 ### Examples ###
 
 Show a system FilePicker dialog:
-```
-#!haxe
+```haxe
 
 import xpcom.mozilla.interfaces.NsIFilePicker;
 ...
@@ -25,8 +24,7 @@ if (fp.show() == NsIFilePicker.returnOK)
 ```
 
 Read file content:
-```
-#!haxe
+```haxe
 
 import xpcom.mozilla.interfaces.NsIConverterInputStream;
 import xpcom.mozilla.interfaces.NsIFileInputStream;
@@ -53,8 +51,7 @@ function getContent(filePath:String) : String
 ```
 
 Working with a system clipboard:
-```
-#!haxe
+```haxe
 
 import xpcom.mozilla.interfaces.NsIClipboard;
 import xpcom.mozilla.interfaces.NsIClipboardHelper;
