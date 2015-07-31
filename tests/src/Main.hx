@@ -1,7 +1,8 @@
 package ;
 
-import mozilla.xpcom.interfaces.*;
-import mozilla.xpcom.objects.*;
+import xpcom.mozilla.interfaces.*;
+import xpcom.mozilla.objects.*;
+import xpcom.mozilla.HttpServer;
 
 class Main
 {
