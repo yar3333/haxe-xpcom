@@ -15,6 +15,7 @@ class Implements
 		"nsIFileOutputStream" => "@mozilla.org/network/file-output-stream;1",
 		"nsISupportsString" => "@mozilla.org/supports-string;1",
 		"nsIBinaryOutputStream" => "@mozilla.org/binaryoutputstream;1",
-		"nsIScriptableInputStream" => "@mozilla.org/scriptableinputstream;1"
+		"nsIScriptableInputStream" => "@mozilla.org/scriptableinputstream;1",
+		"nsIBinaryInputStream" => "@mozilla.org/binaryinputstream;1"
 	];
 }
