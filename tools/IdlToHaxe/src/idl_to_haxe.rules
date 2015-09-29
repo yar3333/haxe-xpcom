@@ -87,4 +87,11 @@ TYPE = LONGID(?:[<]\s*LONGID(?:\s*,\s*LONGID)*\s*[>])?
 /\bComponents\.interfaces\.NsI/Components.interfaces.nsI/
 
 /extern class ([a-z])/extern class $^1/
-/const Int (ID) = (\d+(?:\s*(?:<<|>>|&|[|])\s*\d+)*);/static var $1 : Int; \/\/ $2
+/const Int (ID)\s*=\s*(\d+(?:\s*(?:<<|>>|&|[|])\s*\d+)*);/static var $1 : Int; \/\/ $2
+
+/\[uuid\([^)]+\)\]//
+/\[noscript\]/\/\/[noscript]
+
+/^([ \t]+)attribute var(\s+[^;]+;)/$1var$2 \/\/ attribute/m
+
+/:(\s*)([a-z])([_a-zA-Z0-9]*\s*[,;)=])/:$1$^2$3/

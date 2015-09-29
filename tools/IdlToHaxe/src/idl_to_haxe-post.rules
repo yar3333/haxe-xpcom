@@ -4,3 +4,9 @@
 /^(.+)$/package xpcom.mozilla.interfaces;\n\nimport xpcom.types.*;\nimport xpcom.mozilla.objects.*;\n\n$1/s
 /\/[*] -[*]- Mode[:].+?[*]\/\s*//s
 /\/[*] This Source Code Form is subject to the terms.+?[*]\/\s*//s
+![*]/\s+@:native[(]!*/\n@:native(!
+![*]/\s+?\n([\t ]+)(var|function|staic var)(\s+)!*/\n$1$2$3
+/^[ \t]+var(\s+)/\tvar$1/m
+/(@:native\([^)]+\))\s+(extern\s)/$1\n$2
+/(extern class [^{]+)\s+{/$1\n{/
+/;\s+}/;\n}/
