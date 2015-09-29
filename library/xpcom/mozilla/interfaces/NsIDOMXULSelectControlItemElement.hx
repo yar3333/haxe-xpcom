@@ -3,7 +3,8 @@ package xpcom.mozilla.interfaces;
 import xpcom.types.*;
 import xpcom.mozilla.objects.*;
 
-@:native("Components.interfaces.nsIDOMXULSelectControlItemElement") extern class NsIDOMXULSelectControlItemElement extends NsIDOMXULElement
+@:native("Components.interfaces.nsIDOMXULSelectControlItemElement")
+extern class NsIDOMXULSelectControlItemElement extends NsIDOMXULElement
 {
 	var accessKey : DOMString;
 	var command : DOMString;
