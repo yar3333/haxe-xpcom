@@ -1,3 +1,3 @@
 package xpcom.types;
 
-typedef JSVal = String;
+typedef JSVal = Dynamic;
