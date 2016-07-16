@@ -179,6 +179,6 @@ import xpcom.mozilla.objects.*;
 	function cancelSave() : Void;
 	function saveChannel(aChannel:NsIChannel, aFile:NsISupports) : Void;
 	function saveDocument(aDocument:NsIDOMDocument, aFile:NsISupports, aDataPath:NsISupports, aOutputContentType:String, aEncodingFlags:ULong, aWrapColumn:ULong) : Void;
-	function saveURI(aURI:NsIURI, aCacheKey:NsISupports, aReferrer:NsIURI, aPostData:NsIInputStream, aExtraHeaders:String, aFile:NsISupports, aPrivacyContext:NsILoadContext) : Void;
-	function savePrivacyAwareURI(aURI:NsIURI, aCacheKey:NsISupports, aReferrer:NsIURI, aPostData:NsIInputStream, aExtraHeaders:String, aFile:NsISupports, aIsPrivate:Bool) : Void;
+	function saveURI(aURI:NsIURI, aCacheKey:NsISupports, aReferrer:NsIURI, aReferrerPolicy:Int, aPostData:NsIInputStream, aExtraHeaders:String, aFile:NsISupports, aPrivacyContext:NsILoadContext) : Void;
+	function savePrivacyAwareURI(aURI:NsIURI, aCacheKey:NsISupports, aReferrer:NsIURI, aReferrerPolicy:Int, aPostData:NsIInputStream, aExtraHeaders:String, aFile:NsISupports, aIsPrivate:Bool) : Void;
 }

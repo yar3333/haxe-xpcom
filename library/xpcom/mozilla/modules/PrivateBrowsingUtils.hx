@@ -1,6 +1,7 @@
 package xpcom.mozilla.modules;
 
 import xpcom.mozilla.interfaces.NsILoadContext;
+import xpcom.mozilla.interfaces.NsIWebBrowserPersist;
 
 @:native("PrivateBrowsingUtils") extern class PrivateBrowsingUtils
 {
@@ -10,4 +11,9 @@ import xpcom.mozilla.interfaces.NsILoadContext;
 	}
 	
 	static function privacyContextFromWindow(aWindow:Dynamic) : NsILoadContext;
+	
+	static inline function createWebBrowserPersist() : NsIWebBrowserPersist
+	{
+		return xpcom.Components.classes[cast "@mozilla.org/embedding/browser/nsWebBrowserPersist;1"].createInstance(NsIWebBrowserPersist);
+	}
 }
