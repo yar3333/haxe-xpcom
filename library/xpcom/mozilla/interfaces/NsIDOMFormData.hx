@@ -10,6 +10,8 @@ extern class NsIDOMFormData extends NsISupports
 	{
 		return xpcom.Components.classes[cast "@mozilla.org/files/formdata;1"].createInstance(NsIDOMFormData);
 	}	
-	
+
+	@:overload(function(name:DOMString, value:NsIDOMFile):Void {})
+	@:overload(function(name:DOMString, value:String):Void {})
 	function append(name:DOMString, value:NsIVariant) : Void;
 }

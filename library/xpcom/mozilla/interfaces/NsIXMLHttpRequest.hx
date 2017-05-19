@@ -171,7 +171,9 @@ import xpcom.mozilla.objects.*;
 	 *             Type header via the setRequestHeader method before
 	 *             calling send.
 	 */
-	function send(?body:NsIVariant) : Void;
+	@:overload(function(body:NsIDOMFormData):Void {})
+	@:overload(function(body:NsIVariant):Void {})
+	function send() : Void;
 	
 	/**
 	 * A variant of the send() method used to send binary data.
