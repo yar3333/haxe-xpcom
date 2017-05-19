@@ -5,6 +5,11 @@ import xpcom.mozilla.objects.*;
 
 @:native("Components.interfaces.nsIDOMWindowUtils") extern class NsIDOMWindowUtils extends NsISupports
 {
+	public static inline function createInstance(window:js.html.Window) : NsIDOMWindowUtils
+	{
+		return NsIInterfaceRequestor.createInstance(window).getInterface(NsIDOMWindowUtils);
+	}
+	
 	/**
 	 * getModifierState("Alt") of the send event will return true if this is specified for aModifiers of send*Event() except sendNative*Event().
 	 */
