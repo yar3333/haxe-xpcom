@@ -4,8 +4,8 @@
   "tags": ["mozilla","xul","js","extern"],
   "description": "Haxe wrapper for Mozilla XPCOM classes (for use in xul applications) and interfaces (javascript).",
   "contributors": ["yar3333"],
-  "releasenote": "WebBrowserPersist fix.",
-  "version": "1.3.3",
+  "releasenote": "Add `nsIDOMFormData`.<br>\nAdd `nsIDOMFile` and related.",
+  "version": "1.4.0",
   "url": "https://bitbucket.org/yar3333/haxe-xpcom",
   "dependencies": {}
 }
