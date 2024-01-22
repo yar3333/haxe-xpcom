@@ -1,4 +1,3 @@
-syntax: glob
 library/library.zip
 tools/XpcomHtmlToHaxe/bin
 tests/bin
