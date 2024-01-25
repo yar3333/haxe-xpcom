@@ -6,6 +6,6 @@
   "contributors": ["yar3333"],
   "releasenote": "Add `nsIDOMFormData`.<br>\nAdd `nsIDOMFile` and related.",
   "version": "1.4.0",
-  "url": "https://bitbucket.org/yar3333/haxe-xpcom",
+  "url": "https://github.com/yar3333/haxe-xpcom",
   "dependencies": {}
 }
